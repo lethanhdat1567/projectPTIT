@@ -1,0 +1,12 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^(.+)$ index.php?url=$1
+SetEnv CSS_PATH http://localhost/projectPTIT/public/css/
+SetEnv SCRIPT_PATH http://localhost/projectPTIT/assets/js/
+SetEnv FAVICON_PATH http://localhost/projectPTIT/assets/favicon/
+SetEnv IMG_PATH http://localhost/projectPTIT/assets/img/
+SetEnv ICON_PATH http://localhost/projectPTIT/assets/icons/
+
+

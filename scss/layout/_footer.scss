@@ -1,0 +1,129 @@
+@use "../abstracts";
+.footer {
+  padding: 20px;
+  color: var(--footer__color);
+  background-color: var(--footer__color-bg);
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+    @include abstracts.screen(lg) {
+      grid-template-columns: 1fr;
+    }
+    @include abstracts.screen(sm) {
+      width: 100%;
+    }
+  }
+  &__col {
+    @include abstracts.screen(lg) {
+      width: 70%;
+    }
+  }
+  &__heading {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--footer__color);
+    margin-bottom: 20px;
+  }
+  &__logo {
+    margin-bottom: 20px;
+    filter: var(--footer-logo-color);
+    @include abstracts.screen(lg) {
+      & .logo__img {
+        margin-left: 0;
+      }
+    }
+  }
+  &__search-heading {
+    color: var(--footer__color);
+  }
+  &__search-heading,
+  &__link,
+  &__desc {
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+  &__search-input {
+    border: 2px solid var(--footer__search-input);
+    padding: 10px;
+    border-radius: 6px;
+    @include abstracts.screen(md) {
+      font-size: 1.6rem;
+    }
+  }
+  &__link {
+    display: inline-block;
+    margin-bottom: 12px;
+  }
+  &__wrap-btn {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    margin-top: 20px;
+  }
+  &__search-btn {
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+  &__info {
+    margin-bottom: 20px;
+    &-link,
+    &-local {
+      font-size: 1.2rem;
+    }
+    &-heading {
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: var(--footer__color);
+      margin-bottom: 6px;
+    }
+  }
+  &__search-wrap {
+    margin-top: 30px;
+  }
+  &__bottom {
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &-desc {
+      font-size: 1.2rem;
+      @include abstracts.screen(sm) {
+        margin-top: 20px;
+      }
+    }
+    @include abstracts.screen(sm) {
+      flex-direction: column-reverse;
+    }
+  }
+  &__bottom-icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    justify-content: start;
+    width: 16%;
+    @include abstracts.screen(sm) {
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &__bottom-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    @include abstracts.screen(sm) {
+      margin: 0px 10px;
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+    }
+  }
+  &__bottom-icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: var(--footer__icons-img);
+  }
+}
