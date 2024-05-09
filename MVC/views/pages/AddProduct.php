@@ -1,5 +1,5 @@
 <div class="container">
-      <div class="cart-info">
+      <div class="cart-info__admin">
         <div class="row gy-3">
           <!-- My Wallet -->
           <div class="col-12">
@@ -54,24 +54,17 @@
                 </div>
               </div>
               <!-- Form row 2 -->
-              <div class="form__row">
+              <div class="form__row-admin">
                 <!-- Mô tả -->
                 <div class="form__group">
                   <label for="desc" class="form__label form-card__label">
                     Mô tả sản phẩm
                   </label>
-                  <div class="form__text-input">
-                    <input
-                      type="text"
-                      placeholder="Mô tả sản phẩm..."
-                      name=""
-                      id="desc"
-                      class="form__input"
-                      required
-                    />
+                  <div class="">
+                    <textarea rows="4" cols="50" name="" id="desc" class="form__text-area"></textarea>
                   </div>
                 </div>
-                <!-- Last Name -->
+                <!-- Img -->
                 <div class="form__group">
                   <label for="password" class="form__label form-card__label">
                     Ảnh sản phẩm

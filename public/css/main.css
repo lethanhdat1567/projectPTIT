@@ -2541,6 +2541,10 @@ html.dark {
   opacity: 0.5;
   pointer-events: none;
 }
+.btn--add {
+  background-color: green;
+  color: #fff;
+}
 .btn:hover {
   opacity: 0.9;
 }
@@ -4652,5 +4656,14 @@ html.dark {
   justify-content: flex-end;
   margin-top: 30px;
 }
-
+.form__text-area {
+  width: 100%;
+  resize: none;
+  height: 150px;
+}
+.cart-info__admin {
+  margin: 20px 0px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
 /*# sourceMappingURL=main.css.map */

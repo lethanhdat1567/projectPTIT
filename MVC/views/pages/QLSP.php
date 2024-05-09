@@ -7,10 +7,10 @@
           <div class="admin-menu__wrap">
             <ul class="admin-menu__list">
               <li class="admin-menu__items">
-                <a href="#!" class="admin-menu__link">Home</a>
+                <a href="http://localhost/projectPTIT/Home/Main" class="admin-menu__link">Home</a>
               </li>
               <li class="admin-menu__items">
-                <a href="#!" class="admin-menu__link">Product Management</a>
+                <a href="http://localhost/projectPTIT/Admin/QLSP" class="admin-menu__link">Product Management</a>
               </li>
               <li class="admin-menu__items">
                 <a href="#!" class="admin-menu__link">User Management</a>
@@ -46,7 +46,7 @@
               <td class="admin-product__table-items">13/2/2005</td>
               <td class="admin-product__table-items">
                 <div class="admin-product__wrap-btn">
-                  <button class="btn btn--primary"><a href="http://localhost/projectPTIT/Admin/AddProduct">Thêm</a></button>
+                  <button class="btn  btn--add"><a href="http://localhost/projectPTIT/Admin/AddProduct">Thêm</a></button>
                   <button class="btn btn--primary"><a href="#!">Sửa</a></button>
                   <button class="btn btn--danger"><a href="#!">Xóa</a></button>
                 </div>

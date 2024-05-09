@@ -2,6 +2,8 @@
     class Home extends controller{
         function Main() {
             $this->view("master1",["Pages"=>"Main"]);
+            $teo = $this->model("SinhVienModel");
+            echo $teo->sinhvien();  
         }
         function ProductDetail() {
             $this->view("master1",["Pages"=>"ProductDetail"]);

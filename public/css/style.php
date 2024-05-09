@@ -2538,6 +2538,11 @@ html.dark {
   background-color: #ed4337;
   color: var(--button-danger-color, #fff);
 }
+.btn--add {
+  background-color: green;
+  color: #fff;
+  
+}
 .btn[disabled],
 .btn--disabled {
   opacity: 0.5;
@@ -4849,5 +4854,14 @@ html.dark {
 .admin-product__wrap-btn {
   display: flex;
   justify-content: center;
+}
+.form__text-area{
+  width: 100%;
+  height: 150px;
+  font-size: 1.8rem;
+  resize: none;
+}
+.cart-info__admin {
+  margin: 40px 0px;
 }
 /*# sourceMappingURL=main.css.map */
