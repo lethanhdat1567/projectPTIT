@@ -43,7 +43,7 @@ $icon_path = getenv('ICON_PATH');
     <title>Grocery Mart</title>
   </head>
 <body>
-    <header id="Header" class="header"><?php require_once './MVC/views/blocks/Header.php' ?></header>
+    <header id="Header" class="header"><?php require_once './MVC/views/blocks/HeaderAdmin.php' ?></header>
     <div id="Content"><?php require_once './MVC/views/pages/'.$data['Pages'].'.php' ?></div>
     <footer id="Footer" class="footer"><?php require_once './MVC/views/blocks/Footer.php' ?></footer>
 </body>

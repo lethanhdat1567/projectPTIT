@@ -1614,6 +1614,9 @@ html.dark {
   .navbar {
     margin-left: 28px;
   }
+  .text-header {
+    margin-left: 100px;
+  }
 }
 @media (max-width: 991.98px) {
   .navbar {

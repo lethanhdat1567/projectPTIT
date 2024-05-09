@@ -1983,7 +1983,9 @@ html.dark {
   padding: 20px;
   color: var(--footer__color);
   background-color: var(--footer__color-bg);
+
 }
+
 .footer__row {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -4653,4 +4655,199 @@ html.dark {
   margin-top: 30px;
 }
 
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.action-buttons a {
+  margin: 0 5px;
+}
+.product-mana{
+  margin-bottom: 50px
+}
+.product-mana__heading {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  background-color: #ccc;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.product-mana__add-btn {
+  display: block;
+  margin-left: auto;
+  padding: 20px 30px;
+  background-color: #000;
+  color: #fff;
+}
+.product-mana__wrap-btn{
+  width: 100%;
+}
+.product-mana__heading {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  background-color: #ccc;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.product-mana__add-btn {
+  display: block;
+  margin-left: auto;
+  padding: 20px 30px;
+  background-color: #000;
+  color: #fff;
+}
+.product-mana__wrap-btn {
+  width: 100%;
+}
+.management-content {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  margin-top: 30px;
+}
+.management-menu__wrap {
+  display: flex;
+  align-self: flex-start;
+  flex-direction: column;
+  text-align: center;
+  background-color: #535353;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.management-menu__link {
+  display: block;
+  list-style: none;
+  text-decoration: none;
+  padding: 5px 0px;
+  line-height: 20px;
+  border-bottom: 1px solid #fff;
+  width: 100%;
+}
+.management-menu__item {
+  font-size: 1.4rem;
+  color: #fff;
+}
+.management-menu__heading {
+  padding: 0px 90px;
+  color: #fff;
+  background-color: #000;
+}
+.management-show {
+  flex: 1;
+}
+.management-table,
+.management-table__content-items,
+.management-table__heading {
+  border: 1px solid black;
+  padding: 20px;
+  text-align: center;
+
+}
+
+.management-table__heading-items {
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.management-table__content-img {
+  max-width: 100px;
+  max-height: 100px;
+}
+.management-table {
+  width: 100%;
+}
+.management-table__content-wrap-btn {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.management-table__content-btn:nth-child(2) {
+  background-color: green;
+}
+.admin-product__wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.admin-menu {
+  align-self: flex-start;
+  width: 250px;
+  border: 1px solid #000;
+  border-radius: 6px;
+}
+.admin-menu__heading {
+  background-color: #4e4c4c;
+  padding: 14px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #fff;
+}
+.admin-menu__items:not(:last-child) {
+  border-bottom: 1px solid #000;
+}
+.admin-menu__link {
+  display: block;
+  padding: 14px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2d2c2c;
+}
+.admin-menu__link:hover {
+  background-color: #ccc;
+  transition: background-color ease 0.3s;
+}
+.admin-products {
+  width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.admin-product__header {
+  width: 100%;
+  background-color: #3f3e3e;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.admin-product__heading {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #fff;
+}
+.admin-product__btn {
+  margin-left: auto;
+}
+.admin-product__table {
+  width: 100%;
+  margin-top: 10px;
+}
+.admin-product__table-heading {
+  border: 1px solid #ccc;
+  padding: 20px;
+  background-color: #ccc;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.admin-product__table-items {
+  border: 1px solid #ccc;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.table-items__img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+.admin-product__wrap-btn {
+  display: flex;
+  justify-content: center;
+}
 /*# sourceMappingURL=main.css.map */

@@ -27,5 +27,8 @@
         function Shipping() {
             $this->view("master1",["Pages"=>"Shipping"]);
         }
+        function Admin() {
+            $this->view("master1",["Pages"=>"Admin"]);
+        }
     }
 ?>
