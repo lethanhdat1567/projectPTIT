@@ -31,6 +31,7 @@
         
                     // Gọi phương thức để thêm sản phẩm vào cơ sở dữ liệu
                     $kq = $this->InsertProduct->InsertNewProduct($productName,$productPrice,$productDesc,$thumbnailpath);
+                    echo $kq;
                 }
             }
         }
