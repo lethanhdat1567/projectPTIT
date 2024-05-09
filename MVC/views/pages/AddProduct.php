@@ -14,8 +14,10 @@
               Thêm sản phẩm
             </h2>
             <form
-              action="http://localhost/projectPTIT/Admin/QLSP"
+              action="http://localhost/projectPTIT/Admin/Product"
+              method="post"
               class="form form-card"
+              enctype="multipart/form-data";
             >
               <!-- Form row 1 -->
               <div class="form__row">
@@ -28,7 +30,7 @@
                     <input
                       type="text"
                       placeholder="Tên sản phẩm..."
-                      name=""
+                      name="ProductName"
                       id="product"
                       class="form__input"
                       required
@@ -45,7 +47,7 @@
                     <input
                       type="text"
                       placeholder="Giá sản phẩm"
-                      name=""
+                      name="ProductPrice"
                       id="price"
                       class="form__input"
                       required
@@ -61,7 +63,7 @@
                     Mô tả sản phẩm
                   </label>
                   <div class="">
-                    <textarea rows="4" cols="50" name="" id="desc" class="form__text-area"></textarea>
+                    <textarea rows="4" cols="50" name="ProductDesc" id="desc" class="form__text-area"></textarea>
                   </div>
                 </div>
                 <!-- Img -->
@@ -70,7 +72,7 @@
                     Ảnh sản phẩm
                   </label>
                   <div class="form__text-input">
-                    <input type="file" name="" id="img" class="form__input" />
+                    <input type="file" name="thumbnail" id="img" class="form__input" />
                   </div>
                 </div>
               </div>
@@ -80,10 +82,13 @@
                   class="btn btn--text"
                   >Cancel</a
                 >
-                <button class="btn btn--primary btn--rounded">Save card</button>
+                <button name="btnAdd" class="btn btn--primary btn--rounded">Save card</button>
               </div>
             </form>
           </div>
         </div>
       </div>
     </div>
+    <?php
+          $target_dir ="<?= $img_path ?>products/";
+    ?>
