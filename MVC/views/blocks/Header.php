@@ -1404,7 +1404,7 @@
                 </a>
               </li> 
               <li class="user-menu__separate">
-                <a href="./sign-in.html" class="user-menu__link">
+                <a href="http://localhost/projectPTIT/User/SignIn" class="user-menu__link">
                   Logout</a>
               </li> 
             </ul>

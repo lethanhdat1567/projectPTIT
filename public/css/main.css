@@ -4666,4 +4666,8 @@ html.dark {
   padding: 10px;
   border: 1px solid #ccc;
 }
+.header__toast {
+  font-size: 2rem;
+  font-weight: 600;
+}
 /*# sourceMappingURL=main.css.map */

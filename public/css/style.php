@@ -1613,9 +1613,17 @@ html.dark {
 .navbar {
   margin-left: 129px;
 }
+.header__toast {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-left: 300px;
+}
 @media (max-width: 1199.98px) {
   .navbar {
     margin-left: 28px;
+  }
+  .header__toast{
+    margin-left: 200px;
   }
 }
 @media (max-width: 991.98px) {
@@ -2526,6 +2534,10 @@ html.dark {
 .btn--primary {
   color: #171c28;
   background-color: #ffb700;
+}
+.btn--info{
+  color: #fff;
+  background-color: blue;
 }
 .btn--outline {
   background-color: transparent;
@@ -4670,7 +4682,7 @@ html.dark {
   margin: 0 5px;
 }
 .product-mana{
-  margin-bottom: 50px
+  margin-top: 50px
 }
 .product-mana__heading {
   width: 100%;
@@ -4844,6 +4856,10 @@ html.dark {
   border: 1px solid #ccc;
   vertical-align: middle;
   text-align: center;
+  padding: 10px;
+  max-width: 400px;
+  overflow: auto;
+  word-wrap: break-word;
 }
 
 .table-items__img {
@@ -4854,6 +4870,13 @@ html.dark {
 .admin-product__wrap-btn {
   display: flex;
   justify-content: center;
+  gap: 10px;
+}
+.admin-product__table-items-desc{
+  height: 100px;
+  max-width: 100%;
+  overflow: auto;
+  word-wrap: break-word;
 }
 .form__text-area{
   width: 100%;
@@ -4864,4 +4887,30 @@ html.dark {
 .cart-info__admin {
   margin: 40px 0px;
 }
+.add-success {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.add-success__desc {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.add-success__img{
+  width: 200px;
+  height: 200px;
+  margin-bottom: 50px;
+}
+.add-success__link{
+  margin-top: 20px;
+  color: blue;
+}
+.add-success__link:hover{
+  text-decoration: underline;
+  
+}
+
 /*# sourceMappingURL=main.css.map */
