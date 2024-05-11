@@ -48,11 +48,11 @@
               </td>
               <td class="admin-product__table-items"><?php echo $row['name'] ?></td>
               <td class="admin-product__table-items"><?php echo$row['updated_at'] ?></td>
-              <td class="admin-product__table-items">13/2/2005</td>
+              <td class="admin-product__table-items"><?php echo $row['created_at'] ?></td>
               <td class="admin-product__table-items"><p class="admin-product__table-items-desc"><?php echo $row['description'] ?></p></td>
               <td class="admin-product__table-items">
                 <div class="admin-product__wrap-btn">
-                  <a href="#!">
+                <a href="http://localhost/projectPTIT/Admin/UpdateProduct/<?php echo $row['id'] ?>">
                   <button class="btn btn--info">
                     Sửa
                   </button>

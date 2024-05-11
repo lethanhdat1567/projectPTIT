@@ -1,4 +1,4 @@
-
+<?php  $row = mysqli_fetch_assoc($data["product"]); ?>
 <main class="product-page">
       <div class="container">
         <!-- Search bar -->
@@ -56,7 +56,7 @@
                 <div class="prod-review__list">
                   <div class="prod-review__item">
                     <img
-                      src="<?= $img_path ?>products/item1.png"
+                      src="<?= $img_path ?>products/<?php echo $row['thumbnail'] ?>"
                       alt=""
                       class="prod-review__img"
                     />
@@ -85,7 +85,7 @@
                 </div>
                 <div class="prod-review__thumb">
                   <img
-                    src="<?= $img_path ?>products/item1.png"
+                    src="<?= $img_path ?>products/<?php echo $row['thumbnail']; ?>"
                     alt=""
                     class="prod-review__thumb-img prod-review__thumb-img--current"
                   />
@@ -111,7 +111,7 @@
               <form action="" class="form">
                 <section class="prod-info">
                   <h1 class="prod-info__heading">
-                    Coffee Beans - Espresso Arabica and Robusta Beans
+                    <?php echo $row['name'] ?>
                   </h1>
                   <div class="row">
                     <div class="col-5 col-xxl-6 col-xl-12">
@@ -197,7 +197,7 @@
                             <span class="prod-info__price">$500.00</span>
                             <span class="prod-info__tax">10%</span>
                           </div>
-                          <p class="prod-info__total-price">&540.00</p>
+                          <p class="prod-info__total-price">$<?php echo $row['price'] ?></p>
                           <div class="prod-info__row">
                             <button
                               class="btn btn--primary prod-info__add-to-cart"
@@ -243,67 +243,11 @@
               <div class="prod-tad__content prod-tad__content--current">
                 <div class="row">
                   <div class="col-8 col-xl-10 col-lg-12">
-                    <div class="text-content prod-tab__text-content">
-                      <h2>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Est, eligendi.
-                      </h2>
-                      <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Amet, eum vitae. Debitis magni cum quaerat ex
-                        quibusdam, nemo saepe ad delectus, odit reprehenderit
-                        doloribus veniam incidunt impedit voluptatum veritatis
-                        quidem.
-                      </p>
-                      <h3>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Animi, laudantium.
-                      </h3>
-                      <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Amet, eum vitae. Debitis magni cum quaerat ex
-                        quibusdam, nemo saepe ad delectus, odit reprehenderit
-                        doloribus veniam incidunt impedit voluptatum veritatis
-                        quidem.
-                      </p>
-                      <p>
-                        <img src="<?= $img_path ?>products/item1.png" alt="" />
-                        <em>Lorem ipsum dolor sit amet.0</em>
-                      </p>
-                      <blockquote>
-                        <p>
-                          Lorem, ipsum dolor sit amet
-                          <a href="#!">consectetur</a> adipisicing elit. Amet,
-                          eum vitae. Debitis magni cum quaerat ex quibusdam,
-                          nemo saepe ad delectus, odit reprehenderit doloribus
-                          veniam incidunt impedit
-                          <a href="#!">voluptatum</a> veritatis quidem.
-                        </p>
-                      </blockquote>
-                      <h2>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Animi, laudantium.
-                      </h2>
-                      <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Amet, eum vitae. Debitis magni cum quaerat ex
-                        quibusdam, nemo saepe ad delectus, odit reprehenderit
-                        doloribus veniam incidunt impedit voluptatum veritatis
-                        quidem.
-                      </p>
-                      <hr />
-                      <p>
-                        <img src="<?= $img_path ?>products/item1.png" alt="" />
-                        <em>Lorem ipsum dolor sit amet.0</em>
-                      </p>
-                      <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Amet, eum vitae. Debitis magni cum quaerat ex
-                        quibusdam, nemo saepe ad delectus, odit reprehenderit
-                        doloribus veniam incidunt impedit voluptatum veritatis
-                        quidem.
-                      </p>
-                    </div>
+                  <div class="text-content prod-tab__text-content">
+                  <?php
+                        echo $row['description']
+                  ?>
+                  </div>
                   </div>
                 </div>
               </div>

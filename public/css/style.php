@@ -2589,6 +2589,11 @@ html.dark {
 }
 .product-card__title {
   margin-top: 16px;
+  height: 48px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient:vertical;
+  overflow: hidden; 
 }
 .product-card__title,
 .product-card__price,
