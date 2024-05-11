@@ -1,10 +1,16 @@
 <?php
     class Home extends controller{
-        function Main() {
-            $this->view("master1",["Pages"=>"Main"]);
+        public $GetProduct;
+        public function __construct(){
+            $this->GetProduct = $this->model("GetProduct");
         }
-        function ProductDetail() {
-            $this->view("master1",["Pages"=>"ProductDetail"]);
+        function Main() {
+            $products = $this->GetProduct->GetValuesProduct();
+            $this->view("master1",["Pages"=>"Main","product"=> $products]);
+        }
+        function ProductDetail($id) {
+            $products = $this->GetProduct->GetValuesProductID($id);
+            $this->view("master1",["Pages"=>"ProductDetail","product"=> $products]);
         }
         function AddNewCard() {
             $this->view("master1",["Pages"=>"AddNewCard"]);

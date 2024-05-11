@@ -5,7 +5,7 @@
       <img src="<?= $icon_path ?>more.svg" alt="" class="top-bar__more-icon">
     </button>
     <!-- logo -->
-    <a href="./" class="logo top-bar__logo">
+    <a href="http://localhost/projectPTIT/Home/Main" class="logo top-bar__logo">
       <img src="<?= $icon_path ?>logo.svg" alt="" class="logo__img top-bar__logo-img  " />
       <h1 class="logo__title top-bar__logo-title">grocemart</h1>
     </a>
@@ -19,10 +19,13 @@
     </div>
     <!-- Actions -->
     <div class="top-act ">
-      <a href="./sign-in.html" class="btn btn--text d-md-none">
+      <a href="http://localhost/projectPTIT/Admin/Main" class="btn btn--text d-md-none">
       Trang chủ
       </a>
-      <a href="./sign-up.html" class="top-act__sign-up btn btn--text">
+      <a href="http://localhost/projectPTIT/Admin/QLSP" class="btn btn--text d-md-none">
+      Trang quản trị
+      </a>
+      <a href="http://localhost/projectPTIT/User/SignUp" class="top-act__sign-up btn btn--danger">
         Đăng xuất
       </a>
       </div>
