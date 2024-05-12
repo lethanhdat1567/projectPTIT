@@ -25,7 +25,7 @@
       <div id="auth-content" class="auth__content hide">
         <div class="auth__content-inner">
           <!-- logo -->
-          <a href="http://localhost/projectPTIT/Home/" class="logo">
+          <a href="" class="logo">
             <img src="<?= $icon_path ?>logo.svg" alt="" class="logo__img" />
             <h1 class="logo__title">grocemart</h1>
           </a>
@@ -33,13 +33,13 @@
           <p class="auth__desc">
             Let’s create your account and Shop like a pro and save money.
           </p>
-          <form action="./index-logined.html" class="form auth__form">
+          <form action="http://localhost/projectPTIT/User/DangKyUser" class="form auth__form" method="POST">
             <div class="form__group">
               <div class="form__text-input">
                 <input
                   type="email"
                   placeholder="Email"
-                  name=""
+                  name="email"
                   id=""
                   class="form__input"
                   required
@@ -63,7 +63,7 @@
                 <input
                   type="password"
                   placeholder="Password"
-                  name=""
+                  name="password"
                   id=""
                   class="form__input"
                   required
@@ -87,7 +87,7 @@
                 <input
                   type="password"
                   placeholder="Confirm password"
-                  name=""
+                  name="confirmpassword"
                   id=""
                   class="form__input"
                   required
@@ -118,7 +118,7 @@
               </label>
             </div>
             <div class="form__group auth__btn-group">
-              <button class="btn btn--primary auth__btn form__submit-btn">
+              <button class="btn btn--primary auth__btn form__submit-btn" name="btnRegister">
                 Sign up
               </button>
               <button class="btn btb--outline auth__btn btn--no-margin">

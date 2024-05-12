@@ -24,13 +24,13 @@
             Welcome back to sign in. As a returning customer, you have access to
             your previously saved all information.
           </p>
-          <form action="./index-logined.html" class="form auth__form">
+          <form action="http://localhost/projectPTIT/User/GetUser" class="form auth__form" method="POST">
             <div class="form__group">
               <div class="form__text-input">
                 <input
                   type="email"
                   placeholder="Email"
-                  name=""
+                  name="email"
                   id=""
                   class="form__input"
                   required
@@ -54,7 +54,7 @@
                 <input
                   type="password"
                   placeholder="Password"
-                  name=""
+                  name="password"
                   id=""
                   class="form__input"
                   required
@@ -90,7 +90,7 @@
               >
             </div>
             <div class="form__group auth__btn-group">
-              <button class="btn btn--primary auth__btn form__submit-btn">
+              <button class="btn btn--primary auth__btn form__submit-btn" name="btnLogin">
                 Sign In
               </button>
               <button class="btn btb--outline auth__btn btn--no-margin">
