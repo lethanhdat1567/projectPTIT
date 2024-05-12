@@ -14,6 +14,9 @@
             $products = $this->GetProduct->GetValuesProduct();
             $this->view("AdminPage",["Pages"=>"QLSP","products"=>$products]);
         }
+        function QLND() {
+            $this->view("AdminPage",["Pages"=>"QLND"]);
+        }
         function Main() {
             $products = $this->GetProduct->GetValuesProduct();
             $this->view("AdminPage",["Pages"=>"Main","product"=> $products]);

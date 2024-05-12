@@ -212,7 +212,7 @@
                             for="email-address"
                             class="form__label form-card__label"
                           >
-                            Email Address
+                            Email
                           </label>
                           <div class="form__text-input">
                             <input
@@ -259,7 +259,7 @@
                             for="password"
                             class="form__label form-card__label"
                           >
-                            Password
+                            Address
                           </label>
                           <div class="form__text-input">
                             <input

@@ -4686,7 +4686,7 @@ html.dark {
 .action-buttons a {
   margin: 0 5px;
 }
-.product-mana{
+.product-mana,.admin-mana{
   margin-top: 50px
 }
 .product-mana__heading {
@@ -4851,7 +4851,7 @@ html.dark {
   margin-top: 10px;
 }
 .admin-product__table-heading {
-  border: 1px solid #ccc;
+  border: 1px solid #dadada;
   padding: 20px;
   background-color: #ccc;
   font-size: 1.6rem;

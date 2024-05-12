@@ -7,7 +7,7 @@ class UpdateProduct extends DB{
     }
     function UpdateValuesProduct($productName,$productPrice,$productDesc,$thumbnailpath,$id)
     {
-        $update = "UPDATE product SET name='$productName', price='$productPrice', description='$productDesc', thumbnail='$thumbnailpath' WHERE id=$id";
+        $update = "UPDATE product SET name='$productName', price='$productPrice', description='$productDesc', thumbnail='$thumbnailpath', updated_at= NOW() WHERE id=$id";
         return mysqli_query($this->conn, $update);
     }
     

@@ -13,7 +13,7 @@
                 <a href="http://localhost/projectPTIT/Admin/QLSP" class="admin-menu__link">Product Management</a>
               </li>
               <li class="admin-menu__items">
-                <a href="#!" class="admin-menu__link">User Management</a>
+                <a href="http://localhost/projectPTIT/Admin/QLND" class="admin-menu__link">User Management</a>
               </li>
             </ul>
           </div>
