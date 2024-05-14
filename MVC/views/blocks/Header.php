@@ -1,3 +1,6 @@
+<?php if(isset($data['user'])){
+    $row = mysqli_fetch_assoc($data["user"]);
+} ?>
 <div class="container">
   <div class="top-bar">
     <!-- navbar more -->
@@ -1380,12 +1383,12 @@
               <img src="<?= $img_path ?>z4888248915574_b3c4f7538cab253aae1f1560aa4672a3 (1).jpg" alt="" class="user-menu__avatar">
               <div>
                 <p class="user-menu__name">Dat Lee</p>
-                <p class="user-menu__username">lethanhdat123</p>
+                <p class="user-menu__username"><?php echo $row['email'] ?></p>
               </div>
             </div>
             <ul class="user-menu__list">
               <li>
-                <a href="http://localhost/projectPTIT/Home/Profile" class="user-menu__link">
+                <a href="http://localhost/projectPTIT/Home/Profile/<?php echo $row['id'] ?>" class="user-menu__link">
                   Profile</a>
               </li>
               <li>

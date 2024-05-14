@@ -29,7 +29,7 @@
               <div class="form__text-input">
                 <input
                   type="email"
-                  placeholder="Email"
+                  placeholder="Tên đăng nhập"
                   name="email"
                   id=""
                   class="form__input"
@@ -42,12 +42,12 @@
                   class="form__input-icon-error"
                 />
                 <img
-                  src="<?= $icon_path ?>message.svg"
+                  src="<?= $icon_path ?>user.svg"
                   alt=""
                   class="form__input-icon"
                 />
               </div>
-              <p class="form__error">Email is not in correct format</p>
+              <p class="form__error">Email định dạng chưa chính xác!</p>
             </div>
             <div class="form__group">
               <div class="form__text-input">
@@ -71,8 +71,9 @@
                   class="form__input-icon"
                 />
               </div>
-              <p class="form__error">Password must be at least 6 characters</p>
+              <p class="form__error">Mật khẩu gồm ít nhất 6 kí tự</p>
             </div>
+            <span class="form__login--error <?php echo ($data['Error']) ? 'show' : ''; ?>"><?php echo $data['Error'] ?></span>
             <div class="form__group form__group--inline">
               <label class="form__checkbox">
                 <input

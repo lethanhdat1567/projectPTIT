@@ -1,3 +1,4 @@
+<?php echo $data['id'] ?>
 <main class="profile">
       <div class="container">
         <!-- Search bar -->
@@ -30,7 +31,7 @@
                     alt=""
                     class="profile-user__avatar"
                   />
-                  <h1 class="profile-user__name">Imran Khan</h1>
+                  <h1 class="profile-user__name">Le Thanh Dat</h1>
                   <p class="profile-user__desc">Registered: 17th May 2022</p>
                 </div>
                 <!-- Menu 1 -->
@@ -276,7 +277,6 @@
                             <div>
                               <h3 class="account-info__title">Email Address</h3>
                               <p class="account-info__desc">
-                                tarek97.ta@gmail.com
                               </p>
                             </div>
                           </article>

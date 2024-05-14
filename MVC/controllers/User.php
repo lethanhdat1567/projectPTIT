@@ -20,9 +20,8 @@
 
                 $kq = $this->InsertUser->InsertNewUser($email,$password);
                 // echo $kq;
-                $products = $this->GetProduct->GetValuesProduct();
-                $this->view("master1",["Pages"=>"Main","product"=> $products]);
-
+                header("Location: http://localhost/projectPTIT/User/SignIn");
+                exit();  
             }
         }
         function SignIn() {
@@ -35,18 +34,17 @@
 
                 $kq = $this->GetUser->GetUserDB($email,$password);
                 if(mysqli_num_rows($kq)){
+                    $r = mysqli_fetch_assoc($kq);
+                    $id = $r['id'];
                     $_SESSION['email'] = $email;
-                    $products = $this->GetProduct->GetValuesProduct();
-                    $this->view("master1",["Pages"=>"Main","product"=> $products]);
+                    header("Location: http://localhost/projectPTIT/Home/Main/$id");
+                    exit();         
                 }else {
-                    $error_message = "Tài khoản đăng nhập không đúng.";
-                    echo $error_message;
+                    $error_message = "Tên đăng nhập hoặc mật khẩu không chính xác!";
+                    $this->view("UserPage",["Pages"=>"SignIn","Error"=>$error_message]);
                 }
             
             }
-
-
-            
         }
     }
 ?>

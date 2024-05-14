@@ -8,5 +8,13 @@ class GetUser extends DB{
         $qr = "SELECT * FROM user WHERE email='$email' AND password='$password'";
         return mysqli_query($this->conn, $qr);
     }
+    public function GetUserValues($id) {
+        $qr = "SELECT * FROM user WHERE id=$id";
+        return mysqli_query($this->conn, $qr);
+    }
+    public function GetUsers() {
+        $qr = "SELECT * FROM user";
+        return mysqli_query($this->conn, $qr);
+    }
 }
 ?>

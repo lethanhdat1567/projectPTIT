@@ -1806,7 +1806,7 @@ html.dark {
 }
 .top-act__dropdown {
   right: -15px !important;
-  width: min(300px, 100vw) !important;
+  width: min(325px, 100vw) !important;
 }
 .top-act__dropdown-arrow {
   right: 15px !important;
@@ -2910,7 +2910,23 @@ html.dark {
 }
 .form__input-icon {
   margin-left: 12px;
+  width: 20px;
+  height: 20px;
 }
+.form__login--error{
+  display: none;
+}
+.form__login--error.show{
+  display: block;
+}
+.form__login--error, .form__login--error.show{
+  text-align: left;
+  font-size: 1.4rem;
+  margin-top: 10px;
+  font-weight: 500;
+  color: #ed4337;
+}
+.form__login--error
 .form__select-dialog {
   position: absolute;
   display: flex;

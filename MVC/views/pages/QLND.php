@@ -38,18 +38,22 @@
               <th class="admin-product__table-heading">Ngày tạo</th>
               <th class="admin-product__table-heading">Role</th>
             </tr>
+            <?php
+              while($row = mysqli_fetch_assoc($data["users"])){
+            ?>
             <tr class="admin-product__table-wrap">
-              <td class="admin-product__table-items">Le Thanh Dat</td>
+              <td class="admin-product__table-items"><?php echo $row['fullname'] ?></td>
               <td class="admin-product__table-items">
-                lethanhdat1567@gmail.com
+              <?php echo $row['email'] ?>
               </td>
-              <td class="admin-product__table-items">0909364029</td>
+              <td class="admin-product__table-items"><?php echo $row["phone_number"] ?></td>
               <td class="admin-product__table-items">
-                E12/358, Ấp 5, Xã Đa Phước, Huyện Bình Chánh
+              <?php echo $row['address'] ?>
               </td>
-              <td class="admin-product__table-items">13/02/2005</td>
-              <td class="admin-product__table-items">Admin</td>
+              <td class="admin-product__table-items"><?php echo $row['created_at'] ?></td>
+              <td class="admin-product__table-items"><?php echo $row['role_id'] ?></td>
             </tr>
+            <?php } ?>
           </table>
         </div>
       </div>

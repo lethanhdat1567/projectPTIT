@@ -1,12 +1,15 @@
 <?php
     class Home extends controller{
         public $GetProduct;
+        public $GetUser;
         public function __construct(){
             $this->GetProduct = $this->model("GetProduct");
+            $this->GetUser = $this->model("GetUser");
         }
-        function Main() {
+        function Main($id) {
             $products = $this->GetProduct->GetValuesProduct();
-            $this->view("master1",["Pages"=>"Main","product"=> $products]);
+            $user = $this->GetUser->GetUserValues($id);
+            $this->view("master1",["Pages"=>"Main","product"=> $products,"user"=>$user]);
         }
         function ProductDetail($id) {
             $products = $this->GetProduct->GetValuesProductID($id);
@@ -27,8 +30,9 @@
         function PayMent() {
             $this->view("master1",["Pages"=>"PayMent"]);
         }
-        function Profile() {
-            $this->view("master1",["Pages"=>"Profile"]);
+        function Profile($id) {
+            $user = $this->GetUser->GetUserValues($id);
+            $this->view("master1",["Pages"=>"Profile","id"=>$id,"user"=>$user]);
         }
         function Shipping() {
             $this->view("master1",["Pages"=>"Shipping"]);

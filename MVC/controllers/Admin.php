@@ -4,18 +4,21 @@
         public $GetProduct;
         public $DeleteProduct;
         public $UpdateProduct;
+        public $GetUser;
         public function __construct(){
             $this->InsertProduct = $this->model("InsertProduct");
             $this->GetProduct = $this->model("GetProduct");
             $this->DeleteProduct = $this->model("DeleteProduct");
             $this->UpdateProduct = $this->model("UpdateProduct");
+            $this->GetUser = $this->model("GetUser");
         }
         function QLSP() {
             $products = $this->GetProduct->GetValuesProduct();
             $this->view("AdminPage",["Pages"=>"QLSP","products"=>$products]);
         }
         function QLND() {
-            $this->view("AdminPage",["Pages"=>"QLND"]);
+            $users = $this->GetUser->GetUsers();
+            $this->view("AdminPage",["Pages"=>"QLND","users"=>$users]);
         }
         function Main() {
             $products = $this->GetProduct->GetValuesProduct();
