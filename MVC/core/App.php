@@ -1,8 +1,8 @@
 <?php
 class App{
 
-    protected $controller="User";
-    protected $action="SignIn";
+    protected $controller="All";
+    protected $action="Main";
     protected $params=[];
 
     function __construct(){

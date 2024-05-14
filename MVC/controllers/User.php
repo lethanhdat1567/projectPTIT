@@ -1,4 +1,5 @@
 <?php
+ob_start();
     class User extends Controller{
         public $GetProduct;
          public $InsertUser;
@@ -16,10 +17,10 @@
             if(isset($_POST["btnRegister"])){
                 $email = $_POST["email"];
                 $password = $_POST["password"];
-                // echo $password;
-
-                $kq = $this->InsertUser->InsertNewUser($email,$password);
-                // echo $kq;
+                $password = password_hash($password, PASSWORD_DEFAULT);
+                $this->InsertUser->InsertNewUser($email,$password);
+                $_SESSION['email'] = $email;
+                $_SESSION['password'] = $password;
                 header("Location: http://localhost/projectPTIT/User/SignIn");
                 exit();  
             }
@@ -31,19 +32,23 @@
             if(isset($_POST["btnLogin"])){
                 $email = $_POST["email"];
                 $password = $_POST["password"];
-
-                $kq = $this->GetUser->GetUserDB($email,$password);
-                if(mysqli_num_rows($kq)){
-                    $r = mysqli_fetch_assoc($kq);
-                    $id = $r['id'];
-                    $_SESSION['email'] = $email;
-                    header("Location: http://localhost/projectPTIT/Home/Main/$id");
-                    exit();         
-                }else {
-                    $error_message = "Tên đăng nhập hoặc mật khẩu không chính xác!";
-                    $this->view("UserPage",["Pages"=>"SignIn","Error"=>$error_message]);
+                $users = $this->GetUser->GetUsers();
+                while ($row = mysqli_fetch_assoc($users)){
+                    if(password_verify($password, $row['password'])) {
+                        $kq = $this->GetUser->GetUserDB($email);
+                        if(mysqli_num_rows($kq)){
+                            $r = mysqli_fetch_assoc($kq);
+                            $id = $r['id'];
+                            header("Location: http://localhost/projectPTIT/Home/Main/$id");
+                            exit();         
+                            ob_end_flush();
+                        }                     
+                    }
+                    else {
+                        $error_message = "Tên đăng nhập hoặc mật khẩu không chính xác!";
+                        $this->view("UserPage",["Pages"=>"SignIn","Error"=>$error_message]);
+                    }
                 }
-            
             }
         }
     }

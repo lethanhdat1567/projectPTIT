@@ -1,11 +1,9 @@
 <?php
 class GetUser extends DB{
-    public function GetUserDB($email,$password){
+    public function GetUserDB($email){
             $email = mysqli_real_escape_string($this->conn, $email);
-            $password = mysqli_real_escape_string($this->conn, $password);
             $email = trim($email);
-            $password = trim($password);
-        $qr = "SELECT * FROM user WHERE email='$email' AND password='$password'";
+        $qr = "SELECT * FROM user WHERE email='$email'";
         return mysqli_query($this->conn, $qr);
     }
     public function GetUserValues($id) {

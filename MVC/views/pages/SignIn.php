@@ -31,7 +31,12 @@
                   type="email"
                   placeholder="Tên đăng nhập"
                   name="email"
-                  id=""
+                  id=""                  
+                  value="<?php 
+                  if (isset($_SESSION['password']) && isset($_SESSION['email'])) {
+                    echo $_SESSION['email'];
+                }
+                ?>"
                   class="form__input"
                   required
                   autofocus
@@ -56,6 +61,11 @@
                   placeholder="Password"
                   name="password"
                   id=""
+                  value="<?php 
+                  if (isset($_SESSION['password']) && isset($_SESSION['email'])) {
+                    echo $_SESSION['password'];
+                }
+                ?>"
                   class="form__input"
                   required
                   minlength="6"

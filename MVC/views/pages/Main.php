@@ -265,7 +265,7 @@
               </h3>
               <p class="product-card__brand">Lavazza</p>
               <div class="product-card__row">
-                <span class="product-card__price">$<?php echo $row['price'] ?></span>
+                <span class="product-card__price">VND<?php echo $row['price'] ?></span>
                 <img
                   src="<?= $icon_path ?>star.svg"
                   alt=""
