@@ -1,4 +1,3 @@
-<?php echo $data['id'] ?>
 <main class="profile">
       <div class="container">
         <!-- Search bar -->
@@ -40,7 +39,7 @@
                   <ul class="profile-menu__list">
                     <li>
                       <a
-                        href="http://localhost/projectPTIT/Home/EditPersonalInfo"
+                        href="<?php echo ROOT; ?>Home/EditPersonalInfo"
                         class="profile-menu__link"
                       >
                         <span class="profile-menu__icon">
@@ -245,7 +244,7 @@
                       </div>
                       <!-- Add new payment card -->
                       <div class="col">
-                        <a href="http://localhost/projectPTIT/Home/AddNewCard" class="new-card">
+                        <a href="<?php echo ROOT; ?>Home/AddNewCard" class="new-card">
                           <img
                             src="<?php echo ASSETS; ?>icons/plus.svg"
                             alt=""
@@ -265,7 +264,7 @@
                     <div class="row gy-md-2 row-cols-2 row-cols-lg-1">
                       <!-- Account info 1 -->
                       <div class="col">
-                        <a href="http://localhost/projectPTIT/Home/EditPersonalInfo">
+                        <a href="<?php echo ROOT; ?>Home/EditPersonalInfo">
                           <article class="account-info">
                             <div class="account-info__icon">
                               <img
@@ -284,7 +283,7 @@
                       </div>
                       <!-- Account info 2 -->
                       <div class="col">
-                        <a href="http://localhost/projectPTIT/Home/EditPersonalInfo">
+                        <a href="<?php echo ROOT; ?>Home/EditPersonalInfo">
                           <article class="account-info">
                             <div class="account-info__icon">
                               <img
@@ -304,7 +303,7 @@
                       </div>
                       <!-- Account info 3 -->
                       <div class="col">
-                        <a href="http://localhost/projectPTIT/Home/EditPersonalInfo">
+                        <a href="<?php echo ROOT; ?>Home/EditPersonalInfo">
                           <article class="account-info">
                             <div class="account-info__icon">
                               <img

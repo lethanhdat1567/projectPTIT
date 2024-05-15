@@ -173,7 +173,7 @@
                   <!-- My Wallet -->
                   <div class="col-12">
                     <h2 class="cart-info__heading">
-                      <a href="http://localhost/projectPTIT/Home/Profile">
+                      <a href="<?php echo ROOT; ?>Home/Profile">
                         <img
                           src="<?php echo ASSETS; ?>icons/arrow-left.svg"
                           alt=""
@@ -182,7 +182,7 @@
                       </a>
                       Personal Info
                     </h2>
-                    <form action="http://localhost/projectPTIT/Home/Profile" class="form form-card">
+                    <form action="<?php echo ROOT; ?>Home/Profile" class="form form-card">
                       <!-- Form row 1 -->
                       <div class="form__row">
                         <!-- First name -->
@@ -277,7 +277,7 @@
                         </div>
                       </div>
                       <div class="form-card__bottom">
-                        <a href="http://localhost/projectPTIT/Home/Profile" class="btn btn--text">Cancel</a>
+                        <a href="<?php echo ROOT; ?>Home/Profile" class="btn btn--text">Cancel</a>
                         <button class="btn btn--primary btn--rounded">
                           Save card
                         </button>

@@ -29,9 +29,8 @@
         function PayMent() {
             $this->view("master1",["Pages"=>"PayMent"]);
         }
-        function Profile($id) {
-            $user = $this->GetUser->GetUserValues($id);
-            $this->view("master1",["Pages"=>"Profile","id"=>$id,"user"=>$user]);
+        function Profile() {
+            $this->view("master1",["Pages"=>"Profile"]);
         }
         function Shipping() {
             $this->view("master1",["Pages"=>"Shipping"]);

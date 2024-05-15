@@ -423,7 +423,7 @@
                   <div class="col">
                     <article class="product-card">
                       <div class="product-card__img-wrap">
-                        <a href="http://localhost/projectPTIT/Home/ProductDetail">
+                        <a href="<?php echo ROOT; ?>Home/ProductDetail">
                           <img
                             src="<?php echo ASSETS; ?>img/products/item1.png"
                             alt=""
@@ -446,7 +446,7 @@
                         </button>
                       </div>
                       <h3 class="product-card__title">
-                        <a href="http://localhost/projectPTIT/Home/ProductDetail">
+                        <a href="<?php echo ROOT; ?>Home/ProductDetail">
                           Coffee Beans - Espresso Arabica and Robusta Beans
                         </a>
                       </h3>
@@ -466,7 +466,7 @@
                   <div class="col">
                     <article class="product-card">
                       <div class="product-card__img-wrap">
-                        <a href="http://localhost/projectPTIT/Home/ProductDetail">
+                        <a href="<?php echo ROOT; ?>Home/ProductDetail">
                           <img
                             src="<?php echo ASSETS; ?>img/products/item2.png"
                             alt=""
@@ -487,7 +487,7 @@
                         </button>
                       </div>
                       <h3 class="product-card__title">
-                        <a href="http://localhost/projectPTIT/Home/ProductDetail">
+                        <a href="<?php echo ROOT; ?>Home/ProductDetail">
                           Coffee Beans - Espresso Arabica and Robusta Beans
                         </a>
                       </h3>
@@ -507,7 +507,7 @@
                   <div class="col">
                     <article class="product-card">
                       <div class="product-card__img-wrap">
-                        <a href="http://localhost/projectPTIT/Home/ProductDetail">
+                        <a href="<?php echo ROOT; ?>Home/ProductDetail">
                           <img
                             src="<?php echo ASSETS; ?>img/products/item3.png"
                             alt=""
@@ -530,7 +530,7 @@
                         </button>
                       </div>
                       <h3 class="product-card__title">
-                        <a href="http://localhost/projectPTIT/Home/ProductDetail">
+                        <a href="<?php echo ROOT; ?>Home/ProductDetail">
                           Coffee Beans - Espresso Arabica and Robusta Beans
                         </a>
                       </h3>
@@ -550,7 +550,7 @@
                   <div class="col">
                     <article class="product-card">
                       <div class="product-card__img-wrap">
-                        <a href="http://localhost/projectPTIT/Home/ProductDetail">
+                        <a href="<?php echo ROOT; ?>Home/ProductDetail">
                           <img
                             src="<?php echo ASSETS; ?>img/products/item4.png"
                             alt=""
@@ -571,7 +571,7 @@
                         </button>
                       </div>
                       <h3 class="product-card__title">
-                        <a href="http://localhost/projectPTIT/Home/ProductDetail">
+                        <a href="<?php echo ROOT; ?>Home/ProductDetail">
                           Coffee Beans - Espresso Arabica and Robusta Beans
                         </a>
                       </h3>
@@ -591,7 +591,7 @@
                   <div class="col">
                     <article class="product-card">
                       <div class="product-card__img-wrap">
-                        <a href="http://localhost/projectPTIT/Home/ProductDetail">
+                        <a href="<?php echo ROOT; ?>Home/ProductDetail">
                           <img
                             src="<?php echo ASSETS; ?>img/products/item4.png"
                             alt=""
@@ -612,7 +612,7 @@
                         </button>
                       </div>
                       <h3 class="product-card__title">
-                        <a href="http://localhost/projectPTIT/Home/ProductDetail">
+                        <a href="<?php echo ROOT; ?>Home/ProductDetail">
                           Coffee Beans - Espresso Arabica and Robusta Beans
                         </a>
                       </h3>
@@ -632,7 +632,7 @@
                   <div class="col">
                     <article class="product-card">
                       <div class="product-card__img-wrap">
-                        <a href="http://localhost/projectPTIT/Home/ProductDetail">
+                        <a href="<?php echo ROOT; ?>Home/ProductDetail">
                           <img
                             src="<?php echo ASSETS; ?>img/products/item4.png"
                             alt=""
@@ -653,7 +653,7 @@
                         </button>
                       </div>
                       <h3 class="product-card__title">
-                        <a href="http://localhost/projectPTIT/Home/ProductDetail">
+                        <a href="<?php echo ROOT; ?>Home/ProductDetail">
                           Coffee Beans - Espresso Arabica and Robusta Beans
                         </a>
                       </h3>

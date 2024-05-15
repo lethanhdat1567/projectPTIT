@@ -30,7 +30,7 @@ ob_start();
                   // Không nên lưu mật khẩu vào phiên, ngay cả khi đã mã hóa
                 //  $_SESSION['password'] = $hashedPassword;
                  // Chuyển hướng đến trang đăng nhập
-                 header("Location: http://localhost/projectPTIT/User/SignIn?email=" . urlencode($email). "&password=" . urlencode($password));
+                 header("Location: http://localhost/projectPTIT/User/SignIn");
                  exit();
             }
         }

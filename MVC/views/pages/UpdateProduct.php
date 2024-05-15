@@ -4,7 +4,7 @@
           <!-- My Wallet -->
           <div class="col-12">
             <h2 class="cart-info__heading">
-              <a href="http://localhost/projectPTIT/Admin/QLSP">
+              <a href="<?php echo ROOT; ?>Admin/QLSP">
                 <img
                   src="<?php echo ASSETS; ?>icons/arrow-left.svg"
                   alt=""
@@ -14,7 +14,7 @@
               Thêm sản phẩm
             </h2>
             <form
-              action="http://localhost/projectPTIT/Admin/Product"
+              action="<?php echo ROOT; ?>Admin/Product"
               method="post"
               class="form form-card"
               enctype="multipart/form-data"
@@ -82,7 +82,7 @@
               </div>
               <div class="form-card__bottom">
                 <a
-                  href="http://localhost/projectPTIT/Admin/QLSP"
+                  href="<?php echo ROOT; ?>Admin/QLSP"
                   class="btn btn--text"
                   >Cancel</a
                 >

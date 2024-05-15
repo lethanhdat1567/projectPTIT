@@ -15,7 +15,7 @@
       <div class="auth__content">
         <div class="auth__content-inner">
           <!-- logo -->
-          <a href="http://localhost/projectPTIT/Home/Main" class="logo">
+          <a href="<?php echo ROOT; ?>All/Main" class="logo">
             <img src="<?php echo ASSETS; ?>icons/logo.svg" alt="" class="logo__img" />
             <h2 class="logo__title">grocemart</h2>
           </a>
@@ -24,7 +24,7 @@
             Welcome back to sign in. As a returning customer, you have access to
             your previously saved all information.
           </p>
-          <form action="http://localhost/projectPTIT/User/GetUser" class="form auth__form" method="POST">
+          <form action="<?php echo ROOT; ?>User/GetUser" class="form auth__form" method="POST">
             <div class="form__group">
               <div class="form__text-input">
                 <input
@@ -33,7 +33,7 @@
                   name="email"
                   id=""                  
                   value="<?php 
-                  if (isset($_SESSION['password']) && isset($_SESSION['email'])) {
+                  if (isset($_SESSION['email'])) {
                     echo $_SESSION['email'];
                 }
                 ?>"
@@ -61,11 +61,6 @@
                   placeholder="Password"
                   name="password"
                   id=""
-                  value="<?php 
-                  if (isset($_SESSION['password']) && isset($_SESSION['email'])) {
-                    echo $_SESSION['password'];
-                }
-                ?>"
                   class="form__input"
                   required
                   minlength="6"
@@ -112,7 +107,7 @@
           </form>
           <p class="auth__text">
             Don't have an account yet?
-            <a href="http://localhost/projectPTIT/User/SignUp" class="auth__link auth__text-link"
+            <a href="<?php echo ROOT; ?>User/SignUp" class="auth__link auth__text-link"
               >Sign Up</a
             >
           </p>

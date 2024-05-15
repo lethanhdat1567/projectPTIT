@@ -1,7 +1,7 @@
    <main class="auth">
       <!-- Auth intro -->
       <div class="auth__intro">
-        <a href="./" class="logo auth__intro-logo d-none d-md-flex">
+        <a href="<?php echo ROOT; ?>All/Main" class="logo auth__intro-logo d-none d-md-flex">
           <img src="<?php echo ASSETS; ?>icons/logo.svg" alt="" class="logo__img" />
           <h1 class="logo__title">grocemart</h1>
         </a>
@@ -25,7 +25,7 @@
       <div id="auth-content" class="auth__content hide">
         <div class="auth__content-inner">
           <!-- logo -->
-          <a href="" class="logo">
+          <a href="<?php echo ROOT; ?>All/Main" class="logo">
             <img src="<?php echo ASSETS; ?>icons/logo.svg" alt="" class="logo__img" />
             <h1 class="logo__title">grocemart</h1>
           </a>
@@ -33,7 +33,7 @@
           <p class="auth__desc">
             Let’s create your account and Shop like a pro and save money.
           </p>
-          <form action="http://localhost/projectPTIT/User/DangKyUser" class="form auth__form" method="POST">
+          <form action="<?php echo ROOT; ?>User/DangKyUser" class="form auth__form" method="POST">
             <div class="form__group">
               <div class="form__text-input">
                 <input
@@ -135,7 +135,7 @@
           </form>
           <p class="auth__text">
             You have account yet?
-            <a href="http://localhost/projectPTIT/User/SignIn" class="auth__link auth__text-link"
+            <a href="<?php echo ROOT; ?>User/SignIn" class="auth__link auth__text-link"
               >Sign In</a
             >
           </p>

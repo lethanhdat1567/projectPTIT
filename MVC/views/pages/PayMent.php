@@ -23,20 +23,20 @@
         <div class="checkout-container">
           <ul class="breadcrumbs checkout-page__breadcrumbs">
             <li>
-              <a href="http://localhost/projectPTIT/Home/" class="breadcrumbs__link"
+              <a href="<?php echo ROOT; ?>Home/" class="breadcrumbs__link"
                 >Home
                 <img src="<?php echo ASSETS; ?>icons/arrow-right.svg" alt="" />
               </a>
             </li>
             <li>
-              <a href="http://localhost/projectPTIT/Home/CheckOut" class="breadcrumbs__link"
+              <a href="<?php echo ROOT; ?>Home/CheckOut" class="breadcrumbs__link"
                 >Checkout
                 <img src="<?php echo ASSETS; ?>icons/arrow-right.svg" alt="" />
               </a>
             </li>
             <li>
               <a
-                href="http://localhost/projectPTIT/Home/Shipping"
+                href="<?php echo ROOT; ?>Home/Shipping"
                 class="breadcrumbs__link breadcrumbs__link"
                 >Shipping
                 <img src="<?php echo ASSETS; ?>icons/arrow-right.svg" alt="" />
@@ -58,7 +58,7 @@
                   <h2 class="cart-info__heading cart-info__heading--lv2">
                     1. Shipping, arrives between Mon, May 16—Tue, May 24
                   </h2>
-                  <a class="cart-info__edit-btn" href="http://localhost/projectPTIT/Home/Shipping">
+                  <a class="cart-info__edit-btn" href="<?php echo ROOT; ?>Home/Shipping">
                     <img class="icon" src="<?php echo ASSETS; ?>icons/edit.svg" alt="" />
                     Edit
                   </a>
@@ -78,7 +78,7 @@
                     <h3 class="payment-item__title">Items details</h3>
                     <p class="payment-item__desc">2 items</p>
                   </div>
-                  <a href="http://localhost/projectPTIT/Home/Shipping" class="payment-item__detail"
+                  <a href="<?php echo ROOT; ?>Home/Shipping" class="payment-item__detail"
                     >View details</a
                   >
                 </article>

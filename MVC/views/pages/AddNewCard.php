@@ -39,7 +39,7 @@
                   <ul class="profile-menu__list">
                     <li>
                       <a
-                        href="http://localhost/projectPTIT/Home/EditPersonalInfo"
+                        href="<?php echo ROOT; ?>Home/EditPersonalInfo"
                         class="profile-menu__link"
                       >
                         <span class="profile-menu__icon">
@@ -176,7 +176,7 @@
                   <!-- My Wallet -->
                   <div class="col-12">
                     <h2 class="cart-info__heading">
-                      <a href="http://localhost/projectPTIT/Home/Profile">
+                      <a href="<?php echo ROOT; ?>Home/Profile">
                         <img
                           src="<?php echo ASSETS; ?>icons/arrow-left.svg"
                           alt=""
@@ -343,7 +343,7 @@
                         </label>
                       </div>
                       <div class="form-card__bottom">
-                        <a href="http://localhost/projectPTIT/Home/Profile" class="btn btn--text">Cancel</a>
+                        <a href="<?php echo ROOT; ?>Home/Profile" class="btn btn--text">Cancel</a>
                         <button class="btn btn--primary btn--rounded">
                           Save card
                         </button>

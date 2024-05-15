@@ -7,20 +7,20 @@
             <ul class="admin-menu__list">
               <li class="admin-menu__items">
                 <a
-                  href="http://localhost/projectPTIT/Home/Main"
+                  href="<?php echo ROOT; ?>Home/Main"
                   class="admin-menu__link"
                   >Home</a
                 >
               </li>
               <li class="admin-menu__items">
                 <a
-                  href="http://localhost/projectPTIT/Admin/QLSP"
+                  href="<?php echo ROOT; ?>Admin/QLSP"
                   class="admin-menu__link"
                   >Product Management</a
                 >
               </li>
               <li class="admin-menu__items">
-                <a href="http://localhost/projectPTIT/Admin/QLND" class="admin-menu__link">User Management</a>
+                <a href="<?php echo ROOT; ?>Admin/QLND" class="admin-menu__link">User Management</a>
               </li>
             </ul>
           </div>

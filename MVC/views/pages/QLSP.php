@@ -7,13 +7,13 @@
           <div class="admin-menu__wrap">
             <ul class="admin-menu__list">
               <li class="admin-menu__items">
-                <a href="http://localhost/projectPTIT/Home/Main" class="admin-menu__link">Home</a>
+                <a href="<?php echo ROOT; ?>Home/Main" class="admin-menu__link">Home</a>
               </li>
               <li class="admin-menu__items">
-                <a href="http://localhost/projectPTIT/Admin/QLSP" class="admin-menu__link">Product Management</a>
+                <a href="<?php echo ROOT; ?>Admin/QLSP" class="admin-menu__link">Product Management</a>
               </li>
               <li class="admin-menu__items">
-                <a href="http://localhost/projectPTIT/Admin/QLND" class="admin-menu__link">User Management</a>
+                <a href="<?php echo ROOT; ?>Admin/QLND" class="admin-menu__link">User Management</a>
               </li>
             </ul>
           </div>
@@ -22,7 +22,7 @@
           <div class="admin-product__header">
             <h2 class="admin-product__heading">Danh sách sản phẩm</h2>
           </div>
-          <a href="http://localhost/projectPTIT/Admin/AddProduct">
+          <a href="<?php echo ROOT; ?>Admin/AddProduct">
           <button class="btn btn--primary admin-product__btn">
             Thêm sản phẩm
           </button>
@@ -52,12 +52,12 @@
               <td class="admin-product__table-items"><p class="admin-product__table-items-desc"><?php echo $row['description'] ?></p></td>
               <td class="admin-product__table-items">
                 <div class="admin-product__wrap-btn">
-                <a href="http://localhost/projectPTIT/Admin/UpdateProduct/<?php echo $row['id'] ?>">
+                <a href="<?php echo ROOT; ?>Admin/UpdateProduct/<?php echo $row['id'] ?>">
                   <button class="btn btn--info">
                     Sửa
                   </button>
                 </a>
-                <a href="http://localhost/projectPTIT/Admin/DeleteProduct/<?php echo $row['id'] ?>">
+                <a href="<?php echo ROOT; ?>Admin/DeleteProduct/<?php echo $row['id'] ?>">
                   <button class="btn btn--danger">
                       Xóa
                     </button>

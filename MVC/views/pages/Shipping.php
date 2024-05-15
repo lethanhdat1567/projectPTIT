@@ -23,13 +23,13 @@
         <div class="checkout-container">
           <ul class="breadcrumbs checkout-page__breadcrumbs">
             <li>
-              <a href="http://localhost/projectPTIT/Home/" class="breadcrumbs__link"
+              <a href="<?php echo ROOT; ?>Home/" class="breadcrumbs__link"
                 >Home
                 <img src="<?php echo ASSETS; ?>icons/arrow-right.svg" alt="" />
               </a>
             </li>
             <li>
-              <a href="http://localhost/projectPTIT/Home/CheckOut" class="breadcrumbs__link"
+              <a href="<?php echo ROOT; ?>Home/CheckOut" class="breadcrumbs__link"
                 >Checkout
                 <img src="<?php echo ASSETS; ?>icons/arrow-right.svg" alt="" />
               </a>
@@ -160,7 +160,7 @@
                 <div class="cart-info__list">
                   <!-- Cart item 1 -->
                   <article class="cart-item">
-                    <a href="http://localhost/projectPTIT/Home/ProductDetail">
+                    <a href="<?php echo ROOT; ?>Home/ProductDetail">
                       <img
                         src="<?php echo ASSETS; ?>img/products/item1.png"
                         alt=""
@@ -224,7 +224,7 @@
                   </article>
                   <!-- Cart item 2 -->
                   <article class="cart-item">
-                    <a href="http://localhost/projectPTIT/Home/ProductDetail">
+                    <a href="<?php echo ROOT; ?>Home/ProductDetail">
                       <img
                         src="<?php echo ASSETS; ?>img/products/item2.png"
                         alt=""
@@ -288,7 +288,7 @@
                   </article>
                   <!-- Cart item 3 -->
                   <article class="cart-item">
-                    <a href="http://localhost/projectPTIT/Home/ProductDetail">
+                    <a href="<?php echo ROOT; ?>Home/ProductDetail">
                       <img
                         src="<?php echo ASSETS; ?>img/products/item3.png"
                         alt=""
@@ -355,7 +355,7 @@
                   <div class="row">
                     <div class="col-8 col-xxl-7">
                       <div class="cart-info__continue">
-                        <a href="http://localhost/projectPTIT/Home/" class="cart-info__continue-link">
+                        <a href="<?php echo ROOT; ?>Home/" class="cart-info__continue-link">
                           <img
                             class="cart-info__continue-icon icon"
                             src="<?php echo ASSETS; ?>icons/arrow-down-2.svg"
@@ -410,7 +410,7 @@
                   <span>$201.65</span>
                 </div>
                 <a
-                  href="http://localhost/projectPTIT/Home/Payment"
+                  href="<?php echo ROOT; ?>Home/Payment"
                   class="cart-info__next-btn btn btn--primary btn--rounded"
                 >
                   Continue to checkout

@@ -5,7 +5,7 @@
       <img src="<?php echo ASSETS; ?>icons/more.svg" alt="" class="top-bar__more-icon">
     </button>
     <!-- logo -->
-    <a href="./" class="logo top-bar__logo">
+    <a href="<?php echo ROOT; ?>Home/Main" class="logo top-bar__logo">
       <img src="<?php echo ASSETS; ?>icons/logo.svg" alt="" class="logo__img top-bar__logo-img  " />
       <h1 class="logo__title top-bar__logo-title">grocemart</h1>
     </a>
@@ -15,7 +15,7 @@
         <img src="<?php echo ASSETS; ?>icons/arrow-left.svg" alt="">
       </button>
 
-      <a href="./checkout.html" class="nav-btn d-none d-md-flex">
+      <a href="<?php echo ROOT; ?>Home/CheckOut" class="nav-btn d-none d-md-flex">
         <img src="<?php echo ASSETS; ?>icons/buy.svg" alt="" class="nav-btn__icon icon">
         <span class="nav-btn__title">Cart</span>
         <span class="nav-btn__qtn">3</span>
@@ -1258,7 +1258,7 @@
             <img src="<?php echo ASSETS; ?>icons/arrow-up.png" alt="" class="act-dropdown__arrow">
             <div class="act-dropdown__top">
               <h2 class="act-dropdown__title">You have 3 item(s)</h2>
-              <a href="./favourite.html" class="act-dropdown__view-all">See All</a>
+              <a href="<?php echo ROOT; ?>Home/Favourite" class="act-dropdown__view-all">See All</a>
             </div>
           <div class="row row-cols-3 gx-2 act-dropdown__list">
             <!-- Cart preview item 1 -->
@@ -1294,7 +1294,7 @@
           </div>
           <div class="act-dropdown__separate"></div>
           <div class="act-dropdown__checkout">
-            <a href="./checkout.html" class="btn btn--primary btn--rounded act-dropdown__checkout-btn">Check Out All</a>
+            <a href="<?php echo ROOT; ?>Home/CheckOut" class="btn btn--primary btn--rounded act-dropdown__checkout-btn">Check Out All</a>
           </div>
         </div>
       </div>
@@ -1311,7 +1311,7 @@
               <img src="<?php echo ASSETS; ?>icons/arrow-up.png" alt="" class="act-dropdown__arrow">
               <div class="act-dropdown__top">
                 <h2 class="act-dropdown__title">You have 3 item(s)</h2>
-                <a href="./checkout.html" class="act-dropdown__view-all">See All</a>
+                <a href="<?php echo ROOT; ?>Home/CheckOut" class="act-dropdown__view-all">See All</a>
               </div>
             <div class="row row-cols-3 gx-2 act-dropdown__list">
               <!-- Cart preview item 1 -->
@@ -1364,7 +1364,7 @@
               </div>
             </div>
             <div class="act-dropdown__checkout">
-              <a href="./checkout.html" class="btn btn--primary btn--rounded act-dropdown__checkout-btn">Check Out All</a>
+              <a href="<?php echo ROOT; ?>Home/CheckOut" class="btn btn--primary btn--rounded act-dropdown__checkout-btn">Check Out All</a>
             </div>
           </div>
         </div>
@@ -1385,11 +1385,11 @@
             </div>
             <ul class="user-menu__list">
               <li>
-                <a href="./profile.html" class="user-menu__link">
+                <a href="<?php echo ROOT; ?>Home/Profile" class="user-menu__link">
                   Profile</a>
               </li>
               <li>
-                <a href="./favourite.html" class="user-menu__link">
+                <a href="<?php echo ROOT; ?>Home/Favourite" class="user-menu__link">
                   Favourite list</a>
               </li>
               <li class="user-menu__separate">
@@ -1404,7 +1404,7 @@
                 </a>
               </li> 
               <li class="user-menu__separate">
-                <a href="./sign-in.html" class="user-menu__link">
+                <a href="<?php echo ROOT; ?>User/SignIn" class="user-menu__link">
                   Logout</a>
               </li> 
             </ul>

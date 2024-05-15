@@ -2,7 +2,7 @@
   <div class="footer__row">
     <!-- footer col 1 -->
     <div class="footer__col">
-      <a href="./" class="logo footer__logo">
+      <a href="<?php echo ROOT; ?>Home/Main" class="logo footer__logo">
         <img src="<?php echo ASSETS; ?>icons/logo.svg" alt="" class="logo__img" />
         <h1 class="logo__title">grocemart</h1>
       </a>

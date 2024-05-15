@@ -238,7 +238,7 @@
           <div class="col">
             <article class="product-card">
               <div class="product-card__img-wrap">
-                <a href="http://localhost/projectPTIT/Home/ProductDetail/<?php echo $row['id'] ?>">
+                <a href="<?php echo ROOT; ?>Home/ProductDetail/<?php echo $row['id'] ?>">
                   <img
                     src="<?php echo ASSETS ?>img/products/<?php echo $row['thumbnail'] ?>"
                     alt=""
@@ -259,7 +259,7 @@
                 </button>
               </div>
               <h3 class="product-card__title">
-                <a href="http://localhost/projectPTIT/Home/ProductDetail/<?php echo $row['id'] ?>">
+                <a href="<?php echo ROOT; ?>Home/ProductDetail/<?php echo $row['id'] ?>">
                  <?php echo $row['name'] ?>
                 </a>
               </h3>

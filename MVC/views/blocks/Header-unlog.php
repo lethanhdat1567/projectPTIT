@@ -16,7 +16,7 @@
         <img src="<?php echo ASSETS; ?>icons/arrow-left.svg" alt="">
       </button>
 
-      <a href="./checkout.html" class="nav-btn d-none d-md-flex">
+      <a href="<?php echo ROOT; ?>Home/CheckOut" class="nav-btn d-none d-md-flex">
         <img src="<?php echo ASSETS; ?>icons/buy.svg" alt="" class="nav-btn__icon icon">
         <span class="nav-btn__title">Cart</span>
         <span class="nav-btn__qtn">3</span>
@@ -1243,10 +1243,10 @@
     </div>
     <!-- Actions -->
     <div class="top-act ">
-      <a href="http://localhost/projectPTIT/User/SignIn" class="btn btn--text d-md-none">
+      <a href="<?php ROOT; ?>User/SignIn" class="btn btn--text d-md-none">
         Login
       </a>
-      <a href="http://localhost/projectPTIT/User/SignUp" class="top-act__sign-up btn btn--primary">
+      <a href="<?php ROOT; ?>User/SignUp" class="top-act__sign-up btn btn--primary">
         Sign up
       </a>
       </div>
