@@ -3,7 +3,7 @@
     <!-- footer col 1 -->
     <div class="footer__col">
       <a href="./" class="logo footer__logo">
-        <img src="<?= $icon_path ?>logo.svg" alt="" class="logo__img" />
+        <img src="<?php echo ASSETS; ?>icons/logo.svg" alt="" class="logo__img" />
         <h1 class="logo__title">grocemart</h1>
       </a>
       <p class="footer__desc">
@@ -115,21 +115,21 @@
     <div class="footer__bottom-icons">
       <a href="#!" class="footer__bottom-icon">
         <img
-          src="<?= $icon_path ?>facebook.svg"
+          src="<?php echo ASSETS; ?>icons/facebook.svg"
           alt=""
           class="footer__bottom-icon-img"
         />
       </a>
       <a href="#!" class="footer__bottom-icon">
         <img
-          src="<?= $icon_path ?>ins.svg"
+          src="<?php echo ASSETS; ?>icons/ins.svg"
           alt=""
           class="footer__bottom-icon-img"
         />
       </a>
       <a href="#!" class="footer__bottom-icon">
         <img
-          src="<?= $icon_path ?>threads.svg"
+          src="<?php echo ASSETS; ?>icons/threads.svg"
           alt=""
           class="footer__bottom-icon-img"
         />

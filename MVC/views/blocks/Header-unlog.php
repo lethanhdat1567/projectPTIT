@@ -1,27 +1,28 @@
+<?php require_once('./MVC/core/Config.php') ?>
 <div class="container">
   <div class="top-bar">
     <!-- navbar more -->
     <button class="icon top-bar__more d-none d-lg-block js-toggle" toggle-target="#navbar">
-      <img src="<?= $icon_path ?>more.svg" alt="" class="top-bar__more-icon">
+      <img src="<?php echo ASSETS; ?>icons/more.svg" alt="" class="top-bar__more-icon">
     </button>
     <!-- logo -->
-    <a href="./" class="logo top-bar__logo">
-      <img src="<?= $icon_path ?>logo.svg" alt="" class="logo__img top-bar__logo-img  " />
+    <a href="<?php echo ROOT; ?>Home/Main" class="logo top-bar__logo">
+      <img src="<?php echo ASSETS; ?>icons/logo.svg" alt="" class="logo__img top-bar__logo-img  " />
       <h1 class="logo__title top-bar__logo-title">grocemart</h1>
     </a>
     <!-- Navbar -->
     <nav id="navbar" class="navbar hide">
       <button class="navbar__close-btn js-toggle icon" toggle-target="#navbar">
-        <img src="<?= $icon_path ?>arrow-left.svg" alt="">
+        <img src="<?php echo ASSETS; ?>icons/arrow-left.svg" alt="">
       </button>
 
       <a href="./checkout.html" class="nav-btn d-none d-md-flex">
-        <img src="<?= $icon_path ?>buy.svg" alt="" class="nav-btn__icon icon">
+        <img src="<?php echo ASSETS; ?>icons/buy.svg" alt="" class="nav-btn__icon icon">
         <span class="nav-btn__title">Cart</span>
         <span class="nav-btn__qtn">3</span>
       </a>
       <a href="#!" class="nav-btn d-none d-md-flex">
-        <img src="<?= $icon_path ?>heart.svg" alt="" class="nav-btn__icon icon">
+        <img src="<?php echo ASSETS; ?>icons/heart.svg" alt="" class="nav-btn__icon icon">
         <span class="nav-btn__title">Card</span>
         <span class="nav-btn__qtn">3</span>
       </a>
@@ -29,7 +30,7 @@
       <ul class="navbar__list js-dropdown-list">
         <li class="navbar__item">
           <a class="navbar__link" href="#!">Departments
-            <img src="<?= $icon_path ?>arrow-down.svg" class="icon navbar__arrow" alt="" />
+            <img src="<?php echo ASSETS; ?>icons/arrow-down.svg" class="icon navbar__arrow" alt="" />
           </a>
           <div class="dropdown js-dropdown">
             <div class="dropdown__inner">
@@ -37,8 +38,8 @@
                 <div class="top-menu__main">
                   <div class="menu-column">
                       <div class="menu-column__icon d-lg-none">
-                        <img src="<?= $img_path ?>category/cate1-1.svg" alt="" class="menu-column__icon-1">
-                        <img src="<?= $img_path ?>category/care1-2.svg" alt="" class="menu-column__icon-2">
+                        <img src="<?php echo ASSETS; ?>img/category/cate1-1.svg" alt="" class="menu-column__icon-1">
+                        <img src="<?php echo ASSETS; ?>img/category/care1-2.svg" alt="" class="menu-column__icon-2">
                       </div>
                       <div class="menu-column__content">
                         <h2 class="menu-column__heading d-lg-none">All Departments</h2>
@@ -53,8 +54,8 @@
                                 <!-- menu column 1.1 -->
                                 <div class="menu-column">
                                   <div class="menu-column__icon">
-                                    <img src="<?= $img_path ?>category/cate2-1.svg" alt="" class="menu-column__icon-1">
-                                    <img src="<?= $img_path ?>category/cate2-2.svg" alt="" class="menu-column__icon-2">
+                                    <img src="<?php echo ASSETS; ?>img/category/cate2-1.svg" alt="" class="menu-column__icon-1">
+                                    <img src="<?php echo ASSETS; ?>img/category/cate2-2.svg" alt="" class="menu-column__icon-2">
                                   </div>
                                   <div class="menu-column__content">
                                     <h2 class="menu-column__heading">TV & Video</h2>
@@ -100,8 +101,8 @@
                                 <!-- menu column 1.2 -->
                               <div class="menu-column">
                                 <div class="menu-column__icon">
-                                  <img src="<?= $img_path ?>category/cate3-1.svg" alt="" class="menu-column__icon-1">
-                                  <img src="<?= $img_path ?>category/cate3-2.svg" alt="" class="menu-column__icon-2">
+                                  <img src="<?php echo ASSETS; ?>img/category/cate3-1.svg" alt="" class="menu-column__icon-1">
+                                  <img src="<?php echo ASSETS; ?>img/category/cate3-2.svg" alt="" class="menu-column__icon-2">
                                 </div>
                                 <div class="menu-column__content">
                                   <h2 class="menu-column__heading">Wearable Technology</h2>
@@ -140,8 +141,8 @@
                                 <!-- menu column 2.1 -->
                                 <div class="menu-column">
                                   <div class="menu-column__icon">
-                                    <img src="<?= $img_path ?>category/cate4-1.svg" alt="" class="menu-column__icon-1">
-                                    <img src="<?= $img_path ?>category/cate4-2.svg" alt="" class="menu-column__icon-2">
+                                    <img src="<?php echo ASSETS; ?>img/category/cate4-1.svg" alt="" class="menu-column__icon-1">
+                                    <img src="<?php echo ASSETS; ?>img/category/cate4-2.svg" alt="" class="menu-column__icon-2">
                                   </div>
                                   <div class="menu-column__content">
                                     <h2 class="menu-column__heading">Computers</h2>
@@ -215,8 +216,8 @@
                                 <!-- menu column 3.1 -->
                                 <div class="menu-column">
                                   <div class="menu-column__icon">
-                                    <img src="<?= $img_path ?>category/cate5-1.svg" alt="" class="menu-column__icon-1">
-                                    <img src="<?= $img_path ?>category/cate5-2.svg" alt="" class="menu-column__icon-2">
+                                    <img src="<?php echo ASSETS; ?>img/category/cate5-1.svg" alt="" class="menu-column__icon-1">
+                                    <img src="<?php echo ASSETS; ?>img/category/cate5-2.svg" alt="" class="menu-column__icon-2">
                                   </div>
                                   <div class="menu-column__content">
                                     <h2 class="menu-column__heading">Savings</h2>
@@ -242,8 +243,8 @@
                               <!-- menu column 3.2 -->
                               <div class="menu-column">
                                 <div class="menu-column__icon">
-                                  <img src="<?= $img_path ?>category/cate6-1.svg" alt="" class="menu-column__icon-1">
-                                  <img src="<?= $img_path ?>category/cate6-2.svg" alt="" class="menu-column__icon-2">
+                                  <img src="<?php echo ASSETS; ?>img/category/cate6-1.svg" alt="" class="menu-column__icon-1">
+                                  <img src="<?php echo ASSETS; ?>img/category/cate6-2.svg" alt="" class="menu-column__icon-2">
                                 </div>
                                 <div class="menu-column__content">
                                   <h2 class="menu-column__heading">Cell Phones</h2>
@@ -304,8 +305,8 @@
                               <!-- menu column 1.1 -->
                               <div class="menu-column">
                                 <div class="menu-column__icon">
-                                  <img src="<?= $img_path ?>category/cate2-1.svg" alt="" class="menu-column__icon-1">
-                                  <img src="<?= $img_path ?>category/cate2-2.svg" alt="" class="menu-column__icon-2">
+                                  <img src="<?php echo ASSETS; ?>img/category/cate2-1.svg" alt="" class="menu-column__icon-1">
+                                  <img src="<?php echo ASSETS; ?>img/category/cate2-2.svg" alt="" class="menu-column__icon-2">
                                 </div>
                                 <div class="menu-column__content">
                                   <h2 class="menu-column__heading">TV & Video</h2>
@@ -351,8 +352,8 @@
                               <!-- menu column 1.2 -->
                             <div class="menu-column">
                               <div class="menu-column__icon">
-                                <img src="<?= $img_path ?>category/cate3-1.svg" alt="" class="menu-column__icon-1">
-                                <img src="<?= $img_path ?>category/cate3-2.svg" alt="" class="menu-column__icon-2">
+                                <img src="<?php echo ASSETS; ?>img/category/cate3-1.svg" alt="" class="menu-column__icon-1">
+                                <img src="<?php echo ASSETS; ?>img/category/cate3-2.svg" alt="" class="menu-column__icon-2">
                               </div>
                               <div class="menu-column__content">
                                 <h2 class="menu-column__heading">Wearable Technology</h2>
@@ -391,8 +392,8 @@
                               <!-- menu column 2.1 -->
                               <div class="menu-column">
                                 <div class="menu-column__icon">
-                                  <img src="<?= $img_path ?>category/cate4-1.svg" alt="" class="menu-column__icon-1">
-                                  <img src="<?= $img_path ?>category/cate4-2.svg" alt="" class="menu-column__icon-2">
+                                  <img src="<?php echo ASSETS; ?>img/category/cate4-1.svg" alt="" class="menu-column__icon-1">
+                                  <img src="<?php echo ASSETS; ?>img/category/cate4-2.svg" alt="" class="menu-column__icon-2">
                                 </div>
                                 <div class="menu-column__content">
                                   <h2 class="menu-column__heading">Computers</h2>
@@ -466,8 +467,8 @@
                               <!-- menu column 3.1 -->
                               <div class="menu-column">
                                 <div class="menu-column__icon">
-                                  <img src="<?= $img_path ?>category/cate5-1.svg" alt="" class="menu-column__icon-1">
-                                  <img src="<?= $img_path ?>category/cate5-2.svg" alt="" class="menu-column__icon-2">
+                                  <img src="<?php echo ASSETS; ?>img/category/cate5-1.svg" alt="" class="menu-column__icon-1">
+                                  <img src="<?php echo ASSETS; ?>img/category/cate5-2.svg" alt="" class="menu-column__icon-2">
                                 </div>
                                 <div class="menu-column__content">
                                   <h2 class="menu-column__heading">Savings</h2>
@@ -493,8 +494,8 @@
                             <!-- menu column 3.2 -->
                             <div class="menu-column">
                               <div class="menu-column__icon">
-                                <img src="<?= $img_path ?>category/cate6-1.svg" alt="" class="menu-column__icon-1">
-                                <img src="<?= $img_path ?>category/cate6-2.svg" alt="" class="menu-column__icon-2">
+                                <img src="<?php echo ASSETS; ?>img/category/cate6-1.svg" alt="" class="menu-column__icon-1">
+                                <img src="<?php echo ASSETS; ?>img/category/cate6-2.svg" alt="" class="menu-column__icon-2">
                               </div>
                               <div class="menu-column__content">
                                 <h2 class="menu-column__heading">Cell Phones</h2>
@@ -560,7 +561,7 @@
         </li>
         <li class="navbar__item">
           <a class="navbar__link" href="#!">Grocery
-            <img src="<?= $icon_path ?>arrow-down.svg" class="icon navbar__arrow" alt="" />
+            <img src="<?php echo ASSETS; ?>icons/arrow-down.svg" class="icon navbar__arrow" alt="" />
           </a>
           <div class="dropdown js-dropdown">
             <div class="dropdown__inner">
@@ -571,8 +572,8 @@
                     <!-- menu column 1.1 -->
                     <div class="menu-column">
                       <div class="menu-column__icon">
-                        <img src="<?= $img_path ?>category/cate2-1.svg" alt="" class="menu-column__icon-1">
-                        <img src="<?= $img_path ?>category/cate2-2.svg" alt="" class="menu-column__icon-2">
+                        <img src="<?php echo ASSETS; ?>img/category/cate2-1.svg" alt="" class="menu-column__icon-1">
+                        <img src="<?php echo ASSETS; ?>img/category/cate2-2.svg" alt="" class="menu-column__icon-2">
                       </div>
                       <div class="menu-column__content">
                         <h2 class="menu-column__heading">TV & Video</h2>
@@ -618,8 +619,8 @@
                     <!-- menu column 1.2 -->
                   <div class="menu-column">
                     <div class="menu-column__icon">
-                      <img src="<?= $img_path ?>category/cate3-1.svg" alt="" class="menu-column__icon-1">
-                      <img src="<?= $img_path ?>category/cate3-2.svg" alt="" class="menu-column__icon-2">
+                      <img src="<?php echo ASSETS; ?>img/category/cate3-1.svg" alt="" class="menu-column__icon-1">
+                      <img src="<?php echo ASSETS; ?>img/category/cate3-2.svg" alt="" class="menu-column__icon-2">
                     </div>
                     <div class="menu-column__content">
                       <h2 class="menu-column__heading">Wearable Technology</h2>
@@ -658,8 +659,8 @@
                     <!-- menu column 2.1 -->
                     <div class="menu-column">
                       <div class="menu-column__icon">
-                        <img src="<?= $img_path ?>category/cate4-1.svg" alt="" class="menu-column__icon-1">
-                        <img src="<?= $img_path ?>category/cate4-2.svg" alt="" class="menu-column__icon-2">
+                        <img src="<?php echo ASSETS; ?>img/category/cate4-1.svg" alt="" class="menu-column__icon-1">
+                        <img src="<?php echo ASSETS; ?>img/category/cate4-2.svg" alt="" class="menu-column__icon-2">
                       </div>
                       <div class="menu-column__content">
                         <h2 class="menu-column__heading">Computers</h2>
@@ -733,8 +734,8 @@
                     <!-- menu column 3.1 -->
                     <div class="menu-column">
                       <div class="menu-column__icon">
-                        <img src="<?= $img_path ?>category/cate5-1.svg" alt="" class="menu-column__icon-1">
-                        <img src="<?= $img_path ?>category/cate5-2.svg" alt="" class="menu-column__icon-2">
+                        <img src="<?php echo ASSETS; ?>img/category/cate5-1.svg" alt="" class="menu-column__icon-1">
+                        <img src="<?php echo ASSETS; ?>img/category/cate5-2.svg" alt="" class="menu-column__icon-2">
                       </div>
                       <div class="menu-column__content">
                         <h2 class="menu-column__heading">Savings</h2>
@@ -760,8 +761,8 @@
                   <!-- menu column 3.2 -->
                   <div class="menu-column">
                     <div class="menu-column__icon">
-                      <img src="<?= $img_path ?>category/cate6-1.svg" alt="" class="menu-column__icon-1">
-                      <img src="<?= $img_path ?>category/cate6-2.svg" alt="" class="menu-column__icon-2">
+                      <img src="<?php echo ASSETS; ?>img/category/cate6-1.svg" alt="" class="menu-column__icon-1">
+                      <img src="<?php echo ASSETS; ?>img/category/cate6-2.svg" alt="" class="menu-column__icon-2">
                     </div>
                     <div class="menu-column__content">
                       <h2 class="menu-column__heading">Cell Phones</h2>
@@ -815,8 +816,8 @@
                     <!-- menu column 3.1 -->
                     <div class="menu-column">
                       <div class="menu-column__icon">
-                        <img src="<?= $img_path ?>category/cate5-1.svg" alt="" class="menu-column__icon-1">
-                        <img src="<?= $img_path ?>category/cate5-2.svg" alt="" class="menu-column__icon-2">
+                        <img src="<?php echo ASSETS; ?>img/category/cate5-1.svg" alt="" class="menu-column__icon-1">
+                        <img src="<?php echo ASSETS; ?>img/category/cate5-2.svg" alt="" class="menu-column__icon-2">
                       </div>
                       <div class="menu-column__content">
                         <h2 class="menu-column__heading">Savings</h2>
@@ -842,8 +843,8 @@
                   <!-- menu column 3.2 -->
                   <div class="menu-column">
                     <div class="menu-column__icon">
-                      <img src="<?= $img_path ?>category/cate6-1.svg" alt="" class="menu-column__icon-1">
-                      <img src="<?= $img_path ?>category/cate6-2.svg" alt="" class="menu-column__icon-2">
+                      <img src="<?php echo ASSETS; ?>img/category/cate6-1.svg" alt="" class="menu-column__icon-1">
+                      <img src="<?php echo ASSETS; ?>img/category/cate6-2.svg" alt="" class="menu-column__icon-2">
                     </div>
                     <div class="menu-column__content">
                       <h2 class="menu-column__heading">Cell Phones</h2>
@@ -899,7 +900,7 @@
         </li>
         <li class="navbar__item">
           <a class="navbar__link" href="#!">Beauty
-            <img src="<?= $icon_path ?>arrow-down.svg" class="icon navbar__arrow" alt="" />
+            <img src="<?php echo ASSETS; ?>icons/arrow-down.svg" class="icon navbar__arrow" alt="" />
           </a>
           <div class="dropdown js-dropdown">
             <div class="dropdown__inner">
@@ -910,8 +911,8 @@
                     <!-- menu column 1.1 -->
                     <div class="menu-column">
                       <div class="menu-column__icon">
-                        <img src="<?= $img_path ?>category/cate2-1.svg" alt="" class="menu-column__icon-1">
-                        <img src="<?= $img_path ?>category/cate2-2.svg" alt="" class="menu-column__icon-2">
+                        <img src="<?php echo ASSETS; ?>img/category/cate2-1.svg" alt="" class="menu-column__icon-1">
+                        <img src="<?php echo ASSETS; ?>img/category/cate2-2.svg" alt="" class="menu-column__icon-2">
                       </div>
                       <div class="menu-column__content">
                         <h2 class="menu-column__heading">TV & Video</h2>
@@ -957,8 +958,8 @@
                     <!-- menu column 1.2 -->
                   <div class="menu-column">
                     <div class="menu-column__icon">
-                      <img src="<?= $img_path ?>category/cate3-1.svg" alt="" class="menu-column__icon-1">
-                      <img src="<?= $img_path ?>category/cate3-2.svg" alt="" class="menu-column__icon-2">
+                      <img src="<?php echo ASSETS; ?>img/category/cate3-1.svg" alt="" class="menu-column__icon-1">
+                      <img src="<?php echo ASSETS; ?>img/category/cate3-2.svg" alt="" class="menu-column__icon-2">
                     </div>
                     <div class="menu-column__content">
                       <h2 class="menu-column__heading">Wearable Technology</h2>
@@ -997,8 +998,8 @@
                     <!-- menu column 2.1 -->
                     <div class="menu-column">
                       <div class="menu-column__icon">
-                        <img src="<?= $img_path ?>category/cate4-1.svg" alt="" class="menu-column__icon-1">
-                        <img src="<?= $img_path ?>category/cate4-2.svg" alt="" class="menu-column__icon-2">
+                        <img src="<?php echo ASSETS; ?>img/category/cate4-1.svg" alt="" class="menu-column__icon-1">
+                        <img src="<?php echo ASSETS; ?>img/category/cate4-2.svg" alt="" class="menu-column__icon-2">
                       </div>
                       <div class="menu-column__content">
                         <h2 class="menu-column__heading">Computers</h2>
@@ -1072,8 +1073,8 @@
                     <!-- menu column 3.1 -->
                     <div class="menu-column">
                       <div class="menu-column__icon">
-                        <img src="<?= $img_path ?>category/cate5-1.svg" alt="" class="menu-column__icon-1">
-                        <img src="<?= $img_path ?>category/cate5-2.svg" alt="" class="menu-column__icon-2">
+                        <img src="<?php echo ASSETS; ?>img/category/cate5-1.svg" alt="" class="menu-column__icon-1">
+                        <img src="<?php echo ASSETS; ?>img/category/cate5-2.svg" alt="" class="menu-column__icon-2">
                       </div>
                       <div class="menu-column__content">
                         <h2 class="menu-column__heading">Savings</h2>
@@ -1099,8 +1100,8 @@
                   <!-- menu column 3.2 -->
                   <div class="menu-column">
                     <div class="menu-column__icon">
-                      <img src="<?= $img_path ?>category/cate6-1.svg" alt="" class="menu-column__icon-1">
-                      <img src="<?= $img_path ?>category/cate6-2.svg" alt="" class="menu-column__icon-2">
+                      <img src="<?php echo ASSETS; ?>img/category/cate6-1.svg" alt="" class="menu-column__icon-1">
+                      <img src="<?php echo ASSETS; ?>img/category/cate6-2.svg" alt="" class="menu-column__icon-2">
                     </div>
                     <div class="menu-column__content">
                       <h2 class="menu-column__heading">Cell Phones</h2>
@@ -1154,8 +1155,8 @@
                     <!-- menu column 3.1 -->
                     <div class="menu-column">
                       <div class="menu-column__icon">
-                        <img src="<?= $img_path ?>category/cate5-1.svg" alt="" class="menu-column__icon-1">
-                        <img src="<?= $img_path ?>category/cate5-2.svg" alt="" class="menu-column__icon-2">
+                        <img src="<?php echo ASSETS; ?>img/category/cate5-1.svg" alt="" class="menu-column__icon-1">
+                        <img src="<?php echo ASSETS; ?>img/category/cate5-2.svg" alt="" class="menu-column__icon-2">
                       </div>
                       <div class="menu-column__content">
                         <h2 class="menu-column__heading">Savings</h2>
@@ -1181,8 +1182,8 @@
                   <!-- menu column 3.2 -->
                   <div class="menu-column">
                     <div class="menu-column__icon">
-                      <img src="<?= $img_path ?>category/cate6-1.svg" alt="" class="menu-column__icon-1">
-                      <img src="<?= $img_path ?>category/cate6-2.svg" alt="" class="menu-column__icon-2">
+                      <img src="<?php echo ASSETS; ?>img/category/cate6-1.svg" alt="" class="menu-column__icon-1">
+                      <img src="<?php echo ASSETS; ?>img/category/cate6-2.svg" alt="" class="menu-column__icon-2">
                     </div>
                     <div class="menu-column__content">
                       <h2 class="menu-column__heading">Cell Phones</h2>

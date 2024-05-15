@@ -12,7 +12,7 @@
             />
             <button class="search-bar__submit">
               <img
-                src="<?= $icon_path ?>seach.svg"
+                src="<?php echo ASSETS; ?>icons/seach.svg"
                 alt=""
                 class="search-bar__icon icon"
               />
@@ -26,7 +26,7 @@
                 <!-- User -->
                 <div class="profile-user">
                   <img
-                    src="<?= $img_path ?>z4888248915574_b3c4f7538cab253aae1f1560aa4672a3 (1).jpg"
+                    src="<?php echo ASSETS; ?>img/z4888248915574_b3c4f7538cab253aae1f1560aa4672a3 (1).jpg"
                     alt=""
                     class="profile-user__avatar"
                   />
@@ -41,7 +41,7 @@
                       <a href="#!" class="profile-menu__link">
                         <span class="profile-menu__icon">
                           <img
-                            src="<?= $icon_path ?>profile.svg"
+                            src="<?php echo ASSETS; ?>icons/profile.svg"
                             alt=""
                             class="icon"
                           />
@@ -53,7 +53,7 @@
                       <a href="#!" class="profile-menu__link">
                         <span class="profile-menu__icon">
                           <img
-                            src="<?= $icon_path ?>local.svg"
+                            src="<?php echo ASSETS; ?>icons/local.svg"
                             alt=""
                             class="icon"
                           />
@@ -65,7 +65,7 @@
                       <a href="#!" class="profile-menu__link">
                         <span class="profile-menu__icon">
                           <img
-                            src="<?= $icon_path ?>letter.svg"
+                            src="<?php echo ASSETS; ?>icons/letter.svg"
                             alt=""
                             class="icon"
                           />
@@ -83,7 +83,7 @@
                       <a href="#!" class="profile-menu__link">
                         <span class="profile-menu__icon">
                           <img
-                            src="<?= $icon_path ?>dowloand.svg"
+                            src="<?php echo ASSETS; ?>icons/dowloand.svg"
                             alt=""
                             class="icon"
                           />
@@ -95,7 +95,7 @@
                       <a href="#!" class="profile-menu__link">
                         <span class="profile-menu__icon">
                           <img
-                            src="<?= $icon_path ?>heart.svg"
+                            src="<?php echo ASSETS; ?>icons/heart.svg"
                             alt=""
                             class="icon"
                           />
@@ -107,7 +107,7 @@
                       <a href="#!" class="profile-menu__link">
                         <span class="profile-menu__icon">
                           <img
-                            src="<?= $icon_path ?>gifl.svg"
+                            src="<?php echo ASSETS; ?>icons/gifl.svg"
                             alt=""
                             class="icon"
                           />
@@ -125,7 +125,7 @@
                       <a href="#!" class="profile-menu__link">
                         <span class="profile-menu__icon">
                           <img
-                            src="<?= $icon_path ?>protect.svg"
+                            src="<?php echo ASSETS; ?>icons/protect.svg"
                             alt=""
                             class="icon"
                           />
@@ -143,7 +143,7 @@
                       <a href="#!" class="profile-menu__link">
                         <span class="profile-menu__icon">
                           <img
-                            src="<?= $icon_path ?>help.svg"
+                            src="<?php echo ASSETS; ?>icons/help.svg"
                             alt=""
                             class="icon"
                           />
@@ -155,7 +155,7 @@
                       <a href="#!" class="profile-menu__link">
                         <span class="profile-menu__icon">
                           <img
-                            src="<?= $icon_path ?>use.svg"
+                            src="<?php echo ASSETS; ?>icons/use.svg"
                             alt=""
                             class="icon"
                           />
@@ -175,7 +175,7 @@
                     <h2 class="cart-info__heading">
                       <a href="http://localhost/projectPTIT/Home/Profile">
                         <img
-                          src="<?= $icon_path ?>arrow-left.svg"
+                          src="<?php echo ASSETS; ?>icons/arrow-left.svg"
                           alt=""
                           class="icon cart-info__back-arrow"
                         />

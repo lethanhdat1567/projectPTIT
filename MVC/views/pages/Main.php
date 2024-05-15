@@ -1,4 +1,4 @@
-
+<?php require_once('./MVC/core/config.php'); ?>
 <div class="container home">
       <div class="home__container">
         <!-- slideshow -->
@@ -9,10 +9,10 @@
                 <picture>
                   <source
                     media="(max-width: 991.98px)"
-                    srcset="<?= $img_path ?>slideshow/item1-md.png"
+                    srcset="<?php echo ASSETS; ?>img/slideshow/item1-md.png"
                   />
                   <img
-                    src="<?= $img_path ?>slideshow/item1.png"
+                    src="<?php echo ASSETS; ?>img/slideshow/item1.png"
                     alt=""
                     class="slideshow__img"
                   />
@@ -38,7 +38,7 @@
             <article class="col">
               <div class="cate-item">
                 <img
-                  src="<?= $img_path ?>category-item/item1.png"
+                  src="<?php echo ASSETS; ?>img/category-item/item1.png"
                   alt=""
                   class="cate-item__thumb"
                 />
@@ -56,7 +56,7 @@
             <article class="col">
               <div class="cate-item">
                 <img
-                  src="<?= $img_path ?>category-item/item2.png"
+                  src="<?php echo ASSETS; ?>img/category-item/item2.png"
                   alt=""
                   class="cate-item__thumb"
                 />
@@ -74,7 +74,7 @@
             <article class="col">
               <div class="cate-item">
                 <img
-                  src="<?= $img_path ?>category-item/item3.png"
+                  src="<?php echo ASSETS; ?>img/category-item/item3.png"
                   alt=""
                   class="cate-item__thumb"
                 />
@@ -97,14 +97,14 @@
             <button class="filter-btn js-toggle" toggle-target="#home-filter">
               Filter
               <img
-                src="<?= $icon_path ?>filter.svg"
+                src="<?php echo ASSETS; ?>icons/filter.svg"
                 alt=""
                 class="filter-btn__icon icon"
               />
             </button>
             <div class="filter hide" id="home-filter">
               <img
-                src="<?= $icon_path ?>arrow-up.png"
+                src="<?php echo ASSETS; ?>icons/arrow-up.png"
                 alt=""
                 class="filter__arrow"
               />
@@ -162,7 +162,7 @@
                         <div class="form__select" style="--width: 158px">
                           500g
                           <img
-                            src="<?= $icon_path ?>select-arrow.svg"
+                            src="<?php echo ASSETS; ?>icons/select-arrow.svg"
                             alt=""
                             class="form__select-arrow icon"
                           />
@@ -170,7 +170,7 @@
                         <div class="form__select">
                           Gram
                           <img
-                            src="<?= $icon_path ?>select-arrow.svg"
+                            src="<?php echo ASSETS; ?>icons/select-arrow.svg"
                             alt=""
                             class="form__select-arrow icon"
                           />
@@ -199,7 +199,7 @@
                           class="filter__form-input"
                         />
                         <img
-                          src="<?= $icon_path ?>seach.svg"
+                          src="<?php echo ASSETS; ?>icons/seach.svg"
                           alt=""
                           class="filter__form-input-icon icon"
                         />
@@ -240,19 +240,19 @@
               <div class="product-card__img-wrap">
                 <a href="http://localhost/projectPTIT/Home/ProductDetail/<?php echo $row['id'] ?>">
                   <img
-                    src="<?= $img_path ?>products/<?php echo $row['thumbnail'] ?>"
+                    src="<?php echo ASSETS ?>img/products/<?php echo $row['thumbnail'] ?>"
                     alt=""
                     class="product-card__thumb"
                   />
                 </a>
                 <button class="like-btn like-btn--liked product-card__like-btn">
                   <img
-                    src="<?= $icon_path ?>heart.svg"
+                    src="<?php echo ASSETS; ?>icons/heart.svg"
                     alt=""
                     class="like-btn__icon icon"
                   />
                   <img
-                    src="<?= $icon_path ?>heart-red.svg"
+                    src="<?php echo ASSETS; ?>icons/heart-red.svg"
                     alt=""
                     class="like-btn__icon--liked"
                   />
@@ -267,7 +267,7 @@
               <div class="product-card__row">
                 <span class="product-card__price">VND<?php echo $row['price'] ?></span>
                 <img
-                  src="<?= $icon_path ?>star.svg"
+                  src="<?php echo ASSETS; ?>icons/star.svg"
                   alt=""
                   class="product-card__star"
                 />

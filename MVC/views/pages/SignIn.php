@@ -2,7 +2,7 @@
       <!-- Auth intro -->
       <div class="auth__intro d-md-none">
         <img
-          src="<?= $img_path ?>auth/auth-1.svg"
+          src="<?php echo ASSETS; ?>img/auth/auth-1.svg"
           alt=""
           class="auth__intro-img"
         />
@@ -16,7 +16,7 @@
         <div class="auth__content-inner">
           <!-- logo -->
           <a href="http://localhost/projectPTIT/Home/Main" class="logo">
-            <img src="<?= $icon_path ?>logo.svg" alt="" class="logo__img" />
+            <img src="<?php echo ASSETS; ?>icons/logo.svg" alt="" class="logo__img" />
             <h2 class="logo__title">grocemart</h2>
           </a>
           <h1 class="auth__heading">Hello Again!</h1>
@@ -42,12 +42,12 @@
                   autofocus
                 />
                 <img
-                  src="<?= $icon_path ?>form__error.svg"
+                  src="<?php echo ASSETS; ?>icons/form__error.svg"
                   alt=""
                   class="form__input-icon-error"
                 />
                 <img
-                  src="<?= $icon_path ?>user.svg"
+                  src="<?php echo ASSETS; ?>icons/user.svg"
                   alt=""
                   class="form__input-icon"
                 />
@@ -71,12 +71,12 @@
                   minlength="6"
                 />
                 <img
-                  src="<?= $icon_path ?>form__error.svg"
+                  src="<?php echo ASSETS; ?>icons/form__error.svg"
                   alt=""
                   class="form__input-icon-error"
                 />
                 <img
-                  src="<?= $icon_path ?>lock.svg"
+                  src="<?php echo ASSETS; ?>icons/lock.svg"
                   alt=""
                   class="form__input-icon"
                 />
@@ -105,7 +105,7 @@
                 Sign In
               </button>
               <button class="btn btb--outline auth__btn btn--no-margin">
-                <img src="<?= $icon_path ?>google.svg" alt="" class="btn__icon" />
+                <img src="<?php echo ASSETS; ?>icons/google.svg" alt="" class="btn__icon" />
                 Sign in with Google
               </button>
             </div>

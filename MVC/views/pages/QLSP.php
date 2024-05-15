@@ -42,7 +42,7 @@
               <td class="admin-product__table-items">
                 <img
                   class="table-items__img"
-                  src="<?= $img_path ?>products/<?php echo $row['thumbnail'] ?>"
+                  src="<?php echo ASSETS; ?>img/products/<?php echo $row['thumbnail'] ?>"
                   alt=""
                 />
               </td>

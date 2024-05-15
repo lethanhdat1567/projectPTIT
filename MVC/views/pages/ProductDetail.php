@@ -13,7 +13,7 @@
             />
             <button class="search-bar__submit">
               <img
-                src="<?= $icon_path ?>seach.svg"
+                src="<?php echo ASSETS; ?>icons/seach.svg"
                 alt=""
                 class="search-bar__icon icon"
               />
@@ -26,19 +26,19 @@
             <li>
               <a href="#!" class="breadcrumbs__link"
                 >Departments
-                <img src="<?= $icon_path ?>arrow-right.svg" alt="" />
+                <img src="<?php echo ASSETS; ?>icons/arrow-right.svg" alt="" />
               </a>
             </li>
             <li>
               <a href="#!" class="breadcrumbs__link"
                 >Coffee
-                <img src="<?= $icon_path ?>arrow-right.svg" alt="" />
+                <img src="<?php echo ASSETS; ?>icons/arrow-right.svg" alt="" />
               </a>
             </li>
             <li>
               <a href="#!" class="breadcrumbs__link"
                 >Coffee Beans
-                <img src="<?= $icon_path ?>arrow-right.svg" alt="" />
+                <img src="<?php echo ASSETS; ?>icons/arrow-right.svg" alt="" />
               </a>
             </li>
             <li>
@@ -56,28 +56,28 @@
                 <div class="prod-review__list">
                   <div class="prod-review__item">
                     <img
-                      src="<?= $img_path ?>products/<?php echo $row['thumbnail'] ?>"
+                      src="<?php echo ASSETS; ?>img/products/<?php echo $row['thumbnail'] ?>"
                       alt=""
                       class="prod-review__img"
                     />
                   </div>
                   <div class="prod-review__item">
                     <img
-                      src="<?= $img_path ?>products/item1.png"
+                      src="<?php echo ASSETS; ?>img/products/item1.png"
                       alt=""
                       class="prod-review__img"
                     />
                   </div>
                   <div class="prod-review__item">
                     <img
-                      src="<?= $img_path ?>products/item1.png"
+                      src="<?php echo ASSETS; ?>img/products/item1.png"
                       alt=""
                       class="prod-review__img"
                     />
                   </div>
                   <div class="prod-review__item">
                     <img
-                      src="<?= $img_path ?>products/item1.png"
+                      src="<?php echo ASSETS; ?>img/products/item1.png"
                       alt=""
                       class="prod-review__img"
                     />
@@ -85,22 +85,22 @@
                 </div>
                 <div class="prod-review__thumb">
                   <img
-                    src="<?= $img_path ?>products/<?php echo $row['thumbnail']; ?>"
+                    src="<?php echo ASSETS; ?>img/products/<?php echo $row['thumbnail']; ?>"
                     alt=""
                     class="prod-review__thumb-img prod-review__thumb-img--current"
                   />
                   <img
-                    src="<?= $img_path ?>products/item2.png"
+                    src="<?php echo ASSETS; ?>img/products/item2.png"
                     alt=""
                     class="prod-review__thumb-img"
                   />
                   <img
-                    src="<?= $img_path ?>products/item3.png"
+                    src="<?php echo ASSETS; ?>img/products/item3.png"
                     alt=""
                     class="prod-review__thumb-img"
                   />
                   <img
-                    src="<?= $img_path ?>products/item4.png"
+                    src="<?php echo ASSETS; ?>img/products/item4.png"
                     alt=""
                     class="prod-review__thumb-img"
                   />
@@ -117,7 +117,7 @@
                     <div class="col-5 col-xxl-6 col-xl-12">
                       <div class="prod-prop">
                         <img
-                          src="<?= $icon_path ?>star.svg"
+                          src="<?php echo ASSETS; ?>icons/star.svg"
                           alt=""
                           class="prod-prop__icon"
                         />
@@ -131,7 +131,7 @@
                           <div class="form__select" style="--width: 146px">
                             500g
                             <img
-                              src="<?= $icon_path ?>select-arrow.svg"
+                              src="<?php echo ASSETS; ?>icons/select-arrow.svg"
                               alt=""
                               class="form__select-arrow icon"
                             />
@@ -139,7 +139,7 @@
                           <div class="form__select">
                             Gram
                             <img
-                              src="<?= $icon_path ?>select-arrow.svg"
+                              src="<?php echo ASSETS; ?>icons/select-arrow.svg"
                               alt=""
                               class="form__select-arrow icon"
                             />
@@ -164,7 +164,7 @@
                       <div class="prod-props">
                         <div class="prod-prop">
                           <img
-                            src="<?= $icon_path ?>document.svg"
+                            src="<?php echo ASSETS; ?>icons/document.svg"
                             alt=""
                             class="prod-prop__icon icon"
                           />
@@ -172,7 +172,7 @@
                         </div>
                         <div class="prod-prop">
                           <img
-                            src="<?= $icon_path ?>buy.svg"
+                            src="<?php echo ASSETS; ?>icons/buy.svg"
                             alt=""
                             class="prod-prop__icon icon"
                           />
@@ -183,7 +183,7 @@
                         </div>
                         <div class="prod-prop">
                           <img
-                            src="<?= $icon_path ?>bag.svg"
+                            src="<?php echo ASSETS; ?>icons/bag.svg"
                             alt=""
                             class="prod-prop__icon icon"
                           />
@@ -209,12 +209,12 @@
                               fdprocessedid="1nyck"
                             >
                               <img
-                                src="<?= $icon_path ?>heart.svg"
+                                src="<?php echo ASSETS; ?>icons/heart.svg"
                                 alt=""
                                 class="like-btn__icon icon"
                               />
                               <img
-                                src="<?= $icon_path ?>heart-red.svg"
+                                src="<?php echo ASSETS; ?>icons/heart-red.svg"
                                 alt=""
                                 class="like-btn__icon--liked"
                               />
@@ -262,7 +262,7 @@
                       <div class="review-card">
                         <div class="review-card__content">
                           <img
-                            src="<?= $img_path ?>avatar/avar-1.png"
+                            src="<?php echo ASSETS; ?>img/avatar/avar-1.png"
                             alt=""
                             class="review-card__avatar"
                           />
@@ -276,27 +276,27 @@
                         <div class="review-card__rating">
                           <div class="review-card__star-list">
                             <img
-                              src="<?= $icon_path ?>star.svg"
+                              src="<?php echo ASSETS; ?>icons/star.svg"
                               alt=""
                               class="review-card__star"
                             />
                             <img
-                              src="<?= $icon_path ?>star.svg"
+                              src="<?php echo ASSETS; ?>icons/star.svg"
                               alt=""
                               class="review-card__star"
                             />
                             <img
-                              src="<?= $icon_path ?>star.svg"
+                              src="<?php echo ASSETS; ?>icons/star.svg"
                               alt=""
                               class="review-card__star"
                             />
                             <img
-                              src="<?= $icon_path ?>star-half.svg"
+                              src="<?php echo ASSETS; ?>icons/star-half.svg"
                               alt=""
                               class="review-card__star"
                             />
                             <img
-                              src="<?= $icon_path ?>star-blank.svg"
+                              src="<?php echo ASSETS; ?>icons/star-blank.svg"
                               alt=""
                               class="review-card__star"
                             />
@@ -312,7 +312,7 @@
                       <div class="review-card">
                         <div class="review-card__content">
                           <img
-                            src="<?= $img_path ?>avatar/avar-2.png"
+                            src="<?php echo ASSETS; ?>img/avatar/avar-2.png"
                             alt=""
                             class="review-card__avatar"
                           />
@@ -326,27 +326,27 @@
                         <div class="review-card__rating">
                           <div class="review-card__star-list">
                             <img
-                              src="<?= $icon_path ?>star.svg"
+                              src="<?php echo ASSETS; ?>icons/star.svg"
                               alt=""
                               class="review-card__star"
                             />
                             <img
-                              src="<?= $icon_path ?>star.svg"
+                              src="<?php echo ASSETS; ?>icons/star.svg"
                               alt=""
                               class="review-card__star"
                             />
                             <img
-                              src="<?= $icon_path ?>star.svg"
+                              src="<?php echo ASSETS; ?>icons/star.svg"
                               alt=""
                               class="review-card__star"
                             />
                             <img
-                              src="<?= $icon_path ?>star-half.svg"
+                              src="<?php echo ASSETS; ?>icons/star-half.svg"
                               alt=""
                               class="review-card__star"
                             />
                             <img
-                              src="<?= $icon_path ?>star-blank.svg"
+                              src="<?php echo ASSETS; ?>icons/star-blank.svg"
                               alt=""
                               class="review-card__star"
                             />
@@ -362,7 +362,7 @@
                       <div class="review-card">
                         <div class="review-card__content">
                           <img
-                            src="<?= $img_path ?>avatar/avar-3.png"
+                            src="<?php echo ASSETS; ?>img/avatar/avar-3.png"
                             alt=""
                             class="review-card__avatar"
                           />
@@ -376,27 +376,27 @@
                         <div class="review-card__rating">
                           <div class="review-card__star-list">
                             <img
-                              src="<?= $icon_path ?>star.svg"
+                              src="<?php echo ASSETS; ?>icons/star.svg"
                               alt=""
                               class="review-card__star"
                             />
                             <img
-                              src="<?= $icon_path ?>star.svg"
+                              src="<?php echo ASSETS; ?>icons/star.svg"
                               alt=""
                               class="review-card__star"
                             />
                             <img
-                              src="<?= $icon_path ?>star.svg"
+                              src="<?php echo ASSETS; ?>icons/star.svg"
                               alt=""
                               class="review-card__star"
                             />
                             <img
-                              src="<?= $icon_path ?>star-half.svg"
+                              src="<?php echo ASSETS; ?>icons/star-half.svg"
                               alt=""
                               class="review-card__star"
                             />
                             <img
-                              src="<?= $icon_path ?>star-blank.svg"
+                              src="<?php echo ASSETS; ?>icons/star-blank.svg"
                               alt=""
                               class="review-card__star"
                             />
@@ -425,7 +425,7 @@
                       <div class="product-card__img-wrap">
                         <a href="http://localhost/projectPTIT/Home/ProductDetail">
                           <img
-                            src="<?= $img_path ?>products/item1.png"
+                            src="<?php echo ASSETS; ?>img/products/item1.png"
                             alt=""
                             class="product-card__thumb"
                           />
@@ -434,12 +434,12 @@
                           class="like-btn like-btn--liked product-card__like-btn"
                         >
                           <img
-                            src="<?= $icon_path ?>heart.svg"
+                            src="<?php echo ASSETS; ?>icons/heart.svg"
                             alt=""
                             class="like-btn__icon icon"
                           />
                           <img
-                            src="<?= $icon_path ?>heart-red.svg"
+                            src="<?php echo ASSETS; ?>icons/heart-red.svg"
                             alt=""
                             class="like-btn__icon--liked"
                           />
@@ -454,7 +454,7 @@
                       <div class="product-card__row">
                         <span class="product-card__price">$47.00</span>
                         <img
-                          src="<?= $icon_path ?>star.svg"
+                          src="<?php echo ASSETS; ?>icons/star.svg"
                           alt=""
                           class="product-card__star"
                         />
@@ -468,19 +468,19 @@
                       <div class="product-card__img-wrap">
                         <a href="http://localhost/projectPTIT/Home/ProductDetail">
                           <img
-                            src="<?= $img_path ?>products/item2.png"
+                            src="<?php echo ASSETS; ?>img/products/item2.png"
                             alt=""
                             class="product-card__thumb"
                           />
                         </a>
                         <button class="like-btn product-card__like-btn">
                           <img
-                            src="<?= $icon_path ?>heart.svg"
+                            src="<?php echo ASSETS; ?>icons/heart.svg"
                             alt=""
                             class="like-btn__icon icon"
                           />
                           <img
-                            src="<?= $icon_path ?>heart-red.svg"
+                            src="<?php echo ASSETS; ?>icons/heart-red.svg"
                             alt=""
                             class="like-btn__icon--liked"
                           />
@@ -495,7 +495,7 @@
                       <div class="product-card__row">
                         <span class="product-card__price">$47.00</span>
                         <img
-                          src="<?= $icon_path ?>star.svg"
+                          src="<?php echo ASSETS; ?>icons/star.svg"
                           alt=""
                           class="product-card__star"
                         />
@@ -509,7 +509,7 @@
                       <div class="product-card__img-wrap">
                         <a href="http://localhost/projectPTIT/Home/ProductDetail">
                           <img
-                            src="<?= $img_path ?>products/item3.png"
+                            src="<?php echo ASSETS; ?>img/products/item3.png"
                             alt=""
                             class="product-card__thumb"
                           />
@@ -518,12 +518,12 @@
                           class="like-btn like-btn--liked product-card__like-btn"
                         >
                           <img
-                            src="<?= $icon_path ?>heart.svg"
+                            src="<?php echo ASSETS; ?>icons/heart.svg"
                             alt=""
                             class="like-btn__icon icon"
                           />
                           <img
-                            src="<?= $icon_path ?>heart-red.svg"
+                            src="<?php echo ASSETS; ?>icons/heart-red.svg"
                             alt=""
                             class="like-btn__icon--liked"
                           />
@@ -538,7 +538,7 @@
                       <div class="product-card__row">
                         <span class="product-card__price">$47.00</span>
                         <img
-                          src="<?= $icon_path ?>star.svg"
+                          src="<?php echo ASSETS; ?>icons/star.svg"
                           alt=""
                           class="product-card__star"
                         />
@@ -552,19 +552,19 @@
                       <div class="product-card__img-wrap">
                         <a href="http://localhost/projectPTIT/Home/ProductDetail">
                           <img
-                            src="<?= $img_path ?>products/item4.png"
+                            src="<?php echo ASSETS; ?>img/products/item4.png"
                             alt=""
                             class="product-card__thumb"
                           />
                         </a>
                         <button class="like-btn product-card__like-btn">
                           <img
-                            src="<?= $icon_path ?>heart.svg"
+                            src="<?php echo ASSETS; ?>icons/heart.svg"
                             alt=""
                             class="like-btn__icon icon"
                           />
                           <img
-                            src="<?= $icon_path ?>heart-red.svg"
+                            src="<?php echo ASSETS; ?>icons/heart-red.svg"
                             alt=""
                             class="like-btn__icon--liked"
                           />
@@ -579,7 +579,7 @@
                       <div class="product-card__row">
                         <span class="product-card__price">$47.00</span>
                         <img
-                          src="<?= $icon_path ?>star.svg"
+                          src="<?php echo ASSETS; ?>icons/star.svg"
                           alt=""
                           class="product-card__star"
                         />
@@ -593,19 +593,19 @@
                       <div class="product-card__img-wrap">
                         <a href="http://localhost/projectPTIT/Home/ProductDetail">
                           <img
-                            src="<?= $img_path ?>products/item4.png"
+                            src="<?php echo ASSETS; ?>img/products/item4.png"
                             alt=""
                             class="product-card__thumb"
                           />
                         </a>
                         <button class="like-btn product-card__like-btn">
                           <img
-                            src="<?= $icon_path ?>heart.svg"
+                            src="<?php echo ASSETS; ?>icons/heart.svg"
                             alt=""
                             class="like-btn__icon icon"
                           />
                           <img
-                            src="<?= $icon_path ?>heart-red.svg"
+                            src="<?php echo ASSETS; ?>icons/heart-red.svg"
                             alt=""
                             class="like-btn__icon--liked"
                           />
@@ -620,7 +620,7 @@
                       <div class="product-card__row">
                         <span class="product-card__price">$47.00</span>
                         <img
-                          src="<?= $icon_path ?>star.svg"
+                          src="<?php echo ASSETS; ?>icons/star.svg"
                           alt=""
                           class="product-card__star"
                         />
@@ -634,19 +634,19 @@
                       <div class="product-card__img-wrap">
                         <a href="http://localhost/projectPTIT/Home/ProductDetail">
                           <img
-                            src="<?= $img_path ?>products/item4.png"
+                            src="<?php echo ASSETS; ?>img/products/item4.png"
                             alt=""
                             class="product-card__thumb"
                           />
                         </a>
                         <button class="like-btn product-card__like-btn">
                           <img
-                            src="<?= $icon_path ?>heart.svg"
+                            src="<?php echo ASSETS; ?>icons/heart.svg"
                             alt=""
                             class="like-btn__icon icon"
                           />
                           <img
-                            src="<?= $icon_path ?>heart-red.svg"
+                            src="<?php echo ASSETS; ?>icons/heart-red.svg"
                             alt=""
                             class="like-btn__icon--liked"
                           />
@@ -661,7 +661,7 @@
                       <div class="product-card__row">
                         <span class="product-card__price">$47.00</span>
                         <img
-                          src="<?= $icon_path ?>star.svg"
+                          src="<?php echo ASSETS; ?>icons/star.svg"
                           alt=""
                           class="product-card__star"
                         />

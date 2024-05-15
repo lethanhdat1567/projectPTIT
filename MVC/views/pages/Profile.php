@@ -13,7 +13,7 @@
             />
             <button class="search-bar__submit">
               <img
-                src="<?= $icon_path ?>seach.svg"
+                src="<?php echo ASSETS; ?>icons/seach.svg"
                 alt=""
                 class="search-bar__icon icon"
               />
@@ -27,7 +27,7 @@
                 <!-- User -->
                 <div class="profile-user">
                   <img
-                    src="<?= $img_path ?>z4888248915574_b3c4f7538cab253aae1f1560aa4672a3 (1).jpg"
+                    src="<?php echo ASSETS; ?>img/z4888248915574_b3c4f7538cab253aae1f1560aa4672a3 (1).jpg"
                     alt=""
                     class="profile-user__avatar"
                   />
@@ -45,7 +45,7 @@
                       >
                         <span class="profile-menu__icon">
                           <img
-                            src="<?= $icon_path ?>profile.svg"
+                            src="<?php echo ASSETS; ?>icons/profile.svg"
                             alt=""
                             class="icon"
                           />
@@ -57,7 +57,7 @@
                       <a href="#!" class="profile-menu__link">
                         <span class="profile-menu__icon">
                           <img
-                            src="<?= $icon_path ?>local.svg"
+                            src="<?php echo ASSETS; ?>icons/local.svg"
                             alt=""
                             class="icon"
                           />
@@ -69,7 +69,7 @@
                       <a href="#!" class="profile-menu__link">
                         <span class="profile-menu__icon">
                           <img
-                            src="<?= $icon_path ?>letter.svg"
+                            src="<?php echo ASSETS; ?>icons/letter.svg"
                             alt=""
                             class="icon"
                           />
@@ -87,7 +87,7 @@
                       <a href="#!" class="profile-menu__link">
                         <span class="profile-menu__icon">
                           <img
-                            src="<?= $icon_path ?>dowloand.svg"
+                            src="<?php echo ASSETS; ?>icons/dowloand.svg"
                             alt=""
                             class="icon"
                           />
@@ -99,7 +99,7 @@
                       <a href="#!" class="profile-menu__link">
                         <span class="profile-menu__icon">
                           <img
-                            src="<?= $icon_path ?>heart.svg"
+                            src="<?php echo ASSETS; ?>icons/heart.svg"
                             alt=""
                             class="icon"
                           />
@@ -111,7 +111,7 @@
                       <a href="#!" class="profile-menu__link">
                         <span class="profile-menu__icon">
                           <img
-                            src="<?= $icon_path ?>gifl.svg"
+                            src="<?php echo ASSETS; ?>icons/gifl.svg"
                             alt=""
                             class="icon"
                           />
@@ -129,7 +129,7 @@
                       <a href="#!" class="profile-menu__link">
                         <span class="profile-menu__icon">
                           <img
-                            src="<?= $icon_path ?>protect.svg"
+                            src="<?php echo ASSETS; ?>icons/protect.svg"
                             alt=""
                             class="icon"
                           />
@@ -147,7 +147,7 @@
                       <a href="#!" class="profile-menu__link">
                         <span class="profile-menu__icon">
                           <img
-                            src="<?= $icon_path ?>help.svg"
+                            src="<?php echo ASSETS; ?>icons/help.svg"
                             alt=""
                             class="icon"
                           />
@@ -159,7 +159,7 @@
                       <a href="#!" class="profile-menu__link">
                         <span class="profile-menu__icon">
                           <img
-                            src="<?= $icon_path ?>use.svg"
+                            src="<?php echo ASSETS; ?>icons/use.svg"
                             alt=""
                             class="icon"
                           />
@@ -188,12 +188,12 @@
                           style="--bg-color: #1e2e69"
                         >
                           <img
-                            src="<?= $img_path ?>card/plane-bg.svg"
+                            src="<?php echo ASSETS; ?>img/card/plane-bg.svg"
                             alt=""
                             class="payment-card__img"
                           />
                           <div class="payment-card__top">
-                            <img src="<?= $img_path ?>card/plane.svg" alt="" />
+                            <img src="<?php echo ASSETS; ?>img/card/plane.svg" alt="" />
                             <span class="payment-card__type">FeatherCard</span>
                           </div>
                           <div class="payment-card__number">
@@ -219,12 +219,12 @@
                           style="--bg-color: #354151"
                         >
                           <img
-                            src="<?= $img_path ?>card/leaf-bg.svg"
+                            src="<?php echo ASSETS; ?>img/card/leaf-bg.svg"
                             alt=""
                             class="payment-card__img"
                           />
                           <div class="payment-card__top">
-                            <img src="<?= $img_path ?>card/leaf.svg" alt="" />
+                            <img src="<?php echo ASSETS; ?>img/card/leaf.svg" alt="" />
                             <span class="payment-card__type">FeatherCard</span>
                           </div>
                           <div class="payment-card__number">
@@ -247,7 +247,7 @@
                       <div class="col">
                         <a href="http://localhost/projectPTIT/Home/AddNewCard" class="new-card">
                           <img
-                            src="<?= $icon_path ?>plus.svg"
+                            src="<?php echo ASSETS; ?>icons/plus.svg"
                             alt=""
                             class="new-card__icon icon"
                           />
@@ -269,7 +269,7 @@
                           <article class="account-info">
                             <div class="account-info__icon">
                               <img
-                                src="<?= $icon_path ?>message.svg"
+                                src="<?php echo ASSETS; ?>icons/message.svg"
                                 alt=""
                                 class="icon"
                               />
@@ -288,7 +288,7 @@
                           <article class="account-info">
                             <div class="account-info__icon">
                               <img
-                                src="<?= $icon_path ?>calling.svg"
+                                src="<?php echo ASSETS; ?>icons/calling.svg"
                                 alt=""
                                 class="icon"
                               />
@@ -308,7 +308,7 @@
                           <article class="account-info">
                             <div class="account-info__icon">
                               <img
-                                src="<?= $icon_path ?>local.svg"
+                                src="<?php echo ASSETS; ?>icons/local.svg"
                                 alt=""
                                 class="icon"
                               />
@@ -335,7 +335,7 @@
                     <!-- Favourite item 1 -->
                     <article class="favourite-item">
                       <img
-                        src="<?= $img_path ?>products/item1.png"
+                        src="<?php echo ASSETS; ?>img/products/item1.png"
                         alt=""
                         class="favourite-item__thumb"
                       />
@@ -357,7 +357,7 @@
                     <!-- Favourite item 2 -->
                     <article class="favourite-item">
                       <img
-                        src="<?= $img_path ?>products/item1.png"
+                        src="<?php echo ASSETS; ?>img/products/item1.png"
                         alt=""
                         class="favourite-item__thumb"
                       />

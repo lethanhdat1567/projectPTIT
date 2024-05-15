@@ -12,7 +12,7 @@
             />
             <button class="search-bar__submit">
               <img
-                src="<?= $icon_path ?>seach.svg"
+                src="<?php echo ASSETS; ?>icons/seach.svg"
                 alt=""
                 class="search-bar__icon icon"
               />
@@ -25,7 +25,7 @@
             <li>
               <a href="http://localhost/projectPTIT/Home/" class="breadcrumbs__link"
                 >Home
-                <img src="<?= $icon_path ?>arrow-right.svg" alt="" />
+                <img src="<?php echo ASSETS; ?>icons/arrow-right.svg" alt="" />
               </a>
             </li>
             <li>
@@ -64,7 +64,7 @@
                     </label>
                     <a href="http://localhost/projectPTIT/Home/ProductDetail">
                       <img
-                        src="<?= $img_path ?>products/item1.png"
+                        src="<?php echo ASSETS; ?>img/products/item1.png"
                         alt=""
                         class="cart-item__thumb"
                       />
@@ -86,7 +86,7 @@
                               LavAzza
                               <img
                                 class="icon"
-                                src="<?= $icon_path ?>arrow-down-2.svg"
+                                src="<?php echo ASSETS; ?>icons/arrow-down-2.svg"
                                 alt=""
                               />
                             </div>
@@ -94,7 +94,7 @@
                               <button class="cart-item__input-btn">
                                 <img
                                   class="icon"
-                                  src="<?= $icon_path ?>minus.svg"
+                                  src="<?php echo ASSETS; ?>icons/minus.svg"
                                   alt=""
                                 />
                               </button>
@@ -102,7 +102,7 @@
                               <button class="cart-item__input-btn">
                                 <img
                                   class="icon"
-                                  src="<?= $icon_path ?>plus.svg"
+                                  src="<?php echo ASSETS; ?>icons/plus.svg"
                                   alt=""
                                 />
                               </button>
@@ -110,14 +110,14 @@
                           </div>
                           <div class="cart-item__ctrl">
                             <button class="cart-item__ctrl-btn">
-                              <img src="<?= $icon_path ?>heart-2.svg" alt="" />
+                              <img src="<?php echo ASSETS; ?>icons/heart-2.svg" alt="" />
                               Save
                             </button>
                             <button
                               class="cart-item__ctrl-btn js-toggle"
                               toggle-target="#delete-confirm"
                             >
-                              <img src="<?= $icon_path ?>trash.svg" alt="" />
+                              <img src="<?php echo ASSETS; ?>icons/trash.svg" alt="" />
                               Delete
                             </button>
                           </div>
@@ -144,7 +144,7 @@
                     </label>
                     <a href="http://localhost/projectPTIT/Home/ProductDetail">
                       <img
-                        src="<?= $img_path ?>products/item2.png"
+                        src="<?php echo ASSETS; ?>img/products/item2.png"
                         alt=""
                         class="cart-item__thumb"
                       />
@@ -166,7 +166,7 @@
                               LavAzza
                               <img
                                 class="icon"
-                                src="<?= $icon_path ?>arrow-down-2.svg"
+                                src="<?php echo ASSETS; ?>icons/arrow-down-2.svg"
                                 alt=""
                               />
                             </div>
@@ -174,7 +174,7 @@
                               <button class="cart-item__input-btn">
                                 <img
                                   class="icon"
-                                  src="<?= $icon_path ?>minus.svg"
+                                  src="<?php echo ASSETS; ?>icons/minus.svg"
                                   alt=""
                                 />
                               </button>
@@ -182,7 +182,7 @@
                               <button class="cart-item__input-btn">
                                 <img
                                   class="icon"
-                                  src="<?= $icon_path ?>plus.svg"
+                                  src="<?php echo ASSETS; ?>icons/plus.svg"
                                   alt=""
                                 />
                               </button>
@@ -190,14 +190,14 @@
                           </div>
                           <div class="cart-item__ctrl">
                             <button class="cart-item__ctrl-btn">
-                              <img src="<?= $icon_path ?>heart-2.svg" alt="" />
+                              <img src="<?php echo ASSETS; ?>icons/heart-2.svg" alt="" />
                               Save
                             </button>
                             <button
                               class="cart-item__ctrl-btn js-toggle"
                               toggle-target="#delete-confirm"
                             >
-                              <img src="<?= $icon_path ?>trash.svg" alt="" />
+                              <img src="<?php echo ASSETS; ?>icons/trash.svg" alt="" />
                               Delete
                             </button>
                           </div>
@@ -224,7 +224,7 @@
                     </label>
                     <a href="http://localhost/projectPTIT/Home/ProductDetail">
                       <img
-                        src="<?= $img_path ?>products/item3.png"
+                        src="<?php echo ASSETS; ?>img/products/item3.png"
                         alt=""
                         class="cart-item__thumb"
                       />
@@ -246,7 +246,7 @@
                               LavAzza
                               <img
                                 class="icon"
-                                src="<?= $icon_path ?>arrow-down-2.svg"
+                                src="<?php echo ASSETS; ?>icons/arrow-down-2.svg"
                                 alt=""
                               />
                             </div>
@@ -254,7 +254,7 @@
                               <button class="cart-item__input-btn">
                                 <img
                                   class="icon"
-                                  src="<?= $icon_path ?>minus.svg"
+                                  src="<?php echo ASSETS; ?>icons/minus.svg"
                                   alt=""
                                 />
                               </button>
@@ -262,7 +262,7 @@
                               <button class="cart-item__input-btn">
                                 <img
                                   class="icon"
-                                  src="<?= $icon_path ?>plus.svg"
+                                  src="<?php echo ASSETS; ?>icons/plus.svg"
                                   alt=""
                                 />
                               </button>
@@ -270,14 +270,14 @@
                           </div>
                           <div class="cart-item__ctrl">
                             <button class="cart-item__ctrl-btn">
-                              <img src="<?= $icon_path ?>heart-2.svg" alt="" />
+                              <img src="<?php echo ASSETS; ?>icons/heart-2.svg" alt="" />
                               Save
                             </button>
                             <button
                               class="cart-item__ctrl-btn js-toggle"
                               toggle-target="#delete-confirm"
                             >
-                              <img src="<?= $icon_path ?>trash.svg" alt="" />
+                              <img src="<?php echo ASSETS; ?>icons/trash.svg" alt="" />
                               Delete
                             </button>
                           </div>
@@ -300,7 +300,7 @@
                       <a href="http://localhost/projectPTIT/Home/" class="cart-info__continue-link">
                         <img
                           class="cart-info__continue-icon icon"
-                          src="<?= $icon_path ?>arrow-down-2.svg"
+                          src="<?php echo ASSETS; ?>icons/arrow-down-2.svg"
                           alt=""
                         />
                         Continue Shopping

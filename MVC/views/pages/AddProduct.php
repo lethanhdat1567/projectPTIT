@@ -6,7 +6,7 @@
             <h2 class="cart-info__heading">
               <a href="http://localhost/projectPTIT/Admin/QLSP">
                 <img
-                  src="<?= $icon_path ?>arrow-left.svg"
+                  src="<?php echo ASSETS; ?>icons/arrow-left.svg"
                   alt=""
                   class="icon cart-info__back-arrow"
                 />
@@ -90,5 +90,5 @@
       </div>
     </div>
     <?php
-          $target_dir ="<?= $img_path ?>products/";
+          $target_dir ="<?php echo ASSETS; ?>img/products/";
     ?>

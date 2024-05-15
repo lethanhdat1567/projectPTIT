@@ -6,10 +6,9 @@
             $this->GetProduct = $this->model("GetProduct");
             $this->GetUser = $this->model("GetUser");
         }
-        function Main($id) {
+        function Main() {
             $products = $this->GetProduct->GetValuesProduct();
-            $user = $this->GetUser->GetUserValues($id);
-            $this->view("master1",["Pages"=>"Main","product"=> $products,"user"=>$user]);
+            $this->view("master1",["Pages"=>"Main","product"=> $products]);
         }
         function ProductDetail($id) {
             $products = $this->GetProduct->GetValuesProductID($id);

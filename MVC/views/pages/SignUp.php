@@ -2,11 +2,11 @@
       <!-- Auth intro -->
       <div class="auth__intro">
         <a href="./" class="logo auth__intro-logo d-none d-md-flex">
-          <img src="<?= $icon_path ?>logo.svg" alt="" class="logo__img" />
+          <img src="<?php echo ASSETS; ?>icons/logo.svg" alt="" class="logo__img" />
           <h1 class="logo__title">grocemart</h1>
         </a>
         <img
-          src="<?= $img_path ?>auth/auth-1.svg"
+          src="<?php echo ASSETS; ?>img/auth/auth-1.svg"
           alt=""
           class="auth__intro-img"
         />
@@ -18,7 +18,7 @@
           class="auth__intro-next d-none d-md-flex js-toggle"
           toggle-target="#auth-content"
         >
-          <img src="<?= $img_path ?>auth/slide-auth.svg" alt="" />
+          <img src="<?php echo ASSETS; ?>img/auth/slide-auth.svg" alt="" />
         </button>
       </div>
       <!-- Auth content -->
@@ -26,7 +26,7 @@
         <div class="auth__content-inner">
           <!-- logo -->
           <a href="" class="logo">
-            <img src="<?= $icon_path ?>logo.svg" alt="" class="logo__img" />
+            <img src="<?php echo ASSETS; ?>icons/logo.svg" alt="" class="logo__img" />
             <h1 class="logo__title">grocemart</h1>
           </a>
           <h1 class="auth__heading">Sign Up</h1>
@@ -46,12 +46,12 @@
                   autofocus
                 />
                 <img
-                  src="<?= $icon_path ?>form__error.svg"
+                  src="<?php echo ASSETS; ?>icons/form__error.svg"
                   alt=""
                   class="form__input-icon-error"
                 />
                 <img
-                  src="<?= $icon_path ?>message.svg"
+                  src="<?php echo ASSETS; ?>icons/message.svg"
                   alt=""
                   class="form__input-icon"
                 />
@@ -70,12 +70,12 @@
                   minlength="6"
                 />
                 <img
-                  src="<?= $icon_path ?>form__error.svg"
+                  src="<?php echo ASSETS; ?>icons/form__error.svg"
                   alt=""
                   class="form__input-icon-error"
                 />
                 <img
-                  src="<?= $icon_path ?>lock.svg"
+                  src="<?php echo ASSETS; ?>icons/lock.svg"
                   alt=""
                   class="form__input-icon"
                 />
@@ -94,12 +94,12 @@
                   minlength="6"
                 />
                 <img
-                  src="<?= $icon_path ?>form__error.svg"
+                  src="<?php echo ASSETS; ?>icons/form__error.svg"
                   alt=""
                   class="form__input-icon-error"
                 />
                 <img
-                  src="<?= $icon_path ?>lock.svg"
+                  src="<?php echo ASSETS; ?>icons/lock.svg"
                   alt=""
                   class="form__input-icon"
                 />
@@ -123,7 +123,7 @@
               </button>
               <button class="btn btb--outline auth__btn btn--no-margin">
                 <img
-                  src="<?= $icon_path ?>google.svg"
+                  src="<?php echo ASSETS; ?>icons/google.svg"
                   alt=""
                   class="btn__icon icon"
                 />

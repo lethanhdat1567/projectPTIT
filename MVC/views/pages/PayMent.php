@@ -12,7 +12,7 @@
             />
             <button class="search-bar__submit">
               <img
-                src="<?= $icon_path ?>seach.svg"
+                src="<?php echo ASSETS; ?>icons/seach.svg"
                 alt=""
                 class="search-bar__icon icon"
               />
@@ -25,13 +25,13 @@
             <li>
               <a href="http://localhost/projectPTIT/Home/" class="breadcrumbs__link"
                 >Home
-                <img src="<?= $icon_path ?>arrow-right.svg" alt="" />
+                <img src="<?php echo ASSETS; ?>icons/arrow-right.svg" alt="" />
               </a>
             </li>
             <li>
               <a href="http://localhost/projectPTIT/Home/CheckOut" class="breadcrumbs__link"
                 >Checkout
-                <img src="<?= $icon_path ?>arrow-right.svg" alt="" />
+                <img src="<?php echo ASSETS; ?>icons/arrow-right.svg" alt="" />
               </a>
             </li>
             <li>
@@ -39,7 +39,7 @@
                 href="http://localhost/projectPTIT/Home/Shipping"
                 class="breadcrumbs__link breadcrumbs__link"
                 >Shipping
-                <img src="<?= $icon_path ?>arrow-right.svg" alt="" />
+                <img src="<?php echo ASSETS; ?>icons/arrow-right.svg" alt="" />
               </a>
             </li>
             <li>
@@ -59,7 +59,7 @@
                     1. Shipping, arrives between Mon, May 16—Tue, May 24
                   </h2>
                   <a class="cart-info__edit-btn" href="http://localhost/projectPTIT/Home/Shipping">
-                    <img class="icon" src="<?= $icon_path ?>edit.svg" alt="" />
+                    <img class="icon" src="<?php echo ASSETS; ?>icons/edit.svg" alt="" />
                     Edit
                   </a>
                 </div>
@@ -95,7 +95,7 @@
                 <label>
                   <article class="payment-item payment-item--pointer">
                     <img
-                      src="<?= $img_path ?>payment/delivery-1.png"
+                      src="<?php echo ASSETS; ?>img/payment/delivery-1.png"
                       alt=""
                       class="payment-item__thumb"
                     />
@@ -122,7 +122,7 @@
                 <label>
                   <article class="payment-item payment-item--pointer">
                     <img
-                      src="<?= $img_path ?>payment/delivery-2.png"
+                      src="<?php echo ASSETS; ?>img/payment/delivery-2.png"
                       alt=""
                       class="payment-item__thumb"
                     />
@@ -170,7 +170,7 @@
                         required
                       />
                       <img
-                        src="<?= $icon_path ?>form__error.svg"
+                        src="<?php echo ASSETS; ?>icons/form__error.svg"
                         alt=""
                         class="form__input-icon-error"
                       />
@@ -193,7 +193,7 @@
                         required
                       />
                       <img
-                        src="<?= $icon_path ?>form__error.svg"
+                        src="<?php echo ASSETS; ?>icons/form__error.svg"
                         alt=""
                         class="form__input-icon-error"
                       />
@@ -216,7 +216,7 @@
                         required
                       />
                       <img
-                        src="<?= $icon_path ?>form__error.svg"
+                        src="<?php echo ASSETS; ?>icons/form__error.svg"
                         alt=""
                         class="form__input-icon-error"
                       />
@@ -235,7 +235,7 @@
                           required
                         />
                         <img
-                          src="<?= $icon_path ?>form__error.svg"
+                          src="<?php echo ASSETS; ?>icons/form__error.svg"
                           alt=""
                           class="form__input-icon-error"
                         />
@@ -253,7 +253,7 @@
                           required
                         />
                         <img
-                          src="<?= $icon_path ?>form__error.svg"
+                          src="<?php echo ASSETS; ?>icons/form__error.svg"
                           alt=""
                           class="form__input-icon-error"
                         />
@@ -297,7 +297,7 @@
                   <article class="gift-item">
                     <div class="gift-item__icon-wrap">
                       <img
-                        src="<?= $icon_path ?>gift.svg"
+                        src="<?php echo ASSETS; ?>icons/gift.svg"
                         alt=""
                         class="gift-item__icon"
                       />
@@ -363,7 +363,7 @@
                     minlength="2"
                   />
                   <img
-                    src="<?= $icon_path ?>form__error.svg"
+                    src="<?php echo ASSETS; ?>icons/form__error.svg"
                     alt=""
                     class="form__input-icon-error"
                   />
@@ -385,7 +385,7 @@
                     minlength="10"
                   />
                   <img
-                    src="<?= $icon_path ?>form__error.svg"
+                    src="<?php echo ASSETS; ?>icons/form__error.svg"
                     alt=""
                     class="form__input-icon-error"
                   />
@@ -406,7 +406,7 @@
                   required
                 ></textarea>
                 <img
-                  src="<?= $icon_path ?>form__error.svg"
+                  src="<?php echo ASSETS; ?>icons/form__error.svg"
                   alt=""
                   class="form__input-icon-error"
                 />
@@ -428,7 +428,7 @@
                   required
                 />
                 <img
-                  src="<?= $icon_path ?>form__error.svg"
+                  src="<?php echo ASSETS; ?>icons/form__error.svg"
                   alt=""
                   class="form__input-icon-error"
                 />
@@ -450,7 +450,7 @@
                       class="form__search-input"
                     />
                     <img
-                      src="<?= $icon_path ?>seach.svg"
+                      src="<?php echo ASSETS; ?>icons/seach.svg"
                       alt=""
                       class="form__search-icon icon"
                     />
