@@ -1,3 +1,5 @@
+<?php $row = mysqli_fetch_assoc($data['users']);
+ ?>
 <main class="profile">
       <div class="container">
         <!-- Search bar -->
@@ -30,8 +32,8 @@
                     alt=""
                     class="profile-user__avatar"
                   />
-                  <h1 class="profile-user__name">Le Thanh Dat</h1>
-                  <p class="profile-user__desc">Registered: 17th May 2022</p>
+                  <h1 class="profile-user__name"><?php echo $row['fullname'] ?></h1>
+                  <p class="profile-user__desc">Registered: <?php echo substr($row['created_at'],0,10);  ?></p>
                 </div>
                 <!-- Menu 1 -->
                 <div class="profile-menu">
@@ -275,7 +277,7 @@
                             </div>
                             <div>
                               <h3 class="account-info__title">Email Address</h3>
-                              <p class="account-info__desc">
+                              <p class="account-info__desc"><?php echo $row['email'] ?>
                               </p>
                             </div>
                           </article>
@@ -295,7 +297,7 @@
                             <div>
                               <h3 class="account-info__title">Phone number</h3>
                               <p class="account-info__desc">
-                                +000 11122 2345 657
+                                <?php $row['phone_number'] ?>
                               </p>
                             </div>
                           </article>
@@ -317,7 +319,7 @@
                                 Add an address
                               </h3>
                               <p class="account-info__desc">
-                                Bangladesh Embassy, Washington, DC 20008
+                                <?php echo $row['address'] ?>
                               </p>
                             </div>
                           </article>

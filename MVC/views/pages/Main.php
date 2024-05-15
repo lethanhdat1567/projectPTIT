@@ -1,4 +1,3 @@
-<?php require_once('./MVC/core/config.php'); ?>
 <div class="container home">
       <div class="home__container">
         <!-- slideshow -->
@@ -265,7 +264,7 @@
               </h3>
               <p class="product-card__brand">Lavazza</p>
               <div class="product-card__row">
-                <span class="product-card__price">VND<?php echo $row['price'] ?></span>
+                <span class="product-card__price"><?php echo $row['price'] ?>VNĐ</span>
                 <img
                   src="<?php echo ASSETS; ?>icons/star.svg"
                   alt=""

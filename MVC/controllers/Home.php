@@ -21,7 +21,9 @@
             $this->view("master1",["Pages"=>"CheckOut"]);
         }
         function EditPersonalInfo() {
-            $this->view("master1",["Pages"=>"EditPersonalInfo"]);
+            $id = $_SESSION['id'];
+            $users = $this->GetUser->GetUserValues($id);
+            $this->view("master1",["Pages"=>"EditPersonalInfo","users"=>$users]);
         }
         function Favourite() {
             $this->view("master1",["Pages"=>"Favourite"]);
@@ -30,7 +32,9 @@
             $this->view("master1",["Pages"=>"PayMent"]);
         }
         function Profile() {
-            $this->view("master1",["Pages"=>"Profile"]);
+            $id = $_SESSION['id'];
+            $users = $this->GetUser->GetUserValues($id);
+            $this->view("master1",["Pages"=>"Profile","users"=>$users]);
         }
         function Shipping() {
             $this->view("master1",["Pages"=>"Shipping"]);

@@ -1,3 +1,5 @@
+<?php $row = mysqli_fetch_assoc($data['users']);
+ ?>
 <main class="profile">
       <div class="container">
         <!-- Search bar -->
@@ -200,6 +202,7 @@
                               name=""
                               id="fullname"
                               class="form__input"
+                              value="<?php echo $row['fullname'] ?>"
                               required
                               autofocus
                             />
@@ -221,6 +224,7 @@
                               name=""
                               id="lastname"
                               class="form__input"
+                              value="<?php echo $row['email'] ?>"
                               required
                             />
                           </div>
@@ -246,6 +250,7 @@
                               name=""
                               id="phone-number"
                               class="form__input"
+                              value="<?php echo $row['phone_number'] ?>"
                               required
                             />
                           </div>
@@ -268,6 +273,7 @@
                               name=""
                               id="password"
                               class="form__input"
+                              value="<?php echo $row['address'] ?>"
                               required
                             />
                           </div>

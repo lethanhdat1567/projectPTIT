@@ -5,7 +5,7 @@
       <img src="<?php echo ASSETS; ?>icons/more.svg" alt="" class="top-bar__more-icon">
     </button>
     <!-- logo -->
-    <a href="<?php echo ROOT; ?>Home/Main" class="logo top-bar__logo">
+    <a href="<?php echo ROOT; ?>All/Main" class="logo top-bar__logo">
       <img src="<?php echo ASSETS; ?>icons/logo.svg" alt="" class="logo__img top-bar__logo-img  " />
       <h1 class="logo__title top-bar__logo-title">grocemart</h1>
     </a>

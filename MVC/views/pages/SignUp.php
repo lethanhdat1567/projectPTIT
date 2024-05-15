@@ -34,6 +34,30 @@
             Let’s create your account and Shop like a pro and save money.
           </p>
           <form action="<?php echo ROOT; ?>User/DangKyUser" class="form auth__form" method="POST">
+          <div class="form__group">
+              <div class="form__text-input">
+                <input
+                  type="text"
+                  placeholder="Nhập tên người dùng"
+                  name="username"
+                  id=""
+                  class="form__input"
+                  required
+                  autofocus
+                />
+                <img
+                  src="<?php echo ASSETS; ?>icons/form__error.svg"
+                  alt=""
+                  class="form__input-icon-error"
+                />
+                <img
+                  src="<?php echo ASSETS; ?>icons/message.svg"
+                  alt=""
+                  class="form__input-icon"
+                />
+              </div>
+              <p class="form__error">Email is not in correct format</p>
+            </div>
             <div class="form__group">
               <div class="form__text-input">
                 <input

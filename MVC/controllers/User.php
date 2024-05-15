@@ -16,6 +16,7 @@ ob_start();
         function DangKyUser(){
             $errors = [];
             if(isset($_POST["btnRegister"])){
+                $username = $_POST["username"];
                 $email = $_POST["email"];
                 $password = $_POST["password"];
                 $confirmpassword = $_POST['confirmpassword'];
@@ -25,7 +26,7 @@ ob_start();
                     return; // Dừng thực thi nếu có lỗi
                 }
                 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-                $this->InsertUser->InsertNewUser($email, $hashedPassword);
+                $this->InsertUser->InsertNewUser($username,$email, $hashedPassword);
                 $_SESSION['email'] = $email;
                   // Không nên lưu mật khẩu vào phiên, ngay cả khi đã mã hóa
                 //  $_SESSION['password'] = $hashedPassword;
@@ -48,7 +49,8 @@ ob_start();
                         if(mysqli_num_rows($kq)){
                             $r = mysqli_fetch_assoc($kq);
                             $id = $r['id'];
-                            header("Location: http://localhost/projectPTIT/Home/Main/$id");
+                            $_SESSION['id'] = $id;
+                            header("Location: http://localhost/projectPTIT/Home/Main");
                             exit();         
                             ob_end_flush();
                         }                     
