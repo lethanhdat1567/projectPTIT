@@ -14,15 +14,24 @@ ob_start();
         $this->view("UserPage",["Pages"=>"SignUp"]);
          }
         function DangKyUser(){
+            $errors = [];
             if(isset($_POST["btnRegister"])){
                 $email = $_POST["email"];
                 $password = $_POST["password"];
-                $password = password_hash($password, PASSWORD_DEFAULT);
-                $this->InsertUser->InsertNewUser($email,$password);
+                $confirmpassword = $_POST['confirmpassword'];
+                if ($password !== $confirmpassword) {
+                    $errors['confirmpassword'] = "Password và Confirm Password không khớp nhau!";
+                    $this->view("UserPage", ["Pages" => "SignUp", "Error" => $errors['confirmpassword']]);
+                    return; // Dừng thực thi nếu có lỗi
+                }
+                $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+                $this->InsertUser->InsertNewUser($email, $hashedPassword);
                 $_SESSION['email'] = $email;
-                $_SESSION['password'] = $password;
-                header("Location: http://localhost/projectPTIT/User/SignIn");
-                exit();  
+                  // Không nên lưu mật khẩu vào phiên, ngay cả khi đã mã hóa
+                //  $_SESSION['password'] = $hashedPassword;
+                 // Chuyển hướng đến trang đăng nhập
+                 header("Location: http://localhost/projectPTIT/User/SignIn?email=" . urlencode($email). "&password=" . urlencode($password));
+                 exit();
             }
         }
         function SignIn() {
