@@ -1346,15 +1346,24 @@
         </div>
       </div>
       <div class="top-act__user">
-        <img src="<?php echo ASSETS; ?>img/z4888248915574_b3c4f7538cab253aae1f1560aa4672a3 (1).jpg" alt=""
-          class="top-act__avatar">
+        <img src="<?php echo ASSETS; ?>img/avatar/<?php if(isset($_SESSION['avatar'])){
+                echo $_SESSION['avatar'];
+              }
+              else{
+                echo "assets/img/z4888248915574_b3c4f7538cab253aae1f1560aa4672a3 (1).jpg";
+              } ?>" alt="" class="top-act__avatar">
         <!-- Dropdown  -->
         <div class="act-dropdown top-act__dropdown">
           <div class="act-dropdown__inner user-menu">
             <img src="<?php echo ASSETS; ?>icons/arrow-up.png" alt=""
               class="act-dropdown__arrow top-act__dropdown-arrow">
             <div class="user-menu__top">
-              <img src="<?php echo ASSETS; ?>img/z4888248915574_b3c4f7538cab253aae1f1560aa4672a3 (1).jpg" alt=""
+              <img src="<?php echo ASSETS; ?>img/avatar/<?php if(isset($_SESSION['avatar'])){
+                echo $_SESSION['avatar'];
+              }
+              else{
+                echo "assets/img/z4888248915574_b3c4f7538cab253aae1f1560aa4672a3 (1).jpg";
+              } ?>" alt=""
                 class="user-menu__avatar">
               <div>
                 <p class="user-menu__name"><?php

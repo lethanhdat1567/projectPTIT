@@ -68,9 +68,10 @@
                 $kq = $this->UpdateUser->UpdateNewUser($id,$name,$email,$phone,$address,$avatarpath);
                 if($kq) {
                     $_SESSION['id'] = $id;
-                    $_SESSION['fullname'] = $name;
+                    $_SESSION['fullname'] = $name;  
                     $_SESSION['phone_number'] = $phone;
                     $_SESSION['email'] = $email;
+                    $_SESSION['avatar'] = $avatarpath;
                     header("Location: http://localhost/projectPTIT/Home/Profile");
                 }
                 }
