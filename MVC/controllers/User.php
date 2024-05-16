@@ -65,6 +65,7 @@ class User extends Controller
                         $id = $r['id'];
                         $_SESSION['id'] = $id;
                         $_SESSION['role_id'] = $r['role_id'];
+                        $_SESSION['fullname'] = $r['fullname'];
                         $this->checkRoleID();
                         // header("Location: http://localhost/projectPTIT/Home/Main");                               
                         ob_end_flush();
@@ -94,7 +95,7 @@ class User extends Controller
         }
     }
 
-
+   
 
 
 
