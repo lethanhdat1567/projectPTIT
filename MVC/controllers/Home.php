@@ -65,12 +65,13 @@
                     $avatar = $_FILES['avatar']['tmp_name'];
                     move_uploaded_file($avatar, $target_file);
                 }
-                $kq = $this->UpdateUser->UpdateNewUser($id,$name,$email,$phone,$address,$avatar);
+                $kq = $this->UpdateUser->UpdateNewUser($id,$name,$email,$phone,$address,$avatarpath);
                 if($kq) {
                     $_SESSION['id'] = $id;
                     $_SESSION['fullname'] = $name;
                     $_SESSION['phone_number'] = $phone;
                     $_SESSION['email'] = $email;
+                    $_SESSION['avatar'] = $avatarpath;
                     header("Location: http://localhost/projectPTIT/Home/Profile");
                 }
                 }
