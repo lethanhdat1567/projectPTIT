@@ -25,7 +25,7 @@
       <a href="<?php echo ROOT; ?>Admin/QLSP" class="btn btn--text d-md-none">
       Trang quản trị
       </a>
-      <a href="<?php echo ROOT; ?>User/SignUp" class="top-act__sign-up btn btn--danger">
+      <a href="<?php echo ROOT; ?>User/Logout" class="top-act__sign-up btn btn--danger">
         Đăng xuất
       </a>
       </div>

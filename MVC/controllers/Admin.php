@@ -1,4 +1,5 @@
 <?php
+if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)){
     class Admin extends Controller{
         public $InsertProduct;
         public $GetProduct;
@@ -88,5 +89,7 @@
         }
 
     }           
-    
+}  else{
+    header("Location: http://localhost/projectPTIT/User/SignIn");
+}
 ?>
