@@ -128,8 +128,8 @@
                   class="form__input-icon"
                 />
               </div>
-              <p class="form__error">
-              <?php echo !empty($data["Error"]) ? '<h6 style="color:red;">' . $data["Error"] . '</h6>'  : "Password must be at  least 6 characters" ?>
+              <p class="form__error"><?php echo !empty($data["Error"]) ? '<p style="margin-top: 10px;
+  color: red;">' . $data["Error"] . '</p>'  : "Password must be at  least 6 characters" ?>
               </p>
             </div>
             <div class="form__group form__group--inline">

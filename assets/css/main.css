@@ -2829,6 +2829,10 @@ html.dark {
     margin-top: 20px;
   }
 }
+.form__error-password {
+  margin-top: 10px;
+  color: red;
+}
 .form__group--inline {
   display: flex;
   align-items: center;
