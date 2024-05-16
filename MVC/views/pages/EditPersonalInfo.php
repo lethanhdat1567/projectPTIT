@@ -282,6 +282,29 @@
                           </p>
                         </div>
                       </div>
+                      <!-- Form row 3 -->
+                      <div class="form__row">
+                        <!-- First name -->
+                        <div class="form__group">
+                          <label
+                            for="phone-number"
+                            class="form__label form-card__label"
+                          >
+                            Avatar
+                          </label>
+                          <div class="form__text-input">
+                            <input
+                              type="file"
+                              name=""
+                              id="avatar"
+                              class="form__input"
+                            />
+                          </div>
+                          <p class="form__error">
+                            Please enter your phone number!
+                          </p>
+                        </div>
+                      </div>
                       <div class="form-card__bottom">
                         <a href="<?php echo ROOT; ?>Home/Profile" class="btn btn--text">Cancel</a>
                         <button class="btn btn--primary btn--rounded">
