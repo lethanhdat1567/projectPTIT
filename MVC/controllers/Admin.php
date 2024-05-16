@@ -77,7 +77,7 @@ if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)){
                 $productPrice = $_POST['ProductPrice'];
                 $productDesc = $_POST['ProductDesc'];
                 $thumbnailpath = basename($_FILES['thumbnail']['name']);    
-                $target_dir = "<?php echo ASSETS; ?>img/products/";
+                $target_dir = "./assets/img/products/";
                 $target_file = $target_dir . $thumbnailpath;
                 $productImg = $_FILES['thumbnail']['tmp_name'];
                 move_uploaded_file($productImg, $target_file);
