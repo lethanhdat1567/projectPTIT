@@ -184,7 +184,7 @@
                       </a>
                       Personal Info
                     </h2>
-                    <form action="<?php echo ROOT; ?>Home/Profile" class="form form-card">
+                    <form action="<?php echo ROOT; ?>Home/UpdateUser" method="post" class="form form-card" enctype="multipart/form-data">
                       <!-- Form row 1 -->
                       <div class="form__row">
                         <!-- First name -->
@@ -199,7 +199,7 @@
                             <input
                               type="text"
                               placeholder="Full Name"
-                              name=""
+                              name="fullname"
                               id="fullname"
                               class="form__input"
                               value="<?php echo $row['fullname'] ?>"
@@ -221,7 +221,7 @@
                             <input
                               type="text"
                               placeholder="Email Address"
-                              name=""
+                              name="email"
                               id="lastname"
                               class="form__input"
                               value="<?php echo $row['email'] ?>"
@@ -247,7 +247,7 @@
                             <input
                               type="tel"
                               placeholder="Phone Number"
-                              name=""
+                              name="phone_number"
                               id="phone-number"
                               class="form__input"
                               value="<?php echo $row['phone_number'] ?>"
@@ -269,9 +269,9 @@
                           <div class="form__text-input">
                             <input
                               type="text"
-                              placeholder="Password"
-                              name=""
-                              id="password"
+                              placeholder="address"
+                              name="address"
+                              id=""
                               class="form__input"
                               value="<?php echo $row['address'] ?>"
                               required
@@ -295,7 +295,7 @@
                           <div class="form__text-input">
                             <input
                               type="file"
-                              name=""
+                              name="avatar"
                               id="avatar"
                               class="form__input"
                             />
@@ -307,7 +307,7 @@
                       </div>
                       <div class="form-card__bottom">
                         <a href="<?php echo ROOT; ?>Home/Profile" class="btn btn--text">Cancel</a>
-                        <button class="btn btn--primary btn--rounded">
+                        <button name="UpdateUserBtn" class="btn btn--primary btn--rounded">
                           Save card
                         </button>
                       </div>

@@ -1366,8 +1366,8 @@
                 ?></p>
                 <p class="user-menu__username">
                   <?php
-                  if (isset($_SESSION["email"])) {
-                    echo ($_SESSION["email"]);
+                  if (isset($_SESSION["phone_number"])) {
+                    echo ($_SESSION["phone_number"]);
                   } else {
                     echo 'Guest';
                   }

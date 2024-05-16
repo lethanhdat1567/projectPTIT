@@ -2,9 +2,11 @@
     class Home extends controller{
         public $GetProduct;
         public $GetUser;
+        public $UpdateUser;
         public function __construct(){
             $this->GetProduct = $this->model("GetProduct");
             $this->GetUser = $this->model("GetUser");
+            $this->UpdateUser = $this->model("UpdateUser");
         }
         function Main() {
             $products = $this->GetProduct->GetValuesProduct();
@@ -42,5 +44,39 @@
         function Admin() {
             $this->view("master1",["Pages"=>"Admin"]);
         }
-    }
+        // GET FORM
+        function UpdateUser() {
+            if(isset($_POST["UpdateUserBtn"])) {
+                $name = $_POST['fullname'];
+                $email = $_POST['email'];
+                $phone = $_POST['phone_number'];
+                $address = $_POST['address'];
+                $avatar ='';
+                $id = $_SESSION['id'];
+                $user = $this->GetUser->GetUserValues($id);
+                $row = mysqli_fetch_assoc($user);
+                if($_FILES['avatar']['name'] == ''){
+                    $avatarpath = $row['avatar'];
+                }
+                else{
+                    $avatarpath = basename($_FILES['avatar']['name']);    
+                    $target_dir = "./assets/img/avatar/";
+                    $target_file = $target_dir . $avatarpath;
+                    $avatar = $_FILES['avatar']['tmp_name'];
+                    move_uploaded_file($avatar, $target_file);
+                }
+                $kq = $this->UpdateUser->UpdateNewUser($id,$name,$email,$phone,$address,$avatar);
+                if($kq) {
+                    $_SESSION['id'] = $id;
+                    $_SESSION['fullname'] = $name;
+                    $_SESSION['phone_number'] = $phone;
+                    $_SESSION['email'] = $email;
+                    header("Location: http://localhost/projectPTIT/Home/Profile");
+                }
+                }
+                else{
+                    echo "Ket qua khong chinh xac";
+                }
+            }
+        }
 ?>

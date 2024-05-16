@@ -297,7 +297,7 @@
                             <div>
                               <h3 class="account-info__title">Phone number</h3>
                               <p class="account-info__desc">
-                                <?php $row['phone_number'] ?>
+                                <?php echo $row['phone_number'] ?>
                               </p>
                             </div>
                           </article>
