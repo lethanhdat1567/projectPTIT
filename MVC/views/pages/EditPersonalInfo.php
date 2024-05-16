@@ -28,7 +28,7 @@
                 <!-- User -->
                 <div class="profile-user">
                   <img
-                    src="<?php echo ASSETS; ?>img/z4888248915574_b3c4f7538cab253aae1f1560aa4672a3 (1).jpg"
+                    src="<?php echo ASSETS; ?>img/avatar/<?php echo $row['avatar'] ?>"
                     alt=""
                     class="profile-user__avatar"
                   />
