@@ -28,7 +28,12 @@
                 <!-- User -->
                 <div class="profile-user">
                   <img
-                    src="<?php echo ASSETS; ?>img/avatar/<?php echo $row['avatar'] ?>"
+                    src="<?php echo ASSETS; ?>img/avatar/<?php if(isset($_SESSION['avatar'])){
+                echo $_SESSION['avatar'];
+              }
+              else{
+                echo "avatarUnset.png";
+              } ?>"
                     alt=""
                     class="profile-user__avatar"
                   />

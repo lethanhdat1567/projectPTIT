@@ -1350,7 +1350,7 @@
                 echo $_SESSION['avatar'];
               }
               else{
-                echo "assets/img/z4888248915574_b3c4f7538cab253aae1f1560aa4672a3 (1).jpg";
+                echo "avatarUnset.png";
               } ?>" alt="" class="top-act__avatar">
         <!-- Dropdown  -->
         <div class="act-dropdown top-act__dropdown">
@@ -1362,7 +1362,7 @@
                 echo $_SESSION['avatar'];
               }
               else{
-                echo "assets/img/z4888248915574_b3c4f7538cab253aae1f1560aa4672a3 (1).jpg";
+                echo "avatarUnset.png";
               } ?>" alt=""
                 class="user-menu__avatar">
               <div>
