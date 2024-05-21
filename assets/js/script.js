@@ -311,4 +311,9 @@ window.addEventListener("DOMContentLoaded", () => {
     </div>
   `;
   favorCard.innerHTML = renderedHTML;
+
+  const favor = $(".top-act__title-favor");
+  favor.innerText = products.length;
+  const card = $(".top-act__title-card");
+  card.innerText = total + "$";
 });

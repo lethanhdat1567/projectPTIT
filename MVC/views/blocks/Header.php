@@ -1236,7 +1236,7 @@
         <div class="top-act__btn-wrap">
           <button class="top-act__btn">
             <img src="<?php echo ASSETS; ?>icons/heart.svg" alt="" class="icon top-act__icon" />
-            <span class="top-act__title">03</span>
+            <span class="top-act__title top-act__title-favor"></span>
           </button>
           <div class="act-dropdown">
             <div class="act-dropdown__inner act-dropdown__inner-favor">
@@ -1252,7 +1252,7 @@
         <div class="top-act__btn-wrap">
           <button class="top-act__btn">
             <img src="<?php echo ASSETS; ?>icons/buy.svg" alt="" class="icon top-act__icon" />
-            <span class="top-act__title">$65.42</span>
+            <span class="top-act__title top-act__title-card"></span>
           </button>
           <!-- Dropdown  -->
           <div class="act-dropdown">
