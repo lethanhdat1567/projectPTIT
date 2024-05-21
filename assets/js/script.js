@@ -172,3 +172,143 @@ window.addEventListener("DOMContentLoaded", () => {
 
 const isDark = localStorage.dark === "true";
 document.querySelector("html").classList.toggle("dark", isDark);
+
+window.addEventListener("DOMContentLoaded", () => {
+  const roleBtn = $(".activeRoleBtn");
+  const inputRole = $(".role-input");
+  if (roleBtn) {
+    roleBtn.onclick = (e) => {
+      e.preventDefault();
+      inputRole.focus();
+    };
+    inputRole.addEventListener("keypress", function (event) {
+      if (event.key === "Enter") {
+        roleBtn.onclick = null;
+        roleBtn.click();
+      }
+    });
+  }
+});
+
+// favourite list
+window.addEventListener("DOMContentLoaded", () => {
+  const favorList = $(".act-dropdown__inner-favor");
+  let products = JSON.parse(localStorage.getItem("product"));
+  function html([first, ...string], ...values) {
+    return values
+      .reduce((acc, cur) => acc.concat(cur, string.shift()), [first])
+      .filter((x) => (x && x !== true) || x === 0)
+      .join("");
+  }
+  const renderedHTML = html`
+    <img
+      src="<?php echo ASSETS; ?>icons/arrow-up.png"
+      alt=""
+      class="act-dropdown__arrow"
+    />
+    <div class="act-dropdown__top">
+      <h2 class="act-dropdown__title">You have ${products.length} item(s)</h2>
+      <a href="<?php echo ROOT; ?>Home/Favourite" class="act-dropdown__view-all"
+        >See All</a
+      >
+    </div>
+    <div class="row row-cols-3 gx-2 act-dropdown__list">
+      ${products.map((product) => {
+        return `<div class="col">
+        <article class="cart-preview-item">
+          <div class="cart-preview-item__img-wrap">
+            <img
+              src="${ASSETS}img/products/${product.thumbnail}"
+              alt=""
+              class="cart-preview-item__thumb"
+            />
+          </div>
+          <h3 class="cart-preview-item__title">${product.name}</h3>
+          <p class="cart-preview-item__price">$${product.price}</p>
+        </article>
+      </div>`;
+      })}
+    </div>
+    <div class="act-dropdown__separate"></div>
+    <div class="act-dropdown__checkout">
+      <a
+        href="<?php echo ROOT; ?>Home/CheckOut"
+        class="btn btn--primary btn--rounded act-dropdown__checkout-btn"
+        >Check Out All</a
+      >
+    </div>
+  `;
+  favorList.innerHTML = renderedHTML;
+});
+// card list
+window.addEventListener("DOMContentLoaded", () => {
+  const favorCard = $(".act-dropdown__inner-card");
+  let products = JSON.parse(localStorage.getItem("product"));
+
+  const total = products.reduce((acc, product) => {
+    return acc + parseInt(product.price, 10);
+  }, 0);
+  console.log(total);
+  function html([first, ...string], ...values) {
+    return values
+      .reduce((acc, cur) => acc.concat(cur, string.shift()), [first])
+      .filter((x) => (x && x !== true) || x === 0)
+      .join("");
+  }
+  const renderedHTML = html`
+    <img
+      src="<?php echo ASSETS; ?>icons/arrow-up.png"
+      alt=""
+      class="act-dropdown__arrow"
+    />
+    <div class="act-dropdown__top">
+      <h2 class="act-dropdown__title">You have ${products.length} item(s)</h2>
+      <a href="<?php echo ROOT; ?>Home/CheckOut" class="act-dropdown__view-all"
+        >See All</a
+      >
+    </div>
+    <div class="row row-cols-3 gx-2 act-dropdown__list">
+      ${products.map((product) => {
+        return `<div class="col">
+      <article class="cart-preview-item">
+        <div class="cart-preview-item__img-wrap">
+          <img
+            src="${ASSETS}img/products/${product.thumbnail}"
+            alt=""
+            class="cart-preview-item__thumb"
+          />
+        </div>
+        <h3 class="cart-preview-item__title">${product.name}</h3>
+        <p class="cart-preview-item__price">$${product.price}</p>
+      </article>
+    </div>`;
+      })}
+    </div>
+    <div class="act-dropdown__bottom">
+      <div class="act-dropdown__row">
+        <span class="act-dropdown__label">Subtotal</span>
+        <span class="act-dropdown__value">$${total}</span>
+      </div>
+      <div class="act-dropdown__row">
+        <span class="act-dropdown__label">Texes</span>
+        <span class="act-dropdown__value">Free</span>
+      </div>
+      <div class="act-dropdown__row">
+        <span class="act-dropdown__label">Shipping</span>
+        <span class="act-dropdown__value">$10.00</span>
+      </div>
+      <div class="act-dropdown__row act-dropdown__row--bold">
+        <span class="act-dropdown__label">Total Price</span>
+        <span class="act-dropdown__value">$${total + 10}</span>
+      </div>
+    </div>
+    <div class="act-dropdown__checkout">
+      <a
+        href="<?php echo ROOT; ?>Home/CheckOut"
+        class="btn btn--primary btn--rounded act-dropdown__checkout-btn"
+        >Check Out All</a
+      >
+    </div>
+  `;
+  favorCard.innerHTML = renderedHTML;
+});

@@ -1,4 +1,6 @@
-<?php  $row = mysqli_fetch_assoc($data["product"]); ?>
+<?php $row = mysqli_fetch_assoc($data['products']); 
+      $json_data = json_encode($row);  
+?>
 <main class="product-page">
       <div class="container">
         <!-- Search bar -->
@@ -676,3 +678,15 @@
         </div>
       </div>
     </main>
+    <!-- script -->
+    <script>
+      const AddToCard = document.querySelector('.prod-info__add-to-cart');
+      AddToCard.onclick = (e) => {
+        e.preventDefault();
+        const productName = <?php echo ($json_data); ?>;
+        let cart = JSON.parse(localStorage.getItem('product')) || [];
+        cart.push(productName);
+        localStorage.setItem('product', JSON.stringify(cart));
+        window.location.href = "<?php echo ROOT; ?>Home/Main"
+      }
+    </script>
