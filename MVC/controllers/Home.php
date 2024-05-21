@@ -14,7 +14,7 @@
         }
         function ProductDetail($id) {
             $products = $this->GetProduct->GetValuesProductID($id);
-            $this->view("master1",["Pages"=>"ProductDetail","product"=> $products]);
+            $this->view("master1",["Pages"=>"ProductDetail","products"=> $products]);
         }
         function AddNewCard() {
             $this->view("master1",["Pages"=>"AddNewCard"]);
