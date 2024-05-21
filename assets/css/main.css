@@ -4838,6 +4838,7 @@ html.dark {
   border: 1px solid #000;
   border-radius: 6px;
 }
+
 .admin-menu__heading {
   background-color: #4e4c4c;
   padding: 14px;
@@ -4871,6 +4872,12 @@ html.dark {
   padding: 20px;
   text-align: center;
   margin-bottom: 10px;
+}
+.header__email {
+  width: 200px;
+}
+.user-menu__username {
+  overflow-wrap: break-word;
 }
 .admin-product__heading {
   font-size: 1.8rem;
@@ -4910,6 +4917,10 @@ html.dark {
   display: flex;
   justify-content: center;
   gap: 10px;
+}
+.role-input {
+  text-align: center;
+  width: 100%;
 }
 .admin-product__table-items-desc {
   height: 100px;

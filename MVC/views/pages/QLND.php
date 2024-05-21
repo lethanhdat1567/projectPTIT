@@ -29,6 +29,7 @@
           <div class="admin-product__header">
             <h2 class="admin-product__heading">Danh sách người dùng</h2>
           </div>
+          <form action="">
           <table class="admin-product__table">
             <tr class="admin-product__table-wrap">
               <th class="admin-product__table-heading">Tên</th>
@@ -58,8 +59,13 @@
                 <button class="btn btn--info">
                     Sửa role
                 </button>
+<<<<<<< HEAD
                 <a href="<?php echo ROOT; ?>Admin/DeleteUser/<?php echo $row['id'] ?>">
                   <button class="btn btn--danger" type="submit" >
+=======
+                <a href="<?php echo ROOT; ?>Admin/DeleteProduct/<?php echo $row['id'] ?>">
+                  <button class="btn btn--danger">
+>>>>>>> origin/main
                       Xóa
                     </button>
                   </a>
@@ -68,6 +74,7 @@
               </tr>
             <?php } ?>
           </table>
+          </form>
         </div>
       </div>
     </div>
