@@ -1216,9 +1216,21 @@
     <!-- Actions -->
     <div class="top-act">
       <div class="top-act__group d-md-none top-act__group--single">
-        <button class="top-act__btn">
-          <img src="<?php echo ASSETS; ?>icons/seach.svg" alt="" class="icon top-act__icon" />
-        </button>
+        <div class="top-act__btn-wrap">
+          <button class="top-act__btn">
+            <img src="<?php echo ASSETS; ?>icons/seach.svg" alt="" class="icon top-act__icon" />
+          </button>
+          <div class="search-dropdown">
+            <div class="search-dropdown__inner">
+            <form action="" method="">
+              <div class="search">
+                <input class="search__input" type="text" name="q" placeholder="Nhập từ khóa tìm kiếm...">
+                <button class="search__btn btn btn--primary" type="submit">Tìm kiếm</button>
+              </div>
+            </form>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="top-act__group d-md-none">
         <div class="top-act__btn-wrap">
@@ -1404,10 +1416,10 @@
                   Setting
                 </a>
               </li>
-              <li class="user-menu__separate">
-                <a href="<?php echo ROOT; ?>User/SignIn" class="user-menu__link">
-                  Logout</a>
-              </li>
+              <form method="post" action="<?php echo ROOT; ?>User/LogoutUser" class="user-menu__separate">
+                <button href="<?php echo ROOT; ?>User/SignIn" name="logoutBtn" class="user-menu__link user-menu__link-btn">
+                  Logout</button>
+              </form>
             </ul>
           </div>
         </div>

@@ -7,7 +7,7 @@
             <ul class="admin-menu__list">
               <li class="admin-menu__items">
                 <a
-                  href="<?php echo ROOT; ?>Home/Main"
+                  href="<?php echo ROOT; ?>Admin/Main"
                   class="admin-menu__link"
                   >Home</a
                 >
@@ -37,6 +37,7 @@
               <th class="admin-product__table-heading">Địa chỉ</th>
               <th class="admin-product__table-heading">Ngày tạo</th>
               <th class="admin-product__table-heading">Role</th>
+              <th class="admin-product__table-heading">Thao tác</th>
             </tr>
             <?php
               while($row = mysqli_fetch_assoc($data["users"])){
@@ -52,6 +53,20 @@
               </td>
               <td class="admin-product__table-items"><?php echo $row['created_at'] ?></td>
               <td class="admin-product__table-items"><?php echo $row['role_id'] ?></td>
+              <td class="admin-product__table-items">
+                <div class="admin-product__wrap-btn">
+                <a href="<?php echo ROOT; ?>Admin/UpdateProduct/<?php echo $row['id'] ?>">
+                  <button class="btn btn--info">
+                    Sửa role
+                  </button>
+                </a>
+                <a href="<?php echo ROOT; ?>Admin/DeleteProduct/<?php echo $row['id'] ?>">
+                  <button class="btn btn--danger">
+                      Xóa
+                    </button>
+                  </a>
+                </div>
+              </td>
             </tr>
             <?php } ?>
           </table>

@@ -66,6 +66,7 @@ class User extends Controller
                         $_SESSION['id'] = $id;
                         $_SESSION['role_id'] = $r['role_id'];
                         $_SESSION['fullname'] = $r['fullname'];
+                        $_SESSION['avatar'] = $r['avatar'];
                         $this->checkRoleID();
                         // header("Location: http://localhost/projectPTIT/Home/Main");                               
                         ob_end_flush();
@@ -95,10 +96,13 @@ class User extends Controller
         }
     }
 
-   
-
-
-
-
+    function LogoutUser() {
+        if (isset($_POST['logoutBtn'])) {
+            session_unset();
+            session_destroy();
+            header("Location: " . ROOT . "User/SignIn"); 
+            exit();
+        }
+    }
 }
 ?>

@@ -71,7 +71,12 @@
                     $_SESSION['fullname'] = $name;  
                     $_SESSION['phone_number'] = $phone;
                     $_SESSION['email'] = $email;
-                    $_SESSION['avatar'] = $avatarpath;
+                    if($_SESSION['avatar'] == null) {
+                        $_SESSION['avatar'] = $avatarpath;
+                    }
+                    else{
+                        $_SESSION['avatar'] = $row['avatar'];
+                    }
                     header("Location: http://localhost/projectPTIT/Home/Profile");
                 }
                 }

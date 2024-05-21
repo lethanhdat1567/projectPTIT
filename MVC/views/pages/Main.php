@@ -18,11 +18,6 @@
                 </picture>
               </a>
             </div>
-            <div class="slideshow__page">
-              <span class="slideshow__num">1</span>
-              <span class="slideshow__slider"></span>
-              <span class="slideshow__num">5</span>
-            </div>
           </div>
         </div>
       </div>

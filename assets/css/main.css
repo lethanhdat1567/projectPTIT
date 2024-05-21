@@ -1771,6 +1771,9 @@ html.dark {
 .top-act__btn-wrap:hover .act-dropdown {
   display: block;
 }
+.search-wrap {
+  display: none;
+}
 .top-act__btn {
   padding: 13px 20px;
   gap: 10px;
@@ -1810,6 +1813,10 @@ html.dark {
     display: none;
   }
 }
+.search {
+  display: flex;
+  flex-direction: column;
+}
 
 .nav-btn {
   height: 50px;
@@ -1835,7 +1842,8 @@ html.dark {
   }
 }
 
-.act-dropdown {
+.act-dropdown,
+.search-dropdown {
   position: absolute;
   top: 48px;
   padding-top: 28px;
@@ -1843,7 +1851,18 @@ html.dark {
   width: min(500px, 100vw);
   display: none;
 }
-.act-dropdown__inner {
+.search__input {
+  padding: 10px 5px;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+.search__input:focus {
+  outline: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.act-dropdown__inner,
+.search-dropdown__inner {
   position: relative;
   padding: 30px;
   border-radius: 20px;
@@ -1968,6 +1987,10 @@ html.dark {
   justify-content: space-between;
   gap: 15px;
   padding: 14px 0px;
+}
+.user-menu__link-btn {
+  width: 100%;
+  font-size: 1.6rem;
 }
 .user-menu__icon {
   width: 16px;
