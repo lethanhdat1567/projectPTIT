@@ -27,8 +27,9 @@
               <aside class="profile__sidebar">
                 <!-- User -->
                 <div class="profile-user">
+                  <?php echo $row['avatar']?>
                   <img
-                    src="<?php echo ASSETS; ?>img/avatar/<?php if($row['avatar']){
+                    src="<?php echo ASSETS; ?>img/avatar/<?php if($row['avatar'] || $row['avatar'] != ''){
                       echo $row['avatar'];
                     }
                     else{
@@ -37,8 +38,20 @@
                     alt=""
                     class="profile-user__avatar"
                   />
-                  <h1 class="profile-user__name">Imran Khan</h1>
-                  <p class="profile-user__desc">Registered: 17th May 2022</p>
+                  <h1 class="profile-user__name"><?php 
+                  
+                    echo ($row["fullname"]);
+                  
+                  ?></h1>
+                  <p class="profile-user__desc"><?php
+                   $created_at_date = new DateTime($row["created_at"]);
+                   $_SESSION["created_at"] = $created_at_date->format('Y-m-d');
+                   if (isset($_SESSION["created_at"])) {
+                    echo "Registered: ";
+                    echo htmlspecialchars($_SESSION["created_at"]);
+                  }
+                    ?>
+                  </p></p>
                 </div>
                 <!-- Menu 1 -->
                 <div class="profile-menu">

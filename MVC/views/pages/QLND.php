@@ -59,14 +59,23 @@
                 <button class="btn btn--info activeRoleBtn">
                     Sửa role
                 </button>
+<<<<<<< HEAD
+                <a href="<?php echo ROOT; ?>Admin/DeleteUser/<?php echo $row['id'] ?>">
+                  <button class="btn btn--danger" type="submit" >
+=======
                 <a href="<?php echo ROOT; ?>Admin/DeleteProduct/<?php echo $row['id'] ?>">
+<<<<<<< HEAD
                   <button class="btn btn--danger DeleteRoleBtn">
+=======
+                  <button class="btn btn--danger">
+>>>>>>> origin/main
+>>>>>>> 002e6e2c4fa8aeb16bf57f12338a49d9dbeae516
                       Xóa
                     </button>
                   </a>
                 </div>
               </td>
-            </tr>
+              </tr>
             <?php } ?>
           </table>
           </form>

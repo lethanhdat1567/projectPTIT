@@ -6,12 +6,14 @@ if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)){
         public $DeleteProduct;
         public $UpdateProduct;
         public $GetUser;
+        public $DeleteUser;
         public function __construct(){
             $this->InsertProduct = $this->model("InsertProduct");
             $this->GetProduct = $this->model("GetProduct");
             $this->DeleteProduct = $this->model("DeleteProduct");
             $this->UpdateProduct = $this->model("UpdateProduct");
             $this->GetUser = $this->model("GetUser");
+            $this->DeleteUser = $this->model("DeleteUser");
         }
         function QLSP() {
             $products = $this->GetProduct->GetValuesProduct();
@@ -20,6 +22,13 @@ if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)){
         function QLND() {
             $users = $this->GetUser->GetUsers();
             $this->view("AdminPage",["Pages"=>"QLND","users"=>$users]);
+        }
+
+        function DeleteUser($param) {
+            $result = $this->DeleteUser->DeleteUser($param);
+            if($result){
+                $this->QLND();
+            }
         }
         function Main() {
             $products = $this->GetProduct->GetValuesProduct();
