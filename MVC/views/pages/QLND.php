@@ -52,22 +52,20 @@
               <?php echo $row['address'] ?>
               </td>
               <td class="admin-product__table-items"><?php echo $row['created_at'] ?></td>
-              <td class="admin-product__table-items"><?php echo $row['role_id'] ?></td>
+              <td class="admin-product__table-items"><input type="text" class="role-input" value="<?php echo $row['role_id'] ?>"></td>
               <td class="admin-product__table-items">
                 <div class="admin-product__wrap-btn">
-                <a href="<?php echo ROOT; ?>Admin/UpdateProduct/<?php echo $row['id'] ?>">
-                  <button class="btn btn--info">
+                <button class="btn btn--info">
                     Sửa role
-                  </button>
-                </a>
-                <a href="<?php echo ROOT; ?>Admin/DeleteProduct/<?php echo $row['id'] ?>">
-                  <button class="btn btn--danger">
+                </button>
+                <a href="<?php echo ROOT; ?>Admin/DeleteUser/<?php echo $row['id'] ?>">
+                  <button class="btn btn--danger" type="submit" >
                       Xóa
                     </button>
                   </a>
                 </div>
               </td>
-            </tr>
+              </tr>
             <?php } ?>
           </table>
         </div>

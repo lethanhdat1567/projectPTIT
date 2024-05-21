@@ -1358,7 +1358,7 @@
         </div>
       </div>
       <div class="top-act__user">
-        <img src="<?php echo ASSETS; ?>img/avatar/<?php if(isset($_SESSION['avatar'])){
+        <img src="<?php echo ASSETS; ?>img/avatar/<?php if(isset($_SESSION['avatar']) && $_SESSION['avatar'] != ''){
                 echo $_SESSION['avatar'];
               }
               else{
@@ -1370,7 +1370,7 @@
             <img src="<?php echo ASSETS; ?>icons/arrow-up.png" alt=""
               class="act-dropdown__arrow top-act__dropdown-arrow">
             <div class="user-menu__top">
-              <img src="<?php echo ASSETS; ?>img/avatar/<?php if(isset($_SESSION['avatar'])){
+              <img src="<?php echo ASSETS; ?>img/avatar/<?php if(isset($_SESSION['avatar'])&& $_SESSION['avatar'] != ''){
                 echo $_SESSION['avatar'];
               }
               else{
