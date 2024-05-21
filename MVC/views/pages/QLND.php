@@ -29,6 +29,7 @@
           <div class="admin-product__header">
             <h2 class="admin-product__heading">Danh sách người dùng</h2>
           </div>
+          <form action="">
           <table class="admin-product__table">
             <tr class="admin-product__table-wrap">
               <th class="admin-product__table-heading">Tên</th>
@@ -52,14 +53,12 @@
               <?php echo $row['address'] ?>
               </td>
               <td class="admin-product__table-items"><?php echo $row['created_at'] ?></td>
-              <td class="admin-product__table-items"><?php echo $row['role_id'] ?></td>
+              <td class="admin-product__table-items"><input type="text" class="role-input" value="<?php echo $row['role_id'] ?>"></td>
               <td class="admin-product__table-items">
                 <div class="admin-product__wrap-btn">
-                <a href="<?php echo ROOT; ?>Admin/UpdateProduct/<?php echo $row['id'] ?>">
-                  <button class="btn btn--info">
+                <button class="btn btn--info">
                     Sửa role
-                  </button>
-                </a>
+                </button>
                 <a href="<?php echo ROOT; ?>Admin/DeleteProduct/<?php echo $row['id'] ?>">
                   <button class="btn btn--danger">
                       Xóa
@@ -70,6 +69,7 @@
             </tr>
             <?php } ?>
           </table>
+          </form>
         </div>
       </div>
     </div>

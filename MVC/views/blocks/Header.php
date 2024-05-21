@@ -1377,7 +1377,7 @@
                 echo "avatarUnset.png";
               } ?>" alt=""
                 class="user-menu__avatar">
-              <div>
+              <div class="header__email">
                 <p class="user-menu__name"><?php
                 if (isset($_SESSION["fullname"])) {
                   echo ($_SESSION["fullname"]);
@@ -1387,8 +1387,8 @@
                 ?></p>
                 <p class="user-menu__username">
                   <?php
-                  if (isset($_SESSION["phone_number"])) {
-                    echo ($_SESSION["phone_number"]);
+                  if (isset($_SESSION["email"])) {
+                    echo ($_SESSION["email"]);
                   } else {
                     echo 'Guest';
                   }
