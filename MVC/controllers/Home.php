@@ -71,7 +71,7 @@
                     $_SESSION['fullname'] = $name;  
                     $_SESSION['phone_number'] = $phone;
                     $_SESSION['email'] = $email;
-                    if($_SESSION['avatar'] == null) {
+                    if($_SESSION['avatar'] == null || $_SESSION['avatar'] != '') {
                         $_SESSION['avatar'] = $avatarpath;
                     }
                     else{
