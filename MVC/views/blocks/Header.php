@@ -1338,5 +1338,4 @@
 </script>
 <script>
   let products = JSON.parse(localStorage.getItem("product"));
-  console.log(products);
 </script>

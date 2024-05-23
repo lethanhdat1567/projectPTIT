@@ -52,7 +52,9 @@
               <?php echo $row['address'] ?>
               </td>
               <td class="admin-product__table-items"><?php echo $row['created_at'] ?></td>
-              <td class="admin-product__table-items"><input type="text" class="role-input" value="<?php echo $row['role_id'] ?>"></td>
+              <td class="admin-product__table-items"><input type="text" class="role-inputHidden" value="<?php echo $row['role_id'] . '/' . $row['id']; ?>" hidden >
+              <input type="text" class="role-input" value="<?php echo $row['role_id'] ?>" >
+            </td>
               <td class="admin-product__table-items">
                 <div class="admin-product__wrap-btn">
                 <button class="btn btn--info activeRoleBtn">

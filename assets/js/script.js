@@ -174,20 +174,23 @@ const isDark = localStorage.dark === "true";
 document.querySelector("html").classList.toggle("dark", isDark);
 
 window.addEventListener("DOMContentLoaded", () => {
-  const roleBtn = $(".activeRoleBtn");
-  const inputRole = $(".role-input");
-  if (roleBtn) {
+  const rolesBtnNote = $$(".activeRoleBtn");
+  const inputRoles = $$(".role-input");
+  const roleHiddens = $$(".role-inputHidden");
+  const rolesBtn = Array.from(rolesBtnNote);
+  const inputRole = Array.from(inputRoles);
+  const roleHidden = Array.from(roleHiddens);
+  rolesBtn.map((roleBtn, index) => {
     roleBtn.onclick = (e) => {
       e.preventDefault();
-      inputRole.focus();
+      inputRole[index].focus();
     };
-    inputRole.addEventListener("keypress", function (event) {
+    inputRole[index].addEventListener("keypress", function (event) {
       if (event.key === "Enter") {
-        roleBtn.onclick = null;
-        roleBtn.click();
+        window.location.href = `${ROOT}Admin/QLND/${roleHidden[index].value}`;
       }
     });
-  }
+  });
 });
 
 // favourite list

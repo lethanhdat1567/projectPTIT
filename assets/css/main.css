@@ -4921,6 +4921,7 @@ html.dark {
 .role-input {
   text-align: center;
   width: 100%;
+  padding: 10px 0px;
 }
 .admin-product__table-items-desc {
   height: 100px;
