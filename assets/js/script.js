@@ -218,7 +218,7 @@ window.addEventListener("DOMContentLoaded", () => {
         <article class="cart-preview-item">
           <div class="cart-preview-item__img-wrap">
             <img
-              src="${ASSETS}img/products/${product.thumbnail}"
+              src="<?php echo ASSETS; ?>img/products/${product.thumbnail}"
               alt=""
               class="cart-preview-item__thumb"
             />
@@ -273,7 +273,7 @@ window.addEventListener("DOMContentLoaded", () => {
       <article class="cart-preview-item">
         <div class="cart-preview-item__img-wrap">
           <img
-            src="${ASSETS}img/products/${product.thumbnail}"
+            src="<?php echo ASSETS; ?>img/products/${product.thumbnail}"
             alt=""
             class="cart-preview-item__thumb"
           />

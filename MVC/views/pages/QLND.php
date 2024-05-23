@@ -55,7 +55,7 @@
               <td class="admin-product__table-items"><input type="text" class="role-input" value="<?php echo $row['role_id'] ?>"></td>
               <td class="admin-product__table-items">
                 <div class="admin-product__wrap-btn">
-                <button class="btn btn--info">
+                <button class="btn btn--info activeRoleBtn">
                     Sửa role
                 </button>
                 <a href="<?php echo ROOT; ?>Admin/DeleteUser/<?php echo $row['id'] ?>">
