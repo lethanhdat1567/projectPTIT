@@ -157,7 +157,7 @@
                 </div>
                 <div class="cart-info__separate"></div>
                 <h2 class="cart-info__sub-heading">Items details</h2>
-                <div class="cart-info__list">
+                <div class="cart-info__list cart-info__list-card">
                   <!-- Cart item 1 -->
                   <article class="cart-item">
                     <a href="<?php echo ROOT; ?>Home/ProductDetail">

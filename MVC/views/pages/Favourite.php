@@ -52,7 +52,7 @@
                     Check All
                   </label>
                 </div>
-                <div class="cart-info__list">
+                <div class="cart-info__list cart-info__list-favor">
                   <!-- Cart item 1 -->
                   <article class="cart-item">
                     <label class="cart-info__checkbox">

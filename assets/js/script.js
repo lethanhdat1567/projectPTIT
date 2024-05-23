@@ -201,16 +201,10 @@ window.addEventListener("DOMContentLoaded", () => {
       .join("");
   }
   const renderedHTML = html`
-    <img
-      src="<?php echo ASSETS; ?>icons/arrow-up.png"
-      alt=""
-      class="act-dropdown__arrow"
-    />
+    <img src="${ASSETS}icons/arrow-up.png" alt="" class="act-dropdown__arrow" />
     <div class="act-dropdown__top">
       <h2 class="act-dropdown__title">You have ${products.length} item(s)</h2>
-      <a href="<?php echo ROOT; ?>Home/Favourite" class="act-dropdown__view-all"
-        >See All</a
-      >
+      <a href="${ROOT}Home/Favourite" class="act-dropdown__view-all">See All</a>
     </div>
     <div class="row row-cols-3 gx-2 act-dropdown__list">
       ${products.map((product) => {
@@ -218,7 +212,7 @@ window.addEventListener("DOMContentLoaded", () => {
         <article class="cart-preview-item">
           <div class="cart-preview-item__img-wrap">
             <img
-              src="<?php echo ASSETS; ?>img/products/${product.thumbnail}"
+              src="${ASSETS}img/products/${product.thumbnail}"
               alt=""
               class="cart-preview-item__thumb"
             />
@@ -232,7 +226,7 @@ window.addEventListener("DOMContentLoaded", () => {
     <div class="act-dropdown__separate"></div>
     <div class="act-dropdown__checkout">
       <a
-        href="<?php echo ROOT; ?>Home/CheckOut"
+        href="${ROOT}Home/CheckOut"
         class="btn btn--primary btn--rounded act-dropdown__checkout-btn"
         >Check Out All</a
       >
@@ -256,16 +250,10 @@ window.addEventListener("DOMContentLoaded", () => {
       .join("");
   }
   const renderedHTML = html`
-    <img
-      src="<?php echo ASSETS; ?>icons/arrow-up.png"
-      alt=""
-      class="act-dropdown__arrow"
-    />
+    <img src="${ASSETS}icons/arrow-up.png" alt="" class="act-dropdown__arrow" />
     <div class="act-dropdown__top">
       <h2 class="act-dropdown__title">You have ${products.length} item(s)</h2>
-      <a href="<?php echo ROOT; ?>Home/CheckOut" class="act-dropdown__view-all"
-        >See All</a
-      >
+      <a href="${ROOT}Home/CheckOut" class="act-dropdown__view-all">See All</a>
     </div>
     <div class="row row-cols-3 gx-2 act-dropdown__list">
       ${products.map((product) => {
@@ -273,7 +261,7 @@ window.addEventListener("DOMContentLoaded", () => {
       <article class="cart-preview-item">
         <div class="cart-preview-item__img-wrap">
           <img
-            src="<?php echo ASSETS; ?>img/products/${product.thumbnail}"
+            src="${ASSETS}img/products/${product.thumbnail}"
             alt=""
             class="cart-preview-item__thumb"
           />
@@ -304,7 +292,7 @@ window.addEventListener("DOMContentLoaded", () => {
     </div>
     <div class="act-dropdown__checkout">
       <a
-        href="<?php echo ROOT; ?>Home/CheckOut"
+        href="${ROOT}Home/CheckOut"
         class="btn btn--primary btn--rounded act-dropdown__checkout-btn"
         >Check Out All</a
       >

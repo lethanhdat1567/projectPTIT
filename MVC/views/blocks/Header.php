@@ -1332,7 +1332,10 @@
   </div>
 </div>
 </div>
-<script>const ASSETS = "<?php echo ASSETS; ?>";</script>
+<script>
+  const ASSETS = "<?php echo ASSETS; ?>";
+  const ROOT = "<?php echo ROOT; ?>";
+</script>
 <script>
   let products = JSON.parse(localStorage.getItem("product"));
   console.log(products);

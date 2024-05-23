@@ -39,4 +39,5 @@
     <div id="Content"><?php require_once './MVC/views/pages/'.$data['Pages'].'.php' ?></div>
     <footer id="Footer" class="footer"><?php require_once './MVC/views/blocks/Footer.php' ?></footer>
 </body>
+  <script src="<?php echo ASSETS ?>js/Card.js" type="module"></script>
 </html>
