@@ -1243,10 +1243,10 @@
     </div>
     <!-- Actions -->
     <div class="top-act ">
-      <a href="<?php ROOT; ?>User/SignIn" class="btn btn--text d-md-none">
+      <a href="<?php echo ROOT; ?>User/SignIn" class="btn btn--text d-md-none">
         Login
       </a>
-      <a href="<?php ROOT; ?>User/SignUp" class="top-act__sign-up btn btn--primary">
+      <a href="<?php echo ROOT; ?>User/SignUp" class="top-act__sign-up btn btn--primary">
         Sign up
       </a>
       </div>
