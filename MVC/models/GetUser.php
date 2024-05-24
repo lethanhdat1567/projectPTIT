@@ -14,5 +14,10 @@ class GetUser extends DB{
         $qr = "SELECT * FROM user";
         return mysqli_query($this->conn, $qr);
     }
+    public function GetUserById($userId) {
+        $query = "SELECT * FROM user WHERE id = $userId";
+        $result = mysqli_query($this->conn, $query);
+        return mysqli_fetch_assoc($result);
+    }
 }
 ?>
