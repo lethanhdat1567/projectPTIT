@@ -90,7 +90,7 @@
                 <span class="form__checkbox-label">Set as default card</span>
               </label>
               <a
-                href="./reset-password.html"
+                href="<?php echo ROOT; ?>User/GetPagesForgetPass"
                 class="auth__link form__pull-right"
                 >Forgot Password</a
               >

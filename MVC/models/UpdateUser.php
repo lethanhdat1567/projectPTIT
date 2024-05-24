@@ -10,5 +10,14 @@ class UpdateUser extends DB{
     }
     return json_encode($result);
     }
+
+    public function UpdateNewPass($pass,$email){
+        $sql = "UPDATE user SET password ='$pass' WHERE email = '$email' ";       
+     $result = false;
+    if(mysqli_query($this->conn,$sql)){
+        $result =true;
+    }
+    return json_encode($result);
+    }
 }
 ?>
