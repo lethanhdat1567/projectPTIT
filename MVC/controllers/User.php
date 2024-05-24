@@ -5,12 +5,73 @@ class User extends Controller
     public $GetProduct;
     public $InsertUser;
     public $GetUser;
+    public $UpdateUser;
 
     public function __construct()
     {
         $this->GetProduct = $this->model("GetProduct");
         $this->InsertUser = $this->model("InsertUser");
         $this->GetUser = $this->model("GetUser");
+        $this->UpdateUser = $this->model("UpdateUser");
+
+    }
+     function GetPagesForgetPass(){
+        $this->view("UserPage", ["Pages" => "ForgetPass"]);
+}
+    function GetEmail(){
+        $error = [];
+        if(isset($_POST['submit'])){
+            $email = $_POST['email'];
+            $result = $this->GetUser->GetUserDB($email);
+            if($result ->num_rows == 0){  
+                $error['emailfail'] = "Email này không tồn tại";
+                }else{
+                    $code = substr(rand(0,999999),0,6);
+                    $title = "Quên mật khẩu";
+                    $content = "Mã xác nhận của bạn là: <span style='color:green'>$code</span>";
+                    require_once __DIR__ . '/../libraries/index.php';
+                    $mail = new Mailer();
+                    $mail->sendMail($title, $content, $email);
+        
+                    $_SESSION['mail'] = $email;
+                    $_SESSION['code'] = $code;
+                    // Chỉ chuyển hướng khi biến flag là true
+                    header('location: http://localhost/projectPTIT/User/GetPagesVerification');
+                    exit();
+    }
+    $this->view("UserPage", ["Pages" => "ForgetPass", "error" =>$error['emailfail'] ]);
+}
+    }
+    function GetPagesVerification(){
+        $this->view("UserPage", ["Pages" => "Verification"]);
+    }
+    function GetOTP(){
+        if(isset($_POST['submit'])){
+            $error = [];
+            if($_POST['text'] != $_SESSION['code']){
+                $error['fail'] = "Mã xác nhận không hợp lệ !";
+            }else{
+                header('location: http://localhost/projectPTIT/User/GetPagesResetPass');
+            }
+            $this->view("UserPage", ["Pages" => "Verification", "error" =>$error['fail'] ]);
+        }
+    }
+    function GetPagesResetPass(){
+        $this->view("UserPage", ["Pages" => "ResetPass"]);
+    }
+    function UpdatePassWord(){
+        if(isset($_POST['submit'])){
+            $error = [];
+            $password =  $_POST['newpassword'];
+            if($_POST['confirmpassword'] != $password){
+                $error['confirmfail']= 'Nhập lại mật khẩu không khớp !';
+            }else{
+                $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+                $error['success'] = 'Đổi mật khẩu thành công ! Hãy trở về trang Sign In để đăng nhập';
+                $result = $this->UpdateUser->UpdateNewPass($hashedPassword, $_SESSION['mail']);
+            }
+            $this->view("UserPage", ["Pages" => "ResetPass", "errorfail" => $error['confirmfail'] ?? null  ,"errorsuccess" => $error['success'] ?? null]);
+        }
     }
     function SignUp()
     {
