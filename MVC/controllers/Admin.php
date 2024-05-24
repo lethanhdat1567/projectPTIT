@@ -6,7 +6,8 @@ if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)){
         public $DeleteProduct;
         public $UpdateProduct;
         public $GetUser;
-        public $DeleteUser;
+        public $DeleteUser;       
+        public $UpdateRole;
         public function __construct(){
             $this->InsertProduct = $this->model("InsertProduct");
             $this->GetProduct = $this->model("GetProduct");
@@ -14,6 +15,8 @@ if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)){
             $this->UpdateProduct = $this->model("UpdateProduct");
             $this->GetUser = $this->model("GetUser");
             $this->DeleteUser = $this->model("DeleteUser");
+            $this->UpdateRole = $this->model("UpdateRole");
+
         }
         function QLSP() {
             $products = $this->GetProduct->GetValuesProduct();
@@ -30,6 +33,43 @@ if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)){
                 $this->QLND();
             }
         }
+        function UpdateRole($userId) {
+            $user = $this->GetUser->GetUserById($userId);
+            if ($user) {
+                $this->view("AdminPage", ["Pages" => "UpdateRole", "user" => $user]);
+            }
+        }
+
+        function UpdateUserRole() {
+            if (isset($_SERVER['CONTENT_TYPE']) && $_SERVER['CONTENT_TYPE'] === 'application/json') {
+                $data = json_decode(file_get_contents('php://input'), true);
+        
+                // lay du lieu tu json
+                $userId = $data['userId'];
+                $newRoleId = $data['role_id'];
+        
+                // cap nhat vao csdl
+                $result = $this->UpdateRole->UpdateUserRole($userId, $newRoleId);
+                if ($result) {
+                    
+                    echo json_encode(array("success" => true));
+                } else {
+                    
+                    echo json_encode(array("success" => false, "message" => "Update failed"));
+                }
+            } else {
+                
+                if (isset($_POST['btnUpdateRole'])) {
+                    $userId = $_POST['userId'];
+                    $newRoleId = $_POST['role_id'];
+                    $result = $this->UpdateRole->UpdateUserRole($userId, $newRoleId);
+                    if ($result) {
+                        $this->QLND(); 
+                    }
+                }
+            }
+        }
+        
         function Main() {
             $products = $this->GetProduct->GetValuesProduct();
             $this->view("AdminPage",["Pages"=>"Main","product"=> $products]);
