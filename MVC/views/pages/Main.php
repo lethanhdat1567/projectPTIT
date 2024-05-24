@@ -227,7 +227,7 @@
           </div>
         </div>
         <div class="row row-cols-5 row-cols-lg-2 row-cols-sm-1 g-3">
-        <?php while($row = mysqli_fetch_assoc($data["product"])){ ?>
+        <?php $index = -1; while($row = mysqli_fetch_assoc($data["product"])){ $index++; ?>
           <!-- Product item 1 -->
           <div class="col">
             <article class="product-card">
@@ -239,7 +239,9 @@
                     class="product-card__thumb"
                   />
                 </a>
-                <button class="like-btn like-btn--liked product-card__like-btn">
+                <button class="like-btn product-card__like-btn"  
+        data-row="<?php echo htmlspecialchars(json_encode($row), ENT_QUOTES, 'UTF-8'); ?>"
+        data-index="<?php echo $index; ?>">
                   <img
                     src="<?php echo ASSETS; ?>icons/heart.svg"
                     alt=""
@@ -273,3 +275,41 @@
         </div>
       </section>
     </div>
+
+<script>
+  const FavorBtnsNode = document.querySelectorAll('.product-card__like-btn');
+const FavorBtns = Array.from(FavorBtnsNode);
+
+  FavorBtns.forEach((FavorBtn) => {
+      FavorBtn.onclick = function(e) {
+          e.preventDefault(); // Ngăn chặn hành động mặc định của nút (chẳng hạn chuyển hướng)
+          
+          // Lấy dữ liệu từ thuộc tính data của nút yêu thích
+          const row = JSON.parse(this.getAttribute('data-row'));
+          const index = parseInt(this.getAttribute('data-index'));
+          const isFavor = localStorage.getItem('FAVOR');
+          
+          // Gọi hàm dispatch với dữ liệu đã lấy được
+          
+          // Thực hiện toggle lớp CSS 'like-btn--liked'
+          this.classList.toggle('like-btn--liked');
+          if(this.classList.contains('like-btn--liked')){
+            dispatch('addFavor', row, index);
+          }else{
+            dispatch('deleteFavor', row, index);
+          }
+          location.reload();
+      }
+  });
+  window.onload = function() {
+    const favorites = JSON.parse(localStorage.getItem('FAVOR')) || [];
+    FavorBtns.forEach((FavorBtn) => {
+        const row = JSON.parse(FavorBtn.getAttribute('data-row'));
+        const isFavor = favorites.some(item => item.id === row.id && item.isFavor);
+        if (isFavor) {
+            FavorBtn.classList.add('like-btn--liked');
+        }
+    });
+};
+
+</script>

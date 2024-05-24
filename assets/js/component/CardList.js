@@ -1,7 +1,8 @@
 import html from "../redux/core.js";
-export default function CardList() {
+import { connect } from "../redux/store.js";
+function CardList({ products }) {
   return html`
-    ${products.map((product) => {
+    ${products.map((product, index) => {
       return `<article class="cart-item">
         <a href="${ROOT}Home/ProductDetail/${product.id}">
           <img
@@ -43,8 +44,8 @@ export default function CardList() {
                 Save
               </button>
               <button
-                class="cart-item__ctrl-btn js-toggle"
-                toggle-target="#delete-confirm"
+                class="cart-item__ctrl-btn"
+                onclick="dispatch('delete',${index})"
               >
                 <img src="${ASSETS}icons/trash.svg" alt="" />
                 Delete
@@ -56,3 +57,4 @@ export default function CardList() {
     })}
   `;
 }
+export default connect()(CardList);

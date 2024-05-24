@@ -365,7 +365,7 @@
                         </a>
                       </div>
                     </div>
-                    <div class="col-4 col-xxl-5">
+                    <div class="col-4 col-xxl-5 sub-little__price">
                       <div class="cart-info__row">
                         <span>Subtotal:</span>
                         <span>$191.65</span>
@@ -385,30 +385,7 @@
               </div>
             </div>
             <div class="col-4 col-xl-12">
-              <div class="cart-info">
-                <div class="cart-info__row">
-                  <span
-                    >Subtotal
-                    <span class="cart-info__sub-label">(items)</span></span
-                  >
-                  <span>3</span>
-                </div>
-                <div class="cart-info__row">
-                  <span
-                    >Price
-                    <span class="cart-info__sub-label">(Total)</span></span
-                  >
-                  <span>$191.65</span>
-                </div>
-                <div class="cart-info__row">
-                  <span>Shipping</span>
-                  <span>$10.00</span>
-                </div>
-                <div class="cart-info__separate"></div>
-                <div class="cart-info__row">
-                  <span>Estimated Total</span>
-                  <span>$201.65</span>
-                </div>
+              <div class="cart-info cart-info__sub-list shippingPage">
                 <a
                   href="<?php echo ROOT; ?>Home/Payment"
                   class="cart-info__next-btn btn btn--primary btn--rounded"

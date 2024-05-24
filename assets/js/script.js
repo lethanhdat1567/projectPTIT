@@ -193,65 +193,44 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// favourite list
-window.addEventListener("DOMContentLoaded", () => {
-  const favorList = $(".act-dropdown__inner-favor");
-  let products = JSON.parse(localStorage.getItem("product"));
-  function html([first, ...string], ...values) {
-    return values
-      .reduce((acc, cur) => acc.concat(cur, string.shift()), [first])
-      .filter((x) => (x && x !== true) || x === 0)
-      .join("");
-  }
-  const renderedHTML = html`
-    <img src="${ASSETS}icons/arrow-up.png" alt="" class="act-dropdown__arrow" />
-    <div class="act-dropdown__top">
-      <h2 class="act-dropdown__title">You have ${products.length} item(s)</h2>
-      <a href="${ROOT}Home/Favourite" class="act-dropdown__view-all">See All</a>
-    </div>
-    <div class="row row-cols-3 gx-2 act-dropdown__list">
-      ${products.map((product) => {
-        return `<div class="col">
-        <article class="cart-preview-item">
-          <div class="cart-preview-item__img-wrap">
-            <img
-              src="${ASSETS}img/products/${product.thumbnail}"
-              alt=""
-              class="cart-preview-item__thumb"
-            />
-          </div>
-          <h3 class="cart-preview-item__title">${product.name}</h3>
-          <p class="cart-preview-item__price">$${product.price}</p>
-        </article>
-      </div>`;
-      })}
-    </div>
-    <div class="act-dropdown__separate"></div>
-    <div class="act-dropdown__checkout">
-      <a
-        href="${ROOT}Home/CheckOut"
-        class="btn btn--primary btn--rounded act-dropdown__checkout-btn"
-        >Check Out All</a
-      >
-    </div>
-  `;
-  favorList.innerHTML = renderedHTML;
-});
 // card list
 window.addEventListener("DOMContentLoaded", () => {
   const favorCard = $(".act-dropdown__inner-card");
-  let products = JSON.parse(localStorage.getItem("product"));
+  let products = JSON.parse(localStorage.getItem("PRODUCT"));
 
   const total = products.reduce((acc, product) => {
     return acc + parseInt(product.price, 10);
   }, 0);
-  console.log(total);
   function html([first, ...string], ...values) {
     return values
       .reduce((acc, cur) => acc.concat(cur, string.shift()), [first])
       .filter((x) => (x && x !== true) || x === 0)
       .join("");
   }
+  // render
+  const alter = $(".act-dropdown__alert-card");
+  const isAlter = localStorage.getItem("alert");
+  const close = $(".alert-card__close");
+  // let previousProductLength = products.length;
+  // if (previousProductLength == 0) {
+  //   previousProductLength = products.length;
+  // } else {
+  //   previousProductLength = products.length - 1;
+  // }
+  // const nextProductLength = products.length;
+  if (isAlter === "true") {
+    alter.style.display = "block";
+    const setTime = setTimeout(function () {
+      alter.style.display = "none";
+      localStorage.setItem("alert", false);
+    }, 10000);
+    close.onclick = (e) => {
+      alter.style.display = "none";
+      clearTimeout(setTime);
+      localStorage.setItem("alert", false);
+    };
+  }
+  // Đăng ký sự kiện storage để lắng nghe sự thay đổi trong local storage
   const renderedHTML = html`
     <img src="${ASSETS}icons/arrow-up.png" alt="" class="act-dropdown__arrow" />
     <div class="act-dropdown__top">
@@ -302,9 +281,10 @@ window.addEventListener("DOMContentLoaded", () => {
     </div>
   `;
   favorCard.innerHTML = renderedHTML;
-
+  // alter.style.display = "block";
+  let favors = JSON.parse(localStorage.getItem("FAVOR"));
   const favor = $(".top-act__title-favor");
-  favor.innerText = products.length;
+  favor.innerText = favors.length;
   const card = $(".top-act__title-card");
   card.innerText = total + "$";
 });

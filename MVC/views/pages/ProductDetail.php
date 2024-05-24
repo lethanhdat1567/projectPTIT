@@ -684,9 +684,15 @@
       AddToCard.onclick = (e) => {
         e.preventDefault();
         const productName = <?php echo ($json_data); ?>;
-        let cart = JSON.parse(localStorage.getItem('product')) || [];
+        productName.isFavor = false;
+        let cart = JSON.parse(localStorage.getItem('PRODUCT')) || [];
         cart.push(productName);
-        localStorage.setItem('product', JSON.stringify(cart));
-        window.location.href = "<?php echo ROOT; ?>Home/Main"
+        localStorage.setItem('PRODUCT', JSON.stringify(cart));
+        let total = cart.reduce((acc, {price}) => {
+            return acc + parseInt(price, 10);
+        }, 0)
+        localStorage.setItem('total', total);
+        localStorage.setItem('alert', true);
+        window.location.href = "<?php echo ROOT; ?>Home/Main";
       }
     </script>

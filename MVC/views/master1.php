@@ -40,4 +40,5 @@
     <footer id="Footer" class="footer"><?php require_once './MVC/views/blocks/Footer.php' ?></footer>
 </body>
   <script src="<?php echo ASSETS ?>js/Card.js" type="module"></script>
+  <script src="<?php echo ASSETS; ?>js/component/subList.js" type="module"></script>
 </html>
