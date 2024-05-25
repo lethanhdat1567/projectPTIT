@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 23, 2024 lúc 09:06 AM
+-- Thời gian đã tạo: Th5 25, 2024 lúc 04:38 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.1.25
 
@@ -170,7 +170,14 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `fullname`, `email`, `phone_number`, `address`, `password`, `role_id`, `created_at`, `updated_at`, `deleted`, `avatar`) VALUES
 (22, NULL, 'sadsa@gmail.com', NULL, NULL, 'dasdsad', 0, NULL, NULL, NULL, NULL),
-(25, 'dsds', 'thaithanhquan11102005@gmail.com', NULL, NULL, '$2y$10$6f92brE5t9As8AAYnVoXKe533Zorb.UL1J.0aCkNZcS3A9keFSne6', 1, '2024-05-21 16:33:42', NULL, NULL, NULL);
+(25, 'dsds', 'thaithanhquan11102005@gmail.com', '13123', '32fdfds', '$2y$10$P2GOmahsudjPoO2aITaTV.3IehKRVf7jOo/ZhQz1X7dQ717Oy7XB6', 0, '2024-05-21 16:33:42', NULL, NULL, '2.jpg'),
+(26, NULL, 'thaithanhquan11102005@gmail.com', NULL, NULL, '$2y$10$P2GOmahsudjPoO2aITaTV.3IehKRVf7jOo/ZhQz1X7dQ717Oy7XB6', 0, NULL, NULL, NULL, NULL),
+(27, 'cc', 'thaithanhquan11102005@gmail.com', NULL, NULL, '$2y$10$P2GOmahsudjPoO2aITaTV.3IehKRVf7jOo/ZhQz1X7dQ717Oy7XB6', 0, '2024-05-23 23:49:36', NULL, NULL, NULL),
+(28, 'thaqeqe', 'thaithanhquan11102005@gmail.com', NULL, NULL, '$2y$10$P2GOmahsudjPoO2aITaTV.3IehKRVf7jOo/ZhQz1X7dQ717Oy7XB6', 0, '2024-05-24 21:00:28', NULL, NULL, NULL),
+(29, 'thdasda', 'thaithanhquan11102005@gmail.com', NULL, NULL, '$2y$10$P2GOmahsudjPoO2aITaTV.3IehKRVf7jOo/ZhQz1X7dQ717Oy7XB6', 0, '2024-05-24 21:23:34', NULL, NULL, NULL),
+(30, 'quanthai', 'quanthai@gmail.com', NULL, NULL, '$2y$10$Up4jfKMetKujj34Wv/Ubau4iaBn4XhaetrFLgXcr9.GG6Dq7228RK', 0, '2024-05-25 15:50:19', NULL, NULL, NULL),
+(31, 'quanthai', 'quan@gmail.com', NULL, NULL, '$2y$10$qPlsevJhbDQsLiaqbQ3nnOOGEcSqIFeMFukYruIJXi.1JNruM6m/K', 0, '2024-05-25 17:53:39', NULL, NULL, NULL),
+(32, 'quanthaidqz', 'quanthai111@gmail.com', '32132', '23423432', '$2y$10$VMEr/mq8T3/V06l2PdJcXOPkKH/paG3jIvgq6WoudpVhgvR6bYs/C', 0, '2024-05-25 17:58:22', NULL, NULL, 'ed35ec83472bf583c574e1c0bf1b32f2.jpg');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -280,7 +287,7 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
