@@ -56,6 +56,9 @@
                   class="form__input-icon"
                 />
               </div>
+              <p class="form__error"><?php echo !empty($data["Errorname"]) ? '<p style="margin-top: 10px;
+  color: red;">' . $data["Errorname"] . '</p>'  : "" ?>
+              </p>
               <p class="form__error">Email is not in correct format</p>
             </div>
             <div class="form__group">
@@ -80,7 +83,8 @@
                   class="form__input-icon"
                 />
               </div>
-              <p class="form__error">Email is not in correct format</p>
+              <p class="form__error"><?php echo !empty($data["Erroremail"]) ? '<p style="margin-top: 10px;
+  color: red;">' . $data["Erroremail"] . '</p>'  : "Email is not in correct format" ?>
             </div>
             <div class="form__group">
               <div class="form__text-input">

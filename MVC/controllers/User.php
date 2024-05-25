@@ -73,6 +73,7 @@ class User extends Controller
             $this->view("UserPage", ["Pages" => "ResetPass", "errorfail" => $error['confirmfail'] ?? null  ,"errorsuccess" => $error['success'] ?? null]);
         }
     }
+   
     function SignUp()
     {
         $this->view("UserPage", ["Pages" => "SignUp"]);
@@ -96,6 +97,18 @@ class User extends Controller
             if ($password !== $confirmpassword) {
                 $errors['confirmpassword'] = "Password và Confirm Password không khớp nhau!";
                 $this->view("UserPage", ["Pages" => "SignUp", "Error" => $errors['confirmpassword']]);
+                return; // Dừng thực thi nếu có lỗi
+            }
+            $resultname = $this->GetUser->GetNameUser($username);
+            if (mysqli_num_rows($resultname) > 0) {
+                $errors['username'] = "Tên này đã tồn tại hãy đặt tên khác !";
+                $this->view("UserPage", ["Pages" => "SignUp", "Errorname" => $errors['username']]);
+                return; // Dừng thực thi nếu có lỗi
+            }
+            $result = $this->GetUser->GetUserDB($email);
+            if (mysqli_num_rows($result) > 0) {
+                $errors['email'] = "Email này đã tồn tại!";
+                $this->view("UserPage", ["Pages" => "SignUp", "Erroremail" => $errors['email']]);
                 return; // Dừng thực thi nếu có lỗi
             }
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
