@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 25, 2024 lúc 04:38 PM
--- Phiên bản máy phục vụ: 10.4.32-MariaDB
--- Phiên bản PHP: 8.1.25
+-- Host: 127.0.0.1
+-- Generation Time: May 26, 2024 at 12:25 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `coffeeshop`
+-- Database: `coffeeshop`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `category`
+-- Table structure for table `category`
 --
 
 CREATE TABLE `category` (
@@ -35,7 +35,7 @@ CREATE TABLE `category` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `feedback`
+-- Table structure for table `feedback`
 --
 
 CREATE TABLE `feedback` (
@@ -54,7 +54,7 @@ CREATE TABLE `feedback` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `galery`
+-- Table structure for table `galery`
 --
 
 CREATE TABLE `galery` (
@@ -66,7 +66,7 @@ CREATE TABLE `galery` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `orders`
+-- Table structure for table `orders`
 --
 
 CREATE TABLE `orders` (
@@ -85,7 +85,7 @@ CREATE TABLE `orders` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `order_details`
+-- Table structure for table `order_details`
 --
 
 CREATE TABLE `order_details` (
@@ -100,7 +100,7 @@ CREATE TABLE `order_details` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `product`
+-- Table structure for table `product`
 --
 
 CREATE TABLE `product` (
@@ -113,22 +113,30 @@ CREATE TABLE `product` (
   `description` longtext DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
-  `deleted` int(11) DEFAULT NULL,
-  `avatar` varchar(500) DEFAULT NULL
+  `deleted` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `product`
+-- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`id`, `category_id`, `name`, `price`, `discount`, `thumbnail`, `description`, `created_at`, `updated_at`, `deleted`, `avatar`) VALUES
-(1, NULL, 'dsadasd', 0, NULL, '3.jpg', 'dasdas', '2024-05-21 16:37:03', '2024-05-21 16:37:03', NULL, NULL),
-(2, NULL, 'sdasdsad', 0, NULL, '2.jpg', 'gfdgdfg', '2024-05-21 16:37:11', '2024-05-21 16:37:11', NULL, NULL);
+INSERT INTO `product` (`id`, `category_id`, `name`, `price`, `discount`, `thumbnail`, `description`, `created_at`, `updated_at`, `deleted`) VALUES
+(1, NULL, 'Coffe Trung Nguyen ', 1000000, NULL, 'item1.png', 'Phân loại: Cà phê Trung Nguyên cung cấp nhiều loại cà phê hạt khác nhau, từ cà phê Arabica cao cấp đến cà phê Robusta mạnh mẽ.\r\n\r\nXuất xứ: Cà phê Trung Nguyên thường được trồng và chế biến từ các vùng đất đặc biệt của Việt Nam, nơi có khí hậu và đất đai lý tưởng cho việc sản xuất cà phê chất lượng.\r\n\r\nChất lượng: Sản phẩm cà phê Trung Nguyên nổi tiếng với chất lượng cao, được chăm sóc từ việc chọn lọc các hạt cà phê tốt nhất đến quá trình rang xay chuyên nghiệp.', '2024-05-21 11:16:09', '2024-05-26 08:55:56', NULL),
+(2, NULL, 'Coffe Trung Nguyen 2', 200000, NULL, 'item2.png', 'Phân loại: Cà phê Trung Nguyên cung cấp nhiều loại cà phê hạt khác nhau, từ cà phê Arabica cao cấp đến cà phê Robusta mạnh mẽ.\r\n\r\nXuất xứ: Cà phê Trung Nguyên thường được trồng và chế biến từ các vùng đất đặc biệt của Việt Nam, nơi có khí hậu và đất đai lý tưởng cho việc sản xuất cà phê chất lượng.\r\n\r\nChất lượng: Sản phẩm cà phê Trung Nguyên nổi tiếng với chất lượng cao, được chăm sóc từ việc chọn lọc các hạt cà phê tốt nhất đến quá trình rang xay chuyên nghiệp.', '2024-05-21 11:16:20', '2024-05-21 11:16:20', NULL),
+(3, NULL, 'Coffe Trung Nguyen 3', 300000, NULL, 'item3.png', 'Phân loại: Cà phê Trung Nguyên cung cấp nhiều loại cà phê hạt khác nhau, từ cà phê Arabica cao cấp đến cà phê Robusta mạnh mẽ.\r\n\r\nXuất xứ: Cà phê Trung Nguyên thường được trồng và chế biến từ các vùng đất đặc biệt của Việt Nam, nơi có khí hậu và đất đai lý tưởng cho việc sản xuất cà phê chất lượng.\r\n\r\nChất lượng: Sản phẩm cà phê Trung Nguyên nổi tiếng với chất lượng cao, được chăm sóc từ việc chọn lọc các hạt cà phê tốt nhất đến quá trình rang xay chuyên nghiệp.', '2024-05-21 11:16:31', '2024-05-21 11:16:31', NULL),
+(4, NULL, 'Coffe Trung Nguyen 4', 400000, NULL, 'item4.png', 'Phân loại: Cà phê Trung Nguyên cung cấp nhiều loại cà phê hạt khác nhau, từ cà phê Arabica cao cấp đến cà phê Robusta mạnh mẽ.\r\n\r\nXuất xứ: Cà phê Trung Nguyên thường được trồng và chế biến từ các vùng đất đặc biệt của Việt Nam, nơi có khí hậu và đất đai lý tưởng cho việc sản xuất cà phê chất lượng.\r\n\r\nChất lượng: Sản phẩm cà phê Trung Nguyên nổi tiếng với chất lượng cao, được chăm sóc từ việc chọn lọc các hạt cà phê tốt nhất đến quá trình rang xay chuyên nghiệp.', '2024-05-21 11:16:41', '2024-05-26 08:56:20', NULL),
+(5, NULL, 'Coffe Trung Nguyen 5', 240000, NULL, 'item1.png', 'Phân loại: Cà phê Trung Nguyên cung cấp nhiều loại cà phê hạt khác nhau, từ cà phê Arabica cao cấp đến cà phê Robusta mạnh mẽ. Xuất xứ: Cà phê Trung Nguyên thường được trồng và chế biến từ các vùng đất đặc biệt của Việt Nam, nơi có khí hậu và đất đai lý tưởng cho việc sản xuất cà phê chất lượng. Chất lượng: Sản phẩm cà phê Trung Nguyên nổi tiếng với chất lượng cao, được chăm sóc từ việc chọn lọc các hạt cà phê tốt nhất đến quá trình rang xay chuyên nghiệp.', '2024-05-21 13:05:14', '2024-05-26 08:56:31', NULL),
+(6, NULL, 'Coffe Trung Nguyen 6', 340000, NULL, 'item2.png', 'Phân loại: Cà phê Trung Nguyên cung cấp nhiều loại cà phê hạt khác nhau, từ cà phê Arabica cao cấp đến cà phê Robusta mạnh mẽ. Xuất xứ: Cà phê Trung Nguyên thường được trồng và chế biến từ các vùng đất đặc biệt của Việt Nam, nơi có khí hậu và đất đai lý tưởng cho việc sản xuất cà phê chất lượng. Chất lượng: Sản phẩm cà phê Trung Nguyên nổi tiếng với chất lượng cao, được chăm sóc từ việc chọn lọc các hạt cà phê tốt nhất đến quá trình rang xay chuyên nghiệp.', '2024-05-21 13:05:24', '2024-05-26 08:56:42', NULL),
+(7, NULL, 'Coffe Trung Nguyen 7', 243400, NULL, 'item3.png', 'Phân loại: Cà phê Trung Nguyên cung cấp nhiều loại cà phê hạt khác nhau, từ cà phê Arabica cao cấp đến cà phê Robusta mạnh mẽ. Xuất xứ: Cà phê Trung Nguyên thường được trồng và chế biến từ các vùng đất đặc biệt của Việt Nam, nơi có khí hậu và đất đai lý tưởng cho việc sản xuất cà phê chất lượng. Chất lượng: Sản phẩm cà phê Trung Nguyên nổi tiếng với chất lượng cao, được chăm sóc từ việc chọn lọc các hạt cà phê tốt nhất đến quá trình rang xay chuyên nghiệp.', '2024-05-21 13:05:39', '2024-05-26 08:57:16', NULL),
+(8, NULL, 'Coffe Trung Nguyen 8', 548090, NULL, 'item4.png', 'Phân loại: Cà phê Trung Nguyên cung cấp nhiều loại cà phê hạt khác nhau, từ cà phê Arabica cao cấp đến cà phê Robusta mạnh mẽ. Xuất xứ: Cà phê Trung Nguyên thường được trồng và chế biến từ các vùng đất đặc biệt của Việt Nam, nơi có khí hậu và đất đai lý tưởng cho việc sản xuất cà phê chất lượng. Chất lượng: Sản phẩm cà phê Trung Nguyên nổi tiếng với chất lượng cao, được chăm sóc từ việc chọn lọc các hạt cà phê tốt nhất đến quá trình rang xay chuyên nghiệp.', '2024-05-21 13:05:51', '2024-05-26 08:57:09', NULL),
+(9, NULL, 'Coffe Trung Nguyen 9', 430000, NULL, 'item2.png', 'Phân loại: Cà phê Trung Nguyên cung cấp nhiều loại cà phê hạt khác nhau, từ cà phê Arabica cao cấp đến cà phê Robusta mạnh mẽ. Xuất xứ: Cà phê Trung Nguyên thường được trồng và chế biến từ các vùng đất đặc biệt của Việt Nam, nơi có khí hậu và đất đai lý tưởng cho việc sản xuất cà phê chất lượng. Chất lượng: Sản phẩm cà phê Trung Nguyên nổi tiếng với chất lượng cao, được chăm sóc từ việc chọn lọc các hạt cà phê tốt nhất đến quá trình rang xay chuyên nghiệp.', '2024-05-21 13:06:05', '2024-05-26 08:57:02', NULL),
+(10, NULL, 'Coffe Trung Nguyen 10', 534509, NULL, 'item4.png', 'Phân loại: Cà phê Trung Nguyên cung cấp nhiều loại cà phê hạt khác nhau, từ cà phê Arabica cao cấp đến cà phê Robusta mạnh mẽ. Xuất xứ: Cà phê Trung Nguyên thường được trồng và chế biến từ các vùng đất đặc biệt của Việt Nam, nơi có khí hậu và đất đai lý tưởng cho việc sản xuất cà phê chất lượng. Chất lượng: Sản phẩm cà phê Trung Nguyên nổi tiếng với chất lượng cao, được chăm sóc từ việc chọn lọc các hạt cà phê tốt nhất đến quá trình rang xay chuyên nghiệp.', '2024-05-21 13:06:17', '2024-05-26 08:56:55', NULL),
+(13, NULL, 'ád', 2413, NULL, 'item1.png', 'ssadas', '2024-05-26 16:47:28', '2024-05-26 16:47:28', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `role`
+-- Table structure for table `role`
 --
 
 CREATE TABLE `role` (
@@ -137,7 +145,7 @@ CREATE TABLE `role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `role`
+-- Dumping data for table `role`
 --
 
 INSERT INTO `role` (`id`, `name`) VALUES
@@ -147,7 +155,7 @@ INSERT INTO `role` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -165,52 +173,45 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `fullname`, `email`, `phone_number`, `address`, `password`, `role_id`, `created_at`, `updated_at`, `deleted`, `avatar`) VALUES
-(22, NULL, 'sadsa@gmail.com', NULL, NULL, 'dasdsad', 0, NULL, NULL, NULL, NULL),
-(25, 'dsds', 'thaithanhquan11102005@gmail.com', '13123', '32fdfds', '$2y$10$P2GOmahsudjPoO2aITaTV.3IehKRVf7jOo/ZhQz1X7dQ717Oy7XB6', 0, '2024-05-21 16:33:42', NULL, NULL, '2.jpg'),
-(26, NULL, 'thaithanhquan11102005@gmail.com', NULL, NULL, '$2y$10$P2GOmahsudjPoO2aITaTV.3IehKRVf7jOo/ZhQz1X7dQ717Oy7XB6', 0, NULL, NULL, NULL, NULL),
-(27, 'cc', 'thaithanhquan11102005@gmail.com', NULL, NULL, '$2y$10$P2GOmahsudjPoO2aITaTV.3IehKRVf7jOo/ZhQz1X7dQ717Oy7XB6', 0, '2024-05-23 23:49:36', NULL, NULL, NULL),
-(28, 'thaqeqe', 'thaithanhquan11102005@gmail.com', NULL, NULL, '$2y$10$P2GOmahsudjPoO2aITaTV.3IehKRVf7jOo/ZhQz1X7dQ717Oy7XB6', 0, '2024-05-24 21:00:28', NULL, NULL, NULL),
-(29, 'thdasda', 'thaithanhquan11102005@gmail.com', NULL, NULL, '$2y$10$P2GOmahsudjPoO2aITaTV.3IehKRVf7jOo/ZhQz1X7dQ717Oy7XB6', 0, '2024-05-24 21:23:34', NULL, NULL, NULL),
-(30, 'quanthai', 'quanthai@gmail.com', NULL, NULL, '$2y$10$Up4jfKMetKujj34Wv/Ubau4iaBn4XhaetrFLgXcr9.GG6Dq7228RK', 0, '2024-05-25 15:50:19', NULL, NULL, NULL),
-(31, 'quanthai', 'quan@gmail.com', NULL, NULL, '$2y$10$qPlsevJhbDQsLiaqbQ3nnOOGEcSqIFeMFukYruIJXi.1JNruM6m/K', 0, '2024-05-25 17:53:39', NULL, NULL, NULL),
-(32, 'quanthaidqz', 'quanthai111@gmail.com', '32132', '23423432', '$2y$10$VMEr/mq8T3/V06l2PdJcXOPkKH/paG3jIvgq6WoudpVhgvR6bYs/C', 0, '2024-05-25 17:58:22', NULL, NULL, 'ed35ec83472bf583c574e1c0bf1b32f2.jpg');
+(4, 'Đạt Lê Thành', 'dat@gmail.com', '909364029', 'E12/358, Ấp 5, Xã Đa Phước', '$2y$10$nmV39CO5xYb8dbAAEyldV.gAcao.EJbe9fnONQTTZepPQZvvbPmPe', 0, '2024-05-21 11:13:17', NULL, NULL, 'z4888248915574_b3c4f7538cab253aae1f1560aa4672a3 (1).jpg'),
+(5, 'Admin', 'admin@gmail.com', NULL, NULL, '$2y$10$AHFihf0SHC0rFGG2dwBlc.TCPbJ.whxg5xSlZHP/4SvyKRNXC6HyC', 1, '2024-05-21 11:14:38', NULL, NULL, NULL);
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `category`
+-- Indexes for table `category`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `feedback`
+-- Indexes for table `feedback`
 --
 ALTER TABLE `feedback`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `galery`
+-- Indexes for table `galery`
 --
 ALTER TABLE `galery`
   ADD PRIMARY KEY (`id`),
   ADD KEY `product_id` (`product_id`);
 
 --
--- Chỉ mục cho bảng `orders`
+-- Indexes for table `orders`
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`);
 
 --
--- Chỉ mục cho bảng `order_details`
+-- Indexes for table `order_details`
 --
 ALTER TABLE `order_details`
   ADD PRIMARY KEY (`id`),
@@ -218,108 +219,108 @@ ALTER TABLE `order_details`
   ADD KEY `product_id` (`product_id`);
 
 --
--- Chỉ mục cho bảng `product`
+-- Indexes for table `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`id`),
   ADD KEY `category_id` (`category_id`);
 
 --
--- Chỉ mục cho bảng `role`
+-- Indexes for table `role`
 --
 ALTER TABLE `role`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
   ADD KEY `role_id` (`role_id`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `category`
+-- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `feedback`
+-- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `galery`
+-- AUTO_INCREMENT for table `galery`
 --
 ALTER TABLE `galery`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `orders`
+-- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `order_details`
+-- AUTO_INCREMENT for table `order_details`
 --
 ALTER TABLE `order_details`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `product`
+-- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT cho bảng `role`
+-- AUTO_INCREMENT for table `role`
 --
 ALTER TABLE `role`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `galery`
+-- Constraints for table `galery`
 --
 ALTER TABLE `galery`
   ADD CONSTRAINT `galery_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`);
 
 --
--- Các ràng buộc cho bảng `orders`
+-- Constraints for table `orders`
 --
 ALTER TABLE `orders`
   ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
 
 --
--- Các ràng buộc cho bảng `order_details`
+-- Constraints for table `order_details`
 --
 ALTER TABLE `order_details`
   ADD CONSTRAINT `order_details_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`),
   ADD CONSTRAINT `order_details_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`);
 
 --
--- Các ràng buộc cho bảng `product`
+-- Constraints for table `product`
 --
 ALTER TABLE `product`
   ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`);
 
 --
--- Các ràng buộc cho bảng `user`
+-- Constraints for table `user`
 --
 ALTER TABLE `user`
   ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`);
