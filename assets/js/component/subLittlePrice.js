@@ -1,10 +1,13 @@
 import html from "../redux/core.js";
 import { connect } from "../redux/store.js";
 function subLittlePrice({ products, total }) {
+  const result = products.reduce((acc, item) => {
+    return acc + parseInt(item.price);
+  }, 0);
   return html`
     <div class="cart-info__row">
       <span>Subtotal:</span>
-      <span>$${total}</span>
+      <span>$${result}</span>
     </div>
     <div class="cart-info__row">
       <span>Shipping:</span>
@@ -13,7 +16,7 @@ function subLittlePrice({ products, total }) {
     <div class="cart-info__separate"></div>
     <div class="cart-info__row cart-info__row--bold">
       <span>Total:</span>
-      <span>$${total + 10}</span>
+      <span>$${result + 10}</span>
     </div>
   `;
 }

@@ -1,6 +1,7 @@
 const PRODUCTS_STORAGE = "PRODUCT";
 const TOTAL_STORAGE = "total";
 const FAVOR_STORAGE = "FAVOR";
+const ALL_STORAGE = "ALL";
 export default {
   get() {
     return JSON.parse(localStorage.getItem(PRODUCTS_STORAGE)) || [];
@@ -19,5 +20,11 @@ export default {
   },
   setFavor(favor) {
     localStorage.setItem(FAVOR_STORAGE, JSON.stringify(favor));
+  },
+  getALL() {
+    return JSON.parse(localStorage.getItem(ALL_STORAGE)) || [];
+  },
+  setALL(All) {
+    localStorage.setItem(ALL_STORAGE, JSON.stringify(favor));
   },
 };

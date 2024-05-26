@@ -686,10 +686,18 @@
         const productName = <?php echo ($json_data); ?>;
         productName.isFavor = false;
         let cart = JSON.parse(localStorage.getItem('PRODUCT')) || [];
-        cart.push(productName);
+        let existingProductIndex = cart.findIndex(item => item.id === productName.id);
+    if (existingProductIndex !== -1) {
+      // Nếu sản phẩm đã tồn tại trong giỏ hàng, tăng quantity lên 1
+      cart[existingProductIndex].quantity = (cart[existingProductIndex].quantity || 1) + 1;
+    } else {
+      // Nếu sản phẩm chưa tồn tại trong giỏ hàng, thêm mới vào giỏ hàng với quantity là 1
+      productName.quantity = 1;
+      cart.push(productName);
+    }
         localStorage.setItem('PRODUCT', JSON.stringify(cart));
-        let total = cart.reduce((acc, {price}) => {
-            return acc + parseInt(price, 10);
+        let total = cart.reduce((acc, cur) => {
+            return acc + (parseInt(cur.price, 10) * cur.quantity);
         }, 0)
         localStorage.setItem('total', total);
         localStorage.setItem('alert', true);

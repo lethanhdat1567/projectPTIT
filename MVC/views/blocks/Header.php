@@ -1217,17 +1217,21 @@
     <div class="top-act">
       <div class="top-act__group d-md-none top-act__group--single">
         <div class="top-act__btn-wrap">
-          <button class="top-act__btn">
+          <button class="top-act__btn top-act__btn-search">
             <img src="<?php echo ASSETS; ?>icons/seach.svg" alt="" class="icon top-act__icon" />
           </button>
           <div class="search-dropdown">
+          <img src="<?php echo ASSETS; ?>icons/arrow-up.png" alt=""
+              class="act-dropdown__arrow top-act__dropdown-arrow search__dropdown-arrow">
             <div class="search-dropdown__inner">
-            <form action="" method="">
               <div class="search">
-                <input class="search__input" type="text" name="q" placeholder="Nhập từ khóa tìm kiếm...">
+                <div class="search__close-img-wrap">
+                  <img src="<?php echo ASSETS ?>icons/close.svg" alt="" class="search__close-img">
+                </div>
+                <input class="search__input" autocomplete="off" type="text" name="q" placeholder="Nhập từ khóa tìm kiếm...">
+                <div class="search__product-list"></div>
                 <button class="search__btn btn btn--primary" type="submit">Tìm kiếm</button>
               </div>
-            </form>
             </div>
           </div>
         </div>

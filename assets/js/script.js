@@ -193,98 +193,89 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// card list
 window.addEventListener("DOMContentLoaded", () => {
-  const favorCard = $(".act-dropdown__inner-card");
-  let products = JSON.parse(localStorage.getItem("PRODUCT"));
-
-  const total = products.reduce((acc, product) => {
-    return acc + parseInt(product.price, 10);
-  }, 0);
   function html([first, ...string], ...values) {
     return values
       .reduce((acc, cur) => acc.concat(cur, string.shift()), [first])
       .filter((x) => (x && x !== true) || x === 0)
       .join("");
   }
-  // render
-  const alter = $(".act-dropdown__alert-card");
-  const isAlter = localStorage.getItem("alert");
-  const close = $(".alert-card__close");
-  // let previousProductLength = products.length;
-  // if (previousProductLength == 0) {
-  //   previousProductLength = products.length;
-  // } else {
-  //   previousProductLength = products.length - 1;
-  // }
-  // const nextProductLength = products.length;
-  if (isAlter === "true") {
-    alter.style.display = "block";
-    const setTime = setTimeout(function () {
-      alter.style.display = "none";
-      localStorage.setItem("alert", false);
-    }, 10000);
-    close.onclick = (e) => {
-      alter.style.display = "none";
-      clearTimeout(setTime);
-      localStorage.setItem("alert", false);
+  const cates = document.querySelectorAll(".category-item");
+  const catesArr = Array.from(cates);
+  catesArr.forEach((cate) => {
+    cate.onclick = (e) => {
+      fetch("http://localhost/projectPTIT/API/Read")
+        .then((response) => response.json())
+        .then((data) => {
+          let productCate = [];
+          if (cate.classList.contains("category-item-1")) {
+            productCate = data.filter((value) => {
+              const price = parseFloat(value.price);
+              return price >= 0 && price <= 200000;
+            });
+          } else if (cate.classList.contains("category-item-2")) {
+            productCate = data.filter((value) => {
+              const price = parseFloat(value.price);
+              return price > 200000 && price <= 500000;
+            });
+          } else if (cate.classList.contains("category-item-3")) {
+            productCate = data.filter((value) => {
+              const price = parseFloat(value.price);
+              return price > 500000;
+            });
+          }
+          const CateHtml = productCate
+            .map((product, index) => {
+              return html`
+                <div class="col">
+                  <article class="product-card">
+                    <div class="product-card__img-wrap">
+                      <a href="${ROOT}Home/ProductDetail/${index + 1}">
+                        <img
+                          src="${ASSETS}img/products/${product.thumbnail}"
+                          alt=""
+                          class="product-card__thumb"
+                        />
+                      </a>
+                      <button
+                        class="like-btn product-card__like-btn"
+                        data-index=${index}
+                      >
+                        <img
+                          src="${ASSETS}icons/heart.svg"
+                          alt=""
+                          class="like-btn__icon icon"
+                        />
+                        <img
+                          src="${ASSETS}icons/heart-red.svg"
+                          alt=""
+                          class="like-btn__icon--liked"
+                        />
+                      </button>
+                    </div>
+                    <h3 class="product-card__title">
+                      <a href="${ROOT}Home/ProductDetail/${index + 1}">
+                        ${product.name}
+                      </a>
+                    </h3>
+                    <p class="product-card__brand">Lavazza</p>
+                    <div class="product-card__row">
+                      <span class="product-card__price">$${product.price}</span>
+                      <img
+                        src="${ASSETS}icons/star.svg"
+                        alt=""
+                        class="product-card__star"
+                      />
+                      <span class="product-card__score">4.3</span>
+                    </div>
+                  </article>
+                </div>
+              `;
+            })
+            .join("");
+          const productElement = document.querySelector(".render-product");
+          productElement.innerHTML = CateHtml;
+        });
     };
-  }
-  // Đăng ký sự kiện storage để lắng nghe sự thay đổi trong local storage
-  const renderedHTML = html`
-    <img src="${ASSETS}icons/arrow-up.png" alt="" class="act-dropdown__arrow" />
-    <div class="act-dropdown__top">
-      <h2 class="act-dropdown__title">You have ${products.length} item(s)</h2>
-      <a href="${ROOT}Home/CheckOut" class="act-dropdown__view-all">See All</a>
-    </div>
-    <div class="row row-cols-3 gx-2 act-dropdown__list">
-      ${products.map((product) => {
-        return `<div class="col">
-      <article class="cart-preview-item">
-        <div class="cart-preview-item__img-wrap">
-          <img
-            src="${ASSETS}img/products/${product.thumbnail}"
-            alt=""
-            class="cart-preview-item__thumb"
-          />
-        </div>
-        <h3 class="cart-preview-item__title">${product.name}</h3>
-        <p class="cart-preview-item__price">$${product.price}</p>
-      </article>
-    </div>`;
-      })}
-    </div>
-    <div class="act-dropdown__bottom">
-      <div class="act-dropdown__row">
-        <span class="act-dropdown__label">Subtotal</span>
-        <span class="act-dropdown__value">$${total}</span>
-      </div>
-      <div class="act-dropdown__row">
-        <span class="act-dropdown__label">Texes</span>
-        <span class="act-dropdown__value">Free</span>
-      </div>
-      <div class="act-dropdown__row">
-        <span class="act-dropdown__label">Shipping</span>
-        <span class="act-dropdown__value">$10.00</span>
-      </div>
-      <div class="act-dropdown__row act-dropdown__row--bold">
-        <span class="act-dropdown__label">Total Price</span>
-        <span class="act-dropdown__value">$${total + 10}</span>
-      </div>
-    </div>
-    <div class="act-dropdown__checkout">
-      <a
-        href="${ROOT}Home/CheckOut"
-        class="btn btn--primary btn--rounded act-dropdown__checkout-btn"
-        >Check Out All</a
-      >
-    </div>
-  `;
-  favorCard.innerHTML = renderedHTML;
-  // alter.style.display = "block";
-  let favors = JSON.parse(localStorage.getItem("FAVOR"));
-  const favor = $(".top-act__title-favor");
-  favor.innerText = favors.length;
-  const card = $(".top-act__title-card");
-  card.innerText = total + "$";
+  });
 });

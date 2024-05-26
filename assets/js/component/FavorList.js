@@ -1,7 +1,14 @@
 import html from "../redux/core.js";
 import { connect } from "../redux/store.js";
+import HeaderAlert from "./HeaderAlert.js";
 
-function FavorList({ favor, filters }) {
+function FavorList({ favor, filters, products }) {
+  HeaderAlert(products, favor);
+  const duplicateCounts = {};
+  favor.forEach((item) => {
+    duplicateCounts[item.id] = (duplicateCounts[item.id] || 0) + 1;
+  });
+
   return html`
     <h1 class="cart-info__heading">Favourite List</h1>
     <p class="cart-desc">${favor.length} items</p>
@@ -19,81 +26,84 @@ function FavorList({ favor, filters }) {
     </div>
     <div class="cart-info__list cart-info__list-favor">
       ${favor.map((item, index) => {
-        return `<article class="cart-item">
-        <label class="cart-info__checkbox">
-          <input
-            name="shipping-address"
-            type="checkbox"
-            class="cart-info__checkbox-input"
-            ${item.isCheckOut && "checked"}
-            onchange='dispatch("toggle",${index})'
-          />
-        </label>
-        <a href="${ROOT}Home/ProductDetail">
-          <img
-            src="${ASSETS}img/products/${item.thumbnail}"
-            alt=""
-            class="cart-item__thumb"
-          />
-        </a>
-        <div class="cart-item__content">
-          <div class="cart-item__content-left">
-            <h3 class="cart-item__title">
-              ${item.name}
-            </h3>
-            <p class="cart-item__price-wrap">
-              $${item.price} |
-              <span class="cart-item__status">In Stock</span>
-            </p>
-            <div class="cart-item__ctrl-wrap">
-              <div class="cart-item__ctrl cart-item__ctrl--md-block">
-                <div class="cart-item__input">
-                  LavAzza
-                  <img
-                    class="icon"
-                    src="${ASSETS}icons/arrow-down-2.svg"
-                    alt=""
-                  />
+        const countDuplicates = duplicateCounts[item.id] || 1;
+        if (
+          countDuplicates === 1 ||
+          index === favor.findIndex((i) => i.id === item.id)
+        ) {
+          return `<article class="cart-item">
+          <label class="cart-info__checkbox">
+            <input
+              name="shipping-address"
+              type="checkbox"
+              class="cart-info__checkbox-input"
+              ${item.isCheckOut && "checked"}
+              onchange='dispatch("toggle",${index})'
+            />
+          </label>
+          <a href="${ROOT}Home/ProductDetail">
+            <img
+              src="${ASSETS}img/products/${item.thumbnail}"
+              alt=""
+              class="cart-item__thumb"
+            />
+          </a>
+          <div class="cart-item__content">
+            <div class="cart-item__content-left">
+              <h3 class="cart-item__title">
+                ${item.name}
+              </h3>
+              <p class="cart-item__price-wrap">
+                $${item.price} |
+                <span class="cart-item__status">In Stock</span>
+              </p>
+              <div class="cart-item__ctrl-wrap">
+                <div class="cart-item__ctrl cart-item__ctrl--md-block">
+                  <div class="cart-item__input">
+                    LavAzza
+                  </div>
+                  <div class="cart-item__input">
+                    <button class="cart-item__input-btn" onclick="dispatch('minus',${index})">
+                      <img
+                        class="icon"
+                        src="${ASSETS}icons/minus.svg"
+                        alt=""
+                      />
+                    </button>
+                    <span>${countDuplicates}</span>
+                    <button class="cart-item__input-btn" onclick="dispatch('plus', ${index})">
+                      <img
+                        class="icon"
+                        src="${ASSETS}icons/plus.svg"
+                        alt=""
+                      />
+                    </button>
+                  </div>
                 </div>
-                <div class="cart-item__input">
-                  <button class="cart-item__input-btn">
-                    <img
-                      class="icon"
-                      src="${ASSETS}icons/minus.svg"
-                      alt=""
-                    />
-                  </button>
-                  <span>1</span>
-                  <button class="cart-item__input-btn">
-                    <img
-                      class="icon"
-                      src="${ASSETS}icons/plus.svg"
-                      alt=""
-                    />
+                <div class="cart-item__ctrl">
+                  <button
+                    class="cart-item__ctrl-btn" onclick="dispatch('destroyFavor',${index})"
+                  >
+                    <img src="${ASSETS}icons/trash.svg" alt="" />
+                    Delete
                   </button>
                 </div>
-              </div>
-              <div class="cart-item__ctrl">
-                <button
-                  class="cart-item__ctrl-btn" onclick="dispatch('destroyFavor',${index})"
-                >
-                  <img src="${ASSETS}icons/trash.svg" alt="" />
-                  Delete
-                </button>
               </div>
             </div>
+            <div class="cart-item__content-right">
+              <p class="cart-item__total-price">${item.price}$</p>
+              <button
+                class="cart-item__checkout-btn btn btn--primary btn--rounded"
+                onclick="dispatch('CheckOut',${index})"
+              >
+                Check Out
+              </button>
+            </div>
           </div>
-          <div class="cart-item__content-right">
-            <p class="cart-item__total-price">${item.price}$</p>
-            <button
-              class="cart-item__checkout-btn btn btn--primary btn--rounded"
-              onclick="dispatch('CheckOut',${index})"
-            >
-              Check Out
-            </button>
-          </div>
-        </div>
-      </article>`;
+        </article>`;
+        } else {
+          return "";
+        }
       })}
     </div>
     <div class="cart-info__bottom">
