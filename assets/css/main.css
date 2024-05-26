@@ -3953,6 +3953,9 @@ html.dark {
     gap: 20px;
   }
 }
+.category-item {
+  cursor: pointer;
+}
 .auth__btn {
   width: 100%;
 }

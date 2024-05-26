@@ -25,6 +25,6 @@ export default {
     return JSON.parse(localStorage.getItem(ALL_STORAGE)) || [];
   },
   setALL(All) {
-    localStorage.setItem(ALL_STORAGE, JSON.stringify(favor));
+    localStorage.setItem(ALL_STORAGE, JSON.stringify(All));
   },
 };

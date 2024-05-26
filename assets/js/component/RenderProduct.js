@@ -1,5 +1,6 @@
 import html from "../redux/core.js";
 import { connect } from "../redux/store.js";
+import storage from "../../util/storage.js";
 import HeaderAlert from "./HeaderAlert.js";
 
 function RenderProduct({ products, favor, All }) {
@@ -7,6 +8,7 @@ function RenderProduct({ products, favor, All }) {
   fetch("http://localhost/projectPTIT/API/Read")
     .then((response) => response.json())
     .then((data) => {
+      storage.setALL(favor);
       const HTML = data
         .map((product, index) => {
           return html`
