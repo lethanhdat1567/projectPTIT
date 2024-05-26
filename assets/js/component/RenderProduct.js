@@ -8,7 +8,7 @@ function RenderProduct({ products, favor, All }) {
   fetch("http://localhost/projectPTIT/API/Read")
     .then((response) => response.json())
     .then((data) => {
-      storage.setALL(favor);
+      storage.setALL(data);
       const HTML = data
         .map((product, index) => {
           return html`
