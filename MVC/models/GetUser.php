@@ -19,5 +19,11 @@ class GetUser extends DB{
         $result = mysqli_query($this->conn, $query);
         return mysqli_fetch_assoc($result);
     }
+    public function GetNameUser($username){
+        $username = mysqli_real_escape_string($this->conn, $username);
+        $username = trim($username);
+    $qr = "SELECT * FROM user WHERE fullname='$username'";
+    return mysqli_query($this->conn, $qr);
+}
 }
 ?>
