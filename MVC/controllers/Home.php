@@ -17,7 +17,9 @@
             $this->view("master1",["Pages"=>"ProductDetail","products"=> $products]);
         }
         function AddNewCard() {
-            $this->view("master1",["Pages"=>"AddNewCard"]);
+            $id = $_SESSION['id'];
+            $users = $this->GetUser->GetUserValues($id);
+            $this->view("master1",["Pages"=>"AddNewCard","users"=>$users]);
         }
         function CheckOut() {
             $this->view("master1",["Pages"=>"CheckOut"]);
