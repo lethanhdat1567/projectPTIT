@@ -62,23 +62,6 @@ function FavorList({ favor, filters, products }) {
                   <div class="cart-item__input">
                     LavAzza
                   </div>
-                  <div class="cart-item__input">
-                    <button class="cart-item__input-btn" onclick="dispatch('minus',${index})">
-                      <img
-                        class="icon"
-                        src="${ASSETS}icons/minus.svg"
-                        alt=""
-                      />
-                    </button>
-                    <span>${countDuplicates}</span>
-                    <button class="cart-item__input-btn" onclick="dispatch('plus', ${index})">
-                      <img
-                        class="icon"
-                        src="${ASSETS}icons/plus.svg"
-                        alt=""
-                      />
-                    </button>
-                  </div>
                 </div>
                 <div class="cart-item__ctrl">
                   <button

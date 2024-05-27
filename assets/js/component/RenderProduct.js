@@ -8,7 +8,7 @@ function RenderProduct({ products, favor, All }) {
   fetch("http://localhost/projectPTIT/API/Read")
     .then((response) => response.json())
     .then((data) => {
-      storage.setALL(data);
+      // storage.setALL(data);
       const HTML = data
         .map((product, index) => {
           return html`
@@ -82,19 +82,22 @@ function RenderProduct({ products, favor, All }) {
       });
 
       // Gọi hàm updateFavoriteStatus để cập nhật trạng thái yêu thích sau khi các sản phẩm đã được render
-      updateFavoriteStatus(favor, All, FavorBtns);
+      updateFavoriteStatus(favor, data, FavorBtns);
     });
 }
 
-function updateFavoriteStatus(favor, All, FavorBtns) {
+function updateFavoriteStatus(favor, data, FavorBtns) {
   const favorites = favor;
-  FavorBtns.forEach((FavorBtn) => {
-    const index = FavorBtn.getAttribute("data-index");
-    const isFavor = favorites.some(
-      (item) => item.id === All[index].id && item.isFavor
-    );
-    if (isFavor) {
-      FavorBtn.classList.add("like-btn--liked");
+  FavorBtns.forEach((FavorBtn, index) => {
+    if (data[index]) {
+      const isFavor = favorites.some(
+        (item) => item.id === data[index].id && item.isFavor
+      );
+      if (isFavor) {
+        FavorBtn.classList.add("like-btn--liked");
+      }
+    } else {
+      console.log("chiu thua");
     }
   });
 }

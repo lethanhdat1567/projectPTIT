@@ -1,6 +1,6 @@
 import storage from "../../util/storage.js";
 const init = {
-  All: storage.getALL(),
+  All: [], // Khởi tạo All là một mảng trống
   products: storage.get(),
   total: storage.getPrice(),
   favor: storage.getFavor(),
@@ -12,6 +12,17 @@ const init = {
   },
 };
 
+// Fetch dữ liệu từ API
+fetch("http://localhost/projectPTIT/API/Read")
+  .then((response) => response.json())
+  .then((data) => {
+    // Gán dữ liệu từ API vào biến All
+    init.All = data;
+    // Lưu trữ dữ liệu từ API vào localStorage
+    storage.setALL(data);
+    // Gọi hàm render hoặc các thao tác khác tại đây
+  });
+
 const actions = {
   add({ products }, newProduct) {
     if (newProduct) {
@@ -20,21 +31,32 @@ const actions = {
     }
   },
   delete({ products, total }, index) {
-    let test = products[index];
-    let sum = test.price * test.quantity;
-    total = total - sum;
-    products.splice(index, 1);
+    const indexesToDestroy = products.reduce((acc, item, indexPro) => {
+      if (item.id === products[index].id) {
+        acc.push(indexPro);
+      }
+      return acc;
+    }, []);
+    for (let i = indexesToDestroy.length - 1; i >= 0; i--) {
+      products.splice(indexesToDestroy[i], 1);
+    }
+    let totalCheckOut = products.reduce((acc, item) => {
+      return acc + parseInt(item.price);
+    }, 0);
     storage.set(products);
-    storage.setPrice(total);
+    storage.setPrice(totalCheckOut);
   },
   addFavor({ favor, All }, index) {
-    if (index) {
+    if (index >= 0 && index < All.length) {
       All[index].isFavor = true;
       All[index].isCheckOut = false;
       favor.push(All[index]);
       storage.setFavor(favor);
+    } else {
+      location.reload();
     }
   },
+
   deleteFavor({ favor, All }, index) {
     const objIndex = favor.findIndex((item) => item.id === All[index].id);
     // Nếu obj tồn tại trong danh sách favor
@@ -46,7 +68,15 @@ const actions = {
     }
   },
   destroyFavor({ favor }, index) {
-    favor.splice(index, 1);
+    const indexesToDestroy = favor.reduce((acc, item, indexFavor) => {
+      if (item.id === favor[index].id) {
+        acc.push(indexFavor);
+      }
+      return acc;
+    }, []);
+    for (let i = indexesToDestroy.length - 1; i >= 0; i--) {
+      favor.splice(indexesToDestroy[i], 1);
+    }
     storage.setFavor(favor);
   },
   toggle({ favor }, index) {
