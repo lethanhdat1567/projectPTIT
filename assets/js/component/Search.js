@@ -48,6 +48,7 @@ function Search() {
     });
 }
 const SearchInput = document.querySelector(".search__input");
+
 SearchInput.addEventListener("input", function (e) {
   let InputValue = e.target.value.trim().toLowerCase();
   let products = document.querySelectorAll(".product-card__search");

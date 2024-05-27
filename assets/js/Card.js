@@ -6,7 +6,8 @@ import FavorHeaderList from "./component/FavorHeaderList.js";
 import FavorList from "./component/FavorList.js";
 import RenderProduct from "./component/RenderProduct.js";
 import Search from "./component/Search.js";
-
+import HeaderAlert from "./component/HeaderAlert.js";
+import HeaderCardDropdown from "./component/HeaderCardDropdown.js";
 // Hàm kiểm tra và gọi hàm attach
 function attachComponent(selector, component) {
   const element = document.querySelector(selector);
@@ -25,3 +26,5 @@ attachComponent(".render-product", RenderProduct);
 attachComponent(".search__product-list", Search);
 attachComponent(".cart-info__sub-list", subList);
 attachComponent(".sub-little__price", subLittlePrice);
+attachComponent(".act-dropdown__inner-card", HeaderAlert);
+attachComponent(".act-dropdown__inner-card", HeaderCardDropdown);

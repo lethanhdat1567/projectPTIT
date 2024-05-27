@@ -25,9 +25,6 @@
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
     <link rel="stylesheet" href="<?php echo ASSETS; ?>fonts/stylesheet.css" />
-    <!-- styles -->
-<!-- Trong mã HTML của view của bạn -->
-    <!-- <link rel="stylesheet"  href="./public/css/main.css"> -->
     <!-- <link rel="stylesheet" href="<?php echo ASSETS; ?>/css/main.css"> -->
     <link rel="stylesheet" type="text/css"  href="<?php echo ASSETS; ?>css/main.css">
     <script src="<?php echo ASSETS; ?>js/script.js"></script>
@@ -41,5 +38,5 @@
   const ASSETS = "<?php echo ASSETS; ?>";
   const ROOT = "<?php echo ROOT; ?>";
 </script>
-<script src="<?php echo ASSETS ?>js/Card.js" type="module"></script>
+<script src="<?php echo ASSETS; ?>js/AdminRender.js" type="module"></script>
 </html>
