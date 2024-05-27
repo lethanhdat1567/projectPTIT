@@ -11,6 +11,18 @@ class UpdateUser extends DB{
     return json_encode($result);
     }
 
+    public function UpdateCreditCard($id,$cardnumber,$expirationdate,$cvv,$firstname,$lastname){
+        $qr= "UPDATE user SET cardnumber = '$cardnumber', expirationdate = '$expirationdate', cvv = '$cvv', firstname = '$firstname', lastname = '$lastname'
+               WHERE id=$id;
+        ";
+       $result = false;
+       if(mysqli_query($this->conn,$qr)){
+           $result =true;
+       }
+       return json_encode($result);
+       }
+
+
     public function UpdateNewPass($pass,$email){
         $sql = "UPDATE user SET password ='$pass' WHERE email = '$email' ";       
      $result = false;

@@ -188,38 +188,49 @@
                       class="row gy-md-2 row-cols-3 row-cols-xl-2 row-cols-lg-1"
                     >
                       <!-- payment card 1 -->
-                      <div class="col">
-                        <article
-                          class="payment-card"
-                          style="--bg-color: #1e2e69"
-                        >
-                          <img
-                            src="<?php echo ASSETS; ?>img/card/plane-bg.svg"
-                            alt=""
-                            class="payment-card__img"
-                          />
-                          <div class="payment-card__top">
-                            <img src="<?php echo ASSETS; ?>img/card/plane.svg" alt="" />
-                            <span class="payment-card__type">FeatherCard</span>
-                          </div>
-                          <div class="payment-card__number">
-                            1234 4567 8901 2221
-                          </div>
-                          <div class="payment-card__bottom">
-                            <div>
-                              <p class="payment-card__label">Card Holder</p>
-                              <p class="payment-card__value">Imran Khan</p>
-                            </div>
-                            <div class="payment-card__expired">
-                              <p class="payment-card__label">Expired</p>
-                              <p class="payment-card__value">10/22</p>
+                      <?php if (isset($row['cardnumber']) && !empty($row['cardnumber'])) { ?>
+                          <div class="col">
+                            <article class="payment-card" style="--bg-color: #1e2e69">
+                              <img src="<?php echo ASSETS; ?>img/card/plane-bg.svg" alt="" class="payment-card__img" />
+                              <div class="payment-card__top">
+                                <img src="<?php echo ASSETS; ?>img/card/plane.svg" alt="" />
+                                <span class="payment-card__type">FeatherCard</span>
+                              </div>
+                              <div class="payment-card__number">
+                                <?php echo htmlspecialchars($row['cardnumber']); ?>
+                              </div>
+                              <div class="payment-card__bottom">
+                                <div>
+                                  <p class="payment-card__label">Card Holder</p>
+                                  <p class="payment-card__value">
+                                    <?php echo htmlspecialchars($row['lastname']); ?>
+                                    <?php echo htmlspecialchars($row['firstname']); ?>
+                                  </p>
+                                </div>
+                                <div class="payment-card__expired">
+                                  <p class="payment-card__label">Expired</p>
+                                  <p class="payment-card__value">
+                                    <?php
+                                    $date = $row['expirationdate'];
+                                    $dateParts = explode("-", $date);
+                                    if (count($dateParts) === 3) {
+                                      list($year, $month, $day) = $dateParts;
+                                      $formattedDate = $day . "/" . $month;
+                                      echo htmlspecialchars($formattedDate);
+                                    } else {
+                                      echo "Invalid date";
+                                    }
+                                    ?>
+                              </p>
                             </div>
                             <div class="payment-card__circle"></div>
                           </div>
                         </article>
                       </div>
+                      <?php } ?>
+
                       <!-- payment card 2 -->
-                      <div class="col">
+                      <!-- <div class="col">
                         <article
                           class="payment-card"
                           style="--bg-color: #354151"
@@ -234,7 +245,7 @@
                             <span class="payment-card__type">FeatherCard</span>
                           </div>
                           <div class="payment-card__number">
-                            1234 4567 0092 2221
+                            
                           </div>
                           <div class="payment-card__bottom">
                             <div>
@@ -248,7 +259,7 @@
                             <div class="payment-card__circle"></div>
                           </div>
                         </article>
-                      </div>
+                      </div> -->
                       <!-- Add new payment card -->
                       <div class="col">
                         <a href="<?php echo ROOT; ?>Home/AddNewCard" class="new-card">

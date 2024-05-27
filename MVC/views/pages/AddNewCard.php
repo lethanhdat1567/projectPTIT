@@ -1,3 +1,5 @@
+<?php $row = mysqli_fetch_assoc($data['users']);
+ ?>
 <main class="profile">
       <div class="container">
         <!-- Search bar -->
@@ -26,12 +28,27 @@
                 <!-- User -->
                 <div class="profile-user">
                   <img
-                    src="<?php echo ASSETS; ?>img/z4888248915574_b3c4f7538cab253aae1f1560aa4672a3 (1).jpg"
-                    alt=""
+                  src="<?php echo ASSETS; ?>img/avatar/<?php if($row['avatar']){
+                      echo $row['avatar'];
+                    }
+                    else{
+                      echo "avatarUnset.png";
+                    } ?>"
                     class="profile-user__avatar"
                   />
-                  <h1 class="profile-user__name">Imran Khan</h1>
-                  <p class="profile-user__desc">Registered: 17th May 2022</p>
+                  <h1 class="profile-user__name">
+                  <?php  echo $row['fullname'] ?>
+                  </h1>
+                  <p class="profile-user__desc">
+                    <?php
+                    $created_at_date = new DateTime($row["created_at"]);
+                    $_SESSION["created_at"] = $created_at_date->format('Y-m-d');
+                    if (isset($_SESSION["created_at"])) {
+                     echo "Registered: ";
+                     echo htmlspecialchars($_SESSION["created_at"]);
+                   }
+                    ?>
+                  </p>
                 </div>
                 <!-- Menu 1 -->
                 <div class="profile-menu">
@@ -185,7 +202,7 @@
                       </a>
                       Add credit or debit card
                     </h2>
-                    <form action="profile.html" class="form form-card">
+                    <form action="<?php echo ROOT; ?>User/UpCreditCard" class="form form-card" method="post">
                       <!-- Form row 1 -->
                       <div class="form__row">
                         <!-- First name -->
@@ -200,7 +217,7 @@
                             <input
                               type="text"
                               placeholder="First Name"
-                              name=""
+                              name="firstname"
                               id="firstname"
                               class="form__input"
                               required
@@ -223,7 +240,7 @@
                             <input
                               type="text"
                               placeholder="Last Name"
-                              name=""
+                              name="lastname"
                               id="lastname"
                               class="form__input"
                               required
@@ -248,7 +265,7 @@
                             <input
                               type="text"
                               placeholder="Card Number"
-                              name=""
+                              name="cardnumber"
                               id="card-number"
                               class="form__input"
                               required
@@ -269,8 +286,8 @@
                           <div class="form__text-input">
                             <input
                               type="text"
-                              placeholder="MM/YY"
-                              name=""
+                              placeholder="YY-MM-DD"
+                              name="expirationdate"
                               id="expiration-date"
                               class="form__input"
                               required
@@ -292,7 +309,7 @@
                             <input
                               type="text"
                               placeholder="123"
-                              name=""
+                              name="cvv"
                               id="cvv"
                               class="form__input"
                               required
@@ -312,7 +329,7 @@
                             <input
                               type="text"
                               placeholder="Phone Number"
-                              name=""
+                              name="phonenumber"
                               id="phone-number"
                               class="form__input"
                               required
@@ -323,6 +340,8 @@
                           </p>
                         </div>
                       </div>
+                      
+                            
                       <div class="form__group">
                         <label
                           for="set-default-card"
@@ -339,12 +358,12 @@
                           />
                           <span class="form__checkbox-label"
                             >Set as default card</span
-                          >
+                          >                         
                         </label>
                       </div>
                       <div class="form-card__bottom">
                         <a href="<?php echo ROOT; ?>Home/Profile" class="btn btn--text">Cancel</a>
-                        <button class="btn btn--primary btn--rounded">
+                        <button name="btnsaveCredit" class="btn btn--primary btn--rounded" >
                           Save card
                         </button>
                       </div>

@@ -6,6 +6,8 @@ class User extends Controller
     public $InsertUser;
     public $GetUser;
     public $UpdateUser;
+    
+    
 
     public function __construct()
     {
@@ -13,6 +15,7 @@ class User extends Controller
         $this->InsertUser = $this->model("InsertUser");
         $this->GetUser = $this->model("GetUser");
         $this->UpdateUser = $this->model("UpdateUser");
+        
 
     }
      function GetPagesForgetPass(){
@@ -82,8 +85,42 @@ class User extends Controller
     {
         unset($_SESSION["role_id"]);
         header("Location: http://localhost/projectPTIT/User/SignIn");
-        exit(); // Add exit() to ensure the script stops executing after the redirect
+        exit(); 
     }
+
+    // function getuserdetail() {
+    //     $id = $_SESSION['id'];
+    //     $users = $this->GetUser->GetUserValues($id);
+    //     $this->view("master1",["Pages"=>"AddNewCard","users"=>$users]);
+    // }
+
+
+    function UpCreditCard(){
+        if(isset($_POST["btnsaveCredit"])){
+            $id = $_SESSION['id'];
+            $cardnumber = $_POST["cardnumber"];
+            $expirationdate = $_POST["expirationdate"];
+            $cvv = $_POST["cvv"];
+            $firstname = $_POST["firstname"];
+            $lastname = $_POST["lastname"];
+            
+       
+            $kq = $this->UpdateUser->UpdateCreditCard($id, $cardnumber, $expirationdate, $cvv, $firstname, $lastname); 
+            if($kq){
+         
+                $_SESSION['cardnumber'] = $cardnumber;
+                $_SESSION['expirationdate'] = $expirationdate;
+                $_SESSION['cvv'] = $cvv;
+                $_SESSION['firstname'] = $firstname;
+                $_SESSION['lastname'] = $lastname;
+            }
+            header("Location: http://localhost/projectPTIT/Home/Profile");
+            exit ();
+        }
+    }
+    
+    
+
 
     function DangKyUser()
     {
