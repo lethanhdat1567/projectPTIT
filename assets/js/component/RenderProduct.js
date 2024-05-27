@@ -129,7 +129,7 @@ function searchProduct() {
               <div class="col">
                 <article class="product-card">
                   <div class="product-card__img-wrap">
-                    <a href="${ROOT}Home/ProductDetail/${index + 1}">
+                    <a href="${ROOT}Home/ProductDetail/${product.id}">
                       <img
                         src="${ASSETS}img/products/${product.thumbnail}"
                         alt=""
