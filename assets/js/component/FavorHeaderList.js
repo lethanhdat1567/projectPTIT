@@ -27,11 +27,13 @@ function FavorHeaderList({ favor }) {
     </div>
     <div class="act-dropdown__separate"></div>
     <div class="act-dropdown__checkout">
-      <a
+      <button
         href="${ROOT}Home/CheckOut"
-        class="btn btn--primary btn--rounded act-dropdown__checkout-btn"
-        >Check Out All</a
+        class="cart-info__checkout-all btn btn--primary btn--rounded"
+        onclick='dispatch("checkoutAll")'
       >
+        Check Out
+      </button>
     </div>
   `;
 }

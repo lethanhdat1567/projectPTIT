@@ -41,4 +41,5 @@
   const ASSETS = "<?php echo ASSETS; ?>";
   const ROOT = "<?php echo ROOT; ?>";
 </script>
+<script src="<?php echo ASSETS ?>js/Card.js" type="module"></script>
 </html>

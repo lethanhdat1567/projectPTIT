@@ -12,6 +12,9 @@ if (subWrap) {
 }
 // thao tao
 function subList({ products, total }) {
+  const result = products.reduce((acc, item) => {
+    return acc + parseInt(item.price);
+  }, 0);
   return html`
     <div class="cart-info__row">
       <span>Subtotal <span class="cart-info__sub-label">(items)</span></span>
@@ -19,7 +22,7 @@ function subList({ products, total }) {
     </div>
     <div class="cart-info__row">
       <span>Price <span class="cart-info__sub-label">(Total)</span></span>
-      <span>${total}$</span>
+      <span>${result}$</span>
     </div>
     <div class="cart-info__row">
       <span>Shipping</span>
@@ -28,7 +31,7 @@ function subList({ products, total }) {
     <div class="cart-info__separate"></div>
     <div class="cart-info__row">
       <span>Estimated Total</span>
-      <span>${total}$</span>
+      <span>${result}$</span>
     </div>
     <a href=${link} class="cart-info__next-btn btn btn--primary btn--rounded">
       Continue to checkout
