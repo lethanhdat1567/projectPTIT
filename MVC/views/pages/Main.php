@@ -142,40 +142,6 @@
 
                   <div class="filter__separate"></div>
 
-                  <!-- Filter 2 -->
-                  <div class="filter__col">
-                    <label class="form__label">Size/Weight</label>
-                    <div class="filter__form-group">
-                      <div class="form__select-wrap">
-                        <div class="form__select" style="--width: 158px">
-                          500g
-                          <img
-                            src="<?php echo ASSETS; ?>icons/select-arrow.svg"
-                            alt=""
-                            class="form__select-arrow icon"
-                          />
-                        </div>
-                        <div class="form__select">
-                          Gram
-                          <img
-                            src="<?php echo ASSETS; ?>icons/select-arrow.svg"
-                            alt=""
-                            class="form__select-arrow icon"
-                          />
-                        </div>
-                      </div>
-                      <div class="filter__form-group">
-                        <div class="form__tabs">
-                          <button class="form__tab">Small</button>
-                          <button class="form__tab">Medium</button>
-                          <button class="form__tab">Large</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="filter__separate"></div>
-
                   <!-- Filter 3 -->
                   <div class="filter__col">
                     <label class="form__label">Price</label>
