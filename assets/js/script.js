@@ -208,7 +208,9 @@ window.addEventListener("DOMContentLoaded", () => {
   homeLink.classList.add("filter-home", "hide", "btn--primary");
   homeLink.href = `${ROOT}/Home/Main`;
   homeLink.textContent = "Trang chủ";
-  filterContainer.insertAdjacentElement("beforebegin", homeLink);
+  if (filterContainer) {
+    filterContainer.insertAdjacentElement("beforebegin", homeLink);
+  }
   function toggleHomeLink() {
     homeLink.classList.remove("hide");
   }

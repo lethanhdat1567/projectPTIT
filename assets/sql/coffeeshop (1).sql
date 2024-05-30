@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 26, 2024 at 12:25 PM
+-- Generation Time: May 30, 2024 at 09:01 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -169,16 +169,21 @@ CREATE TABLE `user` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   `deleted` int(11) DEFAULT NULL,
-  `avatar` varchar(500) DEFAULT NULL
+  `avatar` varchar(500) DEFAULT NULL,
+  `cardnumber` int(50) DEFAULT NULL,
+  `expirationdate` date DEFAULT NULL,
+  `firstname` varchar(50) DEFAULT NULL,
+  `lastname` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `fullname`, `email`, `phone_number`, `address`, `password`, `role_id`, `created_at`, `updated_at`, `deleted`, `avatar`) VALUES
-(4, 'Đạt Lê Thành', 'dat@gmail.com', '909364029', 'E12/358, Ấp 5, Xã Đa Phước', '$2y$10$nmV39CO5xYb8dbAAEyldV.gAcao.EJbe9fnONQTTZepPQZvvbPmPe', 0, '2024-05-21 11:13:17', NULL, NULL, 'z4888248915574_b3c4f7538cab253aae1f1560aa4672a3 (1).jpg'),
-(5, 'Admin', 'admin@gmail.com', NULL, NULL, '$2y$10$AHFihf0SHC0rFGG2dwBlc.TCPbJ.whxg5xSlZHP/4SvyKRNXC6HyC', 1, '2024-05-21 11:14:38', NULL, NULL, NULL);
+INSERT INTO `user` (`id`, `fullname`, `email`, `phone_number`, `address`, `password`, `role_id`, `created_at`, `updated_at`, `deleted`, `avatar`, `cardnumber`, `expirationdate`, `firstname`, `lastname`) VALUES
+(4, 'Đạt Lê Thành', 'dat@gmail.com', '909364029', 'E12/358, Ấp 5, Xã Đa Phước', '$2y$10$nmV39CO5xYb8dbAAEyldV.gAcao.EJbe9fnONQTTZepPQZvvbPmPe', 0, '2024-05-21 11:13:17', NULL, NULL, 'z4888248915574_b3c4f7538cab253aae1f1560aa4672a3 (1).jpg', NULL, NULL, NULL, NULL),
+(5, 'Admin', 'admin@gmail.com', NULL, NULL, '$2y$10$AHFihf0SHC0rFGG2dwBlc.TCPbJ.whxg5xSlZHP/4SvyKRNXC6HyC', 1, '2024-05-21 11:14:38', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(7, 'a', 'sad@dsa', NULL, NULL, '$2y$10$wlP/XhB7FXE/yYWLt10UBetVXtg8S55CXaNvgWeL31WwVAFQI9W3K', 0, '2024-05-30 13:51:41', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -288,7 +293,7 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
