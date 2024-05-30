@@ -32,7 +32,8 @@
               <th class="admin-product__table-heading">Ảnh</th>
               <th class="admin-product__table-heading">Tên sản phẩm</th>
               <th class="admin-product__table-heading">Ngày cập nhật</th>
-              <th class="admin-product__table-heading">Ngày tạo</th>
+              <th class="admin-product__table-heading">Giá</th>
+              <th class="admin-product__table-heading">Giảm giá</th>
               <th class="admin-product__table-heading">Mô tả</th>
               <th class="admin-product__table-heading">Thao tác</th>
             </tr>
@@ -48,7 +49,8 @@
               </td>
               <td class="admin-product__table-items"><?php echo $row['name'] ?></td>
               <td class="admin-product__table-items"><?php echo$row['updated_at'] ?></td>
-              <td class="admin-product__table-items"><?php echo $row['created_at'] ?></td>
+              <td class="admin-product__table-items"><?php echo $row['price'] ?></td>
+              <td class="admin-product__table-items"><?php echo $row['discount'] ?></td>
               <td class="admin-product__table-items"><p class="admin-product__table-items-desc"><?php echo $row['description'] ?></p></td>
               <td class="admin-product__table-items">
                 <div class="admin-product__wrap-btn">
