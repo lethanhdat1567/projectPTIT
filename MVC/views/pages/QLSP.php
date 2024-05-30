@@ -64,6 +64,11 @@
                       Xóa
                     </button>
                   </a>
+                  <a href="<?php echo ROOT; ?>Admin/UpdateProduct/<?php echo $row['id'] ?>">
+                  <button class="btn" style="background-color: green; color: #fff">
+                    Thêm ảnh 
+                  </button>
+                </a>
                 </div>
               </td>
               <!-- dung viec render -->

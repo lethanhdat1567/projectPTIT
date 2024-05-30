@@ -58,6 +58,23 @@
                     />
                   </div>
                 </div>
+                <!-- Giam gia -->
+                <div class="form__group">
+                  <label for="price" class="form__label form-card__label">
+                    Giảm giá
+                  </label>
+                  <div class="form__text-input">
+                    <input
+                      type="text"
+                      placeholder="Giảm giá..."
+                      name="ProductDiscount"
+                      id="discount"
+                      class="form__input"
+                      value="<?php echo $row['discount'] ?>"
+                      required
+                    />
+                  </div>
+                </div>
               </div>
               <!-- Form row 2 -->
               <div class="form__row-admin">
