@@ -102,11 +102,17 @@
                   <!-- Filter 1 -->
                   <div class="filter__col">
                     <label class="form__label">Price</label>
-                    <div class="filter__form-group">
+                    <!-- slider -->
+                    <div class="filter__form-group filter__form-group-slider">
+                      <!-- progress -->
                       <div
-                        class="filter__form-slider"
-                        style="--min-value: 10%; --max-value: 60%"
-                      ></div>
+                        class="filter__form-slider">
+                      </div>
+                    </div>
+                    <!-- CHỈNH LẠI GIÁ TIỀN Ở ĐÂY -->
+                    <div class="filter__form-group-wrapper">
+                      <input type="range" class="range-min" min="0" max ="2000000" value="500000" step="50000">
+                      <input type="range" class="range-max" min="0" max="2000000" value="1500000" step="50000">
                     </div>
                     <div class="filter__form-group filter__form-group--inline">
                       <div>
@@ -116,10 +122,11 @@
                         <div
                           class="filter__form-text-input filter__form-text-input--small"
                         >
+                        <!-- CHỈNH LẠI GIÁ TIỀN Ở ĐÂY -->
                           <input
                             type="text"
-                            class="filter__form-input"
-                            value="$30.00"
+                            class="filter__form-input price-input price-input__min"
+                            value="500000"
                           />
                         </div>
                       </div>
@@ -130,10 +137,11 @@
                         <div
                           class="filter__form-text-input filter__form-text-input--small"
                         >
+                        <!-- CHỈNH LẠI GIÁ TIỀN Ở ĐÂY -->
                           <input
                             type="text"
-                            class="filter__form-input"
-                            value="$100.00"
+                            class="filter__form-input price-input price-input__max"
+                            value="1500000"
                           />
                         </div>
                       </div>
@@ -144,13 +152,13 @@
 
                   <!-- Filter 3 -->
                   <div class="filter__col">
-                    <label class="form__label">Price</label>
+                    <label class="form__label">Tên sản phẩm</label>
                     <div class="filter__form-group">
                       <div class="filter__form-text-input">
                         <input
                           type="text"
                           placeholder="Search brand name"
-                          class="filter__form-input"
+                          class="filter__form-input filter__form-input-branch"
                         />
                         <img
                           src="<?php echo ASSETS; ?>icons/seach.svg"

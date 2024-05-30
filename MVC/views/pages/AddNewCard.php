@@ -297,51 +297,7 @@
                             Please enter your expiration date!
                           </p>
                         </div>
-                      </div>
-                      <!-- Form row 3 -->
-                      <div class="form__row">
-                        <!-- First name -->
-                        <div class="form__group">
-                          <label for="cvv" class="form__label form-card__label">
-                            CVV
-                          </label>
-                          <div class="form__text-input">
-                            <input
-                              type="text"
-                              placeholder="123"
-                              name="cvv"
-                              id="cvv"
-                              class="form__input"
-                              required
-                            />
-                          </div>
-                          <p class="form__error">Please enter your CVV!</p>
-                        </div>
-                        <!-- Last Name -->
-                        <div class="form__group">
-                          <label
-                            for="phone-number"
-                            class="form__label form-card__label"
-                          >
-                            Phone Number
-                          </label>
-                          <div class="form__text-input">
-                            <input
-                              type="text"
-                              placeholder="Phone Number"
-                              name="phonenumber"
-                              id="phone-number"
-                              class="form__input"
-                              required
-                            />
-                          </div>
-                          <p class="form__error">
-                            Please enter your phone number!
-                          </p>
-                        </div>
-                      </div>
-                      
-                            
+                      </div>         
                       <div class="form__group">
                         <label
                           for="set-default-card"

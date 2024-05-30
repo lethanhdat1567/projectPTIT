@@ -1,5 +1,4 @@
 import html from "../redux/core.js";
-import { connect } from "../redux/store.js";
 function Search() {
   fetch("http://localhost/projectPTIT/API/Read")
     .then((response) => response.json())
@@ -12,7 +11,7 @@ function Search() {
                 <div
                   class="product-card__img-wrap product-card__img-wrap--search"
                 >
-                  <a href="${ROOT}Home/ProductDetail/${index + 1}">
+                  <a href="${ROOT}Home/ProductDetail/${product.id}">
                     <img
                       src="${ASSETS}img/products/${product.thumbnail}"
                       alt=""
@@ -31,7 +30,7 @@ function Search() {
                   </h3>
                   <div class="product-card__row">
                     <a
-                      href="${ROOT}Home/ProductDetail/${index + 1}"
+                      href="${ROOT}Home/ProductDetail/${product.id}"
                       class="product-card__price-search"
                     >
                       <span class="product-card__price">$${product.price}</span>

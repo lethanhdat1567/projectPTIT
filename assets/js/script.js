@@ -1,3 +1,4 @@
+import RenderFilter from "./component/RenderFilter.js";
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
@@ -96,6 +97,7 @@ function initJsToggle() {
     }
     button.onclick = (e) => {
       e.preventDefault();
+      RenderFilter();
       if (!$(target)) {
         return (document.body.innerText = `Không tìm thấy phần tử "${target}"`);
       }
@@ -200,6 +202,16 @@ window.addEventListener("DOMContentLoaded", () => {
       .filter((x) => (x && x !== true) || x === 0)
       .join("");
   }
+  // Thêm trang chủ
+  const filterContainer = document.querySelector(".render-product");
+  const homeLink = document.createElement("a");
+  homeLink.classList.add("filter-home", "hide", "btn--primary");
+  homeLink.href = `${ROOT}/Home/Main`;
+  homeLink.textContent = "Trang chủ";
+  filterContainer.insertAdjacentElement("beforebegin", homeLink);
+  function toggleHomeLink() {
+    homeLink.classList.remove("hide");
+  }
   const cates = document.querySelectorAll(".category-item");
   const catesArr = Array.from(cates);
   catesArr.forEach((cate) => {
@@ -207,6 +219,11 @@ window.addEventListener("DOMContentLoaded", () => {
       fetch("http://localhost/projectPTIT/API/Read")
         .then((response) => response.json())
         .then((data) => {
+          let originalIndexes = [];
+          data.forEach((item, index) => {
+            originalIndexes.push(index);
+          });
+          toggleHomeLink();
           let productCate = [];
           if (cate.classList.contains("category-item-1")) {
             productCate = data.filter((value) => {
@@ -224,13 +241,24 @@ window.addEventListener("DOMContentLoaded", () => {
               return price > 500000;
             });
           }
+          const originalIndexesProductCate = [];
+          // So sánh từng sản phẩm trong productCate với dữ liệu ban đầu để tìm index cũ
+          productCate.forEach((product) => {
+            const oldIndex = originalIndexes.findIndex(
+              (index) => data[index].id === product.id
+            );
+            originalIndexesProductCate.push(oldIndex);
+          });
+
+          // Sử dụng mảng originalIndexesProductCate để lấy index cũ của từng sản phẩm trong productCate
           const CateHtml = productCate
             .map((product, index) => {
+              const oldIndex = originalIndexesProductCate[index];
               return html`
                 <div class="col">
                   <article class="product-card">
                     <div class="product-card__img-wrap">
-                      <a href="${ROOT}Home/ProductDetail/${index + 1}">
+                      <a href="${ROOT}Home/ProductDetail/${product.id}">
                         <img
                           src="${ASSETS}img/products/${product.thumbnail}"
                           alt=""
@@ -239,7 +267,7 @@ window.addEventListener("DOMContentLoaded", () => {
                       </a>
                       <button
                         class="like-btn product-card__like-btn"
-                        data-index=${index}
+                        data-index="${oldIndex}"
                       >
                         <img
                           src="${ASSETS}icons/heart.svg"
@@ -254,7 +282,7 @@ window.addEventListener("DOMContentLoaded", () => {
                       </button>
                     </div>
                     <h3 class="product-card__title">
-                      <a href="${ROOT}Home/ProductDetail/${index + 1}">
+                      <a href="${ROOT}Home/ProductDetail/${product.id}">
                         ${product.name}
                       </a>
                     </h3>
@@ -275,7 +303,42 @@ window.addEventListener("DOMContentLoaded", () => {
             .join("");
           const productElement = document.querySelector(".render-product");
           productElement.innerHTML = CateHtml;
+          const favorites = JSON.parse(localStorage.getItem("FAVOR"));
+          const FavorBtnsNode = document.querySelectorAll(
+            ".product-card__like-btn"
+          );
+
+          const FavorBtns = Array.from(FavorBtnsNode);
+          FavorBtns.forEach((FavorBtn, index) => {
+            FavorBtn.onclick = function (e) {
+              e.preventDefault(); // Ngăn chặn hành động mặc định của nút (chẳng hạn chuyển hướng)
+              const index = FavorBtn.getAttribute("data-index");
+              // Thực hiện toggle lớp CSS 'like-btn--liked'
+              this.classList.toggle("like-btn--liked");
+              if (this.classList.contains("like-btn--liked")) {
+                dispatch("addFavor", index);
+                // location.reload();
+              } else {
+                dispatch("deleteFavor", index);
+                // location.reload();
+              }
+            };
+            const product = productCate[index];
+
+            if (product) {
+              const isFavor = favorites.some(
+                (item) => item.id === product.id && item.isFavor
+              );
+
+              if (isFavor) {
+                FavorBtn.classList.add("like-btn--liked");
+              }
+            } else {
+              console.log("Không tìm thấy sản phẩm tương ứng");
+            }
+          });
         });
     };
   });
 });
+// Filter

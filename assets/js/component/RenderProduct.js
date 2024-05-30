@@ -8,7 +8,6 @@ function RenderProduct({ products, favor, All }) {
   fetch("http://localhost/projectPTIT/API/Read")
     .then((response) => response.json())
     .then((data) => {
-      // storage.setALL(data);
       const HTML = data
         .map((product, index) => {
           return html`
@@ -39,7 +38,7 @@ function RenderProduct({ products, favor, All }) {
                   </button>
                 </div>
                 <h3 class="product-card__title">
-                  <a href="${ROOT}Home/ProductDetail/${index + 1}">
+                  <a href="${ROOT}Home/ProductDetail/${product.id}">
                     ${product.name}
                   </a>
                 </h3>
@@ -153,7 +152,7 @@ function searchProduct() {
                     </button>
                   </div>
                   <h3 class="product-card__title">
-                    <a href="${ROOT}Home/ProductDetail/${index + 1}">
+                    <a href="${ROOT}Home/ProductDetail/${product.id}">
                       ${product.name}
                     </a>
                   </h3>

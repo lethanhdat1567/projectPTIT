@@ -346,50 +346,8 @@
                   <!--  Lists-->
                   <div class="col-12">
                     <h2 class="cart-info__heading">Lists</h2>
-                    <p class="cart-info__desc profile__desc">
-                      2 items - Primary
-                    </p>
-                    <!-- Favourite item 1 -->
-                    <article class="favourite-item">
-                      <img
-                        src="<?php echo ASSETS; ?>img/products/item1.png"
-                        alt=""
-                        class="favourite-item__thumb"
-                      />
-                      <div>
-                        <h3 class="favourite-item__title">
-                          Coffee Beans - Espresso Arabica and Robusta Beans
-                        </h3>
-                        <div class="favourite-item__content">
-                          <span class="favourite-item__price">$47.00</span>
-                          <button class="btn btn--primary btn--rounded">
-                            Add to cart
-                          </button>
-                        </div>
-                      </div>
-                    </article>
-
-                    <div class="separate" style="--margin: 20px"></div>
-
-                    <!-- Favourite item 2 -->
-                    <article class="favourite-item">
-                      <img
-                        src="<?php echo ASSETS; ?>img/products/item1.png"
-                        alt=""
-                        class="favourite-item__thumb"
-                      />
-                      <div>
-                        <h3 class="favourite-item__title">
-                          Coffee Beans - Espresso Arabica and Robusta Beans
-                        </h3>
-                        <div class="favourite-item__content">
-                          <span class="favourite-item__price">$47.00</span>
-                          <button class="btn btn--primary btn--rounded">
-                            Add to cart
-                          </button>
-                        </div>
-                      </div>
-                    </article>
+                   <div class="cart-info__list-card">
+                   </div>
                   </div>
                 </div>
               </div>

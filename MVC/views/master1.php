@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -31,7 +30,7 @@
     <!-- <link rel="stylesheet"  href="./public/css/main.css"> -->
     <!-- <link rel="stylesheet" href="<?php echo ASSETS; ?>/css/main.css"> -->
     <link rel="stylesheet" type="text/css"  href="<?php echo ASSETS; ?>css/main.css">
-    <script src="<?php echo ASSETS; ?>js/script.js"></script>
+    <script src="<?php echo ASSETS; ?>js/script.js" type="module"></script>
     <title>Grocery Mart</title>
   </head>
 <body>
@@ -41,4 +40,5 @@
 </body>
   <script src="<?php echo ASSETS ?>js/Card.js" type="module"></script>
   <script src="<?php echo ASSETS; ?>js/component/subList.js" type="module"></script>
+  <script src="<?php echo ASSETS; ?>js/component/SearchMobile.js" type="module"></script>
 </html>

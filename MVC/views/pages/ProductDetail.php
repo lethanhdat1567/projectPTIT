@@ -132,23 +132,23 @@
                         <div class="form__select-wrap">
                           <div class="form__select" style="--width: 146px">
                             500g
-                            <img
+                            <!-- <img
                               src="<?php echo ASSETS; ?>icons/select-arrow.svg"
                               alt=""
                               class="form__select-arrow icon"
-                            />
+                            /> -->
                           </div>
                           <div class="form__select">
                             Gram
-                            <img
+                            <!-- <img
                               src="<?php echo ASSETS; ?>icons/select-arrow.svg"
                               alt=""
                               class="form__select-arrow icon"
-                            />
+                            /> -->
                           </div>
                         </div>
                         <div class="filter__form-group">
-                          <div class="form__tags">
+                          <!-- <div class="form__tags">
                             <button class="form__tag prod-info__tag">
                               Small
                             </button>
@@ -158,7 +158,7 @@
                             <button class="form__tag prod-info__tag">
                               Large
                             </button>
-                          </div>
+                          </div> -->
                         </div>
                       </div>
                     </div>
@@ -419,258 +419,8 @@
                   Similar items you might like
                 </h2>
                 <div
-                  class="row row-cols-6 row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 g-3"
+                  class="row row-cols-6 row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 g-3 render-product similar-product"
                 >
-                  <!-- Product item 1 -->
-                  <div class="col">
-                    <article class="product-card">
-                      <div class="product-card__img-wrap">
-                        <a href="<?php echo ROOT; ?>Home/ProductDetail">
-                          <img
-                            src="<?php echo ASSETS; ?>img/products/item1.png"
-                            alt=""
-                            class="product-card__thumb"
-                          />
-                        </a>
-                        <button
-                          class="like-btn like-btn--liked product-card__like-btn"
-                        >
-                          <img
-                            src="<?php echo ASSETS; ?>icons/heart.svg"
-                            alt=""
-                            class="like-btn__icon icon"
-                          />
-                          <img
-                            src="<?php echo ASSETS; ?>icons/heart-red.svg"
-                            alt=""
-                            class="like-btn__icon--liked"
-                          />
-                        </button>
-                      </div>
-                      <h3 class="product-card__title">
-                        <a href="<?php echo ROOT; ?>Home/ProductDetail">
-                          Coffee Beans - Espresso Arabica and Robusta Beans
-                        </a>
-                      </h3>
-                      <p class="product-card__brand">Lavazza</p>
-                      <div class="product-card__row">
-                        <span class="product-card__price">$47.00</span>
-                        <img
-                          src="<?php echo ASSETS; ?>icons/star.svg"
-                          alt=""
-                          class="product-card__star"
-                        />
-                        <span class="product-card__score">4.3</span>
-                      </div>
-                    </article>
-                  </div>
-                  <!-- Product item 2 -->
-                  <div class="col">
-                    <article class="product-card">
-                      <div class="product-card__img-wrap">
-                        <a href="<?php echo ROOT; ?>Home/ProductDetail">
-                          <img
-                            src="<?php echo ASSETS; ?>img/products/item2.png"
-                            alt=""
-                            class="product-card__thumb"
-                          />
-                        </a>
-                        <button class="like-btn product-card__like-btn">
-                          <img
-                            src="<?php echo ASSETS; ?>icons/heart.svg"
-                            alt=""
-                            class="like-btn__icon icon"
-                          />
-                          <img
-                            src="<?php echo ASSETS; ?>icons/heart-red.svg"
-                            alt=""
-                            class="like-btn__icon--liked"
-                          />
-                        </button>
-                      </div>
-                      <h3 class="product-card__title">
-                        <a href="<?php echo ROOT; ?>Home/ProductDetail">
-                          Coffee Beans - Espresso Arabica and Robusta Beans
-                        </a>
-                      </h3>
-                      <p class="product-card__brand">Lavazza</p>
-                      <div class="product-card__row">
-                        <span class="product-card__price">$47.00</span>
-                        <img
-                          src="<?php echo ASSETS; ?>icons/star.svg"
-                          alt=""
-                          class="product-card__star"
-                        />
-                        <span class="product-card__score">4.3</span>
-                      </div>
-                    </article>
-                  </div>
-                  <!-- Product item 3 -->
-                  <div class="col">
-                    <article class="product-card">
-                      <div class="product-card__img-wrap">
-                        <a href="<?php echo ROOT; ?>Home/ProductDetail">
-                          <img
-                            src="<?php echo ASSETS; ?>img/products/item3.png"
-                            alt=""
-                            class="product-card__thumb"
-                          />
-                        </a>
-                        <button
-                          class="like-btn like-btn--liked product-card__like-btn"
-                        >
-                          <img
-                            src="<?php echo ASSETS; ?>icons/heart.svg"
-                            alt=""
-                            class="like-btn__icon icon"
-                          />
-                          <img
-                            src="<?php echo ASSETS; ?>icons/heart-red.svg"
-                            alt=""
-                            class="like-btn__icon--liked"
-                          />
-                        </button>
-                      </div>
-                      <h3 class="product-card__title">
-                        <a href="<?php echo ROOT; ?>Home/ProductDetail">
-                          Coffee Beans - Espresso Arabica and Robusta Beans
-                        </a>
-                      </h3>
-                      <p class="product-card__brand">Lavazza</p>
-                      <div class="product-card__row">
-                        <span class="product-card__price">$47.00</span>
-                        <img
-                          src="<?php echo ASSETS; ?>icons/star.svg"
-                          alt=""
-                          class="product-card__star"
-                        />
-                        <span class="product-card__score">4.3</span>
-                      </div>
-                    </article>
-                  </div>
-                  <!-- Product item 4 -->
-                  <div class="col">
-                    <article class="product-card">
-                      <div class="product-card__img-wrap">
-                        <a href="<?php echo ROOT; ?>Home/ProductDetail">
-                          <img
-                            src="<?php echo ASSETS; ?>img/products/item4.png"
-                            alt=""
-                            class="product-card__thumb"
-                          />
-                        </a>
-                        <button class="like-btn product-card__like-btn">
-                          <img
-                            src="<?php echo ASSETS; ?>icons/heart.svg"
-                            alt=""
-                            class="like-btn__icon icon"
-                          />
-                          <img
-                            src="<?php echo ASSETS; ?>icons/heart-red.svg"
-                            alt=""
-                            class="like-btn__icon--liked"
-                          />
-                        </button>
-                      </div>
-                      <h3 class="product-card__title">
-                        <a href="<?php echo ROOT; ?>Home/ProductDetail">
-                          Coffee Beans - Espresso Arabica and Robusta Beans
-                        </a>
-                      </h3>
-                      <p class="product-card__brand">Lavazza</p>
-                      <div class="product-card__row">
-                        <span class="product-card__price">$47.00</span>
-                        <img
-                          src="<?php echo ASSETS; ?>icons/star.svg"
-                          alt=""
-                          class="product-card__star"
-                        />
-                        <span class="product-card__score">4.3</span>
-                      </div>
-                    </article>
-                  </div>
-                  <!-- Product item 5 -->
-                  <div class="col">
-                    <article class="product-card">
-                      <div class="product-card__img-wrap">
-                        <a href="<?php echo ROOT; ?>Home/ProductDetail">
-                          <img
-                            src="<?php echo ASSETS; ?>img/products/item4.png"
-                            alt=""
-                            class="product-card__thumb"
-                          />
-                        </a>
-                        <button class="like-btn product-card__like-btn">
-                          <img
-                            src="<?php echo ASSETS; ?>icons/heart.svg"
-                            alt=""
-                            class="like-btn__icon icon"
-                          />
-                          <img
-                            src="<?php echo ASSETS; ?>icons/heart-red.svg"
-                            alt=""
-                            class="like-btn__icon--liked"
-                          />
-                        </button>
-                      </div>
-                      <h3 class="product-card__title">
-                        <a href="<?php echo ROOT; ?>Home/ProductDetail">
-                          Coffee Beans - Espresso Arabica and Robusta Beans
-                        </a>
-                      </h3>
-                      <p class="product-card__brand">Lavazza</p>
-                      <div class="product-card__row">
-                        <span class="product-card__price">$47.00</span>
-                        <img
-                          src="<?php echo ASSETS; ?>icons/star.svg"
-                          alt=""
-                          class="product-card__star"
-                        />
-                        <span class="product-card__score">4.3</span>
-                      </div>
-                    </article>
-                  </div>
-                  <!-- Product item 6 -->
-                  <div class="col">
-                    <article class="product-card">
-                      <div class="product-card__img-wrap">
-                        <a href="<?php echo ROOT; ?>Home/ProductDetail">
-                          <img
-                            src="<?php echo ASSETS; ?>img/products/item4.png"
-                            alt=""
-                            class="product-card__thumb"
-                          />
-                        </a>
-                        <button class="like-btn product-card__like-btn">
-                          <img
-                            src="<?php echo ASSETS; ?>icons/heart.svg"
-                            alt=""
-                            class="like-btn__icon icon"
-                          />
-                          <img
-                            src="<?php echo ASSETS; ?>icons/heart-red.svg"
-                            alt=""
-                            class="like-btn__icon--liked"
-                          />
-                        </button>
-                      </div>
-                      <h3 class="product-card__title">
-                        <a href="<?php echo ROOT; ?>Home/ProductDetail">
-                          Coffee Beans - Espresso Arabica and Robusta Beans
-                        </a>
-                      </h3>
-                      <p class="product-card__brand">Lavazza</p>
-                      <div class="product-card__row">
-                        <span class="product-card__price">$47.00</span>
-                        <img
-                          src="<?php echo ASSETS; ?>icons/star.svg"
-                          alt=""
-                          class="product-card__star"
-                        />
-                        <span class="product-card__score">4.3</span>
-                      </div>
-                    </article>
-                  </div>
                 </div>
               </div>
             </div>
@@ -680,7 +430,36 @@
     </main>
     <!-- script -->
     <script>
-      const AddToCard = document.querySelector('.prod-info__add-to-cart');
+     const AddToCard = document.querySelector('.prod-info__add-to-cart');
+    const All = JSON.parse(localStorage.getItem('ALL'));
+    const favorites = JSON.parse(localStorage.getItem("FAVOR"));
+    const Btn = document.querySelector('.prod-info__like-btn');
+
+    // Kiểm tra xem danh sách yêu thích không rỗng
+if(favorites && favorites.length > 0) {
+  const isFavor = favorites.some(item => item.id == <?php echo $row['id'] ?> && item.isFavor);
+  if(isFavor) {
+    console.log('123');
+    Btn.classList.add("like-btn--liked");
+  }
+}
+
+Btn.onclick = e => {
+  e.preventDefault();
+  All.forEach((item,index) => {
+    if(item.id == <?php echo $row['id'] ?>) {
+      const indexPro = index;
+      if (Btn.classList.contains("like-btn--liked")) {
+        Btn.classList.remove('like-btn--liked');
+        dispatch("deleteFavor", indexPro);
+      } else {
+        Btn.classList.add('like-btn--liked');
+        dispatch("addFavor", indexPro);
+      }
+    }
+  });
+}
+
       AddToCard.onclick = (e) => {
         e.preventDefault();
         const productName = <?php echo ($json_data); ?>;
@@ -688,10 +467,8 @@
         let cart = JSON.parse(localStorage.getItem('PRODUCT')) || [];
         let existingProductIndex = cart.findIndex(item => item.id === productName.id);
     if (existingProductIndex !== -1) {
-      // Nếu sản phẩm đã tồn tại trong giỏ hàng, tăng quantity lên 1
       cart[existingProductIndex].quantity = (cart[existingProductIndex].quantity || 1) + 1;
     } else {
-      // Nếu sản phẩm chưa tồn tại trong giỏ hàng, thêm mới vào giỏ hàng với quantity là 1
       productName.quantity = 1;
       cart.push(productName);
     }

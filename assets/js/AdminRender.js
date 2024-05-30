@@ -33,7 +33,7 @@ fetch("http://localhost/projectPTIT/API/Read")
                 </button>
               </div>
               <h3 class="product-card__title">
-                <a href="${ROOT}Home/ProductDetail/${index + 1}">
+                <a href="${ROOT}Home/ProductDetail/${product.id}">
                   ${product.name}
                 </a>
               </h3>
