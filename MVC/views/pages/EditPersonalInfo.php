@@ -27,7 +27,6 @@
               <aside class="profile__sidebar">
                 <!-- User -->
                 <div class="profile-user">
-                  <?php echo $row['avatar']?>
                   <img
                     src="<?php echo ASSETS; ?>img/avatar/<?php if($row['avatar'] || $row['avatar'] != ''){
                       echo $row['avatar'];
