@@ -12,7 +12,6 @@
                     extract($row);
                     $product_item = array(
                         'id' => $row['id'],
-                        'category_id' => $row['category_id'],
                         'name' => $row['name'],
                         'price' => $row['price'],
                         'discount' => $row['discount'],

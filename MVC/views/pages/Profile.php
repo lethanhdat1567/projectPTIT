@@ -27,16 +27,19 @@
               <aside class="profile__sidebar">
                 <!-- User -->
                 <div class="profile-user">
-                  <img
-                    src="<?php echo ASSETS; ?>img/avatar/<?php if($row['avatar']){
-                      echo $row['avatar'];
-                    }
-                    else{
-                      echo "avatarUnset.png";
-                    } ?>"
-                    alt=""
-                    class="profile-user__avatar"
-                  />
+                 <div class="profile-user__avatar js-toggle" toggle-target="#delete-confirm">
+                    <img
+                      src="<?php echo ASSETS; ?>img/avatar/<?php if($row['avatar']){
+                        echo $row['avatar'];
+                      }
+                      else{
+                        echo "avatarUnset.png";
+                      } ?>"
+                      alt=""
+                      class="profile-user__avatar-img"
+                    />
+                    <img src="<?php echo ASSETS ?>icons/square.svg" alt="" class="profile-active__img">
+                 </div>
                   <h1 class="profile-user__name"><?php echo $row['fullname'] ?></h1>
                   <p class="profile-user__desc">Registered: <?php echo substr($row['created_at'],0,10);  ?></p>
                 </div>
@@ -228,39 +231,6 @@
                         </article>
                       </div>
                       <?php } ?>
-
-                      <!-- payment card 2 -->
-                      <!-- <div class="col">
-                        <article
-                          class="payment-card"
-                          style="--bg-color: #354151"
-                        >
-                          <img
-                            src="<?php echo ASSETS; ?>img/card/leaf-bg.svg"
-                            alt=""
-                            class="payment-card__img"
-                          />
-                          <div class="payment-card__top">
-                            <img src="<?php echo ASSETS; ?>img/card/leaf.svg" alt="" />
-                            <span class="payment-card__type">FeatherCard</span>
-                          </div>
-                          <div class="payment-card__number">
-                            
-                          </div>
-                          <div class="payment-card__bottom">
-                            <div>
-                              <p class="payment-card__label">Card Holder</p>
-                              <p class="payment-card__value">Imran Khan</p>
-                            </div>
-                            <div class="payment-card__expired">
-                              <p class="payment-card__label">Expired</p>
-                              <p class="payment-card__value">11/22</p>
-                            </div>
-                            <div class="payment-card__circle"></div>
-                          </div>
-                        </article>
-                      </div> -->
-                      <!-- Add new payment card -->
                       <div class="col">
                         <a href="<?php echo ROOT; ?>Home/AddNewCard" class="new-card">
                           <img
@@ -358,7 +328,7 @@
     </main>
     <div id="delete-confirm" class="modal modal--small hide">
       <div class="modal__content">
-        <div class="modal_-text">Do you want to remove this product?</div>
+        <div class="modal_-text">Bạn có muốn xóa avatar</div>
         <div class="modal__bottom">
           <button
             class="btn btn--small btn--outline modal__btn js-toggle"
