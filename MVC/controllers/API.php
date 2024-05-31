@@ -13,7 +13,6 @@
                     $product_item = array(
                         'id' => $row['id'],
                         'name' => $row['name'],
-                        'galery_id' => $row['galery_id'],
                         'price' => $row['price'],
                         'discount' => $row['discount'],
                         'thumbnail' => $row['thumbnail'],
