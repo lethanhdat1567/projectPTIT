@@ -7,9 +7,9 @@ fetch("http://localhost/projectPTIT/API/Read")
       .map((product, index) => {
         return html`
           <div class="col">
-            <article class="product-card">
+            <article class="product-card admin">
               <div class="product-card__img-wrap">
-                <a href="${ROOT}Home/ProductDetail/${product.id}">
+                <a href="${ROOT}Admin/ProductDetail/${product.id}">
                   <img
                     src="${ASSETS}img/products/${product.thumbnail}"
                     alt=""
@@ -33,7 +33,7 @@ fetch("http://localhost/projectPTIT/API/Read")
                 </button>
               </div>
               <h3 class="product-card__title">
-                <a href="${ROOT}Home/ProductDetail/${product.id}">
+                <a href="${ROOT}Admin/ProductDetail/${product.id}">
                   ${product.name}
                 </a>
               </h3>
@@ -54,4 +54,13 @@ fetch("http://localhost/projectPTIT/API/Read")
       .join("");
     const productElement = document.querySelector(".render-product");
     productElement.innerHTML = HTML;
+    const linkNote = document.querySelectorAll(".admin");
+    const link = Array.from(linkNote);
+
+    link.forEach((item) => {
+      item.onclick = (e) => {
+        alert("Anh/Chị vui lòng đăng nhập trang người dùng!!");
+        e.preventDefault();
+      };
+    });
   });

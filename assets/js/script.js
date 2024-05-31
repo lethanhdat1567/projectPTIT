@@ -343,4 +343,3 @@ window.addEventListener("DOMContentLoaded", () => {
     };
   });
 });
-// Filter

@@ -5,6 +5,7 @@ if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)){
         public $GetProduct;
         public $DeleteProduct;
         public $UpdateProduct;
+        public $AddImg;
         public $GetUser;
         public $DeleteUser;       
         public $UpdateRole;
@@ -13,6 +14,7 @@ if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)){
             $this->GetProduct = $this->model("GetProduct");
             $this->DeleteProduct = $this->model("DeleteProduct");
             $this->UpdateProduct = $this->model("UpdateProduct");
+            // $this->AddImg = $this->model("AddImg");
             $this->GetUser = $this->model("GetUser");
             $this->DeleteUser = $this->model("DeleteUser");
             $this->UpdateRole = $this->model("UpdateRole");
@@ -97,8 +99,13 @@ if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)){
             }
         }
 
-       
-        
+        function AddImg($param) {
+            $products = $this->UpdateProduct->GetIdProduct($param);
+            if($products){
+                $this->view("AdminPage",["Pages"=>"AddImg","product"=> $products]);
+            }
+        }
+
         function Product() {
             // UPDATE PRODUCT
             if(isset($_POST["btnUpdate"])) {
