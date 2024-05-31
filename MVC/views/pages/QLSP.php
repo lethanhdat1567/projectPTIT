@@ -60,7 +60,7 @@
                   </button>
                 </a>
                 <a href="<?php echo ROOT; ?>Admin/DeleteProduct/<?php echo $row['id'] ?>">
-                  <button class="btn btn--danger">
+                  <button class="btn btn--danger" name="btnadminxoa" method="post">
                       Xóa
                     </button>
                   </a>

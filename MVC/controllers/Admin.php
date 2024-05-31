@@ -96,6 +96,9 @@ if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)){
                 $this->view("AdminPage",["Pages"=>"UpdateProduct","product"=> $products]);
             }
         }
+
+       
+        
         function Product() {
             // UPDATE PRODUCT
             if(isset($_POST["btnUpdate"])) {
@@ -129,10 +132,15 @@ if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)){
                 $target_dir = "./assets/img/products/";
                 $target_file = $target_dir . $thumbnailpath;
                 $productImg = $_FILES['thumbnail']['tmp_name'];
-                move_uploaded_file($productImg, $target_file);
-                $kq = $this->InsertProduct->InsertNewProduct($productName,$productPrice,$productDesc,$thumbnailpath);
-                if($kq){
-                    $this->AddProductSuccess();
+                
+                if(move_uploaded_file($productImg, $target_file)){
+                    $product_id = $this->InsertProduct->InsertNewProduct($productName, $productPrice, $productDesc, $thumbnailpath);
+                        if($product_id){
+                            $galeryid = $this->InsertProduct->InsertGalery($thumbnailpath, $product_id);            
+                                if($galeryid){
+                                    $this->AddProductSuccess();
+                                }
+                        }
                 }
             }
         }
