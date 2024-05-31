@@ -32,6 +32,14 @@
                   </div>
                 </div>
               </div>
+              <div class="form-card__bottom">
+                <a
+                  href="<?php echo ROOT; ?>Admin/QLSP"
+                  class="btn btn--text"
+                  >Cancel</a
+                >
+                <button name="btnAdd" class="btn btn--primary btn--rounded">Lưu hình ảnh</button>
+              </div>
             </form>
           </div>
         </div>

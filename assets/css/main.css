@@ -4842,6 +4842,16 @@ html.dark {
   top: 25%;
 }
 .profile-user__avatar {
+  position: relative;
+  width: 121px;
+  height: 121px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  background: #ccc content-box;
+  overflow: hidden;
+}
+.profile-user__avatar--toggle {
   cursor: pointer;
   position: relative;
   width: 121px;
@@ -4852,11 +4862,11 @@ html.dark {
   background: #ccc content-box;
   overflow: hidden;
 }
-.profile-user__avatar:hover .profile-active__img {
+.profile-user__avatar--toggle:hover .profile-active__img {
   opacity: 1;
   visibility: visible;
 }
-.profile-user__avatar:hover {
+.profile-user__avatar--toggle:hover {
   opacity: 0.8;
 }
 .profile-user__avatar-img {

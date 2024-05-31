@@ -26,5 +26,8 @@
                 }
                 echo json_encode($product_array['products']);
             }
+            function AddImgs() {
+               echo "Day la add imgs";
+            }
         }
 ?>

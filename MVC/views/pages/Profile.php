@@ -27,7 +27,7 @@
               <aside class="profile__sidebar">
                 <!-- User -->
                 <div class="profile-user">
-                 <div class="profile-user__avatar js-toggle" toggle-target="#delete-confirm">
+                 <div class="profile-user__avatar profile-user__avatar--toggle js-toggle" toggle-target="#delete-confirm">
                     <img
                       src="<?php echo ASSETS; ?>img/avatar/<?php if($row['avatar']){
                         echo $row['avatar'];
