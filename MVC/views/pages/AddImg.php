@@ -14,11 +14,11 @@
               Thêm ảnh
             </h2>
             <form
-              action="<?php echo ROOT; ?>Admin/Product"
+              action="<?php echo ROOT; ?>Admin/galeryImgs"
               method="post"
               class="form form-card"
-              enctype="multipart/form-data"
-            >
+              enctype="multipart/form-data">
+            
             <?php $row = mysqli_fetch_assoc($data['product']);?>
             <input type="text" hidden name="id" value="<?php echo $row['id'] ?>">
               <!-- Form row 1 -->
@@ -28,7 +28,7 @@
                     Ảnh sản phẩm
                   </label>
                   <div class="form__text-input">
-                    <input type="file" name="thumbnail" id="img" class="form__input" />
+                    <input type="file" name="thumbnail[]" id="img" class="form__input" multiple/>
                   </div>
                 </div>
               </div>
@@ -38,7 +38,7 @@
                   class="btn btn--text"
                   >Cancel</a
                 >
-                <button name="btnAdd" class="btn btn--primary btn--rounded">Lưu hình ảnh</button>
+                <button name="btnAddImgs" class="btn btn--primary btn--rounded">Lưu hình ảnh</button>
               </div>
             </form>
           </div>
