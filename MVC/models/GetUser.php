@@ -19,6 +19,10 @@ class GetUser extends DB{
         $result = mysqli_query($this->conn, $query);
         return mysqli_fetch_assoc($result);
     }
+    public function selectAvatar($id){
+        $query = "SELECT avatar FROM user WHERE id = '$id'";
+        return mysqli_query($this->conn, $query);
+    }
     public function GetNameUser($username){
         $username = mysqli_real_escape_string($this->conn, $username);
         $username = trim($username);

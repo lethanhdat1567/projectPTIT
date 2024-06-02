@@ -6,6 +6,7 @@ class User extends Controller
     public $InsertUser;
     public $GetUser;
     public $UpdateUser;
+    public $DeleteUser;
     
     
 
@@ -15,6 +16,7 @@ class User extends Controller
         $this->InsertUser = $this->model("InsertUser");
         $this->GetUser = $this->model("GetUser");
         $this->UpdateUser = $this->model("UpdateUser");
+        $this->DeleteUser = $this->model("DeleteUser");
         
 
     }
@@ -39,7 +41,7 @@ class User extends Controller
                     $_SESSION['mail'] = $email;
                     $_SESSION['code'] = $code;
                     // Chỉ chuyển hướng khi biến flag là true
-                    header('location: http://localhost/projectPTIT/User/GetPagesVerification');
+                    header('location: ". ROOT . "User/GetPagesVerification');
                     exit();
     }
     $this->view("UserPage", ["Pages" => "ForgetPass", "error" =>$error['emailfail'] ]);
@@ -54,7 +56,7 @@ class User extends Controller
             if($_POST['text'] != $_SESSION['code']){
                 $error['fail'] = "Mã xác nhận không hợp lệ !";
             }else{
-                header('location: http://localhost/projectPTIT/User/GetPagesResetPass');
+                header('location: ". ROOT . "User/GetPagesResetPass');
             }
             $this->view("UserPage", ["Pages" => "Verification", "error" =>$error['fail'] ]);
         }
@@ -84,7 +86,7 @@ class User extends Controller
     function Logout()
     {
         unset($_SESSION["role_id"]);
-        header("Location: http://localhost/projectPTIT/User/SignIn");
+        header("Location: ". ROOT . "User/SignIn");
         exit(); 
     }
 
@@ -114,7 +116,7 @@ class User extends Controller
                 $_SESSION['firstname'] = $firstname;
                 $_SESSION['lastname'] = $lastname;
             }
-            header("Location: http://localhost/projectPTIT/Home/Profile");
+            header("Location: ". ROOT . "Home/Profile");
             exit ();
         }
     }
@@ -154,7 +156,7 @@ class User extends Controller
             // Không nên lưu mật khẩu vào phiên, ngay cả khi đã mã hóa
             //  $_SESSION['password'] = $hashedPassword;
             // Chuyển hướng đến trang đăng nhập
-            header("Location: http://localhost/projectPTIT/User/SignIn");
+            header("Location: ". ROOT . "User/SignIn");
             exit();
         }
     }
@@ -180,7 +182,7 @@ class User extends Controller
                         $_SESSION['email'] = $r['email'];
                         $_SESSION['avatar'] = $r['avatar'];
                         $this->checkRoleID();
-                        // header("Location: http://localhost/projectPTIT/Home/Main");                               
+                        // header("Location: ". ROOT . "Home/Main");                               
                         ob_end_flush();
                         exit();
                     }
@@ -199,10 +201,10 @@ class User extends Controller
     {
         if (isset($_SESSION['role_id'])) {
             if ($_SESSION['role_id'] == 0) {
-                header("Location: http://localhost/projectPTIT/Home/Main");
+                header("Location: ". ROOT . "Home/Main");
                 exit();
             } else if ($_SESSION['role_id'] == 1) {
-                header("Location: http://localhost/projectPTIT/Admin/QLSP");
+                header("Location: ". ROOT . "Admin/QLSP");
                 exit();
             }
         }
@@ -215,6 +217,27 @@ class User extends Controller
             header("Location: " . ROOT . "User/SignIn"); 
             exit();
         }
+    }
+
+    function deleteAvatar(){
+        if(isset($_POST['btndelete'])){  
+
+            $id = $_SESSION['id'];
+            
+            $result = $this->GetUser->selectAvatar($id);
+            if ($result) {
+                $row = mysqli_fetch_assoc($result);
+                $avatar_path = $row['avatar'];
+                if ($this->DeleteUser->deleteAvatar($id)) {
+                    if (file_exists($avatar_path)) {
+                        unlink($avatar_path);
+                        echo "quanngu";
+                        header("Location:" . ROOT . "Home/Profile");
+                    }
+                }
+            }
+        }
+
     }
 }
 ?>

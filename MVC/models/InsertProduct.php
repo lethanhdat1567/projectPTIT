@@ -2,7 +2,7 @@
 class InsertProduct extends DB{
    public function InsertNewProduct( $productName,$productPrice,$productDesc, $productImg){
       $qr = "INSERT INTO product VALUES (null,'$productName','$productPrice',null,'$productImg','$productDesc',NOW(),NOW(),null)";
-       $result = mysqli_query($this->conn, $qr);;
+       $result = mysqli_query($this->conn, $qr);
        if($result){
          return mysqli_insert_id($this->conn);
        }
@@ -19,17 +19,29 @@ class InsertProduct extends DB{
      
          $result = mysqli_query($this->conn, $query);
          
-         // Check if the query was successful
-         if ($result) {
-             // Return the last inserted gallery ID
+        
+         if ($result) {             
              return mysqli_insert_id($this->conn);
          } else {
              return false;
          }
+
      }
+
+     public function insertImgs($product_id, $thumbnail) {
+        $qr = "INSERT INTO galery (id, product_id, thumbnail) VALUES (null, '$product_id', '$thumbnail')";
+        $result = mysqli_query($this->conn, $qr);
+        if ($result) {
+            return mysqli_insert_id($this->conn);
+        }
+        return json_encode($result);
+    }
+}
+
+
      
    
-  
+     
     
-}
+
 ?>

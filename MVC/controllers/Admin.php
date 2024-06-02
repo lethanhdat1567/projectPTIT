@@ -106,6 +106,30 @@ if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)){
             }
         }
 
+        function galeryImgs(){
+            if(isset($_POST["btnAddImgs"])){
+                $product_id = $_POST['id'];
+                
+
+
+                foreach ($_FILES['thumbnail']['name'] as $key => $value){
+                    $img_name = $_FILES['thumbnail']['name'][$key];
+                    $tmp_name = $_FILES['thumbnail']['tmp_name'][$key];
+
+                    $target_dir = "./assets/img/products/";
+                    $target_file =$target_dir.$img_name;
+
+                    if(move_uploaded_file($tmp_name, $target_file)){
+                        
+                        $this->InsertProduct->insertImgs($product_id, $img_name);
+                       header("location: http://localhost/projectPTIT/Admin/QLSP");
+                    }
+                    else {
+                        echo "Failed to move file: " . $img_name . "<br>";
+                    }
+                }
+            }
+        }
         function Product() {
             // UPDATE PRODUCT
             if(isset($_POST["btnUpdate"])) {

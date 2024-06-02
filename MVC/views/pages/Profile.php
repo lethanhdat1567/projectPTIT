@@ -27,7 +27,11 @@
               <aside class="profile__sidebar">
                 <!-- User -->
                 <div class="profile-user">
-                 <div class="profile-user__avatar profile-user__avatar--toggle js-toggle" toggle-target="#delete-confirm">
+                <div class="profile-user__avatar
+                 <?php if($row['avatar']): ?>
+                 profile-user__avatar--toggle js-toggle
+                 <?php endif; ?>
+                 " toggle-target="#delete-confirm">
                     <img
                       src="<?php echo ASSETS; ?>img/avatar/<?php if($row['avatar']){
                         echo $row['avatar'];
@@ -326,6 +330,8 @@
         </div>
       </div>
     </main>
+    <form action="<?php echo ROOT; ?>User/deleteAvatar"
+              method="post">
     <div id="delete-confirm" class="modal modal--small hide">
       <div class="modal__content">
         <div class="modal_-text">Bạn có muốn xóa avatar</div>
@@ -337,13 +343,15 @@
             Cancel
           </button>
           <button
-            class="btn btn--danger btn--small btn--primary modal__btn btn--no-margin js-toggle"
-            toggle-target="#delete-confirm"
+            class="btn btn--danger btn--small btn--primary modal__btn btn--no-margin "
+           
+            name="btndelete"
           >
             Delete
           </button>
         </div>
       </div>
+      </form>
       <div
         class="modal__overlay js-toggle"
         toggle-target="#delete-confirm"
