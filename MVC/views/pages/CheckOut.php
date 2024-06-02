@@ -1,24 +1,5 @@
 <main class="checkout-page">
       <div class="container">
-        <!-- Search bar -->
-        <div class="checkout-container">
-          <div class="search-bar d-none d-md-flex">
-            <input
-              type="text"
-              name=""
-              placeholder="Search for item"
-              id=""
-              class="search-bar__input"
-            />
-            <button class="search-bar__submit">
-              <img
-                src="<?php echo ASSETS; ?>icons/seach.svg"
-                alt=""
-                class="search-bar__icon icon"
-              />
-            </button>
-          </div>
-        </div>
         <!-- Breadcrumbs -->
         <div class="checkout-container">
           <ul class="breadcrumbs checkout-page__breadcrumbs">

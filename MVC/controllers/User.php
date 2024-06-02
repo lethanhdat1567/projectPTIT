@@ -100,17 +100,15 @@ class User extends Controller
             $id = $_SESSION['id'];
             $cardnumber = $_POST["cardnumber"];
             $expirationdate = $_POST["expirationdate"];
-            $cvv = $_POST["cvv"];
             $firstname = $_POST["firstname"];
             $lastname = $_POST["lastname"];
             
        
-            $kq = $this->UpdateUser->UpdateCreditCard($id, $cardnumber, $expirationdate, $cvv, $firstname, $lastname); 
+            $kq = $this->UpdateUser->UpdateCreditCard($id, $cardnumber, $expirationdate, $firstname, $lastname); 
             if($kq){
          
                 $_SESSION['cardnumber'] = $cardnumber;
                 $_SESSION['expirationdate'] = $expirationdate;
-                $_SESSION['cvv'] = $cvv;
                 $_SESSION['firstname'] = $firstname;
                 $_SESSION['lastname'] = $lastname;
             }

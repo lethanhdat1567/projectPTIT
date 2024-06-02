@@ -41,7 +41,7 @@ function FavorList({ favor, filters, products }) {
               onchange='dispatch("toggle",${index})'
             />
           </label>
-          <a href="${ROOT}Home/ProductDetail">
+          <a href="${ROOT}Home/ProductDetail/${item.id}">
             <img
               src="${ASSETS}img/products/${item.thumbnail}"
               alt=""

@@ -31,6 +31,7 @@
     <!-- <link rel="stylesheet" href="<?php echo ASSETS; ?>/css/main.css"> -->
     <link rel="stylesheet" type="text/css"  href="<?php echo ASSETS; ?>css/main.css">
     <script src="<?php echo ASSETS; ?>js/script.js" type="module"></script>
+    <script src="<?php echo ASSETS; ?>js/localStorage.js" type="module"></script>
     <title>Grocery Mart</title>
   </head>
 <body>
@@ -39,6 +40,6 @@
     <footer id="Footer" class="footer"><?php require_once './MVC/views/blocks/Footer.php' ?></footer>
 </body>
   <script src="<?php echo ASSETS ?>js/Card.js" type="module"></script>
-  <script src="<?php echo ASSETS; ?>js/component/subList.js" type="module"></script>
+  <!-- <script src="<?php echo ASSETS; ?>js/component/subList.js" type="module"></script> -->
   <script src="<?php echo ASSETS; ?>js/component/SearchMobile.js" type="module"></script>
 </html>

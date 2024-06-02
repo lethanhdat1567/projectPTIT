@@ -112,35 +112,5 @@
   </div>
   <div class="footer__bottom">
     <p class="footer__bottom-desc">© 2024 Grocery Mart.All rights reserved</p>
-    <div class="footer__bottom-icons">
-      <a href="https://www.facebook.com/profile.php?id=100053043289138&mibextid=ZbWKwL" class="footer__bottom-icon">
-        <img
-          src="<?php echo ASSETS; ?>icons/facebook.svg"
-          alt=""
-          class="footer__bottom-icon-img"
-        />
-      </a>
-      <a href="https://www.instagram.com/t_thqu05/" class="footer__bottom-icon">
-        <img
-          src="<?php echo ASSETS; ?>icons/ins.svg"
-          alt=""
-          class="footer__bottom-icon-img"
-        />
-      </a>
-      <a href="https://www.threads.net/@t_thqu05?xmt=AQGzlnedK6QNOgNhq0m9ZVdJl5an2EfAKxp3XkTXMbExnJY" class="footer__bottom-icon">
-        <img
-          src="<?php echo ASSETS; ?>icons/threads.svg"
-          alt=""
-          class="footer__bottom-icon-img"
-        />
-      </a>
-      <a href="https://www.tiktok.com/@thaithanhquan05" class="footer__bottom-icon">
-        <img
-          src="<?php echo ASSETS; ?>icons/tiktok.png"
-          alt=""
-          class="footer__bottom-icon-img"
-        />
-      </a>
-    </div>
   </div>
 </div>

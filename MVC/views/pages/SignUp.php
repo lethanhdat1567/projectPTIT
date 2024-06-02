@@ -137,15 +137,6 @@
               </p>
             </div>
             <div class="form__group form__group--inline">
-              <label class="form__checkbox">
-                <input
-                  type="checkbox"
-                  name=""
-                  id=""
-                  class="form__checkbox-input d-none"
-                />
-                <span class="form__checkbox-label">Set as default card</span>
-              </label>
             </div>
             <div class="form__group auth__btn-group">
               <button class="btn btn--primary auth__btn form__submit-btn" name="btnRegister">

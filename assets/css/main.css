@@ -1547,7 +1547,21 @@ html.dark {
   display: flex;
   align-items: center;
 }
-
+.top-bar__mobile {
+  position: relative;
+}
+.red-alert {
+  display: none;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: rgb(217, 23, 23);
+  border-radius: 50%;
+  bottom: 25px;
+  left: 8px;
+  z-index: 99;
+  border: 2px solid #fff;
+}
 .header {
   position: relative;
   z-index: 2;
@@ -1573,6 +1587,9 @@ html.dark {
   .top-bar {
     padding: 16px 0px;
     justify-content: space-between;
+  }
+  .red-alert.show {
+    display: block;
   }
 }
 @media (max-width: 991.98px) {
@@ -1671,7 +1688,7 @@ html.dark {
 .search-dropdown-inner-mobile {
   display: none;
   position: absolute;
-  background-color: #fff;
+  background-color: var(--sidebar-bg);
   height: 500px;
   width: 100%;
   z-index: 1;
@@ -2720,7 +2737,7 @@ html.dark {
 .product-card__search-mobile-wrapper {
   display: flex;
   align-items: center;
-  background-color: #fff;
+  background-color: var(--sidebar-bg);
   border-bottom: 2px solid #ccc;
 }
 .product-card__img-wrap {
@@ -3587,7 +3604,25 @@ html.dark {
   position: fixed;
   inset: 0;
 }
-
+.modal__warning-wrap {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+.modal__warning-text {
+  color: #ed4337;
+  font-weight: 600;
+}
+.modal__warning-img {
+  filter: brightness(0) saturate(100%) invert(36%) sepia(55%) saturate(3572%)
+    hue-rotate(341deg) brightness(95%) contrast(94%);
+}
+.modal__warning-img {
+  width: 40px;
+  height: 40px;
+}
 .modal {
   z-index: 99;
   display: flex;
@@ -5199,4 +5234,47 @@ html.dark {
 .similar-product {
   height: 400px;
   overflow: hidden;
+}
+.pagination-li {
+  cursor: pointer;
+  text-align: center;
+  line-height: 40px;
+  width: 40px;
+  height: 40px;
+  font-size: 1.8rem;
+  font-weight: 900;
+  border-radius: 10px;
+  transition: ease 0.3s;
+}
+.pagination-li.clicked,
+.pagination-li:hover {
+  background-color: #ffb74d;
+}
+.pagination-li:hover {
+  color: #fff;
+}
+#pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 10px;
+  min-width: 200px;
+}
+.pagination-arrows {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: ease 0.2s;
+}
+.pagination-arrows:hover {
+  filter: brightness(0) saturate(100%) invert(89%) sepia(66%) saturate(4235%)
+    hue-rotate(315deg) brightness(99%) contrast(102%);
+}
+.pagination-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  gap: 10px;
 }

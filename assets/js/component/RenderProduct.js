@@ -1,14 +1,76 @@
 import html from "../redux/core.js";
 import { connect } from "../redux/store.js";
-import storage from "../../util/storage.js";
 import HeaderAlert from "./HeaderAlert.js";
+import toggleHomeLink from "./HomeFilter.js";
+let items = [];
+let currentPage = 1;
+let perPage = 10;
+let totalPage = items.length / 10;
+let perItem = [];
+let isPaginationRendered = false;
+function renderPageNumber(products, favor) {
+  if (!isPaginationRendered) {
+    totalPage = Math.ceil(items.length / perPage);
+    for (let i = 1; i <= totalPage; i++) {
+      document.getElementById(
+        "pagination"
+      ).innerHTML += `<li class="pagination-li">${i}</li>`;
+    }
+    const liNote = document.querySelectorAll(".pagination-li");
+    const li = Array.from(liNote);
+    li.forEach((item, index) => {
+      item.onclick = (e) => {
+        li.forEach((liItem) => liItem.classList.remove("clicked"));
+        item.classList.add("clicked");
+        handlePageNumber(index + 1, products, favor);
+      };
+      if (index === 0) {
+        item.classList.add("clicked");
+        handlePageNumber(1, products, favor);
+      }
+    });
+    document.querySelector(".pagination-minus").onclick = () => {
+      if (currentPage > 1) {
+        li.forEach((liItem) => liItem.classList.remove("clicked"));
+        li[currentPage - 2].classList.add("clicked");
+        handlePageNumber(currentPage - 1, products, favor);
+      }
+    };
 
+    document.querySelector(".pagination-plus").onclick = () => {
+      if (currentPage < totalPage) {
+        const newPage = currentPage + 1;
+        const newPageLi = li[newPage - 1];
+        li.forEach((liItem) => liItem.classList.remove("clicked"));
+        newPageLi.classList.add("clicked");
+        handlePageNumber(newPage, products, favor);
+      }
+    };
+
+    isPaginationRendered = true;
+  }
+}
+
+function handlePageNumber(num, products, favor) {
+  currentPage = num;
+  perItem = items.slice(
+    (currentPage - 1) * perPage,
+    (currentPage - 1) * perPage + perPage
+  );
+  RenderProduct({ products, favor });
+}
 function RenderProduct({ products, favor, All }) {
   HeaderAlert(products, favor);
   fetch("http://localhost/projectPTIT/API/Read")
     .then((response) => response.json())
     .then((data) => {
-      const HTML = data
+      items = data;
+      perItem = items.slice(
+        (currentPage - 1) * perPage,
+        (currentPage - 1) * perPage + perPage
+      );
+      renderPageNumber(products, favor);
+      const HTML = perItem
         .map((product, index) => {
           return html`
             <div class="col">
@@ -114,11 +176,18 @@ function searchProduct() {
   const search_Btn = document.querySelector(".search__btn");
   search_Btn.onclick = (e) => {
     e.preventDefault();
+    toggleHomeLink();
     fetch("http://localhost/projectPTIT/API/Read")
       .then((response) => response.json())
       .then((data) => {
-        let productSearch = data.filter((value) => {
-          return value.name.includes(valueSearch);
+        let productSearch = data.filter((product) => {
+          const searchValue = valueSearch.toLowerCase();
+          const productName = product.name.toLowerCase();
+          const productPrice = product.price;
+          return (
+            productName.includes(searchValue) ||
+            productPrice.includes(searchValue)
+          );
         });
         document.querySelector(".render-product").innerHTML = "";
         //  render
@@ -189,7 +258,7 @@ document.addEventListener("click", function (event) {
     document
       .querySelector(".search__input")
       .addEventListener("input", searchProduct);
-    searchProduct();
+    // searchProduct();
   } else {
     // Nếu click ra ngoài dropdown hoặc không phải là nút mở dropdown, ẩn dropdown đi
     var searchDropdown = document.querySelector(".search-dropdown");

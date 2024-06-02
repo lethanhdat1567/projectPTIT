@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 require_once('./MVC/core/Config.php');

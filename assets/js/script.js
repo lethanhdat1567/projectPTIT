@@ -1,4 +1,5 @@
 import RenderFilter from "./component/RenderFilter.js";
+import toggleHomeLink from "./component/HomeFilter.js";
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
@@ -203,17 +204,6 @@ window.addEventListener("DOMContentLoaded", () => {
       .join("");
   }
   // Thêm trang chủ
-  const filterContainer = document.querySelector(".render-product");
-  const homeLink = document.createElement("a");
-  homeLink.classList.add("filter-home", "hide", "btn--primary");
-  homeLink.href = `${ROOT}/Home/Main`;
-  homeLink.textContent = "Trang chủ";
-  if (filterContainer) {
-    filterContainer.insertAdjacentElement("beforebegin", homeLink);
-  }
-  function toggleHomeLink() {
-    homeLink.classList.remove("hide");
-  }
   const cates = document.querySelectorAll(".category-item");
   const catesArr = Array.from(cates);
   catesArr.forEach((cate) => {

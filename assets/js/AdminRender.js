@@ -2,7 +2,6 @@ import html from "./redux/core.js";
 fetch("http://localhost/projectPTIT/API/Read")
   .then((response) => response.json())
   .then((data) => {
-    // storage.setALL(data);
     const HTML = data
       .map((product, index) => {
         return html`

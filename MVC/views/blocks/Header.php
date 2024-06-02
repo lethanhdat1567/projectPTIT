@@ -1,8 +1,9 @@
 <div class="container">
-  <div class="top-bar">
+  <div class="top-bar top-bar__mobile">
+    <div class="red-alert"></div>
     <!-- navbar more -->
     <button class="icon top-bar__more d-none d-lg-block js-toggle" toggle-target="#navbar">
-      <img src="<?php echo ASSETS; ?>icons/more.svg" alt="" class="top-bar__more-icon">
+      <img src="<?php echo ASSETS; ?>icons/more.svg" alt="" class="top-bar__more-icon top-bar__more-icon-nav">
     </button>
     <!-- logo -->
     <a href="<?php echo ROOT; ?>Home/Main" class="logo top-bar__logo">
@@ -163,7 +164,7 @@
                 </a>
               </li>
               <form method="post" action="<?php echo ROOT; ?>User/LogoutUser" class="user-menu__separate">
-                <button href="<?php echo ROOT; ?>User/SignIn" name="logoutBtn" class="user-menu__link user-menu__link-btn">
+                <button href="<?php echo ROOT; ?>User/SignIn" name="logoutBtn" class="user-menu__link user-menu__link-btn js-toggle"  toggle-target="#Logout">
                   Logout</button>
               </form>
             </ul>
@@ -174,6 +175,33 @@
   </div>
 </div>
 </div>
+<div id="Logout" class="modal modal--small hide  modal__logout">
+      <div class="modal__content modal__content-logout">
+      <div class="modal__warning-wrap">
+        <img src="<?php echo ASSETS ?>icons/warning.svg" alt="" class="modal__warning-img">
+          <p class="modal__warning-text">Cảnh báo !!</p>
+        </div>
+        <p class="modal_-text">Sau khi đăng xuất, tất cả dữ liệu trước đó sẽ mất</p>
+        <div class="modal__bottom">
+          <button
+            class="btn btn--small btn--outline modal__btn js-toggle"
+            toggle-target="#Logout"
+          >
+            Cancel
+          </button>
+          <button
+            class="btn btn--danger btn--small btn--primary modal__btn btn--no-margin btn-logout"
+
+          >
+            Đăng xuất
+          </button>
+        </div>
+      </div>
+      <div
+        class="modal__overlay js-toggle"
+        toggle-target="#Logout"
+      ></div>
+    </div>
 <script>
   const ASSETS = "<?php echo ASSETS; ?>";
   const ROOT = "<?php echo ROOT; ?>";

@@ -34,9 +34,5 @@
     <header id="Header" class="header"><?php require_once './MVC/views/blocks/HeaderAdmin.php' ?></header>
     <div id="Content"><?php require_once './MVC/views/pages/'.$data['Pages'].'.php' ?></div>
 </body>
-<script>
-  const ASSETS = "<?php echo ASSETS; ?>";
-  const ROOT = "<?php echo ROOT; ?>";
-</script>
 <script src="<?php echo ASSETS; ?>js/AdminRender.js" type="module"></script>
 </html>

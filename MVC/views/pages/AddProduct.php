@@ -54,6 +54,21 @@
                     />
                   </div>
                 </div>
+                <div class="form__group">
+                  <label for="price" class="form__label form-card__label">
+                    Giảm giá (%)
+                  </label>
+                  <div class="form__text-input">
+                    <input
+                      type="text"
+                      placeholder="Vui lòng nhập % ... "
+                      name="ProductDiscount"
+                      id="discount"
+                      class="form__input"
+                      required
+                    />
+                  </div>
+                </div>
               </div>
               <!-- Form row 2 -->
               <div class="form__row-admin">

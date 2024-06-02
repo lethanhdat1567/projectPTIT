@@ -12,17 +12,26 @@ const init = {
   },
 };
 
-// Fetch dữ liệu từ API
-fetch("http://localhost/projectPTIT/API/Read")
-  .then((response) => response.json())
-  .then((data) => {
+async function fetchData() {
+  try {
+    // Sử dụng await để chờ đợi khi fetch dữ liệu từ API
+    const response = await fetch("http://localhost/projectPTIT/API/Read");
+    const data = await response.json();
+
     // Gán dữ liệu từ API vào biến All
     init.All = data;
     // Lưu trữ dữ liệu từ API vào localStorage
     storage.setALL(data);
-    // Gọi hàm render hoặc các thao tác khác tại đây
-  });
 
+    // Gọi hàm render hoặc các thao tác khác tại đây
+    // Ví dụ: renderProducts();
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
+
+// Gọi hàm fetchData để bắt đầu quá trình fetch dữ liệu từ API
+fetchData();
 const actions = {
   add({ products }, newProduct) {
     if (newProduct) {
@@ -112,13 +121,15 @@ const actions = {
   },
   checkoutAll({ favor, products }) {
     // Đánh dấu tất cả các sản phẩm trong danh sách yêu thích là đã chọn mua
-    favor.forEach((item) => {
-      item.isCheckOut = true;
+    const checkOut = favor.filter((item) => {
+      return item.isCheckOut;
     });
+    const remainingFavor = favor.filter((item) => {
+      return !item.isCheckOut;
+    });
+    products.push(...checkOut);
 
-    products.push(...favor);
-
-    favor = [];
+    favor = remainingFavor;
 
     let totalCheckOut = products.reduce((acc, item) => {
       return acc + parseInt(item.price); // Sử dụng parseFloat để chuyển đổi chuỗi số thành số thực

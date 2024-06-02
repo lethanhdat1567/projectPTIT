@@ -20,13 +20,13 @@ function attachComponent(selector, component) {
 }
 
 // Gọi hàm attachComponent cho các phần tử cần thiết
-attachComponent(".cart-info__list-card", CardList);
-attachComponent(".act-dropdown__inner-favor", FavorHeaderList);
-attachComponent(".cart-info__favor-list", FavorList);
 attachComponent(".render-product", RenderProduct);
-attachComponent(".search__product-list", Search);
+attachComponent(".cart-info__list-card", CardList);
+attachComponent(".cart-info__favor-list", FavorList);
 attachComponent(".cart-info__sub-list", subList);
-attachComponent(".nav-btn-wrapper", HeaderMobile);
 attachComponent(".sub-little__price", subLittlePrice);
+attachComponent(".nav-btn-wrapper", HeaderMobile);
+attachComponent(".search__product-list", Search);
+attachComponent(".act-dropdown__inner-favor", FavorHeaderList);
 attachComponent(".act-dropdown__inner-card", HeaderAlert);
 attachComponent(".act-dropdown__inner-card", HeaderCardDropdown);
