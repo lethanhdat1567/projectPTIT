@@ -7,7 +7,7 @@
           <div class="admin-menu__wrap">
             <ul class="admin-menu__list">
               <li class="admin-menu__items">
-                <a href="<?php echo ROOT; ?>Home/Main" class="admin-menu__link">Home</a>
+                <a href="<?php echo ROOT; ?>Admin/Main" class="admin-menu__link">Home</a>
               </li>
               <li class="admin-menu__items">
                 <a href="<?php echo ROOT; ?>Admin/QLSP" class="admin-menu__link">Product Management</a>
