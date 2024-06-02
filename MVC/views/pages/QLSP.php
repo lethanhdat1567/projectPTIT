@@ -15,6 +15,9 @@
               <li class="admin-menu__items">
                 <a href="<?php echo ROOT; ?>Admin/QLND" class="admin-menu__link">User Management</a>
               </li>
+              <li class="admin-menu__items">
+              <a href="<?php echo ROOT; ?>Admin/..." class="admin-menu__link">Thống kê</a>
+            </li>
             </ul>
           </div>
         </div>
