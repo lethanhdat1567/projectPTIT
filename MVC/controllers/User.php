@@ -228,6 +228,9 @@ class User extends Controller
                 if ($this->DeleteUser->deleteAvatar($id)) {
                     if ($avatar_path) {
                         unlink($avatar_path);
+                        if(isset($_SESSION['avatar'])) {
+                            unset($_SESSION['avatar']);
+                        }
                         header("Location:" . ROOT . "Home/Profile");
                     }
                 }
