@@ -221,15 +221,13 @@ class User extends Controller
         if(isset($_POST['btndelete'])){  
 
             $id = $_SESSION['id'];
-            
             $result = $this->GetUser->selectAvatar($id);
             if ($result) {
                 $row = mysqli_fetch_assoc($result);
                 $avatar_path = $row['avatar'];
                 if ($this->DeleteUser->deleteAvatar($id)) {
-                    if (file_exists($avatar_path)) {
+                    if ($avatar_path) {
                         unlink($avatar_path);
-                        echo "quanngu";
                         header("Location:" . ROOT . "Home/Profile");
                     }
                 }
