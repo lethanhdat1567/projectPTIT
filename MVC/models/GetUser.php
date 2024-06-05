@@ -29,5 +29,14 @@ class GetUser extends DB{
     $qr = "SELECT * FROM user WHERE fullname='$username'";
     return mysqli_query($this->conn, $qr);
 }
+    public function GetChart(){
+        $query = "SELECT 
+        COUNT(DISTINCT u.id) AS TotalUser,
+        COUNT(DISTINCT o.id) AS TotalOrder
+        FROM user u
+        LEFT JOIN  Orders o ON u.id = o.user_id
+         WHERE  u.role_id = 0";
+         return mysqli_query($this->conn, $query);
+    }
 }
 ?>

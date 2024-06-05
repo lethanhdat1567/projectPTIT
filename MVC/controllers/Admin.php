@@ -20,6 +20,11 @@ if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)){
             $this->UpdateRole = $this->model("UpdateRole");
 
         }
+        function Chart(){
+            $chart = $this->GetUser->GetChart();
+            $this->view("AdminPage",["Pages"=>"Chart","getChart"=>$chart]);
+        }
+        
         function QLSP() {
             $products = $this->GetProduct->GetValuesProduct();
             $this->view("AdminPage",["Pages"=>"QLSP","products"=>$products]);
@@ -180,4 +185,5 @@ if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)){
 }  else{
     header("Location: http://localhost/projectPTIT/User/SignIn");
 }
+    
 ?>
