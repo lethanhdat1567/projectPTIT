@@ -14,7 +14,8 @@
         }
         function ProductDetail($id) {
             $products = $this->GetProduct->GetValuesProductID($id);
-            $this->view("master1",["Pages"=>"ProductDetail","products"=> $products]);
+            $galery =  $this->GetProduct->GetGalery($id);
+            $this->view("master1",["Pages"=>"ProductDetail","products"=> $products,"imgs" => $galery]);
         }
         function AddNewCard() {
             $id = $_SESSION['id'];
@@ -33,15 +34,14 @@
             $this->view("master1",["Pages"=>"Favourite"]);
         }
         function PayMent() {
-            $this->view("master1",["Pages"=>"PayMent"]);
+            $id = $_SESSION['id'];
+            $users = $this->GetUser->GetUserValues($id);
+            $this->view("master1",["Pages"=>"PayMent","users"=>$users]);
         }
         function Profile() {
             $id = $_SESSION['id'];
             $users = $this->GetUser->GetUserValues($id);
             $this->view("master1",["Pages"=>"Profile","users"=>$users]);
-        }
-        function Shipping() {
-            $this->view("master1",["Pages"=>"Shipping"]);
         }
         function Admin() {
             $this->view("master1",["Pages"=>"Admin"]);

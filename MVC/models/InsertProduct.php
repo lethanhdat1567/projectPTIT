@@ -1,7 +1,7 @@
 <?php
 class InsertProduct extends DB{
-   public function InsertNewProduct( $productName,$productPrice,$productDesc, $productImg){
-      $qr = "INSERT INTO product VALUES (null,'$productName','$productPrice',null,'$productImg','$productDesc',NOW(),NOW(),null)";
+   public function InsertNewProduct( $productName,$productPrice,$productDesc, $productImg,$productDiscount){
+      $qr = "INSERT INTO product VALUES (null,'$productName','$productPrice',$productDiscount,'$productImg','$productDesc',NOW(),NOW(),null)";
        $result = mysqli_query($this->conn, $qr);
        if($result){
          return mysqli_insert_id($this->conn);

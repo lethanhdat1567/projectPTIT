@@ -86,26 +86,13 @@
                   </div>
                 </div>
                 <div class="prod-review__thumb">
-                  <img
-                    src="<?php echo ASSETS; ?>img/products/<?php echo $row['thumbnail']; ?>"
-                    alt=""
-                    class="prod-review__thumb-img prod-review__thumb-img--current"
-                  />
-                  <img
-                    src="<?php echo ASSETS; ?>img/products/item2.png"
+                  <?php while($imgs = mysqli_fetch_assoc($data['imgs'])){ ?>
+                    <img
+                    src="<?php echo ASSETS; ?>img/products/<?php echo $imgs['thumbnail'] ?>"
                     alt=""
                     class="prod-review__thumb-img"
                   />
-                  <img
-                    src="<?php echo ASSETS; ?>img/products/item3.png"
-                    alt=""
-                    class="prod-review__thumb-img"
-                  />
-                  <img
-                    src="<?php echo ASSETS; ?>img/products/item4.png"
-                    alt=""
-                    class="prod-review__thumb-img"
-                  />
+                    <?php } ?>
                 </div>
               </div>
             </div>
@@ -132,33 +119,12 @@
                         <div class="form__select-wrap">
                           <div class="form__select" style="--width: 146px">
                             500g
-                            <!-- <img
-                              src="<?php echo ASSETS; ?>icons/select-arrow.svg"
-                              alt=""
-                              class="form__select-arrow icon"
-                            /> -->
                           </div>
                           <div class="form__select">
                             Gram
-                            <!-- <img
-                              src="<?php echo ASSETS; ?>icons/select-arrow.svg"
-                              alt=""
-                              class="form__select-arrow icon"
-                            /> -->
                           </div>
                         </div>
                         <div class="filter__form-group">
-                          <!-- <div class="form__tags">
-                            <button class="form__tag prod-info__tag">
-                              Small
-                            </button>
-                            <button class="form__tag prod-info__tag">
-                              Medium
-                            </button>
-                            <button class="form__tag prod-info__tag">
-                              Large
-                            </button>
-                          </div> -->
                         </div>
                       </div>
                     </div>
@@ -196,10 +162,10 @@
                         </div>
                         <div class="prod-info__card">
                           <div class="prop-info__row">
-                            <span class="prod-info__price">$500.00</span>
-                            <span class="prod-info__tax">10%</span>
+                            <span class="prod-info__price--discount <?php echo $row['discount'] ? "show" : "" ?> "><?php echo number_format($row['price'], 0, ',', '.'); ?>$</span>
+                            <span class="prod-info__tax <?php echo $row['discount'] ? "show" : ""; ?>"><?php echo  $row['discount'] ?>%</span>
                           </div>
-                          <p class="prod-info__total-price">$<?php echo $row['price'] ?></p>
+                          <p class="prod-info__total-price <?php echo $row['discount'] ? "prod-info__total-price--modify" : ""; ?>">$<?php $total = $row['price'] - ($row['price'] * $row['discount']) / 100;  echo number_format($total, 0, ',', '.'); ?></p>
                           <div class="prod-info__row">
                             <button
                               class="btn btn--primary prod-info__add-to-cart"

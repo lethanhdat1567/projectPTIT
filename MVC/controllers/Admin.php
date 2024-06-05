@@ -137,6 +137,7 @@ if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)){
                 $id = $_POST["id"];
                 $productPrice = $_POST['ProductPrice'];
                 $productDesc = $_POST['ProductDesc'];
+                $productDiscount = $_POST['ProductDiscount'];
                 $products = $this->UpdateProduct->GetIdProduct($id);
                 $row = mysqli_fetch_assoc($products);
                 if($_FILES['thumbnail']['name'] == ''){
@@ -149,7 +150,7 @@ if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)){
                     $productImg = $_FILES['thumbnail']['tmp_name'];
                     move_uploaded_file($productImg, $target_file);
                 }
-                $kq = $this->UpdateProduct->UpdateValuesProduct($productName,$productPrice,$productDesc,$thumbnailpath,$id);
+                $kq = $this->UpdateProduct->UpdateValuesProduct($productName,$productPrice,$productDesc,$thumbnailpath,$id,$productDiscount);
                 if($kq){
                     $this->UpdateProductSuccess();
                 }
@@ -159,13 +160,14 @@ if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)){
                 $productName = $_POST["ProductName"];
                 $productPrice = $_POST['ProductPrice'];
                 $productDesc = $_POST['ProductDesc'];
+                $productDiscount = $_POST['ProductDiscount'];
                 $thumbnailpath = basename($_FILES['thumbnail']['name']);    
                 $target_dir = "./assets/img/products/";
                 $target_file = $target_dir . $thumbnailpath;
                 $productImg = $_FILES['thumbnail']['tmp_name'];
                 
                 if(move_uploaded_file($productImg, $target_file)){
-                    $product_id = $this->InsertProduct->InsertNewProduct($productName, $productPrice, $productDesc, $thumbnailpath);
+                    $product_id = $this->InsertProduct->InsertNewProduct($productName, $productPrice, $productDesc, $thumbnailpath,$productDiscount);
                         if($product_id){
                             $galeryid = $this->InsertProduct->InsertGalery($thumbnailpath, $product_id);            
                                 if($galeryid){

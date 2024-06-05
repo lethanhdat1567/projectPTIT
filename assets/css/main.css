@@ -2735,10 +2735,13 @@ html.dark {
   object-fit: contain;
 }
 .product-card__search-mobile-wrapper {
-  display: flex;
-  align-items: center;
+  min-width: 200px;
   background-color: var(--sidebar-bg);
   border-bottom: 2px solid #ccc;
+}
+.product-card__search-mobile-wrap {
+  display: flex;
+  align-self: center;
 }
 .product-card__img-wrap {
   padding-top: 100%;
@@ -2803,8 +2806,40 @@ html.dark {
   font-weight: 500;
   line-height: 150%;
 }
+.product-card__price--modify,
+.prod-info__price--discount {
+  text-decoration: line-through;
+  line-height: 150%;
+  color: #ccc;
+  font-size: 1.4rem;
+}
+.prod-info__price--discount {
+  display: none;
+}
+.prod-info__price--discount.show {
+  display: block;
+  font-size: 2rem;
+}
+.product-card__price--discount {
+  color: #ed4337;
+}
+.prop-info__row {
+  display: flex;
+  align-items: center;
+}
+.product-card__price--modify {
+  opacity: 0;
+  visibility: hidden;
+}
+.product-card__price--modify.show {
+  opacity: 1;
+  visibility: visible;
+}
+.product-card__price-wrapper .product-card__price {
+  display: block;
+}
 .product-card__brand {
-  margin: 16px 0px;
+  margin: 8px 0px;
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 146.667%;
@@ -4166,8 +4201,8 @@ html.dark {
   object-fit: contain;
   border: 1px solid #9a9da8;
   border-radius: 8px;
-  opacity: 0.9;
-  transition: opacity 0.3s;
+  opacity: 0.7;
+  transition: ease 0.3s;
 }
 .prod-review__thumb-img:not(.prod-review__thumb-img--current):hover {
   opacity: 1;
@@ -4225,7 +4260,13 @@ html.dark {
   font-weight: 500;
   line-height: 150%;
 }
+@media (max-width: 1199.98px) {
+  .prod-info__tax.show {
+    display: none !important;
+  }
+}
 .prod-info__tax {
+  display: none;
   padding: 2px 8px;
   margin-left: 10px;
   border-radius: 4px;
@@ -4235,11 +4276,23 @@ html.dark {
   font-weight: 500;
   line-height: 142.857%;
 }
+@media (max-width: 991.98px) {
+  .prod-info__tax.show {
+    display: inline-block !important;
+  }
+}
+
+.prod-info__tax.show {
+  display: inline-block;
+}
 .prod-info__total-price {
   margin: 20px 0px;
   font-size: 2.6rem;
   font-weight: 500;
   line-height: 138.462%;
+}
+.prod-info__total-price--modify {
+  color: red;
 }
 .prod-info__add-to-cart {
   flex: 1;
@@ -4468,6 +4521,9 @@ html.dark {
 }
 .cart-info__next-btn {
   margin-top: 30px;
+}
+.cart-info__next-btn--Pay {
+  width: 100%;
 }
 .cart-info__edit-btn {
   display: flex;

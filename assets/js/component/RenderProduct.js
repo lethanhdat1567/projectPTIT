@@ -10,44 +10,47 @@ let perItem = [];
 let isPaginationRendered = false;
 function renderPageNumber(products, favor) {
   if (!isPaginationRendered) {
-    totalPage = Math.ceil(items.length / perPage);
-    for (let i = 1; i <= totalPage; i++) {
-      document.getElementById(
-        "pagination"
-      ).innerHTML += `<li class="pagination-li">${i}</li>`;
-    }
-    const liNote = document.querySelectorAll(".pagination-li");
-    const li = Array.from(liNote);
-    li.forEach((item, index) => {
-      item.onclick = (e) => {
-        li.forEach((liItem) => liItem.classList.remove("clicked"));
-        item.classList.add("clicked");
-        handlePageNumber(index + 1, products, favor);
+    const pagination = document.querySelector("#pagination");
+    if (pagination) {
+      totalPage = Math.ceil(items.length / perPage);
+      for (let i = 1; i <= totalPage; i++) {
+        document.getElementById(
+          "pagination"
+        ).innerHTML += `<li class="pagination-li">${i}</li>`;
+      }
+      const liNote = document.querySelectorAll(".pagination-li");
+      const li = Array.from(liNote);
+      li.forEach((item, index) => {
+        item.onclick = (e) => {
+          li.forEach((liItem) => liItem.classList.remove("clicked"));
+          item.classList.add("clicked");
+          handlePageNumber(index + 1, products, favor);
+        };
+        if (index === 0) {
+          item.classList.add("clicked");
+          handlePageNumber(1, products, favor);
+        }
+      });
+      document.querySelector(".pagination-minus").onclick = () => {
+        if (currentPage > 1) {
+          li.forEach((liItem) => liItem.classList.remove("clicked"));
+          li[currentPage - 2].classList.add("clicked");
+          handlePageNumber(currentPage - 1, products, favor);
+        }
       };
-      if (index === 0) {
-        item.classList.add("clicked");
-        handlePageNumber(1, products, favor);
-      }
-    });
-    document.querySelector(".pagination-minus").onclick = () => {
-      if (currentPage > 1) {
-        li.forEach((liItem) => liItem.classList.remove("clicked"));
-        li[currentPage - 2].classList.add("clicked");
-        handlePageNumber(currentPage - 1, products, favor);
-      }
-    };
 
-    document.querySelector(".pagination-plus").onclick = () => {
-      if (currentPage < totalPage) {
-        const newPage = currentPage + 1;
-        const newPageLi = li[newPage - 1];
-        li.forEach((liItem) => liItem.classList.remove("clicked"));
-        newPageLi.classList.add("clicked");
-        handlePageNumber(newPage, products, favor);
-      }
-    };
+      document.querySelector(".pagination-plus").onclick = () => {
+        if (currentPage < totalPage) {
+          const newPage = currentPage + 1;
+          const newPageLi = li[newPage - 1];
+          li.forEach((liItem) => liItem.classList.remove("clicked"));
+          newPageLi.classList.add("clicked");
+          handlePageNumber(newPage, products, favor);
+        }
+      };
 
-    isPaginationRendered = true;
+      isPaginationRendered = true;
+    }
   }
 }
 
@@ -61,6 +64,14 @@ function handlePageNumber(num, products, favor) {
 }
 function RenderProduct({ products, favor, All }) {
   HeaderAlert(products, favor);
+  const x = products.reduce((acc, item) => {
+    const discountedPrice = item.price - (item.price * item.discount) / 100;
+    return acc + parseInt(discountedPrice);
+  }, 0);
+  let shipping = 10;
+  let handleEstimated = shipping + x;
+  let Estimated = handleEstimated.toLocaleString("vi-VN");
+  let result = x.toLocaleString("vi-VN");
   fetch("http://localhost/projectPTIT/API/Read")
     .then((response) => response.json())
     .then((data) => {
@@ -72,6 +83,13 @@ function RenderProduct({ products, favor, All }) {
       renderPageNumber(products, favor);
       const HTML = perItem
         .map((product, index) => {
+          let handlePrice =
+            product.price - (product.price * product.discount) / 100;
+          let priceBefore = product.price.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+          let price = handlePrice.toLocaleString("vi-VN");
+          let discount = product.discount > 0 ? "show" : "";
+          let modify =
+            product.discount > 0 ? "product-card__price--discount" : "";
           return html`
             <div class="col">
               <article class="product-card">
@@ -105,8 +123,14 @@ function RenderProduct({ products, favor, All }) {
                   </a>
                 </h3>
                 <p class="product-card__brand">Lavazza</p>
+                <span class="product-card__price--modify ${discount}">
+                  $${priceBefore}
+                </span>
                 <div class="product-card__row">
-                  <span class="product-card__price">$${product.price}</span>
+                  <span class="product-card__price ${modify}">$${price}</span>
+                  <span class="prod-info__tax ${discount}"
+                    >${product.discount}%</span
+                  >
                   <img
                     src="${ASSETS}icons/star.svg"
                     alt=""
@@ -121,6 +145,7 @@ function RenderProduct({ products, favor, All }) {
         .join("");
       const productElement = document.querySelector(".render-product");
       productElement.innerHTML = HTML;
+
       // Like Btn
       const FavorBtnsNode = document.querySelectorAll(
         ".product-card__like-btn"
@@ -193,6 +218,16 @@ function searchProduct() {
         //  render
         const SearchHtml = productSearch
           .map((product, index) => {
+            let handlePrice =
+              product.price - (product.price * product.discount) / 100;
+            let price = handlePrice.toLocaleString("vi-VN");
+            let discount = product.discount > 0 ? "show" : "";
+            let modify =
+              product.discount > 0 ? "product-card__price--discount" : "";
+            let priceBefore = product.price.replace(
+              /\B(?=(\d{3})+(?!\d))/g,
+              "."
+            );
             return html`
               <div class="col">
                 <article class="product-card">
@@ -226,8 +261,14 @@ function searchProduct() {
                     </a>
                   </h3>
                   <p class="product-card__brand">Lavazza</p>
+                  <span class="product-card__price--modify ${discount}">
+                    $${priceBefore}
+                  </span>
                   <div class="product-card__row">
-                    <span class="product-card__price">$${product.price}</span>
+                    <span class="product-card__price ${modify}">$${price}</span>
+                    <span class="prod-info__tax ${discount}"
+                      >${product.discount}%</span
+                    >
                     <img
                       src="${ASSETS}icons/star.svg"
                       alt=""
@@ -241,9 +282,12 @@ function searchProduct() {
           })
           .join("");
         document.querySelector(".render-product").innerHTML = SearchHtml;
+        var searchDropdown = document.querySelector(".search-dropdown");
+        searchDropdown.style.display = "none";
       });
   };
 }
+
 document.addEventListener("click", function (event) {
   var targetElement = event.target; // Phần tử mà người dùng click vào
   // Kiểm tra xem phần tử được click có phải là nút mở dropdown không

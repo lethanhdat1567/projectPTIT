@@ -96,6 +96,13 @@ function RenderFilter() {
 
     renderProduct.innerHTML = products
       .map((product) => {
+        let handlePrice =
+          product.price - (product.price * product.discount) / 100;
+        let price = handlePrice.toLocaleString("vi-VN");
+        let discount = product.discount > 0 ? "show" : "";
+        let modify =
+          product.discount > 0 ? "product-card__price--discount" : "";
+        let priceBefore = product.price.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
         return html`
           <div class="col">
             <article class="product-card">
@@ -129,8 +136,14 @@ function RenderFilter() {
                 </a>
               </h3>
               <p class="product-card__brand">Lavazza</p>
+              <span class="product-card__price--modify ${discount}">
+                $${priceBefore}
+              </span>
               <div class="product-card__row">
-                <span class="product-card__price">$${product.price}</span>
+                <span class="product-card__price ${modify}">$${price}</span>
+                <span class="prod-info__tax ${discount}"
+                  >${product.discount}%</span
+                >
                 <img
                   src="${ASSETS}icons/star.svg"
                   alt=""

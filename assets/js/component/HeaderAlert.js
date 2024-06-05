@@ -5,9 +5,11 @@ function HeaderAlert({ products, favor }) {
   const favorCount = document.querySelector(".top-act__title-favor");
   favorCount.innerText = favor.length;
   const card = document.querySelector(".top-act__title-card");
-  const result = products.reduce((acc, item) => {
-    return acc + parseInt(item.price);
+  const x = products.reduce((acc, item) => {
+    const discountedPrice = item.price - (item.price * item.discount) / 100;
+    return acc + parseInt(discountedPrice);
   }, 0);
+  let result = x.toLocaleString("vi-VN");
   card.innerText = result;
   const alter = document.querySelector(".act-dropdown__alert-card");
   const isAlter = localStorage.getItem("alert");

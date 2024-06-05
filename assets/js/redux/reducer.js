@@ -139,7 +139,23 @@ const actions = {
     storage.setFavor(favor);
     window.location.href = `${ROOT}Home/CheckOut`;
   },
-
+  checkoutNgu({ favor, products }) {
+    favor.forEach((item) => {
+      item.isCheckOut = true;
+    });
+    const checkOut = favor.filter((item) => {
+      return item.isCheckOut;
+    });
+    products.push(...checkOut);
+    favor = [];
+    let totalCheckOut = products.reduce((acc, item) => {
+      return acc + parseInt(item.price);
+    }, 0);
+    storage.setPrice(totalCheckOut);
+    storage.set(products);
+    storage.setFavor(favor);
+    window.location.href = `${ROOT}Home/CheckOut`;
+  },
   plus({ favor }, index) {
     const itemToAdd = favor[index];
     // Sao chép phần tử đó

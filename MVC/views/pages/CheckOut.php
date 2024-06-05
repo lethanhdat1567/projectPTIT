@@ -57,7 +57,11 @@
               </div>
             </div>
             <div class="col-4 col-xl-12">
-              <div class="cart-info cart-info__sub-list checkoutPage">
+              <div class="cart-info">
+                <div class=" cart-info__sub-list checkoutPage"></div>
+                <a href="<?php ECHO ROOT ?>Home/Payment" class="cart-info__next-btn cart-info__next-btn--CheckOut btn btn--primary btn--rounded">
+                    Continue to checkout
+                </a>
               </div>
               <div class="cart-info">
                 <a href="#!">

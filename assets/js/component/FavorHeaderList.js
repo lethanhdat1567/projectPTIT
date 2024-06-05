@@ -10,6 +10,8 @@ function FavorHeaderList({ favor }) {
     </div>
     <div class="row row-cols-3 gx-2 act-dropdown__list">
       ${favor.map((item) => {
+        let handlePrice = item.price - (item.price * item.discount) / 100;
+        let price = handlePrice.toLocaleString("vi-VN");
         return `<div class="col">
           <article class="cart-preview-item">
             <div class="cart-preview-item__img-wrap">
@@ -20,7 +22,7 @@ function FavorHeaderList({ favor }) {
               />
             </div>
             <h3 class="cart-preview-item__title">${item.name}</h3>
-            <p class="cart-preview-item__price">$${item.price}</p>
+            <p class="cart-preview-item__price">$${price}</p>
           </article>
         </div>`;
       })}
@@ -30,9 +32,9 @@ function FavorHeaderList({ favor }) {
       <button
         href="${ROOT}Home/CheckOut"
         class="cart-info__checkout-all btn btn--primary btn--rounded"
-        onclick='dispatch("checkoutAll")'
+        onclick='dispatch("checkoutNgu")'
       >
-        Check Out
+        Check Out All
       </button>
     </div>
   `;

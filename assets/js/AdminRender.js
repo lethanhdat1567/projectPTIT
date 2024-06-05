@@ -4,6 +4,9 @@ fetch("http://localhost/projectPTIT/API/Read")
   .then((data) => {
     const HTML = data
       .map((product, index) => {
+        let handlePrice =
+          product.price - (product.price * product.discount) / 100;
+        let price = handlePrice.toLocaleString("vi-VN");
         return html`
           <div class="col">
             <article class="product-card admin">
@@ -38,7 +41,7 @@ fetch("http://localhost/projectPTIT/API/Read")
               </h3>
               <p class="product-card__brand">Lavazza</p>
               <div class="product-card__row">
-                <span class="product-card__price">$${product.price}</span>
+                <span class="product-card__price">$${price}</span>
                 <img
                   src="${ASSETS}icons/star.svg"
                   alt=""

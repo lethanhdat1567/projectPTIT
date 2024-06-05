@@ -55,7 +55,7 @@
                   </div>
                 </div>
                 <div class="form__group">
-                  <label for="price" class="form__label form-card__label">
+                  <label for="discount" class="form__label form-card__label">
                     Giảm giá (%)
                   </label>
                   <div class="form__text-input">

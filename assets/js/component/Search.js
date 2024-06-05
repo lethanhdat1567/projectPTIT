@@ -5,6 +5,13 @@ function Search() {
     .then((data) => {
       const HTML = data
         .map((product, index) => {
+          let handlePrice =
+            product.price - (product.price * product.discount) / 100;
+          let price = handlePrice.toLocaleString("vi-VN");
+          let discount = product.discount > 0 ? "show" : "";
+          let modify =
+            product.discount > 0 ? "product-card__price--discount" : "";
+          let priceBefore = product.price.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
           return html`
             <div class="col search__product-item">
               <article class="product-card product-card__search">
@@ -33,7 +40,12 @@ function Search() {
                       href="${ROOT}Home/ProductDetail/${product.id}"
                       class="product-card__price-search"
                     >
-                      <span class="product-card__price">$${product.price}</span>
+                      <span class="product-card__price ${modify}"
+                        >$${price}</span
+                      >
+                      <span class="product-card__price--modify ${discount}">
+                        $${priceBefore}
+                      </span>
                     </a>
                   </div>
                 </div>

@@ -30,22 +30,36 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     const Html = value
       .map((product, index) => {
+        let handlePrice =
+          product.price - (product.price * product.discount) / 100;
+        let price = handlePrice.toLocaleString("vi-VN");
+        let discount = product.discount > 0 ? "show" : "";
+        let modify =
+          product.discount > 0 ? "product-card__price--discount" : "";
         return html`
           <div class="product-card__search-mobile-wrapper">
-            <a
-              class="product-card__search-mobile-img-wrapper"
-              href="${ROOT}Home/ProductDetail/${product.id}"
-            >
-              <img
-                src="${ASSETS}img/products/${product.thumbnail}"
-                class="product-card__search-mobile-img"
-              />
-            </a>
-            <a
-              href="${ROOT}Home/ProductDetail/${product.id}"
-              class="product-card__search-mobile"
-              >${product.name}</a
-            >
+            <div class="product-card__search-mobile-wrap">
+              <a
+                class="product-card__search-mobile-img-wrapper"
+                href="${ROOT}Home/ProductDetail/${product.id}"
+              >
+                <img
+                  src="${ASSETS}img/products/${product.thumbnail}"
+                  class="product-card__search-mobile-img"
+                />
+              </a>
+              <div class="product-card__price-wrapper">
+                <a
+                  href="${ROOT}Home/ProductDetail/${product.id}"
+                  class="product-card__search-mobile"
+                  >${product.name}</a
+                >
+                <span class="prod-info__tax ${discount}"
+                  >${product.discount}%</span
+                >
+                <span class="product-card__price ${modify}">$${price}</span>
+              </div>
+            </div>
           </div>
         `;
       })

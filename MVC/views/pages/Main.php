@@ -194,8 +194,7 @@
             </div>
           </div>
         </div>
-        <div class="row row-cols-5 row-cols-lg-2 row-cols-sm-1 g-3 render-product">
-        </div>
+        <div class="row row-cols-5 row-cols-lg-2 row-cols-sm-1 g-3 render-product"></div>
         <div class="pagination-wrap">
           <img src="<?php echo ASSETS ?>icons/minus-pagi.svg" alt="" class="pagination-minus pagination-arrows">
           <ul id="pagination"></ul>

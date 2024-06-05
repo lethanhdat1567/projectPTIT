@@ -1,9 +1,15 @@
 import { connect } from "../redux/store.js";
 import html from "../redux/core.js";
 function HeaderCardDropdown({ favor, products }) {
-  const result = products.reduce((acc, item) => {
-    return acc + parseInt(item.price);
+  const x = products.reduce((acc, item) => {
+    const discountedPrice = item.price - (item.price * item.discount) / 100;
+    return acc + parseInt(discountedPrice);
   }, 0);
+
+  let shipping = 10;
+  let handleEstimated = shipping + x;
+  let Estimated = handleEstimated.toLocaleString("vi-VN");
+  let result = x.toLocaleString("vi-VN");
   return html`
     <img src="${ASSETS}icons/arrow-up.png" alt="" class="act-dropdown__arrow" />
     <div class="act-dropdown__top">
@@ -12,6 +18,9 @@ function HeaderCardDropdown({ favor, products }) {
     </div>
     <div class="row row-cols-3 gx-2 act-dropdown__list">
       ${products.map((product) => {
+        let handlePrice =
+          product.price - (product.price * product.discount) / 100;
+        let price = handlePrice.toLocaleString("vi-VN");
         return `<div class="col">
       <article class="cart-preview-item">
         <div class="cart-preview-item__img-wrap">
@@ -22,7 +31,7 @@ function HeaderCardDropdown({ favor, products }) {
           />
         </div>
         <h3 class="cart-preview-item__title">${product.name}</h3>
-        <p class="cart-preview-item__price">$${product.price}</p>
+        <p class="cart-preview-item__price">$${price}</p>
       </article>
     </div>`;
       })}
@@ -42,7 +51,7 @@ function HeaderCardDropdown({ favor, products }) {
       </div>
       <div class="act-dropdown__row act-dropdown__row--bold">
         <span class="act-dropdown__label">Total Price</span>
-        <span class="act-dropdown__value">$${result + 10}</span>
+        <span class="act-dropdown__value">$${Estimated}</span>
       </div>
     </div>
     <div class="act-dropdown__checkout" onclick='dispatch("checkoutAll")'>

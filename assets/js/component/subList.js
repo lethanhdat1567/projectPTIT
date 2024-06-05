@@ -1,20 +1,18 @@
 import html from "../redux/core.js";
 import { connect } from "../redux/store.js";
 const subWrap = document.querySelector(".cart-info__sub-list");
-// Link
-let link = "";
-if (subWrap) {
-  if (subWrap.classList.contains("checkoutPage")) {
-    link = `${ROOT}Home/Shipping`;
-  } else if (subWrap.classList.contains("shippingPage")) {
-    link = `${ROOT}Home/Payment`;
-  }
-}
+
+let link = `${ROOT}Home/Payment`;
 // thao tao
 function subList({ products, total }) {
-  const result = products.reduce((acc, item) => {
-    return acc + parseInt(item.price);
+  const x = products.reduce((acc, item) => {
+    const discountedPrice = item.price - (item.price * item.discount) / 100;
+    return acc + parseInt(discountedPrice);
   }, 0);
+  let shipping = 10;
+  let handleEstimated = shipping + x;
+  let Estimated = handleEstimated.toLocaleString("vi-VN");
+  let result = x.toLocaleString("vi-VN");
   return html`
     <div class="cart-info__row">
       <span>Subtotal <span class="cart-info__sub-label">(items)</span></span>
@@ -31,11 +29,8 @@ function subList({ products, total }) {
     <div class="cart-info__separate"></div>
     <div class="cart-info__row">
       <span>Estimated Total</span>
-      <span>${result}$</span>
+      <span>${Estimated}$</span>
     </div>
-    <a href=${link} class="cart-info__next-btn btn btn--primary btn--rounded">
-      Continue to checkout
-    </a>
   `;
 }
 export default connect()(subList);

@@ -52,8 +52,10 @@
               </td>
               <td class="admin-product__table-items"><?php echo $row['name'] ?></td>
               <td class="admin-product__table-items"><?php echo$row['updated_at'] ?></td>
-              <td class="admin-product__table-items"><?php echo $row['price'] ?></td>
-              <td class="admin-product__table-items"><?php echo $row['discount'] ?></td>
+              <td class="admin-product__table-items"><?php $price = $row['price'];
+                $formattedPrice = number_format($price, 0, ',', '.');
+                echo $formattedPrice; ?></td>
+              <td class="admin-product__table-items"><?php echo $row['discount'] ?>%</td>
               <td class="admin-product__table-items"><p class="admin-product__table-items-desc"><?php echo $row['description'] ?></p></td>
               <td class="admin-product__table-items">
                 <div class="admin-product__wrap-btn">

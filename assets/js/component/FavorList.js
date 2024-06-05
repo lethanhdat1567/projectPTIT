@@ -8,7 +8,6 @@ function FavorList({ favor, filters, products }) {
   favor.forEach((item) => {
     duplicateCounts[item.id] = (duplicateCounts[item.id] || 0) + 1;
   });
-
   return html`
     <h1 class="cart-info__heading">Favourite List</h1>
     <p class="cart-desc">${favor.length} items</p>
@@ -26,6 +25,8 @@ function FavorList({ favor, filters, products }) {
     </div>
     <div class="cart-info__list cart-info__list-favor">
       ${favor.map((item, index) => {
+        let handlePrice = item.price - (item.price * item.discount) / 100;
+        let price = handlePrice.toLocaleString("vi-VN");
         const countDuplicates = duplicateCounts[item.id] || 1;
         if (
           countDuplicates === 1 ||
@@ -54,7 +55,7 @@ function FavorList({ favor, filters, products }) {
                 ${item.name}
               </h3>
               <p class="cart-item__price-wrap">
-                $${item.price} |
+                $${price} |
                 <span class="cart-item__status">In Stock</span>
               </p>
               <div class="cart-item__ctrl-wrap">
@@ -74,7 +75,7 @@ function FavorList({ favor, filters, products }) {
               </div>
             </div>
             <div class="cart-item__content-right">
-              <p class="cart-item__total-price">${item.price}$</p>
+              <p class="cart-item__total-price">${price}$</p>
               <button
                 class="cart-item__checkout-btn btn btn--primary btn--rounded"
                 onclick="dispatch('CheckOut',${index})"
@@ -106,7 +107,7 @@ function FavorList({ favor, filters, products }) {
           class="cart-info__checkout-all btn btn--primary btn--rounded"
           onclick='dispatch("checkoutAll")'
         >
-          Check Out
+          Check Out Item
         </button>
       </div>
     </div>

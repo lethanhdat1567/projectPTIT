@@ -20,7 +20,9 @@ function CardList({ products, favor }) {
   return html`
     ${products.map((product, index) => {
       const productId = product.id;
-
+      let handlePrice =
+        product.price - (product.price * product.discount) / 100;
+      let price = handlePrice.toLocaleString("vi-VN");
       // Kiểm tra xem sản phẩm đã được hiển thị chưa
       if (displayedProductIds.has(productId)) {
         return ""; // Nếu đã được hiển thị, trả về chuỗi rỗng
@@ -65,7 +67,7 @@ function CardList({ products, favor }) {
               </div>
             </div>
             <div class="cart-item__content-right">
-              <p class="cart-item__total-price">${product.price}$</p>
+              <p class="cart-item__total-price">${price}$</p>
               <div class="cart-item__ctrl">
                 <button
                   class="cart-item__ctrl-btn"
