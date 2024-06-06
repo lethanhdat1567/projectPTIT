@@ -23,7 +23,7 @@
         <div class="checkout-container">
           <ul class="breadcrumbs checkout-page__breadcrumbs">
             <li>
-              <a href="./" class="breadcrumbs__link"
+              <a href="<?php echo ROOT ?>" class="breadcrumbs__link"
                 >Home
                 <img src="<?php echo ASSETS ?>icons/arrow-right.svg" alt="" />
               </a>
@@ -41,262 +41,270 @@
             <div class="col-12">
               <div class="cart-info">
                 <h1 class="cart-info__heading">Lịch sử mua hàng</h1>
-                <p class="cart-desc">3 items</p>
-                <div class="cart-info__check-all">
-                  <label class="cart-info__checkbox">
-                    <input
-                      name="shipping-address"
-                      type="checkbox"
-                      class="cart-info__checkbox-input"
-                    />
-                  </label>
-                </div>
+                <p class="cart-desc cart-desc--history">Đơn hàng đã mua: 3</p>
                 <div class="cart-info__list">
                   <!-- Cart item 1 -->
-                  <article class="cart-item">
-                    <label class="cart-info__checkbox">
-                      <input
-                        name="shipping-address"
-                        type="checkbox"
-                        class="cart-info__checkbox-input"
-                      />
-                    </label>
-                    <a href="./product-detail.html">
-                      <img
-                        src="<?php echo ASSETS ?>img/products/item1.png"
-                        alt=""
-                        class="cart-item__thumb"
-                      />
-                    </a>
-                    <div class="cart-item__content">
-                      <div class="cart-item__content-left">
-                        <h3 class="cart-item__title">
-                          Coffee Beans - Espresso Arabica and Robusta Beans
-                        </h3>
-                        <p class="cart-item__price-wrap">
-                          $47.00 |
-                          <span class="cart-item__status">In Stock</span>
-                        </p>
-                        <div class="cart-item__ctrl-wrap">
-                          <div
-                            class="cart-item__ctrl cart-item__ctrl--md-block"
-                          >
-                            <div class="cart-item__input">
-                              LavAzza
-                              <img
-                                class="icon"
-                                src="<?php echo ASSETS ?>icons/arrow-down-2.svg"
-                                alt=""
-                              />
-                            </div>
-                            <div class="cart-item__input">
-                              <button class="cart-item__input-btn">
-                                <img
-                                  class="icon"
-                                  src="<?php echo ASSETS ?>icons/minus.svg"
-                                  alt=""
-                                />
-                              </button>
-                              <span>1</span>
-                              <button class="cart-item__input-btn">
-                                <img
-                                  class="icon"
-                                  src="<?php echo ASSETS ?>icons/plus.svg"
-                                  alt=""
-                                />
-                              </button>
+                  <div class="cart-item--wrap">
+                    <p class="cart-desc cart-Day--history">Ngày Đặt hàng: 2312312312312312321323</p>
+                    <div class="cart-item--history_wrapper">
+                      <article class="cart-item cart-item--history">
+                        <a href="<?php echo ROOT ?>Home/ProductDetail/1">
+                          <img
+                            src="<?php echo ASSETS ?>img/products/item1.png"
+                            alt=""
+                            class="cart-item__thumb"
+                          />
+                        </a>
+                        <div class="cart-item__content">
+                          <div class="cart-item__content-left">
+                            <h3 class="cart-item__title">
+                              Coffee Beans - Espresso Arabica and Robusta Beans
+                            </h3>
+                            <p class="cart-item__price-wrap">
+                              $47.00 |
+                              <span class="cart-item__status">In Stock</span>
+                            </p>
+                            <div class="cart-item__ctrl-wrap">
+                              <div
+                                class="cart-item__ctrl cart-item__ctrl--md-block"
+                              >
+                                <div class="cart-item__input">
+                                  LavAzza
+                                </div>
+                                <div class="cart-item__input">
+                                  Số lượng: 3
+                                </div>
+                              </div>
+    
                             </div>
                           </div>
-                          <div class="cart-item__ctrl">
-                            <button class="cart-item__ctrl-btn">
-                              <img src="<?php echo ASSETS ?>icons/heart-2.svg" alt="" />
-                              Save
-                            </button>
+                          <div class="cart-item__content-right">
+                            <p class="cart-item__total-price">47.00$</p>
                             <button
-                              class="cart-item__ctrl-btn js-toggle"
-                              toggle-target="#delete-confirm"
+                              class="cart-item__checkout-btn btn btn--primary btn--rounded"
                             >
-                              <img src="<?php echo ASSETS ?>icons/trash.svg" alt="" />
-                              Delete
+                              Xem chi tiết 
                             </button>
                           </div>
                         </div>
-                      </div>
-                      <div class="cart-item__content-right">
-                        <p class="cart-item__total-price">47.00$</p>
-                        <button
-                          class="cart-item__checkout-btn btn btn--primary btn--rounded"
-                        >
-                          Check Out
-                        </button>
-                      </div>
-                    </div>
-                  </article>
-                  <!-- Cart item 2 -->
-                  <article class="cart-item">
-                    <label class="cart-info__checkbox">
-                      <input
-                        name="shipping-address"
-                        type="checkbox"
-                        class="cart-info__checkbox-input"
-                      />
-                    </label>
-                    <a href="./product-detail.html">
-                      <img
-                        src="<?php echo ASSETS ?>img/products/item2.png"
-                        alt=""
-                        class="cart-item__thumb"
-                      />
-                    </a>
-                    <div class="cart-item__content">
-                      <div class="cart-item__content-left">
-                        <h3 class="cart-item__title">
-                          Lavazza Coffee Blends - Try the Italian Espresso
-                        </h3>
-                        <p class="cart-item__price-wrap">
-                          $53.00 |
-                          <span class="cart-item__status">In Stock</span>
-                        </p>
-                        <div class="cart-item__ctrl-wrap">
-                          <div
-                            class="cart-item__ctrl cart-item__ctrl--md-block"
-                          >
-                            <div class="cart-item__input">
-                              LavAzza
-                              <img
-                                class="icon"
-                                src="<?php echo ASSETS ?>icons/arrow-down-2.svg"
-                                alt=""
-                              />
-                            </div>
-                            <div class="cart-item__input">
-                              <button class="cart-item__input-btn">
-                                <img
-                                  class="icon"
-                                  src="<?php echo ASSETS ?>icons/minus.svg"
-                                  alt=""
-                                />
-                              </button>
-                              <span>2</span>
-                              <button class="cart-item__input-btn">
-                                <img
-                                  class="icon"
-                                  src="<?php echo ASSETS ?>icons/plus.svg"
-                                  alt=""
-                                />
-                              </button>
+                      </article>
+                      <article class="cart-item cart-item--history">
+                        <a href="<?php echo ROOT ?>Home/ProductDetail/1">
+                          <img
+                            src="<?php echo ASSETS ?>img/products/item1.png"
+                            alt=""
+                            class="cart-item__thumb"
+                          />
+                        </a>
+                        <div class="cart-item__content">
+                          <div class="cart-item__content-left">
+                            <h3 class="cart-item__title">
+                              Coffee Beans - Espresso Arabica and Robusta Beans
+                            </h3>
+                            <p class="cart-item__price-wrap">
+                              $47.00 |
+                              <span class="cart-item__status">In Stock</span>
+                            </p>
+                            <div class="cart-item__ctrl-wrap">
+                              <div
+                                class="cart-item__ctrl cart-item__ctrl--md-block"
+                              >
+                                <div class="cart-item__input">
+                                  LavAzza
+                                </div>
+                                <div class="cart-item__input">
+                                  Số lượng: 3
+                                </div>
+                              </div>
+    
                             </div>
                           </div>
-                          <div class="cart-item__ctrl">
-                            <button class="cart-item__ctrl-btn">
-                              <img src="<?php echo ASSETS ?>icons/heart-2.svg" alt="" />
-                              Save
-                            </button>
+                          <div class="cart-item__content-right">
+                            <p class="cart-item__total-price">47.00$</p>
                             <button
-                              class="cart-item__ctrl-btn js-toggle"
-                              toggle-target="#delete-confirm"
+                              class="cart-item__checkout-btn btn btn--primary btn--rounded"
                             >
-                              <img src="<?php echo ASSETS ?>icons/trash.svg" alt="" />
-                              Delete
+                              Xem chi tiết 
                             </button>
                           </div>
                         </div>
-                      </div>
-                      <div class="cart-item__content-right">
-                        <p class="cart-item__total-price">$106.00</p>
-                        <button
-                          class="cart-item__checkout-btn btn btn--primary btn--rounded"
-                        >
-                          Check Out
-                        </button>
-                      </div>
-                    </div>
-                  </article>
-                  <!-- Cart item 3 -->
-                  <article class="cart-item">
-                    <label class="cart-info__checkbox">
-                      <input
-                        name="shipping-address"
-                        type="checkbox"
-                        class="cart-info__checkbox-input"
-                      />
-                    </label>
-                    <a href="./product-detail.html">
-                      <img
-                        src="<?php echo ASSETS ?>img/products/item3.png"
-                        alt=""
-                        class="cart-item__thumb"
-                      />
-                    </a>
-                    <div class="cart-item__content">
-                      <div class="cart-item__content-left">
-                        <h3 class="cart-item__title">
-                          Qualità Oro Mountain Grown - Espresso Coffee Beans
-                        </h3>
-                        <p class="cart-item__price-wrap">
-                          $38.65 |
-                          <span class="cart-item__status">In Stock</span>
-                        </p>
-                        <div class="cart-item__ctrl-wrap">
-                          <div
-                            class="cart-item__ctrl cart-item__ctrl--md-block"
-                          >
-                            <div class="cart-item__input">
-                              LavAzza
-                              <img
-                                class="icon"
-                                src="<?php echo ASSETS ?>icons/arrow-down-2.svg"
-                                alt=""
-                              />
-                            </div>
-                            <div class="cart-item__input">
-                              <button class="cart-item__input-btn">
-                                <img
-                                  class="icon"
-                                  src="<?php echo ASSETS ?>icons/minus.svg"
-                                  alt=""
-                                />
-                              </button>
-                              <span>1</span>
-                              <button class="cart-item__input-btn">
-                                <img
-                                  class="icon"
-                                  src="<?php echo ASSETS ?>icons/plus.svg"
-                                  alt=""
-                                />
-                              </button>
+                      </article>
+                      <article class="cart-item cart-item--history">
+                        <a href="<?php echo ROOT ?>Home/ProductDetail/1">
+                          <img
+                            src="<?php echo ASSETS ?>img/products/item1.png"
+                            alt=""
+                            class="cart-item__thumb"
+                          />
+                        </a>
+                        <div class="cart-item__content">
+                          <div class="cart-item__content-left">
+                            <h3 class="cart-item__title">
+                              Coffee Beans - Espresso Arabica and Robusta Beans
+                            </h3>
+                            <p class="cart-item__price-wrap">
+                              $47.00 |
+                              <span class="cart-item__status">In Stock</span>
+                            </p>
+                            <div class="cart-item__ctrl-wrap">
+                              <div
+                                class="cart-item__ctrl cart-item__ctrl--md-block"
+                              >
+                                <div class="cart-item__input">
+                                  LavAzza
+                                </div>
+                                <div class="cart-item__input">
+                                  Số lượng: 3
+                                </div>
+                              </div>
+    
                             </div>
                           </div>
-                          <div class="cart-item__ctrl">
-                            <button class="cart-item__ctrl-btn">
-                              <img src="<?php echo ASSETS ?>icons/heart-2.svg" alt="" />
-                              Save
-                            </button>
+                          <div class="cart-item__content-right">
+                            <p class="cart-item__total-price">47.00$</p>
                             <button
-                              class="cart-item__ctrl-btn js-toggle"
-                              toggle-target="#delete-confirm"
+                              class="cart-item__checkout-btn btn btn--primary btn--rounded"
                             >
-                              <img src="<?php echo ASSETS ?>icons/trash.svg" alt="" />
-                              Delete
+                              Xem chi tiết 
                             </button>
                           </div>
                         </div>
-                      </div>
-                      <div class="cart-item__content-right">
-                        <p class="cart-item__total-price">$38.65</p>
-                        <button
-                          class="cart-item__checkout-btn btn btn--primary btn--rounded"
-                        >
-                          Check Out
-                        </button>
-                      </div>
+                      </article>
                     </div>
-                  </article>
+                  </div>
+                  <div class="cart-item--wrap">
+                    <p class="cart-desc cart-Day--history">Ngày Đặt hàng: 2312312312312312321323</p>
+                    <div class="cart-item--history_wrapper">
+                      <article class="cart-item cart-item--history">
+                        <a href="<?php echo ROOT ?>Home/ProductDetail/1">
+                          <img
+                            src="<?php echo ASSETS ?>img/products/item1.png"
+                            alt=""
+                            class="cart-item__thumb"
+                          />
+                        </a>
+                        <div class="cart-item__content">
+                          <div class="cart-item__content-left">
+                            <h3 class="cart-item__title">
+                              Coffee Beans - Espresso Arabica and Robusta Beans
+                            </h3>
+                            <p class="cart-item__price-wrap">
+                              $47.00 |
+                              <span class="cart-item__status">In Stock</span>
+                            </p>
+                            <div class="cart-item__ctrl-wrap">
+                              <div
+                                class="cart-item__ctrl cart-item__ctrl--md-block"
+                              >
+                                <div class="cart-item__input">
+                                  LavAzza
+                                </div>
+                                <div class="cart-item__input">
+                                  Số lượng: 3
+                                </div>
+                              </div>
+    
+                            </div>
+                          </div>
+                          <div class="cart-item__content-right">
+                            <p class="cart-item__total-price">47.00$</p>
+                            <button
+                              class="cart-item__checkout-btn btn btn--primary btn--rounded"
+                            >
+                              Xem chi tiết 
+                            </button>
+                          </div>
+                        </div>
+                      </article>
+                      <article class="cart-item cart-item--history">
+                        <a href="<?php echo ROOT ?>Home/ProductDetail/1">
+                          <img
+                            src="<?php echo ASSETS ?>img/products/item1.png"
+                            alt=""
+                            class="cart-item__thumb"
+                          />
+                        </a>
+                        <div class="cart-item__content">
+                          <div class="cart-item__content-left">
+                            <h3 class="cart-item__title">
+                              Coffee Beans - Espresso Arabica and Robusta Beans
+                            </h3>
+                            <p class="cart-item__price-wrap">
+                              $47.00 |
+                              <span class="cart-item__status">In Stock</span>
+                            </p>
+                            <div class="cart-item__ctrl-wrap">
+                              <div
+                                class="cart-item__ctrl cart-item__ctrl--md-block"
+                              >
+                                <div class="cart-item__input">
+                                  LavAzza
+                                </div>
+                                <div class="cart-item__input">
+                                  Số lượng: 3
+                                </div>
+                              </div>
+    
+                            </div>
+                          </div>
+                          <div class="cart-item__content-right">
+                            <p class="cart-item__total-price">47.00$</p>
+                            <button
+                              class="cart-item__checkout-btn btn btn--primary btn--rounded"
+                            >
+                              Xem chi tiết 
+                            </button>
+                          </div>
+                        </div>
+                      </article>
+                      <article class="cart-item cart-item--history">
+                        <a href="<?php echo ROOT ?>Home/ProductDetail/1">
+                          <img
+                            src="<?php echo ASSETS ?>img/products/item1.png"
+                            alt=""
+                            class="cart-item__thumb"
+                          />
+                        </a>
+                        <div class="cart-item__content">
+                          <div class="cart-item__content-left">
+                            <h3 class="cart-item__title">
+                              Coffee Beans - Espresso Arabica and Robusta Beans
+                            </h3>
+                            <p class="cart-item__price-wrap">
+                              $47.00 |
+                              <span class="cart-item__status">In Stock</span>
+                            </p>
+                            <div class="cart-item__ctrl-wrap">
+                              <div
+                                class="cart-item__ctrl cart-item__ctrl--md-block"
+                              >
+                                <div class="cart-item__input">
+                                  LavAzza
+                                </div>
+                                <div class="cart-item__input">
+                                  Số lượng: 3
+                                </div>
+                              </div>
+    
+                            </div>
+                          </div>
+                          <div class="cart-item__content-right">
+                            <p class="cart-item__total-price">47.00$</p>
+                            <button
+                              class="cart-item__checkout-btn btn btn--primary btn--rounded"
+                            >
+                              Xem chi tiết 
+                            </button>
+                          </div>
+                        </div>
+                      </article>
+                    </div>
+                  </div>
                 </div>
                 <div class="cart-info__bottom">
                   <div class="cart-info__row cart-info__row-md--block">
                     <div class="cart-info__continue">
-                      <a href="./" class="cart-info__continue-link">
+                      <a href="<?php echo ROOT ?>" class="cart-info__continue-link">
                         <img
                           class="cart-info__continue-icon icon"
                           src="<?php echo ASSETS ?>icons/arrow-down-2.svg"
@@ -305,12 +313,6 @@
                         Continue Shopping
                       </a>
                     </div>
-                    <a
-                      href="./checkout.html"
-                      class="cart-info__checkout-all btn btn--primary btn--rounded"
-                    >
-                      All Check Out
-                    </a>
                   </div>
                 </div>
               </div>

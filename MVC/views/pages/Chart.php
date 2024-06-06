@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-        google.charts.load("current", {packages:["corechart"]});
+        google.charts.load("current", {packages:["corechart", "bar"]});
         google.charts.setOnLoadCallback(drawChart);
         function drawChart() {
             var data = google.visualization.arrayToDataTable([
@@ -22,14 +22,28 @@
                     ['Số đơn hàng được đặt', <?php echo $row['TotalOrder']; ?>]
                 <?php endforeach; ?>
             ]);
-
+            // Vẽ biểu đồ tròn 3D
             var options = {
                 title: 'Thống kê người dùng và đơn hàng',
                 is3D: true,
             };
-
             var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
             chart.draw(data, options);
+
+            // Vẽ biểu đồ cột
+            var optionsColumn = {
+                title: 'Thống kê người dùng và đơn hàng (Cột)',
+                hAxis: {
+                    title: 'Thống kê',
+                    minValue: 0
+                },
+                vAxis: {
+                    title: 'Số lượng'
+                }
+            };
+            var columnChart = new google.visualization.ColumnChart(document.getElementById('columnchart'));
+            columnChart.draw(data, optionsColumn);
+
         }
     </script>
 </head>
@@ -61,6 +75,7 @@
                         <h2 class="admin-product__heading">Thống kê</h2>
                     </div>
                     <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+                    <div id="columnchart" style="width: 900px; height: 500px;"></div>
                 </div>
             </div>
         </div>

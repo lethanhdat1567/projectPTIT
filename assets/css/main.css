@@ -4513,6 +4513,13 @@ html.dark {
   rotate: 90deg;
   transition: translate 0.3s;
 }
+.cart-desc--history {
+  margin: 10px 0px;
+}
+.cart-Day--history {
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
 .cart-info__continue-link:hover .cart-info__continue-icon {
   translate: -5px;
 }
@@ -4712,10 +4719,21 @@ html.dark {
     max-width: 200px;
   }
 }
-
+.cart-item--history {
+  border-bottom: none;
+}
 .gift-item {
   display: flex;
   gap: 20px;
+}
+.cart-item--wrap {
+  border-bottom: 1px solid #ccc;
+}
+.cart-item--history_wrapper {
+  height: 350px;
+  overflow: auto;
+  margin: 20px 0px;
+  padding: 15px;
 }
 .gift-item__icon-wrap {
   width: 76px;

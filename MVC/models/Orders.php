@@ -30,6 +30,16 @@ class Orders extends DB{
         $qr= "SELECT * FROM orders WHERE user_id=$user_id";
         return mysqli_query($this->conn, $qr);
     }
-       
+    public function GetHistoryOrder(){
+        $query = "SELECT orders.order_date as orders_order_date ,
+        order_details.price AS order_detail_price,
+        order_details.quantity AS order_detail_quantity,
+        order_details.total_money AS order_detail_total_money,
+        product.name AS product_name
+        FROM orders
+        JOIN order_details ON orders.id = order_details.order_id
+        JOIN product ON order_details.product_id = product.id;";
+         return mysqli_query($this->conn, $query);
+    }
 }
 ?>
