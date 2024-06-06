@@ -91,8 +91,8 @@ if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)){
         function UpdateProductSuccess() {
             $this->view("AdminPage",["Pages"=>"UpdateProductSuccess"]);
         }
-        function DeleteProduct($param) {
-            $result = $this->DeleteProduct->DeleteValuesProduct($param);
+        function DeleteProduct($id) {         
+            $result = $this->UpdateProduct->statusProduct($id);
             if($result){
                 $this->QLSP();
             }
@@ -160,11 +160,14 @@ if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)){
                     $this->UpdateProductSuccess();
                 }
             }
+
+
             // ADD PRODUCT
             if(isset($_POST["btnAdd"])) {
                 $productName = $_POST["ProductName"];
                 $productPrice = $_POST['ProductPrice'];
                 $productDesc = $_POST['ProductDesc'];
+                $deleted = 0;
                 $productDiscount = $_POST['ProductDiscount'];
                 $thumbnailpath = basename($_FILES['thumbnail']['name']);    
                 $target_dir = "./assets/img/products/";
@@ -172,7 +175,7 @@ if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)){
                 $productImg = $_FILES['thumbnail']['tmp_name'];
                 
                 if(move_uploaded_file($productImg, $target_file)){
-                    $product_id = $this->InsertProduct->InsertNewProduct($productName, $productPrice, $productDesc, $thumbnailpath,$productDiscount);
+                    $product_id = $this->InsertProduct->InsertNewProduct($productName, $productPrice, $productDesc, $thumbnailpath,$productDiscount,$deleted);
                         if($product_id){
                             $galeryid = $this->InsertProduct->InsertGalery($thumbnailpath, $product_id);            
                                 if($galeryid){

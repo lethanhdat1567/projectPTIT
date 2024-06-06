@@ -2,7 +2,7 @@
 class GetProduct extends DB{
     function GetValuesProduct()
     {
-        $qr = "SELECT * FROM product";
+        $qr = "SELECT * FROM product WHERE deleted = 0";
         return mysqli_query($this->conn, $qr);
     }
     function GetValuesProductID($id)

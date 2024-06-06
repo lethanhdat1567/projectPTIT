@@ -11,6 +11,11 @@ class UpdateProduct extends DB{
         return mysqli_query($this->conn, $update);
     }
     
+
+    function statusProduct($id){
+        $update = "UPDATE product SET deleted= 1 WHERE id=$id";
+        return mysqli_query($this->conn, $update);
+    }
 }
 
 ?>
