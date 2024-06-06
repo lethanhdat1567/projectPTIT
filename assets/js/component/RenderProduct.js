@@ -195,6 +195,24 @@ window.onload = function () {
   const FavorBtns = Array.from(FavorBtnsNode);
   updateFavoriteStatus(favor, All, FavorBtns);
 };
+function renderPaginationForSearch(totalPages) {
+  const pagination = document.querySelector("#pagination");
+  if (pagination) {
+    pagination.innerHTML = ""; // Xóa nội dung pagination cũ
+    for (let i = 1; i <= totalPages; i++) {
+      pagination.innerHTML += `<li class="pagination-li">${i}</li>`;
+    }
+    const liNote = document.querySelectorAll(".pagination-li");
+    const li = Array.from(liNote);
+    li.forEach((item, index) => {
+      item.onclick = (e) => {
+        li.forEach((liItem) => liItem.classList.remove("clicked"));
+        item.classList.add("clicked");
+        handlePageNumber(index + 1, products, favor);
+      };
+    });
+  }
+}
 // search product
 function searchProduct() {
   let valueSearch = document.querySelector(".search__input").value;
@@ -284,6 +302,12 @@ function searchProduct() {
         document.querySelector(".render-product").innerHTML = SearchHtml;
         var searchDropdown = document.querySelector(".search-dropdown");
         searchDropdown.style.display = "none";
+        // Tính toán số lượng trang cần hiển thị
+        const totalPages = Math.ceil(productSearch.length / perPage);
+        renderPaginationForSearch(totalPages);
+
+        // Render sản phẩm cho trang đầu tiên
+        handlePageNumber(1, productSearch, favor);
       });
   };
 }

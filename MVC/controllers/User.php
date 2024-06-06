@@ -179,18 +179,18 @@ class User extends Controller
                         $_SESSION['fullname'] = $r['fullname'];
                         $_SESSION['email'] = $r['email'];
                         $_SESSION['avatar'] = $r['avatar'];
+                        $_SESSION['phone_number'] = $r['phone_number'];
+                        setcookie("user_id", $id, time() + (86400 * 30), "/");
                         $this->checkRoleID();
                         // header("Location: ". ROOT . "Home/Main");                               
                         ob_end_flush();
                         exit();
                     }
                 } else {
-                    $error_message = "Tên đăng nhập hoặc mật khẩu không chính xác!";
-                    $this->view("UserPage", ["Pages" => "SignIn", "Error" => $error_message]);
-                }
+                        $error_message = "Tên đăng nhập hoặc mật khẩu không chính xác!";
+                        $this->view("UserPage", ["Pages" => "SignIn", "Error" => $error_message]);
+                    }
             }
-
-
 
         }
     }
@@ -236,7 +236,6 @@ class User extends Controller
                 }
             }
         }
-
     }
 }
 ?>

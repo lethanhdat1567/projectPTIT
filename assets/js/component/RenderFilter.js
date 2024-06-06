@@ -1,6 +1,33 @@
 import html from "../redux/core.js";
 import toggleHomeLink from "./HomeFilter.js";
-
+let items = [];
+let currentPage = 1;
+let perPage = 10;
+function handlePageNumber(num, products, favor) {
+  currentPage = num;
+  perItem = items.slice(
+    (currentPage - 1) * perPage,
+    (currentPage - 1) * perPage + perPage
+  );
+}
+function renderPaginationForSearch(totalPages) {
+  const pagination = document.querySelector("#pagination");
+  if (pagination) {
+    pagination.innerHTML = ""; // Xóa nội dung pagination cũ
+    for (let i = 1; i <= totalPages; i++) {
+      pagination.innerHTML += `<li class="pagination-li">${i}</li>`;
+    }
+    const liNote = document.querySelectorAll(".pagination-li");
+    const li = Array.from(liNote);
+    li.forEach((item, index) => {
+      item.onclick = (e) => {
+        li.forEach((liItem) => liItem.classList.remove("clicked"));
+        item.classList.add("clicked");
+        handlePageNumber(index + 1, products, favor);
+      };
+    });
+  }
+}
 function RenderFilter() {
   const $ = document.querySelector.bind(document);
   const $$ = document.querySelectorAll.bind(document);
@@ -156,6 +183,11 @@ function RenderFilter() {
         `;
       })
       .join("");
+    const totalPages = Math.ceil(products.length / perPage);
+    renderPaginationForSearch(totalPages);
+
+    // Render sản phẩm cho trang đầu tiên
+    handlePageNumber(1, products);
 
     const favorites = JSON.parse(localStorage.getItem("FAVOR"));
 

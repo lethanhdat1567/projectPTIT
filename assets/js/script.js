@@ -197,6 +197,24 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 window.addEventListener("DOMContentLoaded", () => {
+  function renderPaginationForSearch(totalPages) {
+    const pagination = document.querySelector("#pagination");
+    if (pagination) {
+      pagination.innerHTML = ""; // Xóa nội dung pagination cũ
+      for (let i = 1; i <= totalPages; i++) {
+        pagination.innerHTML += `<li class="pagination-li">${i}</li>`;
+      }
+      const liNote = document.querySelectorAll(".pagination-li");
+      const li = Array.from(liNote);
+      li.forEach((item, index) => {
+        item.onclick = (e) => {
+          li.forEach((liItem) => liItem.classList.remove("clicked"));
+          item.classList.add("clicked");
+          handlePageNumber(index + 1, products, favor);
+        };
+      });
+    }
+  }
   function html([first, ...string], ...values) {
     return values
       .reduce((acc, cur) => acc.concat(cur, string.shift()), [first])
@@ -204,6 +222,16 @@ window.addEventListener("DOMContentLoaded", () => {
       .join("");
   }
   // Thêm trang chủ
+  let items = [];
+  let currentPage = 1;
+  let perPage = 10;
+  function handlePageNumber(num, products, favor) {
+    currentPage = num;
+    perItem = items.slice(
+      (currentPage - 1) * perPage,
+      (currentPage - 1) * perPage + perPage
+    );
+  }
   const cates = document.querySelectorAll(".category-item");
   const catesArr = Array.from(cates);
   catesArr.forEach((cate) => {
@@ -313,6 +341,11 @@ window.addEventListener("DOMContentLoaded", () => {
             .join("");
           const productElement = document.querySelector(".render-product");
           productElement.innerHTML = CateHtml;
+          const totalPages = Math.ceil(productCate.length / perPage);
+          renderPaginationForSearch(totalPages);
+
+          // Render sản phẩm cho trang đầu tiên
+          handlePageNumber(1, productCate);
           const favorites = JSON.parse(localStorage.getItem("FAVOR"));
           const FavorBtnsNode = document.querySelectorAll(
             ".product-card__like-btn"

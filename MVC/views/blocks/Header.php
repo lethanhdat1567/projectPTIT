@@ -158,11 +158,6 @@
                   <img src="<?php echo ASSETS; ?>icons/sun-dark.svg" alt="" class="icon user-menu__icon">
                 </a>
               </li>
-              <li>
-                <a href="#!" class="user-menu__link">
-                  Setting
-                </a>
-              </li>
               <form method="post" action="<?php echo ROOT; ?>User/LogoutUser" class="user-menu__separate">
                 <button href="<?php echo ROOT; ?>User/SignIn" name="logoutBtn" class="user-menu__link user-menu__link-btn js-toggle"  toggle-target="#Logout">
                   Logout</button>
@@ -191,7 +186,7 @@
           </button>
           <button
             class="btn btn--danger btn--small btn--primary modal__btn btn--no-margin btn-logout"
-
+            name="LogOut"
           >
             Đăng xuất
           </button>

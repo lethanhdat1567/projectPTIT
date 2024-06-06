@@ -111,7 +111,8 @@
                   Complete your purchase item by providing your payment details
                   order.
                 </p>
-                <form action="" class="form cart-info__form">
+                <form action="<?php echo ROOT ?>Home/GetIdCart" method="post" class="form cart-info__form">
+                  <input type="text" hidden class="cart-info__checkOut" name="prodIds" id="prodIds">
                   <div class="form__group">
                     <label for="email" class="form__label form__label--medium"
                       >Email Address</label
@@ -210,6 +211,7 @@
                   </div>
                   <button
                     class="cart-info__next-btn cart-info__next-btn--Pay btn btn--primary btn--rounded"
+                    name="PayBtn"
                   >
                     Pay
                   </button>

@@ -9,6 +9,7 @@ import Search from "./component/Search.js";
 import HeaderAlert from "./component/HeaderAlert.js";
 import HeaderCardDropdown from "./component/HeaderCardDropdown.js";
 import HeaderMobile from "./component/HeaderMobile.js";
+import Payment from "./component/Payment.js";
 // Hàm kiểm tra và gọi hàm attach
 function attachComponent(selector, component) {
   const element = document.querySelector(selector);
@@ -30,3 +31,4 @@ attachComponent(".search__product-list", Search);
 attachComponent(".act-dropdown__inner-favor", FavorHeaderList);
 attachComponent(".act-dropdown__inner-card", HeaderAlert);
 attachComponent(".act-dropdown__inner-card", HeaderCardDropdown);
+attachComponent(".cart-info__checkOut", Payment);
