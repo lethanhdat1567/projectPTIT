@@ -152,6 +152,10 @@
                 <a href="<?php echo ROOT; ?>Home/Favourite" class="user-menu__link">
                   Favourite list</a>
               </li>
+              <li>
+                <a href="<?php echo ROOT; ?>Home/History" class="user-menu__link">
+                  Lịch sử mua hàng</a>
+              </li>
               <li class="user-menu__separate">
                 <a href="#!" class="user-menu__link" id="switch-theme-btn">
                   <span>Dark mode</span>

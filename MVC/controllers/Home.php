@@ -59,6 +59,9 @@
         function Admin() {
             $this->view("master1",["Pages"=>"Admin"]);
         }
+        function History() {
+            $this->view("master1",["Pages"=>"History"]);
+        }
         // GET FORM
         function UpdateUser() {
             if(isset($_POST["UpdateUserBtn"])) {
