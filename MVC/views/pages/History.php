@@ -1,3 +1,14 @@
+<?php
+// Kiểm tra xem $data["OrderHistory"] có dữ liệu không
+if (!empty($data["OrderHistory"])) {
+    // Fetch all rows from $data["OrderHistory"]
+    $orderHistoryRows = [];
+    while ($row = mysqli_fetch_assoc($data["OrderHistory"])) {
+        $orderHistoryRows[] = $row;
+    }
+}
+?>
+
 <main class="checkout-page">
       <div class="container">
         <!-- Search bar -->
@@ -41,266 +52,45 @@
             <div class="col-12">
               <div class="cart-info">
                 <h1 class="cart-info__heading">Lịch sử mua hàng</h1>
-                <p class="cart-desc cart-desc--history">Đơn hàng đã mua: 3</p>
+                <p class="cart-desc cart-desc--history">Đơn hàng đã mua: </p>
                 <div class="cart-info__list">
-                  <!-- Cart item 1 -->
-                  <div class="cart-item--wrap">
-                    <p class="cart-desc cart-Day--history">Ngày Đặt hàng: 2312312312312312321323</p>
-                    <div class="cart-item--history_wrapper">
-                      <article class="cart-item cart-item--history">
-                        <a href="<?php echo ROOT ?>Home/ProductDetail/1">
-                          <img
-                            src="<?php echo ASSETS ?>img/products/item1.png"
-                            alt=""
-                            class="cart-item__thumb"
-                          />
-                        </a>
-                        <div class="cart-item__content">
-                          <div class="cart-item__content-left">
-                            <h3 class="cart-item__title">
-                              Coffee Beans - Espresso Arabica and Robusta Beans
-                            </h3>
-                            <p class="cart-item__price-wrap">
-                              $47.00 |
-                              <span class="cart-item__status">In Stock</span>
-                            </p>
-                            <div class="cart-item__ctrl-wrap">
-                              <div
-                                class="cart-item__ctrl cart-item__ctrl--md-block"
-                              >
-                                <div class="cart-item__input">
-                                  LavAzza
-                                </div>
-                                <div class="cart-item__input">
-                                  Số lượng: 3
-                                </div>
-                              </div>
-    
-                            </div>
-                          </div>
-                          <div class="cart-item__content-right">
-                            <p class="cart-item__total-price">47.00$</p>
-                            <button
-                              class="cart-item__checkout-btn btn btn--primary btn--rounded"
-                            >
-                              Xem chi tiết 
-                            </button>
-                          </div>
+                <?php while ($order = mysqli_fetch_assoc($data["Orders"])) { ?>
+                    <div class="cart-item--wrap">
+                        <p class="cart-desc cart-Day--history">Ngày Đặt hàng: <?php echo date("d-m-Y", strtotime($order["order_date"])); ?></p>
+                        <div class="cart-item--history_wrapper">
+                            <?php
+                            // Filter order history rows for the current order
+                            $orderHistoryRowsFiltered = array_filter($orderHistoryRows, function($orderHistoryRow) use ($order) {
+                                return $orderHistoryRow['orders_id'] == $order['id'];
+                            });
+
+                            foreach ($orderHistoryRowsFiltered as $orderHistoryRow) { ?>
+                                <article class="cart-item cart-item--history">
+                                    <a href="<?php echo ROOT ?>Home/ProductDetail/<?php echo $orderHistoryRow["id"]; ?>">
+                                        <img src="<?php echo ASSETS ?>img/products/<?php echo $orderHistoryRow["thumbnail"]; ?>" alt="" class="cart-item__thumb" />
+                                    </a>
+                                    <div class="cart-item__content">
+                                        <div class="cart-item__content-left">
+                                            <h3 class="cart-item__title"><?php echo $orderHistoryRow["product_name"]; ?></h3>
+                                            <p class="cart-item__price-wrap"><?php echo $orderHistoryRow["order_detail_price"]; ?> | <span class="cart-item__status">In Stock</span></p>
+                                            <div class="cart-item__ctrl-wrap">
+                                                <div class="cart-item__ctrl cart-item__ctrl--md-block">
+                                                    <div class="cart-item__input">Lazzada</div>
+                                                    <div class="cart-item__input">Số lượng: <?php echo $orderHistoryRow["order_detail_quantity"]; ?></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cart-item__content-right">
+                                            <p class="cart-item__total-price"><?php echo $orderHistoryRow["order_detail_price"]; ?></p>
+                                            <button class="cart-item__checkout-btn btn btn--primary btn--rounded">Xem chi tiết</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            <?php } ?>
                         </div>
-                      </article>
-                      <article class="cart-item cart-item--history">
-                        <a href="<?php echo ROOT ?>Home/ProductDetail/1">
-                          <img
-                            src="<?php echo ASSETS ?>img/products/item1.png"
-                            alt=""
-                            class="cart-item__thumb"
-                          />
-                        </a>
-                        <div class="cart-item__content">
-                          <div class="cart-item__content-left">
-                            <h3 class="cart-item__title">
-                              Coffee Beans - Espresso Arabica and Robusta Beans
-                            </h3>
-                            <p class="cart-item__price-wrap">
-                              $47.00 |
-                              <span class="cart-item__status">In Stock</span>
-                            </p>
-                            <div class="cart-item__ctrl-wrap">
-                              <div
-                                class="cart-item__ctrl cart-item__ctrl--md-block"
-                              >
-                                <div class="cart-item__input">
-                                  LavAzza
-                                </div>
-                                <div class="cart-item__input">
-                                  Số lượng: 3
-                                </div>
-                              </div>
-    
-                            </div>
-                          </div>
-                          <div class="cart-item__content-right">
-                            <p class="cart-item__total-price">47.00$</p>
-                            <button
-                              class="cart-item__checkout-btn btn btn--primary btn--rounded"
-                            >
-                              Xem chi tiết 
-                            </button>
-                          </div>
-                        </div>
-                      </article>
-                      <article class="cart-item cart-item--history">
-                        <a href="<?php echo ROOT ?>Home/ProductDetail/1">
-                          <img
-                            src="<?php echo ASSETS ?>img/products/item1.png"
-                            alt=""
-                            class="cart-item__thumb"
-                          />
-                        </a>
-                        <div class="cart-item__content">
-                          <div class="cart-item__content-left">
-                            <h3 class="cart-item__title">
-                              Coffee Beans - Espresso Arabica and Robusta Beans
-                            </h3>
-                            <p class="cart-item__price-wrap">
-                              $47.00 |
-                              <span class="cart-item__status">In Stock</span>
-                            </p>
-                            <div class="cart-item__ctrl-wrap">
-                              <div
-                                class="cart-item__ctrl cart-item__ctrl--md-block"
-                              >
-                                <div class="cart-item__input">
-                                  LavAzza
-                                </div>
-                                <div class="cart-item__input">
-                                  Số lượng: 3
-                                </div>
-                              </div>
-    
-                            </div>
-                          </div>
-                          <div class="cart-item__content-right">
-                            <p class="cart-item__total-price">47.00$</p>
-                            <button
-                              class="cart-item__checkout-btn btn btn--primary btn--rounded"
-                            >
-                              Xem chi tiết 
-                            </button>
-                          </div>
-                        </div>
-                      </article>
                     </div>
-                  </div>
-                  <div class="cart-item--wrap">
-                    <p class="cart-desc cart-Day--history">Ngày Đặt hàng: 2312312312312312321323</p>
-                    <div class="cart-item--history_wrapper">
-                      <article class="cart-item cart-item--history">
-                        <a href="<?php echo ROOT ?>Home/ProductDetail/1">
-                          <img
-                            src="<?php echo ASSETS ?>img/products/item1.png"
-                            alt=""
-                            class="cart-item__thumb"
-                          />
-                        </a>
-                        <div class="cart-item__content">
-                          <div class="cart-item__content-left">
-                            <h3 class="cart-item__title">
-                              Coffee Beans - Espresso Arabica and Robusta Beans
-                            </h3>
-                            <p class="cart-item__price-wrap">
-                              $47.00 |
-                              <span class="cart-item__status">In Stock</span>
-                            </p>
-                            <div class="cart-item__ctrl-wrap">
-                              <div
-                                class="cart-item__ctrl cart-item__ctrl--md-block"
-                              >
-                                <div class="cart-item__input">
-                                  LavAzza
-                                </div>
-                                <div class="cart-item__input">
-                                  Số lượng: 3
-                                </div>
-                              </div>
-    
-                            </div>
-                          </div>
-                          <div class="cart-item__content-right">
-                            <p class="cart-item__total-price">47.00$</p>
-                            <button
-                              class="cart-item__checkout-btn btn btn--primary btn--rounded"
-                            >
-                              Xem chi tiết 
-                            </button>
-                          </div>
-                        </div>
-                      </article>
-                      <article class="cart-item cart-item--history">
-                        <a href="<?php echo ROOT ?>Home/ProductDetail/1">
-                          <img
-                            src="<?php echo ASSETS ?>img/products/item1.png"
-                            alt=""
-                            class="cart-item__thumb"
-                          />
-                        </a>
-                        <div class="cart-item__content">
-                          <div class="cart-item__content-left">
-                            <h3 class="cart-item__title">
-                              Coffee Beans - Espresso Arabica and Robusta Beans
-                            </h3>
-                            <p class="cart-item__price-wrap">
-                              $47.00 |
-                              <span class="cart-item__status">In Stock</span>
-                            </p>
-                            <div class="cart-item__ctrl-wrap">
-                              <div
-                                class="cart-item__ctrl cart-item__ctrl--md-block"
-                              >
-                                <div class="cart-item__input">
-                                  LavAzza
-                                </div>
-                                <div class="cart-item__input">
-                                  Số lượng: 3
-                                </div>
-                              </div>
-    
-                            </div>
-                          </div>
-                          <div class="cart-item__content-right">
-                            <p class="cart-item__total-price">47.00$</p>
-                            <button
-                              class="cart-item__checkout-btn btn btn--primary btn--rounded"
-                            >
-                              Xem chi tiết 
-                            </button>
-                          </div>
-                        </div>
-                      </article>
-                      <article class="cart-item cart-item--history">
-                        <a href="<?php echo ROOT ?>Home/ProductDetail/1">
-                          <img
-                            src="<?php echo ASSETS ?>img/products/item1.png"
-                            alt=""
-                            class="cart-item__thumb"
-                          />
-                        </a>
-                        <div class="cart-item__content">
-                          <div class="cart-item__content-left">
-                            <h3 class="cart-item__title">
-                              Coffee Beans - Espresso Arabica and Robusta Beans
-                            </h3>
-                            <p class="cart-item__price-wrap">
-                              $47.00 |
-                              <span class="cart-item__status">In Stock</span>
-                            </p>
-                            <div class="cart-item__ctrl-wrap">
-                              <div
-                                class="cart-item__ctrl cart-item__ctrl--md-block"
-                              >
-                                <div class="cart-item__input">
-                                  LavAzza
-                                </div>
-                                <div class="cart-item__input">
-                                  Số lượng: 3
-                                </div>
-                              </div>
-    
-                            </div>
-                          </div>
-                          <div class="cart-item__content-right">
-                            <p class="cart-item__total-price">47.00$</p>
-                            <button
-                              class="cart-item__checkout-btn btn btn--primary btn--rounded"
-                            >
-                              Xem chi tiết 
-                            </button>
-                          </div>
-                        </div>
-                      </article>
-                    </div>
-                  </div>
-                </div>
+                <?php } ?>
+            </div>
                 <div class="cart-info__bottom">
                   <div class="cart-info__row cart-info__row-md--block">
                     <div class="cart-info__continue">
@@ -311,7 +101,7 @@
                           alt=""
                         />
                         Continue Shopping
-                      </a>
+                      </a>  
                     </div>
                   </div>
                 </div>

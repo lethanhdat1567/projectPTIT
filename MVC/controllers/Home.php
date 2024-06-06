@@ -60,8 +60,10 @@
             $this->view("master1",["Pages"=>"Admin"]);
         }
         function History() {
-            $OrderHistory = $this->Orders->GetHistoryOrder();
-            $this->view("master1",["Pages"=>"History","OrderHistory"=>$OrderHistory]);
+            $id = $_SESSION['id'];
+            $OrderHistory = $this->Orders->GetHistoryOrder($id);
+            $Orders = $this->Orders->GetOrdersId($id);
+            $this->view("master1",["Pages"=>"History","OrderHistory"=>$OrderHistory,"Orders"=>$Orders]);
         }
         // GET FORM
         function UpdateUser() {

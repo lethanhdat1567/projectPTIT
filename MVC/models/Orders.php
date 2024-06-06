@@ -27,18 +27,32 @@ class Orders extends DB{
        return json_encode($result);
     }
     public function GetOrders($user_id) {
-        $qr= "SELECT * FROM orders WHERE user_id=$user_id";
+        $qr = "SELECT * FROM orders WHERE user_id=$user_id ORDER BY order_date DESC LIMIT 1";
         return mysqli_query($this->conn, $qr);
     }
-    public function GetHistoryOrder(){
-        $query = "SELECT orders.order_date as orders_order_date ,
-        order_details.price AS order_detail_price,
-        order_details.quantity AS order_detail_quantity,
-        order_details.total_money AS order_detail_total_money,
-        product.name AS product_name
-        FROM orders
-        JOIN order_details ON orders.id = order_details.order_id
-        JOIN product ON order_details.product_id = product.id;";
+    public function GetOrdersId($user_id) {
+        $qr= "SELECT id,order_date FROM orders WHERE user_id=$user_id";    
+        return mysqli_query($this->conn, $qr);
+    }
+    
+    public function GetHistoryOrder($id){
+        $query = "SELECT 
+    orders.order_date AS orders_order_date,
+    orders.id as orders_id,
+    product.*,
+    orders.user_id AS orders_user_id,
+    order_details.price AS order_detail_price,
+    order_details.quantity AS order_detail_quantity,
+    order_details.total_money AS order_detail_total_money,
+    product.name AS product_name
+FROM 
+    orders
+JOIN 
+    order_details ON orders.id = order_details.order_id
+JOIN 
+    product ON order_details.product_id = product.id
+WHERE 
+    orders.user_id = $id;";
          return mysqli_query($this->conn, $query);
     }
 }
