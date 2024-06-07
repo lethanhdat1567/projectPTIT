@@ -126,11 +126,11 @@ function RenderProduct({ products, favor, All }) {
                 <span class="product-card__price--modify ${discount}">
                   $${priceBefore}
                 </span>
+                <span class="prod-info__tax ${discount}"
+                  >${product.discount}%</span
+                >
                 <div class="product-card__row">
                   <span class="product-card__price ${modify}">$${price}</span>
-                  <span class="prod-info__tax ${discount}"
-                    >${product.discount}%</span
-                  >
                   <img
                     src="${ASSETS}icons/star.svg"
                     alt=""
