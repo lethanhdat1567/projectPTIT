@@ -59,6 +59,9 @@
         function Admin() {
             $this->view("master1",["Pages"=>"Admin"]);
         }
+        function PaymentSuccess() {
+            $this->view("master1",["Pages"=>"PaymentSuccess"]);
+        }
         function History() {
             $id = $_SESSION['id'];
             $OrderHistory = $this->Orders->GetHistoryOrder($id);
@@ -150,7 +153,11 @@
                             $discounted_price = $row["price"] - ($row["price"] * ($row["discount"] / 100));
                             $this->Orders->InsertOrderDetail($orderId, $prodId, $discounted_price, $product['quantity'], $product['totalProd']);
                         }
-                        
+                        echo '<script>';
+                        echo 'localStorage.removeItem("PRODUCT");';
+                        echo 'localStorage.removeItem("total");';
+                        echo '</script>';                        
+                        $this->PaymentSuccess();
                 }
             }
         }

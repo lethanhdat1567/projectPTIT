@@ -151,9 +151,6 @@ class User extends Controller
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
             $this->InsertUser->InsertNewUser($username, $email, $hashedPassword, $role_id);
             $_SESSION['email'] = $email;
-            // Không nên lưu mật khẩu vào phiên, ngay cả khi đã mã hóa
-            //  $_SESSION['password'] = $hashedPassword;
-            // Chuyển hướng đến trang đăng nhập
             header("Location: ". ROOT . "User/SignIn");
             exit();
         }

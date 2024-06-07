@@ -31,7 +31,7 @@ class Orders extends DB{
         return mysqli_query($this->conn, $qr);
     }
     public function GetOrdersId($user_id) {
-        $qr= "SELECT id,order_date FROM orders WHERE user_id=$user_id";    
+        $qr= "SELECT id,order_date,total_money FROM orders WHERE user_id=$user_id";    
         return mysqli_query($this->conn, $qr);
     }
     
@@ -41,7 +41,9 @@ class Orders extends DB{
     orders.id as orders_id,
     product.*,
     orders.user_id AS orders_user_id,
+    orders.total_money AS orders_total,
     order_details.price AS order_detail_price,
+    order_details.product_id AS order_detail_prodId,
     order_details.quantity AS order_detail_quantity,
     order_details.total_money AS order_detail_total_money,
     product.name AS product_name

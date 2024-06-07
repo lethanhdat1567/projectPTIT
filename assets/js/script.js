@@ -405,3 +405,23 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+window.addEventListener("DOMContentLoaded", () => {
+  const contentHisNote = $$(".cart-item--history_wrapper");
+  const arrowHisNote = $$(".arrow-more");
+  const contentHis = Array.from(contentHisNote);
+  const arrowHis = Array.from(arrowHisNote);
+  console.log(arrowHis);
+  arrowHis.forEach((item, index) => {
+    item.onclick = (e) => {
+      const content = contentHis[index];
+      content.classList.toggle("cart-item--history_wrapper--expand");
+      // Tìm thẻ img trong phần tử arrow-more tương ứng và thay đổi src
+      const img = item.querySelector("img");
+      if (content.classList.contains("cart-item--history_wrapper--expand")) {
+        img.src = `${ASSETS}icons/arrow-up.svg`;
+      } else {
+        img.src = `${ASSETS}icons/arrow-down.svg`;
+      }
+    };
+  });
+});

@@ -1416,6 +1416,7 @@ html {
   --account-info-bg: #f6f6f6;
   --account-info-icon-bg: #fff;
   --separate-color: #d2d1d6;
+  --arrow-his-color: #ccc;
 }
 @media (max-width: 991.98px) {
   html {
@@ -1519,6 +1520,7 @@ html.dark {
   --account-info-bg: #292e39;
   --account-info-icon-bg: #171c28;
   --separate-color: #292e39;
+  --arrow-his-color: #b9babe;
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -4463,6 +4465,9 @@ html.dark {
 .cart-info__list {
   margin-top: -30px;
 }
+.cart-info__list-history {
+  margin: 0;
+}
 @media (max-width: 767.98px) {
   .cart-info__list {
     margin-top: -16px;
@@ -4516,9 +4521,16 @@ html.dark {
 .cart-desc--history {
   margin: 10px 0px;
 }
+.cart-desc__total {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.cart-desc__price {
+  color: rgb(228, 2, 2);
+  font-size: 2.2rem;
+}
 .cart-Day--history {
-  margin-top: 50px;
-  margin-bottom: 10px;
+  margin: 10px 0px;
 }
 .cart-info__continue-link:hover .cart-info__continue-icon {
   translate: -5px;
@@ -4722,19 +4734,69 @@ html.dark {
 .cart-item--history {
   border-bottom: none;
 }
+
+.arrow-more {
+  position: absolute;
+  width: 100%;
+  height: 25px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  transition: ease 0.2s;
+  /* border-top: 1px solid var(--arrow-his-color); */
+}
+.arrow-more:hover {
+  background-color: var(--arrow-his-color);
+}
+.arrow-more img {
+  width: 100%;
+  height: 100%;
+  filter: var(--icon-color);
+}
+.his__status {
+  font-size: 1.7rem;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #67b044;
+}
+.his__info-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.his__status-img {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) saturate(100%) invert(64%) sepia(9%) saturate(2733%)
+    hue-rotate(57deg) brightness(94%) contrast(86%);
+}
 .gift-item {
   display: flex;
   gap: 20px;
 }
 .cart-item--wrap {
-  border-bottom: 1px solid #ccc;
+  border: 2px solid var(--cate-item-title-color);
+  border-radius: 10px;
+  position: relative;
+  padding: 10px;
+  margin-top: 30px;
+  overflow: hidden;
 }
 .cart-item--history_wrapper {
-  height: 350px;
-  overflow: auto;
+  height: 200px;
+  overflow: hidden;
   margin: 20px 0px;
   padding: 15px;
+  transition: height ease 0.2s;
+  border-top: 1px solid var(--cate-item-title-color);
 }
+.cart-item--history_wrapper.cart-item--history_wrapper--expand {
+  height: 400px;
+  overflow: auto;
+}
+
 .gift-item__icon-wrap {
   width: 76px;
   height: 76px;
@@ -5292,6 +5354,7 @@ html.dark {
 .add-success__desc {
   font-size: 2rem;
   font-weight: 600;
+  margin: 10px;
 }
 .add-success__img {
   width: 200px;
