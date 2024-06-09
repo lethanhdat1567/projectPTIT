@@ -15,6 +15,14 @@
         google.charts.load("current", {packages:["corechart", "bar"]});
         google.charts.setOnLoadCallback(drawChart);
         function drawChart() {
+            <?php 
+                $totalRevenue = 0;
+                while($row = mysqli_fetch_assoc($data["getChart"])): 
+                    $totalRevenue = $row['SumTotalMoney']; // Lưu tổng doanh thu vào biến
+                ?>
+                    ['Số người dùng đã đăng ký', <?php echo $row['TotalUser']; ?>],
+                    ['Số đơn hàng được đặt', <?php echo $row['TotalOrder']; ?>]
+                <?php endwhile; ?>
             var data = google.visualization.arrayToDataTable([
                 ['Label', 'Value'],
                 <?php foreach($data["getChart"] as $row): ?>
@@ -43,7 +51,7 @@
             };
             var columnChart = new google.visualization.ColumnChart(document.getElementById('columnchart'));
             columnChart.draw(data, optionsColumn);
-
+            document.querySelector('.admin-product__total').innerText = 'Tổng doanh thu: ' + new Intl.NumberFormat().format(<?php echo $totalRevenue; ?>) ;
         }
     </script>
 </head>
@@ -74,6 +82,9 @@
                     <div class="admin-product__header">
                         <h2 class="admin-product__heading">Thống kê</h2>
                     </div>
+                    <div class="admin-product__total">Tổng danh thu: <?php while($row = mysqli_fetch_assoc($data["getChart"])): ?>
+                            <p>Tổng doanh thu: <?php echo number_format($row['SumTotalMoney'], 0, ',', '.'); ?> VND</p>
+                        <?php endwhile; ?> VND</p></div>
                     <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
                     <div id="columnchart" style="width: 900px; height: 500px;"></div>
                 </div>

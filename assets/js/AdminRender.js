@@ -4,14 +4,18 @@ fetch("http://localhost/projectPTIT/API/Read")
   .then((data) => {
     const HTML = data
       .map((product, index) => {
+        let priceBefore = product.price.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
         let handlePrice =
           product.price - (product.price * product.discount) / 100;
         let price = handlePrice.toLocaleString("vi-VN");
+        let discount = product.discount > 0 ? "show" : "";
+        let modify =
+          product.discount > 0 ? "product-card__price--discount" : "";
         return html`
           <div class="col">
-            <article class="product-card admin">
+            <article class="product-card">
               <div class="product-card__img-wrap">
-                <a href="${ROOT}Admin/ProductDetail/${product.id}">
+                <a href="${ROOT}Home/ProductDetail/${product.id}">
                   <img
                     src="${ASSETS}img/products/${product.thumbnail}"
                     alt=""
@@ -35,13 +39,19 @@ fetch("http://localhost/projectPTIT/API/Read")
                 </button>
               </div>
               <h3 class="product-card__title">
-                <a href="${ROOT}Admin/ProductDetail/${product.id}">
+                <a href="${ROOT}Home/ProductDetail/${product.id}">
                   ${product.name}
                 </a>
               </h3>
               <p class="product-card__brand">Lavazza</p>
+              <span class="product-card__price--modify ${discount}">
+                $${priceBefore}
+              </span>
+              <span class="prod-info__tax ${discount}"
+                >${product.discount}%</span
+              >
               <div class="product-card__row">
-                <span class="product-card__price">$${price}</span>
+                <span class="product-card__price ${modify}">$${price}</span>
                 <img
                   src="${ASSETS}icons/star.svg"
                   alt=""

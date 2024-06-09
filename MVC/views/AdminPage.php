@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="<?php echo ASSETS; ?>fonts/stylesheet.css" />
     <!-- <link rel="stylesheet" href="<?php echo ASSETS; ?>/css/main.css"> -->
     <link rel="stylesheet" type="text/css"  href="<?php echo ASSETS; ?>css/main.css">
-    <script src="<?php echo ASSETS; ?>js/script.js"></script>
+    <script src="<?php echo ASSETS; ?>js/script.js" type="module"></script>
     <title>Grocery Mart</title>
   </head>
 <body>
