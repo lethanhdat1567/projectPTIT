@@ -65,7 +65,7 @@
                             class="icon"
                           />
                         </span>
-                        Personal info
+                        Thông tin người dùng
                       </a>
                     </li>
                     <li>
@@ -199,7 +199,7 @@
                           class="icon cart-info__back-arrow"
                         />
                       </a>
-                      Personal Info
+                      Thông tin người dùng
                     </h2>
                     <form action="<?php echo ROOT; ?>Home/UpdateUser" method="post" class="form form-card" enctype="multipart/form-data">
                       <!-- Form row 1 -->
@@ -210,7 +210,7 @@
                             for="fullname"
                             class="form__label form-card__label"
                           >
-                            Full Name
+                            Tên người dùng
                           </label>
                           <div class="form__text-input">
                             <input
@@ -237,7 +237,7 @@
                           <div class="form__text-input">
                             <input
                               type="text"
-                              placeholder="Email Address"
+                              placeholder="Nhập email của bạn ..."
                               name="email"
                               id="lastname"
                               class="form__input"
@@ -246,7 +246,7 @@
                             />
                           </div>
                           <p class="form__error">
-                            Please enter your email address!
+                            Vui lòng nhập email của bạn
                           </p>
                         </div>
                       </div>
@@ -258,12 +258,12 @@
                             for="phone-number"
                             class="form__label form-card__label"
                           >
-                            Phone Number
+                            Số điện thoại
                           </label>
                           <div class="form__text-input">
                             <input
                               type="tel"
-                              placeholder="Phone Number"
+                              placeholder="Nhập số điện thoại..."
                               name="phone_number"
                               id="phone-number"
                               class="form__input"
@@ -325,7 +325,7 @@
                       <div class="form-card__bottom">
                         <a href="<?php echo ROOT; ?>Home/Profile" class="btn btn--text">Cancel</a>
                         <button name="UpdateUserBtn" class="btn btn--primary btn--rounded">
-                          Save card
+                          Lưu thông tin
                         </button>
                       </div>
                     </form>

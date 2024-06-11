@@ -5,8 +5,10 @@ function FavorHeaderList({ favor }) {
   return html`
     <img src="${ASSETS}icons/arrow-up.png" alt="" class="act-dropdown__arrow" />
     <div class="act-dropdown__top">
-      <h2 class="act-dropdown__title">You have ${favor.length} item(s)</h2>
-      <a href="${ROOT}Home/Favourite" class="act-dropdown__view-all">See All</a>
+      <h2 class="act-dropdown__title">Bạn có ${favor.length} sản phẩm</h2>
+      <a href="${ROOT}Home/Favourite" class="act-dropdown__view-all"
+        >Xem tất cả</a
+      >
     </div>
     <div class="row row-cols-3 gx-2 act-dropdown__list">
       ${favor.map((item) => {
@@ -22,7 +24,7 @@ function FavorHeaderList({ favor }) {
               />
             </div>
             <h3 class="cart-preview-item__title">${item.name}</h3>
-            <p class="cart-preview-item__price">$${price}</p>
+            <p class="cart-preview-item__price">${price} đ</p>
           </article>
         </div>`;
       })}
@@ -34,7 +36,7 @@ function FavorHeaderList({ favor }) {
         class="cart-info__checkout-all btn btn--primary btn--rounded"
         onclick='dispatch("checkoutNgu")'
       >
-        Check Out All
+        Mua tất cả
       </button>
     </div>
   `;

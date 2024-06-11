@@ -50,26 +50,29 @@
               <div class="cart-info">
                 <div class="cart-info__top">
                   <h2 class="cart-info__heading cart-info__heading--lv2">
-                    1. Shipping, arrives between Mon, May 16—Tue, May 24
+                    1. Vận chuyển, đến trong khoảng 1-3 ngày
                   </h2>
                 </div>
                 <!-- Payment item 1 -->
                 <article class="payment-item">
                   <div class="payment-item__info">
-                    <h3 class="payment-item__title"><?php echo $row['fullname'] ?></h3>
-                    <p class="payment-item__desc">
+                    <h3 class="payment-item__title">Tên: <?php echo $row['fullname'] ?></h3>
+                    <h3 class="payment-item__title">Địa chỉ:
                       <?php echo $row["address"] ?>
-                    </p>
+                    </h3>
+                    <h3 class="payment-item__title">Số điện thoại:
+                      <?php echo $row["phone_number"] ?>
+                    </h3>
                   </div>
                 </article>
               </div>
               <div class="cart-info">
                 <h2 class="cart-info__heading cart-info__heading--lv2">
-                  2. Shipping method
+                  2. Phương thức vận chuyển
                 </h2>
                 <div class="cart-info__separate"></div>
                 <h3 class="cart-info__sub-heading">
-                  Availeble Shipping method
+                  Phương thức vận chuyển tiếp nhận
                 </h3>
                 <!-- Payment item 3 -->
                 <label>
@@ -83,7 +86,7 @@
                       <div class="payment-item__info">
                         <h3 class="payment-item__title">Fedex Delivery</h3>
                         <p class="payment-item__desc payment-item__desc--low">
-                          Delivery: 2-3 days work
+                          Vận chuyển: 1-3 ngày 
                         </p>
                       </div>
                     </div>
@@ -92,11 +95,11 @@
               </div>
               <div class="cart-info">
                 <h2 class="cart-info__heading cart-info__heading--lv2">
-                  3. Items details
+                  3. Sản phẩm thanh toán
                 </h2>
                 <div class="cart-info__separate"></div>
                 <h3 class="cart-info__sub-heading">
-                  Your items details
+                  Sản phẩm của bạn
                 </h3>
                 <div class="cart-info__list cart-info__list-card">
                 </div>
@@ -105,22 +108,21 @@
             <div class="col-4 col-xl-4 col-lg-12">
               <div class="cart-info">
                 <h2 class="cart-info__heading cart-info__heading--lv2">
-                  Payment Details
+                  Thông tin thanh toán
                 </h2>
                 <p class="cart-info__desc">
-                  Complete your purchase item by providing your payment details
-                  order.
+                  Hãy điền đầy đủ thông tin. Vui lòng không để trống bất kì thông tin nào
                 </p>
                 <form action="<?php echo ROOT ?>Home/GetIdCart" method="post" class="form cart-info__form">
                   <input type="text" hidden class="cart-info__checkOut" name="prodIds" id="prodIds">
                   <div class="form__group">
                     <label for="email" class="form__label form__label--medium"
-                      >Email Address</label
+                      >Email</label
                     >
                     <div class="form__text-input">
                       <input
                         type="email"
-                        placeholder="Email"
+                        placeholder="Nhập email của bạn ..."
                         name="email"
                         id="email"
                         class="form__input"
@@ -133,18 +135,18 @@
                         class="form__input-icon-error"
                       />
                     </div>
-                    <p class="form__error">Email is not in correct format</p>
+                    <p class="form__error">Email không đúng định dạng</p>
                   </div>
                   <div class="form__group">
                     <label
                       for="Fullname"
                       class="form__label form__label--medium"
-                      >FullName</label
+                      >Tên đầy đủ</label
                     >
                     <div class="form__text-input">
                       <input
                         type="text"
-                        placeholder="Fullname"
+                        placeholder="Nhập tên của bạn ..."
                         name="Fullname"
                         id="Fullname"
                         class="form__input"
@@ -157,18 +159,18 @@
                         class="form__input-icon-error"
                       />
                     </div>
-                    <p class="form__error">Email is not in correct format</p>
+                    <p class="form__error">Email không đúng định dạng</p>
                   </div>
                   <div class="form__group">
                     <label
                       for="Address"
                       class="form__label form__label--medium"
-                      >Address
+                      >Địa chỉ
                     </label>
                     <div class="form__text-input">
                       <input
                         type="text"
-                        placeholder="Address"
+                        placeholder="Nhập địa chỉ của bạn ..."
                         name="Address"
                         id="Address"
                         class="form__input"
@@ -181,18 +183,18 @@
                         class="form__input-icon-error"
                       />
                     </div>
-                    <p class="form__error">Email is not in correct format</p>
+                    <p class="form__error">Email không đúng định dạng</p>
                   </div>
                   <div class="form__group">
                     <label
                       for="PhoneNumber"
                       class="form__label form__label--medium"
-                      >PhoneNumber
+                      >Số điện thoại
                     </label>
                     <div class="form__text-input">
                       <input
                         type="tel"
-                        placeholder="PhoneNumber"
+                        placeholder="Nhập số điện thoại..."
                         name="PhoneNumber"
                         id="PhoneNumber"
                         class="form__input"
@@ -205,7 +207,7 @@
                         class="form__input-icon-error"
                       />
                     </div>
-                    <p class="form__error">Email is not in correct format</p>
+                    <p class="form__error">Email không đúng định dạng</p>
                   </div>
                   <div class="cart-info__sub-list">
                   </div>
@@ -213,7 +215,7 @@
                     class="cart-info__next-btn cart-info__next-btn--Pay btn btn--primary btn--rounded"
                     name="PayBtn"
                   >
-                    Pay
+                    Thanh toán
                   </button>
                 </form>
               </div>

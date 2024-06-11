@@ -12,7 +12,7 @@
             <!-- logo -->
             <a href="<?php echo ROOT; ?>All/Main" class="logo">
                 <img src="<?php echo ASSETS; ?>icons/logo.svg" alt="" class="logo__img" />
-                <h2 class="logo__title">grocemart</h2>
+                <h2 class="logo__title">CoffeShop</h2>
             </a>
             <h1 class="auth__heading">Change Password</h1>
             <form action="<?php echo ROOT; ?>User/UpdatePassWord" class="form auth__form" method="post">

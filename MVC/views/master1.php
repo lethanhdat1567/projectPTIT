@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css"  href="<?php echo ASSETS; ?>css/main.css">
     <script src="<?php echo ASSETS; ?>js/script.js" type="module"></script>
     <script src="<?php echo ASSETS; ?>js/localStorage.js" type="module"></script>
-    <title>Grocery Mart</title>
+    <title>Coffe Shop</title>
   </head>
 <body>
     <header id="Header" class="header"><?php require_once './MVC/views/blocks/Header.php' ?></header>

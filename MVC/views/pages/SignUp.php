@@ -3,7 +3,7 @@
       <div class="auth__intro">
         <a href="<?php echo ROOT; ?>All/Main" class="logo auth__intro-logo d-none d-md-flex">
           <img src="<?php echo ASSETS; ?>icons/logo.svg" alt="" class="logo__img" />
-          <h1 class="logo__title">grocemart</h1>
+          <h1 class="logo__title">CoffeShop</h1>
         </a>
         <img
           src="<?php echo ASSETS; ?>img/auth/auth-1.svg"
@@ -27,11 +27,11 @@
           <!-- logo -->
           <a href="<?php echo ROOT; ?>All/Main" class="logo">
             <img src="<?php echo ASSETS; ?>icons/logo.svg" alt="" class="logo__img" />
-            <h1 class="logo__title">grocemart</h1>
+            <h1 class="logo__title">CoffeShop</h1>
           </a>
-          <h1 class="auth__heading">Sign Up</h1>
+          <h1 class="auth__heading">Đăng kí</h1>
           <p class="auth__desc">
-            Let’s create your account and Shop like a pro and save money.
+          Hãy tạo tài khoản của bạn và mua sắm như một người chuyên nghiệp và tiết kiệm tiền.
           </p>
           <form action="<?php echo ROOT; ?>User/DangKyUser" class="form auth__form" method="POST">
           <div class="form__group">
@@ -140,22 +140,14 @@
             </div>
             <div class="form__group auth__btn-group">
               <button class="btn btn--primary auth__btn form__submit-btn" name="btnRegister">
-                Sign up
-              </button>
-              <button class="btn btb--outline auth__btn btn--no-margin">
-                <img
-                  src="<?php echo ASSETS; ?>icons/google.svg"
-                  alt=""
-                  class="btn__icon icon"
-                />
-                Sign in with Google
+                Đăng kí
               </button>
             </div>
           </form>
           <p class="auth__text">
-            You have account yet?
+            Bạn đã có tài khoản ?
             <a href="<?php echo ROOT; ?>User/SignIn" class="auth__link auth__text-link"
-              >Sign In</a
+              >Đăng nhập</a
             >
           </p>
         </div>

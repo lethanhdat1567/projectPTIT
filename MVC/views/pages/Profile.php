@@ -45,7 +45,7 @@
                     <img src="<?php echo ASSETS ?>icons/square.svg" alt="" class="profile-active__img">
                  </div>
                   <h1 class="profile-user__name"><?php echo $row['fullname'] ?></h1>
-                  <p class="profile-user__desc">Registered: <?php echo substr($row['created_at'],0,10);  ?></p>
+                  <p class="profile-user__desc">Ngày đăng kí: <?php echo substr($row['created_at'],0,10);  ?></p>
                 </div>
                 <!-- Menu 1 -->
                 <div class="profile-menu">
@@ -63,19 +63,7 @@
                             class="icon"
                           />
                         </span>
-                        Personal info
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#!" class="profile-menu__link">
-                        <span class="profile-menu__icon">
-                          <img
-                            src="<?php echo ASSETS; ?>icons/local.svg"
-                            alt=""
-                            class="icon"
-                          />
-                        </span>
-                        Addresses
+                        Thông tin cá nhân
                       </a>
                     </li>
                     <li>
@@ -87,7 +75,7 @@
                             class="icon"
                           />
                         </span>
-                        Communications & privacy
+                        Thông tin và quyền riêng tư
                       </a>
                     </li>
                   </ul>
@@ -97,19 +85,7 @@
                   <h3 class="profile-menu__title">My items</h3>
                   <ul class="profile-menu__list">
                     <li>
-                      <a href="#!" class="profile-menu__link">
-                        <span class="profile-menu__icon">
-                          <img
-                            src="<?php echo ASSETS; ?>icons/dowloand.svg"
-                            alt=""
-                            class="icon"
-                          />
-                        </span>
-                        Reorder
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#!" class="profile-menu__link">
+                      <a href="<?php echo ROOT ?>Home/Favourite" class="profile-menu__link">
                         <span class="profile-menu__icon">
                           <img
                             src="<?php echo ASSETS; ?>icons/heart.svg"
@@ -117,11 +93,11 @@
                             class="icon"
                           />
                         </span>
-                        Lists
+                        Sản phẩm yêu thích
                       </a>
                     </li>
                     <li>
-                      <a href="#!" class="profile-menu__link">
+                      <a href="<?php echo ROOT ?>Home/CheckOut" class="profile-menu__link">
                         <span class="profile-menu__icon">
                           <img
                             src="<?php echo ASSETS; ?>icons/gifl.svg"
@@ -129,32 +105,14 @@
                             class="icon"
                           />
                         </span>
-                        Registries
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <!-- Menu 3 -->
-                <div class="profile-menu">
-                  <h3 class="profile-menu__title">Subscriptions & plans</h3>
-                  <ul class="profile-menu__list">
-                    <li>
-                      <a href="#!" class="profile-menu__link">
-                        <span class="profile-menu__icon">
-                          <img
-                            src="<?php echo ASSETS; ?>icons/protect.svg"
-                            alt=""
-                            class="icon"
-                          />
-                        </span>
-                        Protection plans
+                        Giỏ hàng
                       </a>
                     </li>
                   </ul>
                 </div>
                 <!-- Menu 4 -->
                 <div class="profile-menu">
-                  <h3 class="profile-menu__title">Customer Service</h3>
+                  <h3 class="profile-menu__title">Dịch vụ khách hàng</h3>
                   <ul class="profile-menu__list">
                     <li>
                       <a href="#!" class="profile-menu__link">
@@ -189,8 +147,8 @@
                 <div class="row gy-3">
                   <!-- My Wallet -->
                   <div class="col-12">
-                    <h2 class="cart-info__heading">My Wallet</h2>
-                    <p class="cart-info__desc profile__desc">Payment methods</p>
+                    <h2 class="cart-info__heading">Phương thức thanh toán</h2>
+                    <p class="cart-info__desc profile__desc">Thẻ tính dụng</p>
                     <div
                       class="row gy-md-2 row-cols-3 row-cols-xl-2 row-cols-lg-1"
                     >
@@ -242,16 +200,16 @@
                             alt=""
                             class="new-card__icon icon"
                           />
-                          <p class="new-card__text">Add New Card</p>
+                          <p class="new-card__text">Thêm thẻ mới</p>
                         </a>
                       </div>
                     </div>
                   </div>
                   <!--Account info  -->
                   <div class="col-12">
-                    <h2 class="cart-info__heading">Account info</h2>
+                    <h2 class="cart-info__heading">Thông tin người dùng</h2>
                     <p class="cart-info__desc profile__desc">
-                      Addresses, contact information and password
+                      Địa chỉ và thông tin liên lạc
                     </p>
                     <div class="row gy-md-2 row-cols-2 row-cols-lg-1">
                       <!-- Account info 1 -->
@@ -266,7 +224,7 @@
                               />
                             </div>
                             <div>
-                              <h3 class="account-info__title">Email Address</h3>
+                              <h3 class="account-info__title">Email</h3>
                               <p class="account-info__desc"><?php echo $row['email'] ?>
                               </p>
                             </div>
@@ -285,7 +243,7 @@
                               />
                             </div>
                             <div>
-                              <h3 class="account-info__title">Phone number</h3>
+                              <h3 class="account-info__title">Số điện thoại</h3>
                               <p class="account-info__desc">
                                 <?php echo $row['phone_number'] ?>
                               </p>
@@ -306,7 +264,7 @@
                             </div>
                             <div>
                               <h3 class="account-info__title">
-                                Add an address
+                                Địa chỉ
                               </h3>
                               <p class="account-info__desc">
                                 <?php echo $row['address'] ?>
@@ -319,7 +277,7 @@
                   </div>
                   <!--  Lists-->
                   <div class="col-12">
-                    <h2 class="cart-info__heading">Lists</h2>
+                    <h2 class="cart-info__heading">Giỏ hàng</h2>
                    <div class="cart-info__list-card">
                    </div>
                   </div>

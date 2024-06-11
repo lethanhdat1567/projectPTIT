@@ -17,12 +17,11 @@
           <!-- logo -->
           <a href="<?php echo ROOT; ?>All/Main" class="logo">
             <img src="<?php echo ASSETS; ?>icons/logo.svg" alt="" class="logo__img" />
-            <h2 class="logo__title">grocemart</h2>
+            <h2 class="logo__title">CoffeShop</h2>
           </a>
           <h1 class="auth__heading">Hello Again!</h1>
           <p class="auth__desc">
-            Welcome back to sign in. As a returning customer, you have access to
-            your previously saved all information.
+          Chào mừng bạn quay lại đăng nhập. Với tư cách là khách hàng cũ, bạn có quyền truy cập vào tất cả thông tin đã lưu trước đó của mình.
           </p>
           <form action="<?php echo ROOT; ?>User/GetUser" class="form auth__form" method="POST">
             <div class="form__group">
@@ -87,7 +86,7 @@
                   id=""
                   class="form__checkbox-input d-none"
                 />
-                <span class="form__checkbox-label">Set as default card</span>
+                <span class="form__checkbox-label">Làm tài khoản mặt định</span>
               </label>
               <a
                 href="<?php echo ROOT; ?>User/GetPagesForgetPass"
@@ -97,18 +96,14 @@
             </div>
             <div class="form__group auth__btn-group">
               <button class="btn btn--primary auth__btn form__submit-btn" name="btnLogin">
-                Sign In
-              </button>
-              <button class="btn btb--outline auth__btn btn--no-margin">
-                <img src="<?php echo ASSETS; ?>icons/google.svg" alt="" class="btn__icon" />
-                Sign in with Google
+                Đăng nhập
               </button>
             </div>
           </form>
           <p class="auth__text">
-            Don't have an account yet?
+            Chưa có tài khoản ?
             <a href="<?php echo ROOT; ?>User/SignUp" class="auth__link auth__text-link"
-              >Sign Up</a
+              >Đăng kí</a
             >
           </p>
         </div>

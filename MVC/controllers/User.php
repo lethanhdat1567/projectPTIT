@@ -182,10 +182,10 @@ class User extends Controller
                         // header("Location: ". ROOT . "Home/Main");                               
                         ob_end_flush();
                         exit();
-                    }
-                } else {
-                        $error_message = "Tên đăng nhập hoặc mật khẩu không chính xác!";
-                        $this->view("UserPage", ["Pages" => "SignIn", "Error" => $error_message]);
+                    } else {
+                            $error_message = "Tên đăng nhập hoặc mật khẩu không chính xác!";
+                            $this->view("UserPage", ["Pages" => "SignIn", "Error" => $error_message]);
+                        }
                     }
             }
 

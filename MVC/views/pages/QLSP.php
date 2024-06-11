@@ -25,7 +25,7 @@
           <div class="admin-product__header">
             <h2 class="admin-product__heading">Danh sách sản phẩm</h2>
           </div>
-          <a href="<?php echo ROOT; ?>Admin/AddProduct">
+          <a class="SQLP_btn" href="<?php echo ROOT; ?>Admin/AddProduct">
           <button class="btn btn--primary admin-product__btn">
             Thêm sản phẩm
           </button>

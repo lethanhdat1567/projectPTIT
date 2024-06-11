@@ -4,7 +4,7 @@
     <div class="footer__col">
       <a href="<?php echo ROOT; ?>Home/Main" class="logo footer__logo">
         <img src="<?php echo ASSETS; ?>icons/logo.svg" alt="" class="logo__img" />
-        <h1 class="logo__title">grocemart</h1>
+        <h1 class="logo__title">CoffeShop</h1>
       </a>
       <p class="footer__desc">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut, ratione.
@@ -111,6 +111,6 @@
     </div>
   </div>
   <div class="footer__bottom">
-    <p class="footer__bottom-desc">© 2024 Grocery Mart.All rights reserved</p>
+    <p class="footer__bottom-desc">© 2024 Coffe Shop.All rights reserved</p>
   </div>
 </div>

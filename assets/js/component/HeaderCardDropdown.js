@@ -6,15 +6,17 @@ function HeaderCardDropdown({ favor, products }) {
     return acc + parseInt(discountedPrice);
   }, 0);
 
-  let shipping = 10;
+  let shipping = 10000;
   let handleEstimated = shipping + x;
   let Estimated = handleEstimated.toLocaleString("vi-VN");
   let result = x.toLocaleString("vi-VN");
   return html`
     <img src="${ASSETS}icons/arrow-up.png" alt="" class="act-dropdown__arrow" />
     <div class="act-dropdown__top">
-      <h2 class="act-dropdown__title">You have ${products.length} item(s)</h2>
-      <a href="${ROOT}Home/CheckOut" class="act-dropdown__view-all">See All</a>
+      <h2 class="act-dropdown__title">Bạn có ${products.length} sản phẩm</h2>
+      <a href="${ROOT}Home/CheckOut" class="act-dropdown__view-all"
+        >Xem tất cả</a
+      >
     </div>
     <div class="row row-cols-3 gx-2 act-dropdown__list">
       ${products.map((product) => {
@@ -31,27 +33,27 @@ function HeaderCardDropdown({ favor, products }) {
           />
         </div>
         <h3 class="cart-preview-item__title">${product.name}</h3>
-        <p class="cart-preview-item__price">$${price}</p>
+        <p class="cart-preview-item__price">${price} đ</p>
       </article>
     </div>`;
       })}
     </div>
     <div class="act-dropdown__bottom">
       <div class="act-dropdown__row">
-        <span class="act-dropdown__label">Subtotal</span>
-        <span class="act-dropdown__value">$${result}</span>
+        <span class="act-dropdown__label">Tổng phụ</span>
+        <span class="act-dropdown__value">${result} đ</span>
       </div>
       <div class="act-dropdown__row">
-        <span class="act-dropdown__label">Texes</span>
+        <span class="act-dropdown__label">Thuế</span>
         <span class="act-dropdown__value">Free</span>
       </div>
       <div class="act-dropdown__row">
         <span class="act-dropdown__label">Shipping</span>
-        <span class="act-dropdown__value">$10.00</span>
+        <span class="act-dropdown__value">10.000 đ</span>
       </div>
       <div class="act-dropdown__row act-dropdown__row--bold">
-        <span class="act-dropdown__label">Total Price</span>
-        <span class="act-dropdown__value">$${Estimated}</span>
+        <span class="act-dropdown__label">Tổng tiền</span>
+        <span class="act-dropdown__value">${Estimated} đ</span>
       </div>
     </div>
     <div class="act-dropdown__checkout" onclick='dispatch("checkoutAll")'>

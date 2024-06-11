@@ -48,8 +48,8 @@ function CardList({ products, favor }) {
                 ${product.name}
               </h3>
               <p class="cart-item__price-wrap">
-                $47.00 |
-                <span class="cart-item__status">In Stock</span>
+               100 |
+                <span class="cart-item__status">Còn hàng</span>
               </p>
               <div class="cart-item__ctrl cart-item__ctrl--md-block">
                 <div class="cart-item__input">
@@ -59,7 +59,7 @@ function CardList({ products, favor }) {
                   <button class="cart-item__input-btn" onclick="dispatch('minusCart',${index})">
                     <img class="icon" src="${ASSETS}icons/minus.svg" alt="" />
                   </button>
-                  <span>${productCount}</span> <!-- Hiển thị số lượng sản phẩm -->
+                  <span>${productCount}</span>
                   <button class="cart-item__input-btn" onclick="dispatch('plusCart',${index})">
                     <img class="icon" src="${ASSETS}icons/plus.svg" alt="" />
                   </button>
@@ -67,7 +67,7 @@ function CardList({ products, favor }) {
               </div>
             </div>
             <div class="cart-item__content-right">
-              <p class="cart-item__total-price">${price}$</p>
+              <p class="cart-item__total-price">${price} đ</p>
               <div class="cart-item__ctrl">
                 <button
                   class="cart-item__ctrl-btn"

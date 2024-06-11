@@ -129,7 +129,7 @@ if (!empty($data["Orders"])) {
                                             src="<?php echo ASSETS ?>icons/arrow-down.svg"
                                             alt=""
                                         />
-                                        Continue Shopping
+                                        Trở về trang chủ
                                     </a>  
                                 </div>
                             </div>

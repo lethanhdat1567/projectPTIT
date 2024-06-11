@@ -8,7 +8,7 @@
     <!-- logo -->
     <a href="<?php echo ROOT; ?>Home/Main" class="logo top-bar__logo">
       <img src="<?php echo ASSETS; ?>icons/logo.svg" alt="" class="logo__img top-bar__logo-img  " />
-      <h1 class="logo__title top-bar__logo-title">grocemart</h1>
+      <h1 class="logo__title top-bar__logo-title">CoffeShop</h1>
     </a>
     <!-- Navbar -->
     <nav id="navbar" class="navbar hide">
@@ -137,7 +137,7 @@
                   if (isset($_SESSION["phone_number"])) {
                     echo ($_SESSION["phone_number"]);
                   } else {
-                    echo 'Guest';
+                    echo 'Chưa có số điện thoại';
                   }
                   ?>
                 </p>
@@ -150,7 +150,7 @@
               </li>
               <li>
                 <a href="<?php echo ROOT; ?>Home/Favourite" class="user-menu__link">
-                  Favourite list</a>
+                  Sản phẩm yêu thích</a>
               </li>
               <li>
                 <a href="<?php echo ROOT; ?>Home/History" class="user-menu__link">
@@ -164,7 +164,7 @@
               </li>
               <form method="post" action="<?php echo ROOT; ?>User/LogoutUser" class="user-menu__separate">
                 <button href="<?php echo ROOT; ?>User/SignIn" name="logoutBtn" class="user-menu__link user-menu__link-btn js-toggle"  toggle-target="#Logout">
-                  Logout</button>
+                  Đăng xuất</button>
               </form>
             </ul>
           </div>

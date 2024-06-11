@@ -8,7 +8,7 @@
     <!-- logo -->
     <a href="<?php echo ROOT; ?>Home/Main" class="logo top-bar__logo">
       <img src="<?php echo ASSETS; ?>icons/logo.svg" alt="" class="logo__img top-bar__logo-img  " />
-      <h1 class="logo__title top-bar__logo-title">grocemart</h1>
+      <h1 class="logo__title top-bar__logo-title">CoffeShop</h1>
     </a>
     <!-- Navbar -->
     <nav id="navbar" class="navbar hide">

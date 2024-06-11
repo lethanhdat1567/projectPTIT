@@ -33,7 +33,7 @@
                             src="<?php echo ASSETS; ?>icons/arrow-down-2.svg"
                             alt=""
                           />
-                          Continue Shopping
+                          Trở về trang chủ
                         </a>
                       </div>
                     </div>
@@ -60,7 +60,7 @@
               <div class="cart-info">
                 <div class=" cart-info__sub-list checkoutPage"></div>
                 <a href="<?php ECHO ROOT ?>Home/Payment" class="cart-info__next-btn cart-info__next-btn--CheckOut btn btn--primary btn--rounded">
-                    Continue to checkout
+                    Tiếp tục thanh toán
                 </a>
               </div>
               <div class="cart-info">

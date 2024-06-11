@@ -124,13 +124,13 @@ function RenderProduct({ products, favor, All }) {
                 </h3>
                 <p class="product-card__brand">Lavazza</p>
                 <span class="product-card__price--modify ${discount}">
-                  $${priceBefore}
+                  ${priceBefore} đ
                 </span>
                 <span class="prod-info__tax ${discount}"
                   >${product.discount}%</span
                 >
                 <div class="product-card__row">
-                  <span class="product-card__price ${modify}">$${price}</span>
+                  <span class="product-card__price ${modify}">${price} đ</span>
                   <img
                     src="${ASSETS}icons/star.svg"
                     alt=""

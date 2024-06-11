@@ -5,7 +5,7 @@ function HeaderAlert({ products, favor }) {
   const favorCount = document.querySelector(".top-act__title-favor");
   favorCount.innerText = favor.length;
   const card = document.querySelector(".top-act__title-card");
-  const x = products.reduce((acc, item) => {
+  let x = products.reduce((acc, item) => {
     const discountedPrice = item.price - (item.price * item.discount) / 100;
     return acc + parseInt(discountedPrice);
   }, 0);

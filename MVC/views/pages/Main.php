@@ -24,7 +24,7 @@
       <!-- Browse Categories -->
       <section class="home__container">
         <div class="home__row">
-          <h2 class="home__heading">Browse Categories</h2>
+          <h2 class="home__heading">Duyệt danh mục</h2>
         </div>
         <div class="home__cate row row-cols-3 row-cols-md-1">
           <!-- category item 1 -->
@@ -36,9 +36,9 @@
                   class="cate-item__thumb"
                 />
                 <div class="cate-item__info">
-                  <h3 class="cate-item__title">0 - 200$</h3>
+                  <h3 class="cate-item__title">0 - 200 nghìn VND</h3>
                   <div class="cate-item__desc">
-                    New sumatra mandeling coffe blend
+                    Sản phẩm cà phê gói chất lượng loại nhỏ
                   </div>
                 </div>
               </div>
@@ -52,9 +52,9 @@
                   class="cate-item__thumb"
                 />
                 <div class="cate-item__info">
-                  <h3 class="cate-item__title">200$ - 500$</h3>
+                  <h3 class="cate-item__title">200 - 500 nghìn VND</h3>
                   <div class="cate-item__desc">
-                    New sumatra mandeling coffe blend
+                  Sản phẩm cà phê gói chất lượng loại vừa
                   </div>
                 </div>
               </div>
@@ -68,9 +68,9 @@
                   class="cate-item__thumb"
                 />
                 <div class="cate-item__info">
-                  <h3 class="cate-item__title">500$</h3>
+                  <h3 class="cate-item__title">500 nghìn VND trở đi </h3>
                   <div class="cate-item__desc">
-                    New sumatra mandeling coffe blend
+                  Sản phẩm cà phê gói chất lượng loại lớn
                   </div>
                 </div>
               </div>
@@ -101,7 +101,7 @@
                 <div class="filter__row filter__content">
                   <!-- Filter 1 -->
                   <div class="filter__col">
-                    <label class="form__label">Price</label>
+                    <label class="form__label">Giá</label>
                     <!-- slider -->
                     <div class="filter__form-group filter__form-group-slider">
                       <!-- progress -->
@@ -117,7 +117,7 @@
                     <div class="filter__form-group filter__form-group--inline">
                       <div>
                         <label class="form__label form__label--small"
-                          >Minimum:</label
+                          >Tối thiểu:</label
                         >
                         <div
                           class="filter__form-text-input filter__form-text-input--small"
@@ -132,7 +132,7 @@
                       </div>
                       <div>
                         <label class="form__label form__label--small"
-                          >Maximum:
+                          >Tối đa:
                         </label>
                         <div
                           class="filter__form-text-input filter__form-text-input--small"
@@ -157,7 +157,7 @@
                       <div class="filter__form-text-input">
                         <input
                           type="text"
-                          placeholder="Search brand name"
+                          placeholder="Tìm kiếm tên sản phẩm..."
                           class="filter__form-input filter__form-input-branch"
                         />
                         <img
@@ -169,9 +169,9 @@
                     </div>
                     <div class="filter__form-group">
                       <div class="form__tabs">
-                        <button class="form__tab">Lavazza</button>
-                        <button class="form__tab">Nescafe</button>
-                        <button class="form__tab">Starbucks</button>
+                        <span class="form__tab">Lavazza</span>
+                        <span class="form__tab">Nescafe</span>
+                        <span class="form__tab">Starbucks</span>
                       </div>
                     </div>
                   </div>
@@ -184,10 +184,9 @@
                     Cancel
                   </button>
                   <button
-                    class="btn btn--primary filter__submit js-toggle"
-                    toggle-target="#home-filter"
+                    class="btn btn--primary filter__submit"
                   >
-                    Show Result
+                    Hiện kết quả
                   </button>
                 </div>
               </form>

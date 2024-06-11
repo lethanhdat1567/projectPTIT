@@ -410,7 +410,6 @@ window.addEventListener("DOMContentLoaded", () => {
   const arrowHisNote = $$(".arrow-more");
   const contentHis = Array.from(contentHisNote);
   const arrowHis = Array.from(arrowHisNote);
-  console.log(arrowHis);
   arrowHis.forEach((item, index) => {
     item.onclick = (e) => {
       const content = contentHis[index];
@@ -420,6 +419,10 @@ window.addEventListener("DOMContentLoaded", () => {
       if (content.classList.contains("cart-item--history_wrapper--expand")) {
         img.src = `${ASSETS}icons/arrow-up.svg`;
       } else {
+        content.scrollIntoView({
+          behavior: "smooth", // Làm cho cuộn mềm mại
+          block: "center", // Cuộn đến phía trên của phần tử content
+        });
         img.src = `${ASSETS}icons/arrow-down.svg`;
       }
     };

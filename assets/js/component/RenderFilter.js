@@ -5,7 +5,7 @@ let currentPage = 1;
 let perPage = 10;
 function handlePageNumber(num, products, favor) {
   currentPage = num;
-  perItem = items.slice(
+  let perItem = items.slice(
     (currentPage - 1) * perPage,
     (currentPage - 1) * perPage + perPage
   );
@@ -35,7 +35,7 @@ function RenderFilter() {
   const priceInput = $$(".price-input");
   const progress = $(".filter__form-slider");
   const inputName = $(".filter__form-input-branch");
-
+  const submitBtn = $(".filter__submit");
   if (inputName) {
     inputName.addEventListener("keydown", (e) => {
       if (e.key === "Enter") {
@@ -48,7 +48,16 @@ function RenderFilter() {
       }
     });
   }
-
+  if (submitBtn) {
+    submitBtn.onclick = (e) => {
+      e.preventDefault();
+      FilterAndRender(
+        priceInput[0].value,
+        priceInput[1].value,
+        inputName.value.trim().toLowerCase()
+      );
+    };
+  }
   let priceGap = 200000;
   const rangeInput = Array.from(rangeInputs);
 
@@ -112,11 +121,11 @@ function RenderFilter() {
           );
         });
 
-        RenderProducts(products);
+        RenderProducts(products, data, minVal, maxVal, nameValue);
       });
   }
 
-  function RenderProducts(products) {
+  function RenderProducts(products, data, minVal, maxVal, nameValue) {
     const renderProduct = $(".render-product");
 
     if (!renderProduct) return;
@@ -190,8 +199,7 @@ function RenderFilter() {
     handlePageNumber(1, products);
 
     const favorites = JSON.parse(localStorage.getItem("FAVOR"));
-
-    products.forEach((product) => {
+    products.forEach((product, index) => {
       const favorBtn = $(`.product-card__like-btn[data-index="${product.id}"]`);
 
       if (!favorBtn) return;
@@ -200,11 +208,15 @@ function RenderFilter() {
         e.preventDefault();
         favorBtn.classList.toggle("like-btn--liked");
 
+        const favorIndex = data.findIndex(
+          (item) => item.id === favorBtn.dataset.index
+        );
         if (favorBtn.classList.contains("like-btn--liked")) {
-          dispatch("addFavor", product.id);
+          dispatch("addFavor", favorIndex);
         } else {
-          dispatch("deleteFavor", product.id);
+          dispatch("deleteFavor", favorIndex);
         }
+        FilterAndRender(minVal, maxVal, nameValue);
       });
 
       const isFavor = favorites.some(

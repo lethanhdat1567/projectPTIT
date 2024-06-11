@@ -3379,12 +3379,11 @@ html.dark {
   align-items: center;
   justify-content: space-between;
   height: calc(100% - 10px);
-  min-width: var(--width, 108px);
+  min-width: var(--width, 132px);
   padding: 0px 14px;
   font-size: 1.4rem;
   font-weight: 500;
   line-height: 142.857%;
-  cursor: pointer;
 }
 @media (max-width: 1199.98px) {
   .form__select {
@@ -4786,7 +4785,7 @@ html.dark {
 }
 .cart-item--history_wrapper {
   height: 200px;
-  overflow: hidden;
+  overflow: auto;
   margin: 20px 0px;
   padding: 15px;
   transition: height ease 0.2s;
@@ -5396,6 +5395,10 @@ html.dark {
   justify-content: space-evenly;
   gap: 10px;
   min-width: 200px;
+}
+.SQLP_btn {
+  margin-left: auto;
+  padding-right: 10px;
 }
 .admin-product__total {
   width: 84%;

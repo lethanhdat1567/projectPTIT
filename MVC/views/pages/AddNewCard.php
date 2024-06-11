@@ -200,7 +200,7 @@
                           class="icon cart-info__back-arrow"
                         />
                       </a>
-                      Add credit or debit card
+                      Thêm thẻ tín dụng
                     </h2>
                     <form action="<?php echo ROOT; ?>User/UpCreditCard" class="form form-card" method="post">
                       <!-- Form row 1 -->
@@ -211,12 +211,12 @@
                             for="firstname"
                             class="form__label form-card__label"
                           >
-                            Fisrt Name
+                            Họ
                           </label>
                           <div class="form__text-input">
                             <input
                               type="text"
-                              placeholder="First Name"
+                              placeholder="Nhập họ của bạn ..."
                               name="firstname"
                               id="firstname"
                               class="form__input"
@@ -234,12 +234,12 @@
                             for="lastname"
                             class="form__label form-card__label"
                           >
-                            Last Name
+                            Tên
                           </label>
                           <div class="form__text-input">
                             <input
                               type="text"
-                              placeholder="Last Name"
+                              placeholder="Nhập tên của bạn   ..."
                               name="lastname"
                               id="lastname"
                               class="form__input"
@@ -259,7 +259,7 @@
                             for="card-number"
                             class="form__label form-card__label"
                           >
-                            Card Number
+                            Số tín dụng
                           </label>
                           <div class="form__text-input">
                             <input
@@ -276,51 +276,11 @@
                           </p>
                         </div>
                         <!-- Last Name -->
-                        <div class="form__group">
-                          <label
-                            for="expiration-date"
-                            class="form__label form-card__label"
-                          >
-                            Expiration Date
-                          </label>
-                          <div class="form__text-input">
-                            <input
-                              type="text"
-                              placeholder="YY-MM-DD"
-                              name="expirationdate"
-                              id="expiration-date"
-                              class="form__input"
-                              required
-                            />
-                          </div>
-                          <p class="form__error">
-                            Please enter your expiration date!
-                          </p>
-                        </div>
                       </div>         
-                      <div class="form__group">
-                        <label
-                          for="set-default-card"
-                          class="form__label form-card__label"
-                          >Card Preferences</label
-                        >
-                        <label class="form__checkbox">
-                          <input
-                            type="checkbox"
-                            name=""
-                            id="set-default-card"
-                            checked
-                            class="form__checkbox-input d-none"
-                          />
-                          <span class="form__checkbox-label"
-                            >Set as default card</span
-                          >                         
-                        </label>
-                      </div>
                       <div class="form-card__bottom">
                         <a href="<?php echo ROOT; ?>Home/Profile" class="btn btn--text">Cancel</a>
                         <button name="btnsaveCredit" class="btn btn--primary btn--rounded" >
-                          Save card
+                          Lưu thông tin
                         </button>
                       </div>
                     </form>

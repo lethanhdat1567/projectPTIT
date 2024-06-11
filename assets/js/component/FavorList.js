@@ -10,7 +10,7 @@ function FavorList({ favor, filters, products }) {
   });
   return html`
     <h1 class="cart-info__heading">Favourite List</h1>
-    <p class="cart-desc">${favor.length} items</p>
+    <p class="cart-desc">${favor.length} sản phẩm</p>
     <div class="cart-info__check-all">
       <label class="cart-info__checkbox">
         <input
@@ -55,8 +55,8 @@ function FavorList({ favor, filters, products }) {
                 ${item.name}
               </h3>
               <p class="cart-item__price-wrap">
-                $${price} |
-                <span class="cart-item__status">In Stock</span>
+               100 |
+                <span class="cart-item__status">Còn hàng</span>
               </p>
               <div class="cart-item__ctrl-wrap">
                 <div class="cart-item__ctrl cart-item__ctrl--md-block">
@@ -75,12 +75,12 @@ function FavorList({ favor, filters, products }) {
               </div>
             </div>
             <div class="cart-item__content-right">
-              <p class="cart-item__total-price">${price}$</p>
+              <p class="cart-item__total-price">${price} đ</p>
               <button
                 class="cart-item__checkout-btn btn btn--primary btn--rounded"
                 onclick="dispatch('CheckOut',${index})"
               >
-                Check Out
+                Thêm vào giỏ hàng
               </button>
             </div>
           </div>
@@ -99,7 +99,7 @@ function FavorList({ favor, filters, products }) {
               src="${ASSETS}icons/arrow-down-2.svg"
               alt=""
             />
-            Continue Shopping
+            Trở về trang chủ
           </a>
         </div>
         <button
@@ -107,7 +107,7 @@ function FavorList({ favor, filters, products }) {
           class="cart-info__checkout-all btn btn--primary btn--rounded"
           onclick='dispatch("checkoutAll")'
         >
-          Check Out Item
+          Thêm tất cả vào giỏ hàng
         </button>
       </div>
     </div>

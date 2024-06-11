@@ -32,7 +32,7 @@
     <!-- <link rel="stylesheet" href="<?php echo ASSETS; ?>/css/main.css"> -->
     <link rel="stylesheet" type="text/css"  href="<?php echo ASSETS; ?>css/main.css">
     <script src="<?php echo ASSETS; ?>js/script.js"></script>
-    <title>Grocery Mart</title>
+    <title>Coffe Shop</title>
   </head>
 <body>
     <header id="Header" class="header"><?php require_once './MVC/views/blocks/Header-unlog.php'?></header>
