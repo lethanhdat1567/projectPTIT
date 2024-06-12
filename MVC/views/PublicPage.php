@@ -31,12 +31,16 @@
     <!-- <link rel="stylesheet"  href="./public/css/main.css"> -->
     <!-- <link rel="stylesheet" href="<?php echo ASSETS; ?>/css/main.css"> -->
     <link rel="stylesheet" type="text/css"  href="<?php echo ASSETS; ?>css/main.css">
-    <script src="<?php echo ASSETS; ?>js/script.js"></script>
+    <script src="<?php echo ASSETS; ?>js/script.js" type="module"></script>
     <title>Coffe Shop</title>
   </head>
 <body>
-    <header id="Header" class="header"><?php require_once './MVC/views/blocks/Header-unlog.php'?></header>
-    <div id="Content"><?php require_once './MVC/views/pages/'.$data['Pages'].'.php' ?></div>
+    <header id="Header" class="header"><?php require_once __DIR__ . '/blocks/Header-unlog.php'?></header>
+    <div id="Content"><?php require_once __DIR__ . '/pages/'.$data['Pages'].'.php' ?></div>
 </body>
 <script src="<?php echo ASSETS; ?>js/public.js"></script>
+<script>
+    const ASSETS = "<?php echo ASSETS; ?>";
+    const ROOT = "<?php echo ROOT; ?>";
+  </script>
 </html>

@@ -95,7 +95,7 @@
         </div>
         <div class="act-dropdown__alert-card">
           <div class="act-dropdown__inner act-dropdown__inner-alert">
-          <img src="http://localhost/projectPTIT/assets/icons/arrow-up.png" alt="" class="act-dropdown__arrow top-act__btn-wrap__dropdown-arrow top-act__btn-wrap__dropdown-arrow--alert">
+          <img src="http://datlethanh.id.vn/projectPTIT/assets/icons/arrow-up.png" alt="" class="act-dropdown__arrow top-act__btn-wrap__dropdown-arrow top-act__btn-wrap__dropdown-arrow--alert">
           <div class="act-dropdown__inner-alert-wrap">
             <img src="<?php echo ASSETS ?>img/auth/check.png" class="alert-img__check" alt="">
               Bạn đã thêm vào giỏ hàng một sản phẩm

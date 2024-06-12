@@ -1,7 +1,10 @@
 <?php
 class DeleteUser extends DB{
-    function DeleteUser($id)
-    {
+    function __construct() {
+        parent::__construct();
+    }
+
+    function deleteUser($id) {
         $qr = "DELETE FROM user WHERE id=$id";
         return mysqli_query($this->conn, $qr);
     }
@@ -10,7 +13,5 @@ class DeleteUser extends DB{
         $qr = "UPDATE user SET avatar = NULL WHERE id = $id";
         return mysqli_query($this->conn, $qr);
     }
-    
 }
-
 ?>

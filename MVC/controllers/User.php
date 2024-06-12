@@ -41,7 +41,7 @@ class User extends Controller
                     $_SESSION['mail'] = $email;
                     $_SESSION['code'] = $code;
                     // Chỉ chuyển hướng khi biến flag là true
-                    header('location: ". ROOT . "User/GetPagesVerification');
+                    header('location: GetPagesVerification');
                     exit();
     }
     $this->view("UserPage", ["Pages" => "ForgetPass", "error" =>$error['emailfail'] ]);
@@ -56,7 +56,7 @@ class User extends Controller
             if($_POST['text'] != $_SESSION['code']){
                 $error['fail'] = "Mã xác nhận không hợp lệ !";
             }else{
-                header('location: ". ROOT . "User/GetPagesResetPass');
+                header('location: GetPagesResetPass');
             }
             $this->view("UserPage", ["Pages" => "Verification", "error" =>$error['fail'] ]);
         }

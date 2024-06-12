@@ -40,6 +40,6 @@
     <title>Coffe Shop</title>
   </head>
 <body>
-    <div id="Content"><?php require_once './MVC/views/pages/'.$data['Pages'].'.php' ?></div>
+    <div id="Content"><?php require_once $_SERVER['DOCUMENT_ROOT'] . '/projectPTIT/' . 'MVC/views/pages/'.$data['Pages'].'.php' ?></div>
 </body>
 </html>

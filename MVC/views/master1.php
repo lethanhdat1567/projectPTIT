@@ -35,9 +35,9 @@
     <title>Coffe Shop</title>
   </head>
 <body>
-    <header id="Header" class="header"><?php require_once './MVC/views/blocks/Header.php' ?></header>
-    <div id="Content"><?php require_once './MVC/views/pages/'.$data['Pages'].'.php' ?></div>
-    <footer id="Footer" class="footer"><?php require_once './MVC/views/blocks/Footer.php' ?></footer>
+    <header id="Header" class="header"><?php require_once $_SERVER['DOCUMENT_ROOT'] . '/projectPTIT/' . 'MVC/views/blocks/Header.php' ?></header>
+    <div id="Content"><?php require_once $_SERVER['DOCUMENT_ROOT'] . '/projectPTIT/' . 'MVC/views/pages/'.$data['Pages'].'.php' ?></div>
+    <footer id="Footer" class="footer"><?php require_once $_SERVER['DOCUMENT_ROOT'] . '/projectPTIT/' . 'MVC/views/blocks/Footer.php' ?></footer>
 </body>
   <script src="<?php echo ASSETS ?>js/Card.js" type="module"></script>
   <!-- <script src="<?php echo ASSETS; ?>js/component/subList.js" type="module"></script> -->

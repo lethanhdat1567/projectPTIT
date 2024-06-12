@@ -72,7 +72,7 @@ function RenderProduct({ products, favor, All }) {
   let handleEstimated = shipping + x;
   let Estimated = handleEstimated.toLocaleString("vi-VN");
   let result = x.toLocaleString("vi-VN");
-  fetch("http://localhost/projectPTIT/API/Read")
+  fetch("https://datlethanh.id.vn/projectPTIT/API/Read")
     .then((response) => response.json())
     .then((data) => {
       items = data;
@@ -220,7 +220,7 @@ function searchProduct() {
   search_Btn.onclick = (e) => {
     e.preventDefault();
     toggleHomeLink();
-    fetch("http://localhost/projectPTIT/API/Read")
+    fetch("https://datlethanh.id.vn/projectPTIT/API/Read")
       .then((response) => response.json())
       .then((data) => {
         let productSearch = data.filter((product) => {

@@ -1,5 +1,5 @@
 <?php
-require_once './MVC/core/App.php';
-require_once './MVC/core/Controller.php';
-require_once './MVC/core/DB.php';
+require_once __DIR__ . '/core/App.php';
+require_once __DIR__ . '/core/Controller.php';
+require_once __DIR__ . '/core/DB.php';
 ?>

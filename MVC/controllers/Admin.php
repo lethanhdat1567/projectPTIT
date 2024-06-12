@@ -127,7 +127,7 @@ if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)){
                     if(move_uploaded_file($tmp_name, $target_file)){
                         
                         $this->InsertProduct->insertImgs($product_id, $img_name);
-                       header("location: http://localhost/projectPTIT/Admin/QLSP");
+                       header("location: http://datlethanh.id.vn/projectPTIT/Admin/QLSP");
                     }
                     else {
                         echo "Failed to move file: " . $img_name . "<br>";
@@ -188,7 +188,7 @@ if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)){
 
     }           
 }  else{
-    header("Location: http://localhost/projectPTIT/User/SignIn");
+    header("location: http://datlethanh.id.vn/projectPTIT/User/SignIn");
 }
     
 ?>

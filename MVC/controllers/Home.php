@@ -101,7 +101,7 @@
                     else{
                         $_SESSION['avatar'] = $row['avatar'];
                     }
-                    header("Location: http://localhost/projectPTIT/Home/Profile");
+                    header("location: http://datlethanh.id.vn/projectPTIT/Home/Profile");
                 }
                 }
                 else{

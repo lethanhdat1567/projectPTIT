@@ -5,7 +5,7 @@
 define('WEBSITE_TITLE', "My Website");
 
 /*protocal type http or https*/
-define('PROTOCAL', 'http');
+define('PROTOCAL', 'https');
 
 /*root and asset paths*/
 // $serverName = 'localhost';
