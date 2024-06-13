@@ -37,6 +37,7 @@
         }
         function CheckOut() {
             $this->view("master1",["Pages"=>"CheckOut"]);
+            
         }
         function EditPersonalInfo() {
             $id = $_SESSION['id'];
@@ -117,47 +118,55 @@
                 $id = $_SESSION['id'];
                     $prodIds = json_decode($_POST['prodIds']);
                     $total = 0;
-                    foreach($prodIds as $prodId) {
-                        $products = $this->GetProduct->GetValuesProductID($prodId);
-                        $row = mysqli_fetch_assoc($products);
-                        $discounted_price = $row["price"] - ($row["price"] * ($row["discount"] / 100));
-                        $total += $discounted_price;
-
-                    }
-                    $Orders = $this->Orders->InsertOrder($id,$name,$email,$phone,$address,$total);
-                    $OrdersValue = $this->Orders->GetOrders($id);
-                    $orders = mysqli_fetch_assoc($OrdersValue);
-                    $orderId = $orders["id"];
-                    foreach($prodIds as $prodId) {
-                        $products = $this->GetProduct->GetValuesProductID($prodId);
-                        $row = mysqli_fetch_assoc($products);
-                        $discounted_price = $row["price"] - ($row["price"] * ($row["discount"] / 100));
-                        // Tạo một key duy nhất cho mỗi sản phẩm dựa trên ID sản phẩm
-                        $productKey = 'prod_' . $prodId;
-                        if(isset($productInfo[$productKey])) {
-                            // Nếu sản phẩm đã tồn tại trong mảng $productInfo, cập nhật số lượng và tổng giá trị
-                            $productInfo[$productKey]['quantity'] += 1;
-                            $productInfo[$productKey]['totalProd'] += $discounted_price;
-                        } else {
-                            // Nếu sản phẩm chưa tồn tại trong mảng $productInfo, thêm mới sản phẩm vào mảng
-                            $productInfo[$productKey] = array(
-                                'quantity' => 1,
-                                'totalProd' => $discounted_price
-                            );
-                        }
-                        }
-                        foreach ($productInfo as $prodKey => $product) {
-                            $prodId = substr($prodKey, 5);
+                    if(is_array($prodIds) && !empty($prodIds)) {
+                        foreach($prodIds as $prodId) {
                             $products = $this->GetProduct->GetValuesProductID($prodId);
                             $row = mysqli_fetch_assoc($products);
                             $discounted_price = $row["price"] - ($row["price"] * ($row["discount"] / 100));
-                            $this->Orders->InsertOrderDetail($orderId, $prodId, $discounted_price, $product['quantity'], $product['totalProd']);
+                            $total += $discounted_price;
+    
                         }
+                        $Orders = $this->Orders->InsertOrder($id,$name,$email,$phone,$address,$total);
+                        $OrdersValue = $this->Orders->GetOrders($id);
+                        $orders = mysqli_fetch_assoc($OrdersValue);
+                        $orderId = $orders["id"];
+                        foreach($prodIds as $prodId) {
+                            $products = $this->GetProduct->GetValuesProductID($prodId);
+                            $row = mysqli_fetch_assoc($products);
+                            $discounted_price = $row["price"] - ($row["price"] * ($row["discount"] / 100));
+                            // Tạo một key duy nhất cho mỗi sản phẩm dựa trên ID sản phẩm
+                            $productKey = 'prod_' . $prodId;
+                            if(isset($productInfo[$productKey])) {
+                                // Nếu sản phẩm đã tồn tại trong mảng $productInfo, cập nhật số lượng và tổng giá trị
+                                $productInfo[$productKey]['quantity'] += 1;
+                                $productInfo[$productKey]['totalProd'] += $discounted_price;
+                            } else {
+                                // Nếu sản phẩm chưa tồn tại trong mảng $productInfo, thêm mới sản phẩm vào mảng
+                                $productInfo[$productKey] = array(
+                                    'quantity' => 1,
+                                    'totalProd' => $discounted_price
+                                );
+                            }
+                            }
+                            foreach ($productInfo as $prodKey => $product) {
+                                $prodId = substr($prodKey, 5);
+                                $products = $this->GetProduct->GetValuesProductID($prodId);
+                                $row = mysqli_fetch_assoc($products);
+                                $discounted_price = $row["price"] - ($row["price"] * ($row["discount"] / 100));
+                                $this->Orders->InsertOrderDetail($orderId, $prodId, $discounted_price, $product['quantity'], $product['totalProd']);
+                            }
+                            echo '<script>';
+                            echo 'localStorage.removeItem("PRODUCT");';
+                            echo 'localStorage.removeItem("total");';
+                            echo '</script>';                        
+                            $this->PaymentSuccess();
+                    }
+                    else{
                         echo '<script>';
-                        echo 'localStorage.removeItem("PRODUCT");';
-                        echo 'localStorage.removeItem("total");';
-                        echo '</script>';                        
-                        $this->PaymentSuccess();
+                        echo 'alert("Bạn chưa có sản phẩm !");';
+                        echo 'window.location.href = document.referrer;';
+                        echo '</script>';
+                    }
                 }
             }
         }
