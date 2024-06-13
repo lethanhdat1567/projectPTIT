@@ -37,10 +37,6 @@ if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)){
             $users = $this->GetUser->GetUsers();
             $this->view("AdminPage",["Pages"=>"QLND","users"=>$users]);
         }
-        function QLDH() {
-            $users = $this->GetUser->GetUsers();
-            $this->view("AdminPage",["Pages"=>"QLDH","users"=>$users]);
-        }
         function DeleteUser($param) {
             $result = $this->DeleteUser->DeleteUser($param);
             if($result){
@@ -212,9 +208,9 @@ if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)){
                 }
             }
         }
-        function GetOrderAdmin(){
+        function QLDH(){
             $GetOrder = $this->Orders->GetOrderAdmin();
-            $this->view("AdminPage",["Pages"=>"GetOrderAdmin","getOrderAdmin"=>$GetOrder]);
+            $this->view("AdminPage",["Pages"=>"QLDH","getOrderAdmin"=>$GetOrder]);
         }
     }           
 }  else{

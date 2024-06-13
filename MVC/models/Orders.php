@@ -59,15 +59,15 @@ WHERE
     }
     public function GetOrderAdmin(){
         $query = "SELECT 
-            u.fullname, 
-            u.phone_number, 
-            u.address, 
-            o.order_date, 
+            o.fullname AS fullname, 
+            u.phone_number AS phone_number , 
+            u.address AS address, 
+            o.order_date AS order_date, 
             o.total_money AS order_total_money, 
             od.total_money AS order_details_total_money, 
             od.quantity AS quantity,
-            p.name AS product_name, 
-            p.thumbnail
+            p.name AS product_name,     
+            p.thumbnail AS thumbnail
         FROM 
             user u
         JOIN 
