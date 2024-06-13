@@ -62,20 +62,43 @@
                 <div class="admin-menu">
                     <h2 class="admin-menu__heading">Admin Menu</h2>
                     <div class="admin-menu__wrap">
-                        <ul class="admin-menu__list">
-                            <li class="admin-menu__items">
-                                <a href="<?php echo ROOT; ?>Admin/Main" class="admin-menu__link">Home</a>
-                            </li>
-                            <li class="admin-menu__items">
-                                <a href="<?php echo ROOT; ?>Admin/QLSP" class="admin-menu__link">Product Management</a>
-                            </li>
-                            <li class="admin-menu__items">
-                                <a href="<?php echo ROOT; ?>Admin/QLND" class="admin-menu__link">User Management</a>
-                            </li>
-                            <li class="admin-menu__items">
-                                <a href="<?php echo ROOT; ?>Admin/Chart" class="admin-menu__link">Thống kê</a>
-                            </li>
-                        </ul>
+                    <ul class="admin-menu__list">
+                <li class="admin-menu__items">
+                  <a
+                    href="<?php echo ROOT; ?>Admin/Main"
+                    class="admin-menu__link"
+                    >Trang chủ</a
+                  >
+                </li>
+                <li class="admin-menu__items">
+                  <a
+                    href="<?php echo ROOT; ?>Admin/QLSP"
+                    class="admin-menu__link"
+                    >Trang quản lí sản phẩm</a
+                  >
+                </li>
+                <li class="admin-menu__items">
+                  <a
+                    href="<?php echo ROOT; ?>Admin/QLND"
+                    class="admin-menu__link"
+                    >Trang quản lí người dùng</a
+                  >
+                </li>
+                <li class="admin-menu__items">
+                  <a
+                    href="<?php echo ROOT; ?>Admin/QLDH"
+                    class="admin-menu__link"
+                    >Trang quản lí đơn hàng</a
+                  >
+                </li>
+                <li class="admin-menu__items">
+                  <a
+                    href="<?php echo ROOT; ?>Admin/Chart"
+                    class="admin-menu__link"
+                    >Thống kê</a
+                  >
+                </li>
+              </ul>
                     </div>
                 </div>
                 <div class="admin-products">
