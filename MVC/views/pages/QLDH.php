@@ -51,9 +51,10 @@
                                 <div class="orders__wrapper">
                                     <div class="orders__heading">
                                         <div class="orders__heading-info">
-                                            <h2 class="orders-info__user">Tên: <?php echo $row['fullname']; ?></h2>
-                                            <p class="orders-info__phone">Số điện thoại: <?php echo $row['phone_number']; ?></p>
-                                            <p class="orders-info__address">Địa chỉ: <?php echo $row['address']; ?></p>
+                                            <h2 class="orders-info__user">Tên:<?php echo $row['fullname']; ?></h2>
+                                            <p class="orders-info__phone"><span class="orders__heading-item">Ngày đặt hàng: </span><?php echo $row['order_date']; ?></p>
+                                            <p class="orders-info__phone"><span class="orders__heading-item">Số điện thoại: </span><?php echo $row['phone_number']; ?></p>
+                                            <p class="orders-info__address"><span class="orders__heading-item">Địa chỉ: </span><?php echo $row['address']; ?></p>
                                         </div>
                                         <p class="orders__heading-total"><?php echo number_format($row['order_total_money'], 0, ',', '.'); ?> đ</p>
                                     </div>
