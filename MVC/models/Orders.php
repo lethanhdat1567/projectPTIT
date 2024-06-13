@@ -57,5 +57,28 @@ WHERE
     orders.user_id = $id;";
          return mysqli_query($this->conn, $query);
     }
+    public function GetOrderAdmin(){
+        $query = "SELECT 
+            u.fullname, 
+            u.phone_number, 
+            u.address, 
+            o.order_date, 
+            o.total_money AS order_total_money, 
+            od.total_money AS order_details_total_money, 
+            od.quantity AS quantity,
+            p.name AS product_name, 
+            p.thumbnail
+        FROM 
+            user u
+        JOIN 
+            orders o ON u.id = o.user_id
+        JOIN 
+            order_details od ON o.id = od.order_id
+        JOIN 
+            product p ON p.id = od.product_id
+        WHERE 
+            u.role_id = 0";
+            return mysqli_query($this->conn, $query);
+    }
 }
 ?>
