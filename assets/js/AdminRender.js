@@ -1,5 +1,5 @@
 import html from "./redux/core.js";
-fetch("https://datlethanh.id.vn/projectPTIT/API/Read")
+fetch("https://coffeedp.id.vn/projectPTIT/API/Read")
   .then((response) => response.json())
   .then((data) => {
     const HTML = data

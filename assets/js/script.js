@@ -237,7 +237,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const catesArr = Array.from(cates);
   catesArr.forEach((cate) => {
     cate.onclick = (e) => {
-      fetch("https://datlethanh.id.vn/projectPTIT/API/Read")
+      fetch("https://coffeedp.id.vn/projectPTIT/API/Read")
         .then((response) => response.json())
         .then((data) => {
           let originalIndexes = [];

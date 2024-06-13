@@ -1,10 +1,10 @@
 <?php
 class DB{
     public $conn;
-    protected $servername = 'datlethanh.id.vn';
-    protected $username = 'lethanhdat';
-    protected $password = 'Kckcnbcb89*';
-    protected $dbname = 'coffeShop';
+    protected $servername = 'coffeedp.id.vn';
+    protected $username = 'daphuoc';
+    protected $password = 'Daphuoc15678*';
+    protected $dbname = 'CoffeeDP';
     function __construct()
     {
         $this->conn = mysqli_connect($this->servername,$this->username,$this->password);

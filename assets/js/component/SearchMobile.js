@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (inputBtn) {
     inputBtn.addEventListener("input", function (e) {
-      fetch("https://datlethanh.id.vn/projectPTIT/API/Read")
+      fetch("https://coffeedp.id.vn/projectPTIT/API/Read")
         .then((response) => response.json())
         .then((data) => {
           let productSearch = data.filter((value) => {

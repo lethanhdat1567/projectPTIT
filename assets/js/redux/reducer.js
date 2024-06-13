@@ -15,9 +15,7 @@ const init = {
 async function fetchData() {
   try {
     // Sử dụng await để chờ đợi khi fetch dữ liệu từ API
-    const response = await fetch(
-      "https://datlethanh.id.vn/projectPTIT/API/Read"
-    );
+    const response = await fetch("https://coffeedp.id.vn/projectPTIT/API/Read");
     const data = await response.json();
 
     // Gán dữ liệu từ API vào biến All
