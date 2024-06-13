@@ -45,7 +45,7 @@ if (!empty($data["Orders"])) {
         <div class="checkout-container">
             <ul class="breadcrumbs checkout-page__breadcrumbs">
                 <li>
-                    <a href="<?php echo ROOT ?>" class="breadcrumbs__link"
+                    <a href="<?php echo ROOT ?>Home/Main" class="breadcrumbs__link"
                         >Home
                         <img src="<?php echo ASSETS ?>icons/arrow-right.svg" alt="" />
                     </a>

@@ -90,12 +90,30 @@
                 <!-- Img -->
                 <div class="form__group">
                   <label for="password" class="form__label form-card__label">
-                    Ảnh sản phẩm
+                    Ảnh chính của sản phẩm
                   </label>
                   <div class="form__text-input">
                     <input type="file" name="thumbnail" id="img" class="form__input" />
                   </div>
                 </div>
+                <div class="form__group">
+                  <?php 
+                  // Fetch all rows as an array of arrays
+                  $arrGalery = [];
+                  while ($gar = mysqli_fetch_assoc($data["galery"])) {
+                      $arrGalery[] = $gar;
+                  }
+                  ?>
+                  <p class="form__imgs-desc">Ảnh phụ của sản phẩm</p>
+                  <a href="<?php echo ROOT; ?>Admin/AddImg/<?php echo $row['id']; ?>" class="form__imgs-Btn btn btn--primary <?php echo (count($arrGalery) < 3) ? 'show' : ''; ?>">Thêm ảnh</a>
+                  <div class="form__imgs-wrapper">
+                      <?php foreach ($arrGalery as $galery) { ?>
+                          <div class="form__imgs-wrap">
+                            <img src="<?php echo ASSETS ?>img/products/<?php echo $galery['thumbnail']; ?>" alt="" class="form__imgs-galery">
+                            <a href="<?php echo ROOT ?>Admin/DeleteGalery/<?php echo $galery['id'] ?>" class="btn btn--danger form__imgs-BtnDelete">Xóa</a>
+                          </div>
+                      <?php } ?>
+                  </div>
               </div>
               <div class="form-card__bottom">
                 <a
