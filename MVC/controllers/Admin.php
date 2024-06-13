@@ -9,6 +9,7 @@ if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)){
         public $GetUser;
         public $DeleteUser;       
         public $UpdateRole;
+        public $Orders;
         public function __construct(){
             $this->InsertProduct = $this->model("InsertProduct");
             $this->GetProduct = $this->model("GetProduct");
@@ -18,6 +19,7 @@ if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)){
             $this->GetUser = $this->model("GetUser");
             $this->DeleteUser = $this->model("DeleteUser");
             $this->UpdateRole = $this->model("UpdateRole");
+            $this->Orders = $this->model("Orders");
 
         }
         function Chart(){
@@ -185,7 +187,10 @@ if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)){
                 }
             }
         }
-
+        function GetOrderAdmin(){
+            $GetOrder = $this->Orders->GetOrderAdmin();
+            $this->view("AdminPage",["Pages"=>"GetOrderAdmin","getOrderAdmin"=>$GetOrder]);
+        }
     }           
 }  else{
     header("location: http://datlethanh.id.vn/projectPTIT/User/SignIn");
