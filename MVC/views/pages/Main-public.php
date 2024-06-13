@@ -24,7 +24,7 @@
       <!-- Browse Categories -->
       <section class="home__container">
         <div class="home__row">
-          <h2 class="home__heading">Browse Categories</h2>
+          <h2 class="home__heading">Duyệt danh mục</h2>
         </div>
         <div class="home__cate row row-cols-3 row-cols-md-1">
           <!-- category item 1 -->
@@ -37,9 +37,9 @@
                   class="cate-item__thumb"
                 />
                 <div class="cate-item__info">
-                  <h3 class="cate-item__title">$24 - $150</h3>
+                  <h3 class="cate-item__title">0-200 nghìn VNd</h3>
                   <div class="cate-item__desc">
-                    New sumatra mandeling coffe blend
+                    Sản phẩm cà phê gói chất lượng loại nhỏ
                   </div>
                 </div>
               </div>
@@ -55,7 +55,7 @@
                   class="cate-item__thumb"
                 />
                 <div class="cate-item__info">
-                  <h3 class="cate-item__title">$37 - $160</h3>
+                  <h3 class="cate-item__title">200 - 500 nghìn VND</h3>
                   <div class="cate-item__desc">
                     New sumatra mandeling coffe blend
                   </div>
@@ -73,7 +73,7 @@
                   class="cate-item__thumb"
                 />
                 <div class="cate-item__info">
-                  <h3 class="cate-item__title">$32 - $160</h3>
+                  <h3 class="cate-item__title">500 nghìn VND trở đi</h3>
                   <div class="cate-item__desc">
                     New sumatra mandeling coffe blend
                   </div>
@@ -258,7 +258,7 @@
               </h3>
               <p class="product-card__brand">Lavazza</p>
               <div class="product-card__row">
-                <span class="product-card__price">$47.00</span>
+                <span class="product-card__price">100.000 đ</span>
                 <img
                   src="<?php echo ASSETS; ?>icons/star.svg"
                   alt=""
@@ -299,7 +299,7 @@
               </h3>
               <p class="product-card__brand">Lavazza</p>
               <div class="product-card__row">
-                <span class="product-card__price">$47.00</span>
+                <span class="product-card__price">100.000 đ</span>
                 <img
                   src="<?php echo ASSETS; ?>icons/star.svg"
                   alt=""
@@ -340,7 +340,7 @@
               </h3>
               <p class="product-card__brand">Lavazza</p>
               <div class="product-card__row">
-                <span class="product-card__price">$47.00</span>
+                <span class="product-card__price">200.000 đ</span>
                 <img
                   src="<?php echo ASSETS; ?>icons/star.svg"
                   alt=""
@@ -381,7 +381,7 @@
               </h3>
               <p class="product-card__brand">Lavazza</p>
               <div class="product-card__row">
-                <span class="product-card__price">$47.00</span>
+                <span class="product-card__price">100.000 đ</span>
                 <img
                   src="<?php echo ASSETS; ?>icons/star.svg"
                   alt=""
@@ -422,7 +422,7 @@
               </h3>
               <p class="product-card__brand">Lavazza</p>
               <div class="product-card__row">
-                <span class="product-card__price">$47.00</span>
+                <span class="product-card__price">100.000 đ</span>
                 <img
                   src="<?php echo ASSETS; ?>icons/star.svg"
                   alt=""
@@ -463,7 +463,7 @@
               </h3>
               <p class="product-card__brand">Lavazza</p>
               <div class="product-card__row">
-                <span class="product-card__price">$47.00</span>
+                <span class="product-card__price">400.000 đ</span>
                 <img
                   src="<?php echo ASSETS; ?>icons/star.svg"
                   alt=""
@@ -504,7 +504,7 @@
               </h3>
               <p class="product-card__brand">Lavazza</p>
               <div class="product-card__row">
-                <span class="product-card__price">$47.00</span>
+                <span class="product-card__price">100.000 đ</span>
                 <img
                   src="<?php echo ASSETS; ?>icons/star.svg"
                   alt=""
@@ -545,7 +545,7 @@
               </h3>
               <p class="product-card__brand">Lavazza</p>
               <div class="product-card__row">
-                <span class="product-card__price">$47.00</span>
+                <span class="product-card__price">100.000 đ</span>
                 <img
                   src="<?php echo ASSETS; ?>icons/star.svg"
                   alt=""
@@ -586,7 +586,7 @@
               </h3>
               <p class="product-card__brand">Lavazza</p>
               <div class="product-card__row">
-                <span class="product-card__price">$47.00</span>
+                <span class="product-card__price">800.000 đ</span>
                 <img
                   src="<?php echo ASSETS; ?>icons/star.svg"
                   alt=""
@@ -627,7 +627,7 @@
               </h3>
               <p class="product-card__brand">Lavazza</p>
               <div class="product-card__row">
-                <span class="product-card__price">$47.00</span>
+                <span class="product-card__price">100.000 đ</span>
                 <img
                   src="<?php echo ASSETS; ?>icons/star.svg"
                   alt=""

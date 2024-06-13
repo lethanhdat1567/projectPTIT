@@ -44,11 +44,11 @@
             <?php while($row = mysqli_fetch_assoc($data["products"])){ ?>
             <tr class="admin-product__table-wrap">
               <td class="admin-product__table-items">
-                <img
-                  class="table-items__img"
-                  src="<?php echo ASSETS; ?>img/products/<?php echo $row['thumbnail'] ?>"
-                  alt=""
-                />
+                  <img
+                    class="table-items__img"
+                    src="<?php echo ASSETS; ?>img/products/<?php echo $row['thumbnail'] ?>"
+                    alt=""
+                  />
               </td>
               <td class="admin-product__table-items"><?php echo $row['name'] ?></td>
               <td class="admin-product__table-items"><?php echo$row['updated_at'] ?></td>
@@ -69,11 +69,6 @@
                       Xóa
                     </button>
                   </a>
-                  <a href="<?php echo ROOT; ?>Admin/AddImg/<?php echo $row['id'] ?>">
-                  <button class="btn" style="background-color: green; color: #fff">
-                    Thêm ảnh 
-                  </button>
-                </a>
                 </div>
               </td>
               <!-- dung viec render -->

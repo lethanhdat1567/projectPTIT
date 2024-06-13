@@ -15,6 +15,7 @@ if (!isExecuted) {
       localStorage.removeItem("PRODUCT");
       localStorage.removeItem("FAVOR");
       localStorage.removeItem("defaultUser");
+      localStorage.setItem("dark", false);
       window.location.href = `${ROOT}User/SignIn`;
     };
   }

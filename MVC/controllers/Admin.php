@@ -10,6 +10,7 @@ if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)){
         public $DeleteUser;       
         public $UpdateRole;
         public $Orders;
+        public $DeleteGalery;
         public function __construct(){
             $this->InsertProduct = $this->model("InsertProduct");
             $this->GetProduct = $this->model("GetProduct");
@@ -20,6 +21,7 @@ if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)){
             $this->DeleteUser = $this->model("DeleteUser");
             $this->UpdateRole = $this->model("UpdateRole");
             $this->Orders = $this->model("Orders");
+            $this->DeleteGalery = $this->model("DeleteGalery");
 
         }
         function Chart(){
@@ -35,11 +37,13 @@ if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)){
             $users = $this->GetUser->GetUsers();
             $this->view("AdminPage",["Pages"=>"QLND","users"=>$users]);
         }
-
         function DeleteUser($param) {
             $result = $this->DeleteUser->DeleteUser($param);
             if($result){
                 $this->QLND();
+            }
+            else {
+                echo "<script>alert('Tài khoản đã mua hàng, không thể xóa người dùng!');</script>";
             }
         }
         function UpdateRole($userId) {
@@ -101,8 +105,9 @@ if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)){
         }
         function UpdateProduct($param) {
             $products = $this->UpdateProduct->GetIdProduct($param);
+            $galery = $this->GetProduct->GetGalery($param);
             if($products){
-                $this->view("AdminPage",["Pages"=>"UpdateProduct","product"=> $products]);
+                $this->view("AdminPage",["Pages"=>"UpdateProduct","product"=> $products,"galery"=>$galery]);
             }
         }
 
@@ -112,31 +117,48 @@ if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)){
                 $this->view("AdminPage",["Pages"=>"AddImg","product"=> $products]);
             }
         }
-
+        function DeleteGalery($id) {
+            $this->DeleteGalery->DeleteGaleryValues($id);
+            if (isset($_SERVER['HTTP_REFERER'])) {
+                $previousPage = $_SERVER['HTTP_REFERER'];
+                header("Location: $previousPage");
+            } else {
+                header("Location: http://datlethanh.id.vn/projectPTIT/Admin/QLSP");
+            }
+            exit();
+        }
+        
         function galeryImgs(){
             if(isset($_POST["btnAddImgs"])){
                 $product_id = $_POST['id'];
+                $num_images = count($_FILES['thumbnail']['name']);
                 
-
-
+                if ($num_images > 3) {
+                    echo "<script>
+                            alert('Vui lòng không thêm quá 3 ảnh!');
+                            setTimeout(function() {
+                                window.history.back();
+                            }, 0);
+                          </script>";
+                    return; 
+                }
                 foreach ($_FILES['thumbnail']['name'] as $key => $value){
                     $img_name = $_FILES['thumbnail']['name'][$key];
                     $tmp_name = $_FILES['thumbnail']['tmp_name'][$key];
-
+        
                     $target_dir = "./assets/img/products/";
-                    $target_file =$target_dir.$img_name;
-
+                    $target_file = $target_dir . $img_name;
+        
                     if(move_uploaded_file($tmp_name, $target_file)){
-                        
                         $this->InsertProduct->insertImgs($product_id, $img_name);
-                       header("location: http://datlethanh.id.vn/projectPTIT/Admin/QLSP");
-                    }
-                    else {
+                        header("location: http://datlethanh.id.vn/projectPTIT/Admin/QLSP");
+                    } else {
                         echo "Failed to move file: " . $img_name . "<br>";
                     }
                 }
             }
         }
+        
         function Product() {
             // UPDATE PRODUCT
             if(isset($_POST["btnUpdate"])) {
@@ -162,7 +184,6 @@ if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)){
                     $this->UpdateProductSuccess();
                 }
             }
-
 
             // ADD PRODUCT
             if(isset($_POST["btnAdd"])) {
