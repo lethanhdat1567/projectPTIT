@@ -1,5 +1,6 @@
 import RenderFilter from "./component/RenderFilter.js";
 import toggleHomeLink from "./component/HomeFilter.js";
+import html from "./redux/core.js";
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 

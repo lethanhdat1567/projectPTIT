@@ -35,6 +35,10 @@ if(isset($_SESSION['role_id']) && ($_SESSION['role_id'] == 1)){
             $users = $this->GetUser->GetUsers();
             $this->view("AdminPage",["Pages"=>"QLND","users"=>$users]);
         }
+        function QLDH() {
+            $users = $this->GetUser->GetUsers();
+            $this->view("AdminPage",["Pages"=>"QLDH","users"=>$users]);
+        }
         function DeleteUser($param) {
             $result = $this->DeleteUser->DeleteUser($param);
             if($result){

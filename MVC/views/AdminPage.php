@@ -29,10 +29,10 @@
     <link rel="stylesheet" type="text/css"  href="<?php echo ASSETS; ?>css/main.css">
     <script src="<?php echo ASSETS; ?>js/script.js" type="module"></script>
     <title>Coffe Shop</title>
-  </head>
-<body>
-    <header id="Header" class="header"><?php require_once __DIR__ . '/blocks/HeaderAdmin.php'; ?></header>
-    <div id="Content"><?php  require_once __DIR__ . '/pages/'.$data['Pages'].'.php' ?></div>
-</body>
-<script src="<?php echo ASSETS; ?>js/AdminRender.js" type="module"></script>
+    </head>
+    <body>
+      <header id="Header" class="header"><?php require_once __DIR__ . '/blocks/HeaderAdmin.php'; ?></header>
+      <div id="Content"><?php  require_once __DIR__ . '/pages/'.$data['Pages'].'.php' ?></div>
+      </body>
+    <script src="<?php echo ASSETS; ?>js/AdminRender.js" type="module"></script>
 </html>

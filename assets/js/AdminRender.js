@@ -65,14 +65,26 @@ fetch("https://datlethanh.id.vn/projectPTIT/API/Read")
       })
       .join("");
     const productElement = document.querySelector(".render-product");
-    productElement.innerHTML = HTML;
-    const linkNote = document.querySelectorAll(".admin");
-    const link = Array.from(linkNote);
-
-    link.forEach((item) => {
-      item.onclick = (e) => {
-        alert("Anh/Chị vui lòng đăng nhập trang người dùng!!");
-        e.preventDefault();
-      };
-    });
+    if (productElement) {
+      productElement.innerHTML = HTML;
+      const linkNote = document.querySelectorAll(".admin");
+      const link = Array.from(linkNote);
+      link.forEach((item) => {
+        item.onclick = (e) => {
+          alert("Anh/Chị vui lòng đăng nhập trang người dùng!!");
+          e.preventDefault();
+        };
+      });
+    }
   });
+const arrDown = document.querySelectorAll(".orders__img-wrap");
+const arrDownArr = Array.from(arrDown);
+const wrapperNote = document.querySelectorAll(".orders__items-wrapper");
+const wrapper = Array.from(wrapperNote);
+if (wrapper) {
+  arrDownArr.forEach((item, index) => {
+    item.onclick = (e) => {
+      wrapper[index].classList.toggle("show");
+    };
+  });
+}
